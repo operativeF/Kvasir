@@ -3,7 +3,7 @@
 namespace Kvasir {
 //System configuration controller
     namespace SyscfgCfgr1{    ///<configuration register 1
-        using Addr = Register::Address<0x40010000,0x02c007fc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010000,0x02c007fc,0x00000000,std::uint32_t>;
         ///Memory mapping selection              bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> memMode{}; 
         ///TIM16 DMA request remapping              bit
@@ -34,7 +34,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::ReadWriteAccess,unsigned> fpuIt{}; 
     }
     namespace SyscfgExticr1{    ///<external interrupt configuration register          1
-        using Addr = Register::Address<0x40010008,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010008,0xffff0000,0x00000000,std::uint32_t>;
         ///EXTI 3 configuration bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> exti3{}; 
         ///EXTI 2 configuration bits
@@ -45,7 +45,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> exti0{}; 
     }
     namespace SyscfgExticr2{    ///<external interrupt configuration register          2
-        using Addr = Register::Address<0x4001000c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001000c,0xffff0000,0x00000000,std::uint32_t>;
         ///EXTI 7 configuration bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> exti7{}; 
         ///EXTI 6 configuration bits
@@ -56,7 +56,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> exti4{}; 
     }
     namespace SyscfgExticr3{    ///<external interrupt configuration register          3
-        using Addr = Register::Address<0x40010010,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010010,0xffff0000,0x00000000,std::uint32_t>;
         ///EXTI 11 configuration bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> exti11{}; 
         ///EXTI 10 configuration bits
@@ -67,7 +67,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> exti8{}; 
     }
     namespace SyscfgExticr4{    ///<external interrupt configuration register          4
-        using Addr = Register::Address<0x40010014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010014,0xffff0000,0x00000000,std::uint32_t>;
         ///EXTI 15 configuration bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> exti15{}; 
         ///EXTI 14 configuration bits
@@ -78,7 +78,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> exti12{}; 
     }
     namespace SyscfgCfgr2{    ///<configuration register 2
-        using Addr = Register::Address<0x40010018,0xfffffef8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010018,0xfffffef8,0x00000000,std::uint32_t>;
         ///SRAM parity flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> sramPef{}; 
         ///PVD lock enable bit

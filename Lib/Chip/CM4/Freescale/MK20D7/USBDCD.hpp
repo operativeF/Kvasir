@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB Device Charger Detection module
     namespace UsbdcdControl{    ///<Control Register
-        using Addr = Register::Address<0x40035000,0xfcfefefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035000,0xfcfefefe,0x00000000,std::uint32_t>;
         ///Interrupt Acknowledge
         enum class IackVal {
             v0=0x00000000,     ///<Do not clear the interrupt.
@@ -56,7 +56,7 @@ namespace Kvasir {
         }
     }
     namespace UsbdcdClock{    ///<Clock Register
-        using Addr = Register::Address<0x40035004,0xfffff002,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035004,0xfffff002,0x00000000,std::uint32_t>;
         ///Unit of measurement encoding for Clock Speed
         enum class ClockunitVal {
             v0=0x00000000,     ///<kHz Speed (between 1 kHz and 1023 kHz)
@@ -71,7 +71,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,2),Register::ReadWriteAccess,unsigned> clockSpeed{}; 
     }
     namespace UsbdcdStatus{    ///<Status Register
-        using Addr = Register::Address<0x40035008,0xff80ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035008,0xff80ffff,0x00000000,std::uint32_t>;
         ///Charger Detection Sequence Results
         enum class SeqresVal {
             v00=0x00000000,     ///<No results to report.
@@ -132,21 +132,21 @@ namespace Kvasir {
         }
     }
     namespace UsbdcdTimer0{    ///<TIMER0 Register
-        using Addr = Register::Address<0x40035010,0xfc00f000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035010,0xfc00f000,0x00000000,std::uint32_t>;
         ///Unit Connection Timer Elapse (in ms)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> tunitcon{}; 
         ///Sequence Initiation Time
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> tseqInit{}; 
     }
     namespace UsbdcdTimer1{    ///<no description available
-        using Addr = Register::Address<0x40035014,0xfc00fc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035014,0xfc00fc00,0x00000000,std::uint32_t>;
         ///Time Period Comparator Enabled
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> tvdpsrcOn{}; 
         ///Time Period to Debounce D+ Signal
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> tdcdDbnc{}; 
     }
     namespace UsbdcdTimer2{    ///<no description available
-        using Addr = Register::Address<0x40035018,0xfc00fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035018,0xfc00fff0,0x00000000,std::uint32_t>;
         ///Time Before Check of D- Line
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> checkDm{}; 
         ///Time Period Before Enabling D+ Pullup

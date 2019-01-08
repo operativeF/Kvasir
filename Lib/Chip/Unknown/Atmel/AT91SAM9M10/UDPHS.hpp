@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB High Speed Device Port
     namespace UdphsCtrl{    ///<UDPHS Control Register
-        using Addr = Register::Address<0xfff78000,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78000,0xfffff000,0x00000000,std::uint32_t>;
         ///UDPHS Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> devAddr{}; 
         ///Function Address Enable
@@ -18,7 +18,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> pulldDis{}; 
     }
     namespace UdphsFnum{    ///<UDPHS Frame Number Register
-        using Addr = Register::Address<0xfff78004,0x7fffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78004,0x7fffc000,0x00000000,std::uint32_t>;
         ///Microframe Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> microFrameNum{}; 
         ///Frame Number as defined in the Packet Field Formats
@@ -27,7 +27,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fnumErr{}; 
     }
     namespace UdphsIen{    ///<UDPHS Interrupt Enable Register
-        using Addr = Register::Address<0xfff78010,0x81ff8001,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78010,0x81ff8001,0x00000000,std::uint32_t>;
         ///Suspend Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> detSuspd{}; 
         ///Micro-SOF Interrupt Enable
@@ -70,7 +70,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::ReadWriteAccess,unsigned> dma6{}; 
     }
     namespace UdphsIntsta{    ///<UDPHS Interrupt Status Register
-        using Addr = Register::Address<0xfff78014,0x81ff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78014,0x81ff8000,0x00000000,std::uint32_t>;
         ///Speed Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> speed{}; 
         ///Suspend Interrupt
@@ -115,7 +115,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UdphsClrint{    ///<UDPHS Clear Interrupt Register
-        using Addr = Register::Address<0xfff78018,0xffffff01,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78018,0xffffff01,0x00000000,std::uint32_t>;
         ///Suspend Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> detSuspd{}; 
         ///Micro Start Of Frame Interrupt Clear
@@ -132,7 +132,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> upstrRes{}; 
     }
     namespace UdphsEptrst{    ///<UDPHS Endpoints Reset Register
-        using Addr = Register::Address<0xfff7801c,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7801c,0xffffff80,0x00000000,std::uint32_t>;
         ///Endpoint 0 Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ept0{}; 
         ///Endpoint 1 Reset
@@ -149,7 +149,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ept6{}; 
     }
     namespace UdphsTst{    ///<UDPHS Test Register
-        using Addr = Register::Address<0xfff780e0,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff780e0,0xffffffc0,0x00000000,std::uint32_t>;
         ///Speed Configuration
         enum class SpeedcfgVal {
             normal=0x00000000,     ///<Normal Mode: The macro is in Full Speed mode, ready to make a High Speed identification, if the host supports it and then to automatically switch to High Speed mode
@@ -172,7 +172,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,unsigned> opmode2{}; 
     }
     namespace UdphsEptcfg0{    ///<UDPHS Endpoint Configuration Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78100,0x7ffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78100,0x7ffffc00,0x00000000,std::uint32_t>;
         ///Endpoint Size
         enum class EptsizeVal {
             v8=0x00000000,     ///<8 bytes
@@ -231,7 +231,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> eptMapd{}; 
     }
     namespace UdphsEptctlenb0{    ///<UDPHS Endpoint Control Enable Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78104,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78104,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -262,7 +262,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctlenb0Isoendpt{    ///<UDPHS Endpoint Control Enable Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78104,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78104,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -293,7 +293,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis0{    ///<UDPHS Endpoint Control Disable Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78108,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78108,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -324,7 +324,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis0Isoendpt{    ///<UDPHS Endpoint Control Disable Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78108,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78108,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -355,7 +355,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl0{    ///<UDPHS Endpoint Control Register (endpoint = 0)
-        using Addr = Register::Address<0xfff7810c,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7810c,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled (Not for CONTROL Endpoints)
@@ -386,7 +386,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl0Isoendpt{    ///<UDPHS Endpoint Control Register (endpoint = 0)
-        using Addr = Register::Address<0xfff7810c,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7810c,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled
@@ -417,7 +417,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsetsta0{    ///<UDPHS Endpoint Set Status Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78114,0xfffff5df,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78114,0xfffff5df,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///KILL Bank Set (for IN Endpoint)
@@ -426,14 +426,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdy{}; 
     }
     namespace UdphsEptsetsta0Isoendpt{    ///<UDPHS Endpoint Set Status Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78114,0xfffff5ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78114,0xfffff5ff,0x00000000,std::uint32_t>;
         ///KILL Bank Set (for IN Endpoint)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdyTxkl{}; 
         ///TX Packet Ready Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdyTrer{}; 
     }
     namespace UdphsEptclrsta0{    ///<UDPHS Endpoint Clear Status Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78118,0xffff099f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78118,0xffff099f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Data Toggle Clear
@@ -452,7 +452,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nakOut{}; 
     }
     namespace UdphsEptclrsta0Isoendpt{    ///<UDPHS Endpoint Clear Status Register (endpoint = 0)
-        using Addr = Register::Address<0xfff78118,0xffff89bf,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78118,0xffff89bf,0x00000000,std::uint32_t>;
         ///Data Toggle Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> togglesq{}; 
         ///Received OUT Data Clear
@@ -467,7 +467,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> errFlush{}; 
     }
     namespace UdphsEptsta0{    ///<UDPHS Endpoint Status Register (endpoint = 0)
-        using Addr = Register::Address<0xfff7811c,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7811c,0x0000001f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Toggle Sequencing
@@ -520,7 +520,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsta0Isoendpt{    ///<UDPHS Endpoint Status Register (endpoint = 0)
-        using Addr = Register::Address<0xfff7811c,0x0000803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7811c,0x0000803f,0x00000000,std::uint32_t>;
         ///Toggle Sequencing
         enum class TogglesqstaVal {
             data0=0x00000000,     ///<DATA0
@@ -579,7 +579,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptcfg1{    ///<UDPHS Endpoint Configuration Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78120,0x7ffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78120,0x7ffffc00,0x00000000,std::uint32_t>;
         ///Endpoint Size
         enum class EptsizeVal {
             v8=0x00000000,     ///<8 bytes
@@ -638,7 +638,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> eptMapd{}; 
     }
     namespace UdphsEptctlenb1{    ///<UDPHS Endpoint Control Enable Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78124,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78124,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -669,7 +669,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctlenb1Isoendpt{    ///<UDPHS Endpoint Control Enable Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78124,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78124,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -700,7 +700,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis1{    ///<UDPHS Endpoint Control Disable Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78128,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78128,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -731,7 +731,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis1Isoendpt{    ///<UDPHS Endpoint Control Disable Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78128,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78128,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -762,7 +762,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl1{    ///<UDPHS Endpoint Control Register (endpoint = 1)
-        using Addr = Register::Address<0xfff7812c,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7812c,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled (Not for CONTROL Endpoints)
@@ -793,7 +793,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl1Isoendpt{    ///<UDPHS Endpoint Control Register (endpoint = 1)
-        using Addr = Register::Address<0xfff7812c,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7812c,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled
@@ -824,7 +824,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsetsta1{    ///<UDPHS Endpoint Set Status Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78134,0xfffff5df,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78134,0xfffff5df,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///KILL Bank Set (for IN Endpoint)
@@ -833,14 +833,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdy{}; 
     }
     namespace UdphsEptsetsta1Isoendpt{    ///<UDPHS Endpoint Set Status Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78134,0xfffff5ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78134,0xfffff5ff,0x00000000,std::uint32_t>;
         ///KILL Bank Set (for IN Endpoint)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdyTxkl{}; 
         ///TX Packet Ready Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdyTrer{}; 
     }
     namespace UdphsEptclrsta1{    ///<UDPHS Endpoint Clear Status Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78138,0xffff099f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78138,0xffff099f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Data Toggle Clear
@@ -859,7 +859,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nakOut{}; 
     }
     namespace UdphsEptclrsta1Isoendpt{    ///<UDPHS Endpoint Clear Status Register (endpoint = 1)
-        using Addr = Register::Address<0xfff78138,0xffff89bf,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78138,0xffff89bf,0x00000000,std::uint32_t>;
         ///Data Toggle Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> togglesq{}; 
         ///Received OUT Data Clear
@@ -874,7 +874,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> errFlush{}; 
     }
     namespace UdphsEptsta1{    ///<UDPHS Endpoint Status Register (endpoint = 1)
-        using Addr = Register::Address<0xfff7813c,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7813c,0x0000001f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Toggle Sequencing
@@ -927,7 +927,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsta1Isoendpt{    ///<UDPHS Endpoint Status Register (endpoint = 1)
-        using Addr = Register::Address<0xfff7813c,0x0000803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7813c,0x0000803f,0x00000000,std::uint32_t>;
         ///Toggle Sequencing
         enum class TogglesqstaVal {
             data0=0x00000000,     ///<DATA0
@@ -986,7 +986,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptcfg2{    ///<UDPHS Endpoint Configuration Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78140,0x7ffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78140,0x7ffffc00,0x00000000,std::uint32_t>;
         ///Endpoint Size
         enum class EptsizeVal {
             v8=0x00000000,     ///<8 bytes
@@ -1045,7 +1045,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> eptMapd{}; 
     }
     namespace UdphsEptctlenb2{    ///<UDPHS Endpoint Control Enable Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78144,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78144,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -1076,7 +1076,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctlenb2Isoendpt{    ///<UDPHS Endpoint Control Enable Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78144,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78144,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -1107,7 +1107,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis2{    ///<UDPHS Endpoint Control Disable Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78148,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78148,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -1138,7 +1138,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis2Isoendpt{    ///<UDPHS Endpoint Control Disable Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78148,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78148,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -1169,7 +1169,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl2{    ///<UDPHS Endpoint Control Register (endpoint = 2)
-        using Addr = Register::Address<0xfff7814c,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7814c,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled (Not for CONTROL Endpoints)
@@ -1200,7 +1200,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl2Isoendpt{    ///<UDPHS Endpoint Control Register (endpoint = 2)
-        using Addr = Register::Address<0xfff7814c,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7814c,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled
@@ -1231,7 +1231,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsetsta2{    ///<UDPHS Endpoint Set Status Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78154,0xfffff5df,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78154,0xfffff5df,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///KILL Bank Set (for IN Endpoint)
@@ -1240,14 +1240,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdy{}; 
     }
     namespace UdphsEptsetsta2Isoendpt{    ///<UDPHS Endpoint Set Status Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78154,0xfffff5ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78154,0xfffff5ff,0x00000000,std::uint32_t>;
         ///KILL Bank Set (for IN Endpoint)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdyTxkl{}; 
         ///TX Packet Ready Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdyTrer{}; 
     }
     namespace UdphsEptclrsta2{    ///<UDPHS Endpoint Clear Status Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78158,0xffff099f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78158,0xffff099f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Data Toggle Clear
@@ -1266,7 +1266,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nakOut{}; 
     }
     namespace UdphsEptclrsta2Isoendpt{    ///<UDPHS Endpoint Clear Status Register (endpoint = 2)
-        using Addr = Register::Address<0xfff78158,0xffff89bf,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78158,0xffff89bf,0x00000000,std::uint32_t>;
         ///Data Toggle Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> togglesq{}; 
         ///Received OUT Data Clear
@@ -1281,7 +1281,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> errFlush{}; 
     }
     namespace UdphsEptsta2{    ///<UDPHS Endpoint Status Register (endpoint = 2)
-        using Addr = Register::Address<0xfff7815c,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7815c,0x0000001f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Toggle Sequencing
@@ -1334,7 +1334,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsta2Isoendpt{    ///<UDPHS Endpoint Status Register (endpoint = 2)
-        using Addr = Register::Address<0xfff7815c,0x0000803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7815c,0x0000803f,0x00000000,std::uint32_t>;
         ///Toggle Sequencing
         enum class TogglesqstaVal {
             data0=0x00000000,     ///<DATA0
@@ -1393,7 +1393,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptcfg3{    ///<UDPHS Endpoint Configuration Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78160,0x7ffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78160,0x7ffffc00,0x00000000,std::uint32_t>;
         ///Endpoint Size
         enum class EptsizeVal {
             v8=0x00000000,     ///<8 bytes
@@ -1452,7 +1452,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> eptMapd{}; 
     }
     namespace UdphsEptctlenb3{    ///<UDPHS Endpoint Control Enable Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78164,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78164,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -1483,7 +1483,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctlenb3Isoendpt{    ///<UDPHS Endpoint Control Enable Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78164,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78164,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -1514,7 +1514,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis3{    ///<UDPHS Endpoint Control Disable Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78168,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78168,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -1545,7 +1545,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis3Isoendpt{    ///<UDPHS Endpoint Control Disable Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78168,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78168,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -1576,7 +1576,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl3{    ///<UDPHS Endpoint Control Register (endpoint = 3)
-        using Addr = Register::Address<0xfff7816c,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7816c,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled (Not for CONTROL Endpoints)
@@ -1607,7 +1607,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl3Isoendpt{    ///<UDPHS Endpoint Control Register (endpoint = 3)
-        using Addr = Register::Address<0xfff7816c,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7816c,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled
@@ -1638,7 +1638,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsetsta3{    ///<UDPHS Endpoint Set Status Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78174,0xfffff5df,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78174,0xfffff5df,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///KILL Bank Set (for IN Endpoint)
@@ -1647,14 +1647,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdy{}; 
     }
     namespace UdphsEptsetsta3Isoendpt{    ///<UDPHS Endpoint Set Status Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78174,0xfffff5ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78174,0xfffff5ff,0x00000000,std::uint32_t>;
         ///KILL Bank Set (for IN Endpoint)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdyTxkl{}; 
         ///TX Packet Ready Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdyTrer{}; 
     }
     namespace UdphsEptclrsta3{    ///<UDPHS Endpoint Clear Status Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78178,0xffff099f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78178,0xffff099f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Data Toggle Clear
@@ -1673,7 +1673,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nakOut{}; 
     }
     namespace UdphsEptclrsta3Isoendpt{    ///<UDPHS Endpoint Clear Status Register (endpoint = 3)
-        using Addr = Register::Address<0xfff78178,0xffff89bf,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78178,0xffff89bf,0x00000000,std::uint32_t>;
         ///Data Toggle Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> togglesq{}; 
         ///Received OUT Data Clear
@@ -1688,7 +1688,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> errFlush{}; 
     }
     namespace UdphsEptsta3{    ///<UDPHS Endpoint Status Register (endpoint = 3)
-        using Addr = Register::Address<0xfff7817c,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7817c,0x0000001f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Toggle Sequencing
@@ -1741,7 +1741,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsta3Isoendpt{    ///<UDPHS Endpoint Status Register (endpoint = 3)
-        using Addr = Register::Address<0xfff7817c,0x0000803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7817c,0x0000803f,0x00000000,std::uint32_t>;
         ///Toggle Sequencing
         enum class TogglesqstaVal {
             data0=0x00000000,     ///<DATA0
@@ -1800,7 +1800,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptcfg4{    ///<UDPHS Endpoint Configuration Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78180,0x7ffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78180,0x7ffffc00,0x00000000,std::uint32_t>;
         ///Endpoint Size
         enum class EptsizeVal {
             v8=0x00000000,     ///<8 bytes
@@ -1859,7 +1859,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> eptMapd{}; 
     }
     namespace UdphsEptctlenb4{    ///<UDPHS Endpoint Control Enable Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78184,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78184,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -1890,7 +1890,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctlenb4Isoendpt{    ///<UDPHS Endpoint Control Enable Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78184,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78184,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -1921,7 +1921,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis4{    ///<UDPHS Endpoint Control Disable Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78188,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78188,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -1952,7 +1952,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis4Isoendpt{    ///<UDPHS Endpoint Control Disable Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78188,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78188,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -1983,7 +1983,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl4{    ///<UDPHS Endpoint Control Register (endpoint = 4)
-        using Addr = Register::Address<0xfff7818c,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7818c,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled (Not for CONTROL Endpoints)
@@ -2014,7 +2014,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl4Isoendpt{    ///<UDPHS Endpoint Control Register (endpoint = 4)
-        using Addr = Register::Address<0xfff7818c,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7818c,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled
@@ -2045,7 +2045,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsetsta4{    ///<UDPHS Endpoint Set Status Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78194,0xfffff5df,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78194,0xfffff5df,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///KILL Bank Set (for IN Endpoint)
@@ -2054,14 +2054,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdy{}; 
     }
     namespace UdphsEptsetsta4Isoendpt{    ///<UDPHS Endpoint Set Status Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78194,0xfffff5ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78194,0xfffff5ff,0x00000000,std::uint32_t>;
         ///KILL Bank Set (for IN Endpoint)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdyTxkl{}; 
         ///TX Packet Ready Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdyTrer{}; 
     }
     namespace UdphsEptclrsta4{    ///<UDPHS Endpoint Clear Status Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78198,0xffff099f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78198,0xffff099f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Data Toggle Clear
@@ -2080,7 +2080,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nakOut{}; 
     }
     namespace UdphsEptclrsta4Isoendpt{    ///<UDPHS Endpoint Clear Status Register (endpoint = 4)
-        using Addr = Register::Address<0xfff78198,0xffff89bf,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78198,0xffff89bf,0x00000000,std::uint32_t>;
         ///Data Toggle Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> togglesq{}; 
         ///Received OUT Data Clear
@@ -2095,7 +2095,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> errFlush{}; 
     }
     namespace UdphsEptsta4{    ///<UDPHS Endpoint Status Register (endpoint = 4)
-        using Addr = Register::Address<0xfff7819c,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7819c,0x0000001f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Toggle Sequencing
@@ -2148,7 +2148,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsta4Isoendpt{    ///<UDPHS Endpoint Status Register (endpoint = 4)
-        using Addr = Register::Address<0xfff7819c,0x0000803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7819c,0x0000803f,0x00000000,std::uint32_t>;
         ///Toggle Sequencing
         enum class TogglesqstaVal {
             data0=0x00000000,     ///<DATA0
@@ -2207,7 +2207,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptcfg5{    ///<UDPHS Endpoint Configuration Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781a0,0x7ffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781a0,0x7ffffc00,0x00000000,std::uint32_t>;
         ///Endpoint Size
         enum class EptsizeVal {
             v8=0x00000000,     ///<8 bytes
@@ -2266,7 +2266,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> eptMapd{}; 
     }
     namespace UdphsEptctlenb5{    ///<UDPHS Endpoint Control Enable Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781a4,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781a4,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -2297,7 +2297,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctlenb5Isoendpt{    ///<UDPHS Endpoint Control Enable Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781a4,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781a4,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -2328,7 +2328,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis5{    ///<UDPHS Endpoint Control Disable Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781a8,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781a8,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -2359,7 +2359,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis5Isoendpt{    ///<UDPHS Endpoint Control Disable Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781a8,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781a8,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -2390,7 +2390,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl5{    ///<UDPHS Endpoint Control Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781ac,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781ac,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled (Not for CONTROL Endpoints)
@@ -2421,7 +2421,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl5Isoendpt{    ///<UDPHS Endpoint Control Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781ac,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781ac,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled
@@ -2452,7 +2452,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsetsta5{    ///<UDPHS Endpoint Set Status Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781b4,0xfffff5df,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781b4,0xfffff5df,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///KILL Bank Set (for IN Endpoint)
@@ -2461,14 +2461,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdy{}; 
     }
     namespace UdphsEptsetsta5Isoendpt{    ///<UDPHS Endpoint Set Status Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781b4,0xfffff5ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781b4,0xfffff5ff,0x00000000,std::uint32_t>;
         ///KILL Bank Set (for IN Endpoint)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdyTxkl{}; 
         ///TX Packet Ready Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdyTrer{}; 
     }
     namespace UdphsEptclrsta5{    ///<UDPHS Endpoint Clear Status Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781b8,0xffff099f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781b8,0xffff099f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Data Toggle Clear
@@ -2487,7 +2487,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nakOut{}; 
     }
     namespace UdphsEptclrsta5Isoendpt{    ///<UDPHS Endpoint Clear Status Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781b8,0xffff89bf,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781b8,0xffff89bf,0x00000000,std::uint32_t>;
         ///Data Toggle Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> togglesq{}; 
         ///Received OUT Data Clear
@@ -2502,7 +2502,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> errFlush{}; 
     }
     namespace UdphsEptsta5{    ///<UDPHS Endpoint Status Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781bc,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781bc,0x0000001f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Toggle Sequencing
@@ -2555,7 +2555,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsta5Isoendpt{    ///<UDPHS Endpoint Status Register (endpoint = 5)
-        using Addr = Register::Address<0xfff781bc,0x0000803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781bc,0x0000803f,0x00000000,std::uint32_t>;
         ///Toggle Sequencing
         enum class TogglesqstaVal {
             data0=0x00000000,     ///<DATA0
@@ -2614,7 +2614,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptcfg6{    ///<UDPHS Endpoint Configuration Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781c0,0x7ffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781c0,0x7ffffc00,0x00000000,std::uint32_t>;
         ///Endpoint Size
         enum class EptsizeVal {
             v8=0x00000000,     ///<8 bytes
@@ -2673,7 +2673,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> eptMapd{}; 
     }
     namespace UdphsEptctlenb6{    ///<UDPHS Endpoint Control Enable Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781c4,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781c4,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -2704,7 +2704,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctlenb6Isoendpt{    ///<UDPHS Endpoint Control Enable Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781c4,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781c4,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enable
@@ -2735,7 +2735,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis6{    ///<UDPHS Endpoint Control Disable Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781c8,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781c8,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -2766,7 +2766,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctldis6Isoendpt{    ///<UDPHS Endpoint Control Disable Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781c8,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781c8,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptDisabl{}; 
         ///Packet Auto-Valid Disable
@@ -2797,7 +2797,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl6{    ///<UDPHS Endpoint Control Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781cc,0x7ffb00e4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781cc,0x7ffb00e4,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled (Not for CONTROL Endpoints)
@@ -2828,7 +2828,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptctl6Isoendpt{    ///<UDPHS Endpoint Control Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781cc,0x7ffb8034,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781cc,0x7ffb8034,0x00000000,std::uint32_t>;
         ///Endpoint Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eptEnabl{}; 
         ///Packet Auto-Valid Enabled
@@ -2859,7 +2859,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsetsta6{    ///<UDPHS Endpoint Set Status Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781d4,0xfffff5df,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781d4,0xfffff5df,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///KILL Bank Set (for IN Endpoint)
@@ -2868,14 +2868,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdy{}; 
     }
     namespace UdphsEptsetsta6Isoendpt{    ///<UDPHS Endpoint Set Status Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781d4,0xfffff5ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781d4,0xfffff5ff,0x00000000,std::uint32_t>;
         ///KILL Bank Set (for IN Endpoint)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdyTxkl{}; 
         ///TX Packet Ready Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txrdyTrer{}; 
     }
     namespace UdphsEptclrsta6{    ///<UDPHS Endpoint Clear Status Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781d8,0xffff099f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781d8,0xffff099f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Data Toggle Clear
@@ -2894,7 +2894,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nakOut{}; 
     }
     namespace UdphsEptclrsta6Isoendpt{    ///<UDPHS Endpoint Clear Status Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781d8,0xffff89bf,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781d8,0xffff89bf,0x00000000,std::uint32_t>;
         ///Data Toggle Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> togglesq{}; 
         ///Received OUT Data Clear
@@ -2909,7 +2909,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> errFlush{}; 
     }
     namespace UdphsEptsta6{    ///<UDPHS Endpoint Status Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781dc,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781dc,0x0000001f,0x00000000,std::uint32_t>;
         ///Stall Handshake Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frcestall{}; 
         ///Toggle Sequencing
@@ -2962,7 +2962,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsEptsta6Isoendpt{    ///<UDPHS Endpoint Status Register (endpoint = 6)
-        using Addr = Register::Address<0xfff781dc,0x0000803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff781dc,0x0000803f,0x00000000,std::uint32_t>;
         ///Toggle Sequencing
         enum class TogglesqstaVal {
             data0=0x00000000,     ///<DATA0
@@ -3021,17 +3021,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shrtPckt{}; 
     }
     namespace UdphsDmanxtdsc0{    ///<UDPHS DMA Next Descriptor Address Register (channel = 0)
-        using Addr = Register::Address<0xfff78300,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78300,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UdphsDmaaddress0{    ///<UDPHS DMA Channel Address Register (channel = 0)
-        using Addr = Register::Address<0xfff78304,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78304,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UdphsDmacontrol0{    ///<UDPHS DMA Channel Control Register (channel = 0)
-        using Addr = Register::Address<0xfff78308,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78308,0x0000ff00,0x00000000,std::uint32_t>;
         ///(Channel Enable Command)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable (Command)
@@ -3052,7 +3052,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UdphsDmastatus0{    ///<UDPHS DMA Channel Status Register (channel = 0)
-        using Addr = Register::Address<0xfff7830c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7830c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -3067,17 +3067,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UdphsDmanxtdsc1{    ///<UDPHS DMA Next Descriptor Address Register (channel = 1)
-        using Addr = Register::Address<0xfff78310,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78310,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UdphsDmaaddress1{    ///<UDPHS DMA Channel Address Register (channel = 1)
-        using Addr = Register::Address<0xfff78314,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78314,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UdphsDmacontrol1{    ///<UDPHS DMA Channel Control Register (channel = 1)
-        using Addr = Register::Address<0xfff78318,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78318,0x0000ff00,0x00000000,std::uint32_t>;
         ///(Channel Enable Command)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable (Command)
@@ -3098,7 +3098,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UdphsDmastatus1{    ///<UDPHS DMA Channel Status Register (channel = 1)
-        using Addr = Register::Address<0xfff7831c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7831c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -3113,17 +3113,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UdphsDmanxtdsc2{    ///<UDPHS DMA Next Descriptor Address Register (channel = 2)
-        using Addr = Register::Address<0xfff78320,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78320,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UdphsDmaaddress2{    ///<UDPHS DMA Channel Address Register (channel = 2)
-        using Addr = Register::Address<0xfff78324,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78324,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UdphsDmacontrol2{    ///<UDPHS DMA Channel Control Register (channel = 2)
-        using Addr = Register::Address<0xfff78328,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78328,0x0000ff00,0x00000000,std::uint32_t>;
         ///(Channel Enable Command)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable (Command)
@@ -3144,7 +3144,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UdphsDmastatus2{    ///<UDPHS DMA Channel Status Register (channel = 2)
-        using Addr = Register::Address<0xfff7832c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7832c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -3159,17 +3159,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UdphsDmanxtdsc3{    ///<UDPHS DMA Next Descriptor Address Register (channel = 3)
-        using Addr = Register::Address<0xfff78330,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78330,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UdphsDmaaddress3{    ///<UDPHS DMA Channel Address Register (channel = 3)
-        using Addr = Register::Address<0xfff78334,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78334,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UdphsDmacontrol3{    ///<UDPHS DMA Channel Control Register (channel = 3)
-        using Addr = Register::Address<0xfff78338,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78338,0x0000ff00,0x00000000,std::uint32_t>;
         ///(Channel Enable Command)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable (Command)
@@ -3190,7 +3190,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UdphsDmastatus3{    ///<UDPHS DMA Channel Status Register (channel = 3)
-        using Addr = Register::Address<0xfff7833c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7833c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -3205,17 +3205,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UdphsDmanxtdsc4{    ///<UDPHS DMA Next Descriptor Address Register (channel = 4)
-        using Addr = Register::Address<0xfff78340,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78340,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UdphsDmaaddress4{    ///<UDPHS DMA Channel Address Register (channel = 4)
-        using Addr = Register::Address<0xfff78344,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78344,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UdphsDmacontrol4{    ///<UDPHS DMA Channel Control Register (channel = 4)
-        using Addr = Register::Address<0xfff78348,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78348,0x0000ff00,0x00000000,std::uint32_t>;
         ///(Channel Enable Command)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable (Command)
@@ -3236,7 +3236,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UdphsDmastatus4{    ///<UDPHS DMA Channel Status Register (channel = 4)
-        using Addr = Register::Address<0xfff7834c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7834c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -3251,17 +3251,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UdphsDmanxtdsc5{    ///<UDPHS DMA Next Descriptor Address Register (channel = 5)
-        using Addr = Register::Address<0xfff78350,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78350,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UdphsDmaaddress5{    ///<UDPHS DMA Channel Address Register (channel = 5)
-        using Addr = Register::Address<0xfff78354,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78354,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UdphsDmacontrol5{    ///<UDPHS DMA Channel Control Register (channel = 5)
-        using Addr = Register::Address<0xfff78358,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff78358,0x0000ff00,0x00000000,std::uint32_t>;
         ///(Channel Enable Command)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable (Command)
@@ -3282,7 +3282,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UdphsDmastatus5{    ///<UDPHS DMA Channel Status Register (channel = 5)
-        using Addr = Register::Address<0xfff7835c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff7835c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status

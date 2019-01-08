@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Flash Memory Interface
     namespace FtfeFstat{    ///<Flash Status Register
-        using Addr = Register::Address<0x40020000,0xffffff0e,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020000,0xffffff0e,0x00000000,std::uint8_t>;
         ///Memory Controller Command Completion Status Flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mgstat0{}; 
         ///Flash Protection Violation Flag
@@ -48,7 +48,7 @@ namespace Kvasir {
         }
     }
     namespace FtfeFcnfg{    ///<Flash Configuration Register
-        using Addr = Register::Address<0x40020001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020001,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         enum class EeerdyVal {
             v0=0x00000000,     ///<For devices with FlexNVM: FlexRAM is not available for EEPROM operation.
@@ -131,7 +131,7 @@ namespace Kvasir {
         }
     }
     namespace FtfeFsec{    ///<Flash Security Register
-        using Addr = Register::Address<0x40020002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020002,0xffffff00,0x00000000,std::uint8_t>;
         ///Flash Security
         enum class SecVal {
             v00=0x00000000,     ///<MCU security status is secure
@@ -190,97 +190,97 @@ namespace Kvasir {
         }
     }
     namespace FtfeFopt{    ///<Flash Option Register
-        using Addr = Register::Address<0x40020003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020003,0xffffff00,0x00000000,std::uint8_t>;
         ///Nonvolatile Option
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> opt{}; 
     }
     namespace FtfeFeprot{    ///<EEPROM Protection Register
-        using Addr = Register::Address<0x40020016,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020016,0xffffff00,0x00000000,std::uint8_t>;
         ///EEPROM Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> eprot{}; 
     }
     namespace FtfeFdprot{    ///<Data Flash Protection Register
-        using Addr = Register::Address<0x40020017,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020017,0xffffff00,0x00000000,std::uint8_t>;
         ///Data Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dprot{}; 
     }
     namespace FtfeFccob3{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020004,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob2{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020005,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob1{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020006,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob0{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020007,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob7{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020008,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020008,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob6{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020009,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020009,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob5{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002000a,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob4{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002000b,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccobb{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000c,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002000c,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccoba{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000d,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002000d,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob9{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000e,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002000e,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFccob8{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000f,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002000f,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfeFprot3{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020010,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020010,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }
     namespace FtfeFprot2{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020011,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020011,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }
     namespace FtfeFprot1{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020012,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020012,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }
     namespace FtfeFprot0{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020013,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020013,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }

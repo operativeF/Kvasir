@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32F427x/RNG.hpp>
 #include <Chip/Unknown/STMicro/STM32F427x/DCMI.hpp>
 #include <Chip/Unknown/STMicro/STM32F427x/DMA2.hpp>

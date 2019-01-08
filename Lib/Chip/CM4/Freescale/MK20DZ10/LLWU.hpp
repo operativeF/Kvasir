@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Low-leakage wake-up module
     namespace LlwuPe1{    ///<LLWU Pin Enable 1 Register
-        using Addr = Register::Address<0x4007c000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c000,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup Pin Enable for LLWU_P0
         enum class Wupe0Val {
             v00=0x00000000,     ///<External input pin disabled as wakeup input
@@ -62,7 +62,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuPe2{    ///<LLWU Pin Enable 2 Register
-        using Addr = Register::Address<0x4007c001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c001,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup Pin Enable for LLWU_P4
         enum class Wupe4Val {
             v00=0x00000000,     ///<External input pin disabled as wakeup input
@@ -121,7 +121,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuPe3{    ///<LLWU Pin Enable 3 Register
-        using Addr = Register::Address<0x4007c002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c002,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup Pin Enable for LLWU_P8
         enum class Wupe8Val {
             v00=0x00000000,     ///<External input pin disabled as wakeup input
@@ -180,7 +180,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuPe4{    ///<LLWU Pin Enable 4 Register
-        using Addr = Register::Address<0x4007c003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c003,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup Pin Enable for LLWU_P12
         enum class Wupe12Val {
             v00=0x00000000,     ///<External input pin disabled as wakeup input
@@ -239,7 +239,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuMe{    ///<LLWU Module Enable Register
-        using Addr = Register::Address<0x4007c004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c004,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup Module Enable for Module 0
         enum class Wume0Val {
             v0=0x00000000,     ///<Internal module flag not used as wakeup source
@@ -322,7 +322,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuF1{    ///<LLWU Flag 1 Register
-        using Addr = Register::Address<0x4007c005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c005,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup Flag for LLWU_P0
         enum class Wuf0Val {
             v0=0x00000000,     ///<LLWU_P0 input was not a source of wakeup from LLS or VLLS mode
@@ -405,7 +405,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuF2{    ///<LLWU Flag 2 Register
-        using Addr = Register::Address<0x4007c006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c006,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup Flag for LLWU_P8
         enum class Wuf8Val {
             v0=0x00000000,     ///<LLWU_P8 input was not a source of wakeup from LLS or VLLS mode
@@ -488,7 +488,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuF3{    ///<LLWU Flag 3 Register
-        using Addr = Register::Address<0x4007c007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c007,0xffffff00,0x00000000,std::uint8_t>;
         ///Wakeup flag for module 0
         enum class Mwuf0Val {
             v0=0x00000000,     ///<Module 0 input was not a source of wakeup from LLS or VLLS mode
@@ -571,7 +571,7 @@ namespace Kvasir {
         }
     }
     namespace LlwuCs{    ///<LLWU Control and Status Register
-        using Addr = Register::Address<0x4007c008,0xffffff7c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007c008,0xffffff7c,0x00000000,std::uint8_t>;
         ///Digital Filter on RESET Pin
         enum class FltrVal {
             v0=0x00000000,     ///<Filter not enabled

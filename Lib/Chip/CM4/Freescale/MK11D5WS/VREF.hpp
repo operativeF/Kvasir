@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Voltage Reference
     namespace VrefTrm{    ///<VREF Trim Register
-        using Addr = Register::Address<0x40074000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40074000,0xffffff00,0x00000000,std::uint8_t>;
         ///Trim bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> trim{}; 
         ///Chop oscillator enable. When set, internal chopping operation is enabled and the internal analog offset will be minimized.
@@ -20,7 +20,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace VrefSc{    ///<VREF Status and Control Register
-        using Addr = Register::Address<0x40074001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40074001,0xffffff00,0x00000000,std::uint8_t>;
         ///Buffer Mode selection
         enum class ModelvVal {
             v00=0x00000000,     ///<Bandgap on only, for stabilization and startup

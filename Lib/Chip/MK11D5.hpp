@@ -1,6 +1,8 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/CM4/Freescale/MK11D5/Io.hpp>
 #include <Chip/CM4/Freescale/MK11D5/FTFL_FlashConfig.hpp>
+#include <Chip/CM4/Freescale/MK11D5/AIPS0.hpp>
 #include <Chip/CM4/Freescale/MK11D5/DMA.hpp>
 #include <Chip/CM4/Freescale/MK11D5/FMC.hpp>
 #include <Chip/CM4/Freescale/MK11D5/FTFL.hpp>
@@ -18,7 +20,6 @@
 #include <Chip/CM4/Freescale/MK11D5/ADC0.hpp>
 #include <Chip/CM4/Freescale/MK11D5/RTC.hpp>
 #include <Chip/CM4/Freescale/MK11D5/RFVBAT.hpp>
-#include <Chip/CM4/Freescale/MK11D5/DAC0.hpp>
 #include <Chip/CM4/Freescale/MK11D5/LPTMR0.hpp>
 #include <Chip/CM4/Freescale/MK11D5/RFSYS.hpp>
 #include <Chip/CM4/Freescale/MK11D5/SIM.hpp>
@@ -40,7 +41,6 @@
 #include <Chip/CM4/Freescale/MK11D5/UART3.hpp>
 #include <Chip/CM4/Freescale/MK11D5/CMP0.hpp>
 #include <Chip/CM4/Freescale/MK11D5/CMP1.hpp>
-#include <Chip/CM4/Freescale/MK11D5/VREF.hpp>
 #include <Chip/CM4/Freescale/MK11D5/LLWU.hpp>
 #include <Chip/CM4/Freescale/MK11D5/PMC.hpp>
 #include <Chip/CM4/Freescale/MK11D5/SMC.hpp>
@@ -50,8 +50,5 @@
 #include <Chip/CM4/Freescale/MK11D5/GPIOC.hpp>
 #include <Chip/CM4/Freescale/MK11D5/GPIOD.hpp>
 #include <Chip/CM4/Freescale/MK11D5/GPIOE.hpp>
-#include <Chip/CM4/Freescale/MK11D5/SystemControl.hpp>
-#include <Chip/CM4/Freescale/MK11D5/SysTick.hpp>
-#include <Chip/CM4/Freescale/MK11D5/NVIC.hpp>
 #include <Chip/CM4/Freescale/MK11D5/MCM.hpp>
 #include <Chip/CM4/Freescale/MK11D5/CAU.hpp>

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //High Speed MultiMedia Card Interface
     namespace HsmciCr{    ///<Control Register
-        using Addr = Register::Address<0x40000000,0xffffff70,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000000,0xffffff70,0x00000000,std::uint32_t>;
         ///Multi-Media Interface Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mcien{}; 
         ///Multi-Media Interface Disable
@@ -16,7 +16,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace HsmciMr{    ///<Mode Register
-        using Addr = Register::Address<0x40000004,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000004,0xffff0000,0x00000000,std::uint32_t>;
         ///Clock Divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> clkdiv{}; 
         ///Power Saving Divider
@@ -33,7 +33,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> pdcmode{}; 
     }
     namespace HsmciDtor{    ///<Data Timeout Register
-        using Addr = Register::Address<0x40000008,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000008,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Timeout Cycle Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> dtocyc{}; 
         ///Data Timeout Multiplier
@@ -60,7 +60,7 @@ namespace Kvasir {
         }
     }
     namespace HsmciSdcr{    ///<SD/SDIO Card Register
-        using Addr = Register::Address<0x4000000c,0xffffff3c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000000c,0xffffff3c,0x00000000,std::uint32_t>;
         ///SDCard/SDIO Slot
         enum class SdcselVal {
             slota=0x00000000,     ///<Slot A is selected.
@@ -89,12 +89,12 @@ namespace Kvasir {
         }
     }
     namespace HsmciArgr{    ///<Argument Register
-        using Addr = Register::Address<0x40000010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000010,0x00000000,0x00000000,std::uint32_t>;
         ///Command Argument
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> arg{}; 
     }
     namespace HsmciCmdr{    ///<Command Register
-        using Addr = Register::Address<0x40000014,0xf0c0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000014,0xf0c0e000,0x00000000,std::uint32_t>;
         ///Command Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdnb{}; 
         ///Response Type
@@ -217,14 +217,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bootAck{}; 
     }
     namespace HsmciBlkr{    ///<Block Register
-        using Addr = Register::Address<0x40000018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000018,0x00000000,0x00000000,std::uint32_t>;
         ///MMC/SDIO Block Count - SDIO Byte Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> bcnt{}; 
         ///Data Block Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> blklen{}; 
     }
     namespace HsmciCstor{    ///<Completion Signal Timeout Register
-        using Addr = Register::Address<0x4000001c,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000001c,0xffffff80,0x00000000,std::uint32_t>;
         ///Completion Signal Timeout Cycle Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> cstocyc{}; 
         ///Completion Signal Timeout Multiplier
@@ -251,17 +251,17 @@ namespace Kvasir {
         }
     }
     namespace HsmciRdr{    ///<Receive Data Register
-        using Addr = Register::Address<0x40000030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000030,0x00000000,0x00000000,std::uint32_t>;
         ///Data to Read
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace HsmciTdr{    ///<Transmit Data Register
-        using Addr = Register::Address<0x40000034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000034,0x00000000,0x00000000,std::uint32_t>;
         ///Data to Write
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace HsmciSr{    ///<Status Register
-        using Addr = Register::Address<0x40000040,0x03000e00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000040,0x03000e00,0x00000000,std::uint32_t>;
         ///Command Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready
@@ -318,7 +318,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace HsmciIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x40000044,0x03000e00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000044,0x03000e00,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Enable
@@ -375,7 +375,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace HsmciIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0x40000048,0x03000e00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000048,0x03000e00,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Disable
@@ -432,7 +432,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace HsmciImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0x4000004c,0x03000e00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000004c,0x03000e00,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Mask
@@ -489,7 +489,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace HsmciCfg{    ///<Configuration Register
-        using Addr = Register::Address<0x40000054,0xffffeeee,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000054,0xffffeeee,0x00000000,std::uint32_t>;
         ///HSMCI Internal FIFO control mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fifomode{}; 
         ///Flow Error flag reset control mode
@@ -500,61 +500,61 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::ReadWriteAccess,unsigned> lsync{}; 
     }
     namespace HsmciWpmr{    ///<Write Protection Mode Register
-        using Addr = Register::Address<0x400000e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400000e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpEn{}; 
         ///Write Protection Key password
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpKey{}; 
     }
     namespace HsmciWpsr{    ///<Write Protection Status Register
-        using Addr = Register::Address<0x400000e8,0xff0000f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400000e8,0xff0000f0,0x00000000,std::uint32_t>;
         ///Write Protection Violation Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpVs{}; 
         ///Write Protection Violation SouRCe
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpVsrc{}; 
     }
     namespace HsmciRpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0x40000100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000100,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace HsmciRcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0x40000104,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000104,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace HsmciTpr{    ///<Transmit Pointer Register
-        using Addr = Register::Address<0x40000108,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000108,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txptr{}; 
     }
     namespace HsmciTcr{    ///<Transmit Counter Register
-        using Addr = Register::Address<0x4000010c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000010c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txctr{}; 
     }
     namespace HsmciRnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0x40000110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000110,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace HsmciRncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0x40000114,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000114,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace HsmciTnpr{    ///<Transmit Next Pointer Register
-        using Addr = Register::Address<0x40000118,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000118,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txnptr{}; 
     }
     namespace HsmciTncr{    ///<Transmit Next Counter Register
-        using Addr = Register::Address<0x4000011c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000011c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Next
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txnctr{}; 
     }
     namespace HsmciPtcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0x40000120,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000120,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -565,798 +565,798 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace HsmciPtsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0x40000124,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000124,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txten{}; 
     }
     namespace HsmciRspr0{    ///<Response Register
-        using Addr = Register::Address<0x40000020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000020,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace HsmciRspr1{    ///<Response Register
-        using Addr = Register::Address<0x40000024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000024,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace HsmciRspr2{    ///<Response Register
-        using Addr = Register::Address<0x40000028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000028,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace HsmciRspr3{    ///<Response Register
-        using Addr = Register::Address<0x4000002c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000002c,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace HsmciFifo0{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000200,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000200,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo1{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000204,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000204,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo2{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000208,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000208,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo3{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000020c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000020c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo4{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000210,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000210,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo5{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000214,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000214,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo6{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000218,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000218,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo7{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000021c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000021c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo8{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000220,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000220,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo9{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000224,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000224,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo10{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000228,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000228,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo11{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000022c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000022c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo12{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000230,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000230,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo13{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000234,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000234,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo14{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000238,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000238,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo15{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000023c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000023c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo16{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000240,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000240,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo17{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000244,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000244,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo18{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000248,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000248,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo19{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000024c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000024c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo20{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000250,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000250,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo21{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000254,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000254,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo22{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000258,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000258,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo23{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000025c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000025c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo24{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000260,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000260,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo25{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000264,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000264,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo26{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000268,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000268,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo27{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000026c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000026c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo28{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000270,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000270,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo29{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000274,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000274,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo30{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000278,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000278,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo31{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000027c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000027c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo32{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000280,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000280,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo33{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000284,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000284,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo34{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000288,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000288,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo35{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000028c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000028c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo36{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000290,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000290,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo37{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000294,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000294,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo38{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000298,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000298,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo39{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000029c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000029c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo40{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002a0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002a0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo41{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002a4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002a4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo42{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002a8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002a8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo43{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002ac,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002ac,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo44{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002b0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002b0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo45{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002b4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002b4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo46{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002b8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002b8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo47{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002bc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002bc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo48{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002c0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002c0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo49{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002c4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002c4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo50{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002c8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002c8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo51{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002cc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002cc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo52{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002d0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002d0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo53{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002d4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002d4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo54{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002d8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002d8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo55{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002dc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002dc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo56{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002e0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002e0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo57{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002e4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002e4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo58{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002e8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002e8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo59{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002ec,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002ec,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo60{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002f0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002f0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo61{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002f4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002f4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo62{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002f8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002f8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo63{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400002fc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400002fc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo64{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000300,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000300,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo65{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000304,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000304,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo66{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000308,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000308,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo67{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000030c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000030c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo68{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000310,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000310,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo69{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000314,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000314,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo70{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000318,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000318,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo71{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000031c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000031c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo72{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000320,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000320,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo73{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000324,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000324,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo74{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000328,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000328,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo75{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000032c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000032c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo76{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000330,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000330,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo77{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000334,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000334,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo78{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000338,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000338,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo79{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000033c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000033c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo80{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000340,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000340,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo81{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000344,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000344,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo82{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000348,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000348,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo83{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000034c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000034c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo84{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000350,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000350,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo85{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000354,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000354,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo86{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000358,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000358,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo87{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000035c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000035c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo88{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000360,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000360,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo89{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000364,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000364,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo90{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000368,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000368,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo91{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000036c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000036c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo92{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000370,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000370,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo93{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000374,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000374,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo94{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000378,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000378,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo95{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000037c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000037c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo96{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000380,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000380,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo97{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000384,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000384,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo98{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000388,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000388,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo99{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000038c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000038c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo100{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000390,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000390,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo101{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000394,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000394,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo102{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000398,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000398,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo103{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000039c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000039c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo104{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003a0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003a0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo105{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003a4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003a4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo106{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003a8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003a8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo107{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003ac,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003ac,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo108{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003b0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003b0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo109{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003b4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003b4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo110{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003b8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003b8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo111{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003bc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003bc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo112{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003c0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003c0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo113{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003c4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003c4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo114{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003c8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003c8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo115{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003cc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003cc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo116{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003d0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003d0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo117{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003d4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003d4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo118{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003d8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003d8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo119{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003dc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003dc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo120{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003e0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003e0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo121{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003e4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003e4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo122{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003e8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003e8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo123{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003ec,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003ec,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo124{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003f0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003f0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo125{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003f4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003f4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo126{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003f8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003f8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo127{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400003fc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400003fc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo128{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000400,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000400,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo129{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000404,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000404,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo130{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000408,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000408,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo131{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000040c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000040c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo132{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000410,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000410,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo133{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000414,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000414,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo134{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000418,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000418,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo135{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000041c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000041c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo136{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000420,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000420,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo137{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000424,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000424,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo138{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000428,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000428,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo139{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000042c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000042c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo140{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000430,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000430,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo141{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000434,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000434,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo142{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000438,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000438,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo143{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000043c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000043c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo144{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000440,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000440,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo145{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000444,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000444,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo146{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000448,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000448,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo147{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000044c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000044c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo148{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000450,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000450,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo149{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000454,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000454,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo150{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000458,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000458,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo151{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000045c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000045c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo152{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000460,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000460,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo153{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000464,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000464,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo154{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000468,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000468,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo155{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000046c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000046c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo156{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000470,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000470,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo157{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000474,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000474,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo158{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000478,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000478,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo159{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000047c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000047c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo160{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000480,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000480,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo161{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000484,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000484,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo162{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000488,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000488,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo163{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000048c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000048c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo164{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000490,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000490,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo165{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000494,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000494,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo166{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000498,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000498,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo167{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000049c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000049c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo168{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004a0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004a0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo169{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004a4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004a4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo170{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004a8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004a8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo171{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004ac,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004ac,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo172{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004b0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004b0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo173{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004b4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004b4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo174{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004b8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004b8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo175{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004bc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004bc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo176{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004c0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004c0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo177{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004c4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004c4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo178{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004c8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004c8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo179{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004cc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004cc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo180{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004d0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004d0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo181{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004d4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004d4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo182{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004d8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004d8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo183{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004dc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004dc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo184{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004e0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004e0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo185{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004e4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004e4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo186{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004e8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004e8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo187{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004ec,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004ec,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo188{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004f0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004f0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo189{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004f4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004f4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo190{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004f8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004f8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo191{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400004fc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400004fc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo192{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000500,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000500,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo193{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000504,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000504,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo194{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000508,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000508,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo195{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000050c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000050c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo196{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000510,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000510,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo197{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000514,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000514,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo198{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000518,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000518,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo199{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000051c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000051c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo200{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000520,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000520,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo201{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000524,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000524,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo202{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000528,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000528,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo203{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000052c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000052c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo204{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000530,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000530,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo205{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000534,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000534,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo206{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000538,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000538,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo207{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000053c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000053c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo208{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000540,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000540,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo209{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000544,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000544,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo210{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000548,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000548,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo211{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000054c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000054c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo212{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000550,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000550,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo213{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000554,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000554,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo214{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000558,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000558,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo215{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000055c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000055c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo216{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000560,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000560,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo217{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000564,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000564,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo218{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000568,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000568,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo219{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000056c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000056c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo220{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000570,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000570,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo221{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000574,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000574,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo222{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000578,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000578,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo223{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000057c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000057c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo224{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000580,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000580,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo225{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000584,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000584,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo226{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000588,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000588,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo227{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000058c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000058c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo228{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000590,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000590,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo229{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000594,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000594,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo230{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x40000598,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000598,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo231{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x4000059c,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000059c,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo232{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005a0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005a0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo233{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005a4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005a4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo234{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005a8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005a8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo235{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005ac,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005ac,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo236{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005b0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005b0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo237{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005b4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005b4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo238{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005b8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005b8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo239{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005bc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005bc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo240{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005c0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005c0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo241{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005c4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005c4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo242{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005c8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005c8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo243{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005cc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005cc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo244{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005d0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005d0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo245{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005d4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005d4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo246{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005d8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005d8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo247{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005dc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005dc,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo248{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005e0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005e0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo249{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005e4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005e4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo250{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005e8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005e8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo251{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005ec,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005ec,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo252{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005f0,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005f0,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo253{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005f4,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005f4,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo254{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005f8,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005f8,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace HsmciFifo255{    ///<FIFO Memory Aperture0
-        using Addr = Register::Address<0x400005fc,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400005fc,0xffffffff,0x00000000,std::uint32_t>;
     }
 }

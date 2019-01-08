@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Power control
     namespace PwrCr{    ///<power control register
-        using Addr = Register::Address<0x40007000,0xffffa000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007000,0xffffa000,0x00000000,std::uint32_t>;
         ///Low power run mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> lprun{}; 
         ///Voltage scaling range               selection
@@ -28,7 +28,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lpsdsr{}; 
     }
     namespace PwrCsr{    ///<power control/status register
-        using Addr = Register::Address<0x40007004,0xfffff8c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007004,0xfffff8c0,0x00000000,std::uint32_t>;
         ///Enable WKUP pin 3
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,10),Register::ReadWriteAccess,unsigned> ewup3{}; 
         ///Enable WKUP pin 2

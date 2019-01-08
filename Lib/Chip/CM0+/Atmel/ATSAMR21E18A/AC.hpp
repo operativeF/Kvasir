@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Analog Comparators
     namespace AcCtrla{    ///<Control A
-        using Addr = Register::Address<0x42004400,0xffffff78,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004400,0xffffff78,0x00000000,std::uint8_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
         ///Enable
@@ -14,14 +14,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> lpmux{}; 
     }
     namespace AcCtrlb{    ///<Control B
-        using Addr = Register::Address<0x42004401,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004401,0xfffffffc,0x00000000,std::uint8_t>;
         ///Comparator 0 Start Comparison
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> start0{}; 
         ///Comparator 1 Start Comparison
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> start1{}; 
     }
     namespace AcEvctrl{    ///<Event Control
-        using Addr = Register::Address<0x42004402,0xfffffcec,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004402,0xfffffcec,0x00000000,std::uint16_t>;
         ///Comparator 0 Event Output Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> compeo0{}; 
         ///Comparator 1 Event Output Enable
@@ -34,7 +34,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> compei1{}; 
     }
     namespace AcIntenclr{    ///<Interrupt Enable Clear
-        using Addr = Register::Address<0x42004404,0xffffffec,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004404,0xffffffec,0x00000000,std::uint8_t>;
         ///Comparator 0 Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> comp0{}; 
         ///Comparator 1 Interrupt Enable
@@ -43,7 +43,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> win0{}; 
     }
     namespace AcIntenset{    ///<Interrupt Enable Set
-        using Addr = Register::Address<0x42004405,0xffffffec,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004405,0xffffffec,0x00000000,std::uint8_t>;
         ///Comparator 0 Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> comp0{}; 
         ///Comparator 1 Interrupt Enable
@@ -52,7 +52,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> win0{}; 
     }
     namespace AcIntflag{    ///<Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x42004406,0xffffffec,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004406,0xffffffec,0x00000000,std::uint8_t>;
         ///Comparator 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> comp0{}; 
         ///Comparator 1
@@ -61,7 +61,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> win0{}; 
     }
     namespace AcStatusa{    ///<Status A
-        using Addr = Register::Address<0x42004408,0xffffffcc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004408,0xffffffcc,0x00000000,std::uint8_t>;
         ///Comparator 0 Current State
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> state0{}; 
         ///Comparator 1 Current State
@@ -80,7 +80,7 @@ namespace Kvasir {
         }
     }
     namespace AcStatusb{    ///<Status B
-        using Addr = Register::Address<0x42004409,0xffffff7c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004409,0xffffff7c,0x00000000,std::uint8_t>;
         ///Comparator 0 Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ready0{}; 
         ///Comparator 1 Ready
@@ -89,7 +89,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> syncbusy{}; 
     }
     namespace AcStatusc{    ///<Status C
-        using Addr = Register::Address<0x4200440a,0xffffffcc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4200440a,0xffffffcc,0x00000000,std::uint8_t>;
         ///Comparator 0 Current State
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> state0{}; 
         ///Comparator 1 Current State
@@ -108,7 +108,7 @@ namespace Kvasir {
         }
     }
     namespace AcWinctrl{    ///<Window Control
-        using Addr = Register::Address<0x4200440c,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4200440c,0xfffffff8,0x00000000,std::uint8_t>;
         ///Window 0 Mode Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wen0{}; 
         ///Window 0 Interrupt Selection
@@ -127,7 +127,7 @@ namespace Kvasir {
         }
     }
     namespace AcCompctrl0{    ///<Comparator Control n
-        using Addr = Register::Address<0x42004410,0xf8f44890,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004410,0xf8f44890,0x00000000,std::uint32_t>;
         ///Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> enable{}; 
         ///Single-Shot Mode
@@ -212,7 +212,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,24),Register::ReadWriteAccess,unsigned> flen{}; 
     }
     namespace AcCompctrl1{    ///<Comparator Control n
-        using Addr = Register::Address<0x42004414,0xf8f44890,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004414,0xf8f44890,0x00000000,std::uint32_t>;
         ///Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> enable{}; 
         ///Single-Shot Mode
@@ -297,12 +297,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,24),Register::ReadWriteAccess,unsigned> flen{}; 
     }
     namespace AcScaler0{    ///<Scaler n
-        using Addr = Register::Address<0x42004420,0xffffffc0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004420,0xffffffc0,0x00000000,std::uint8_t>;
         ///Scaler Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> value{}; 
     }
     namespace AcScaler1{    ///<Scaler n
-        using Addr = Register::Address<0x42004421,0xffffffc0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004421,0xffffffc0,0x00000000,std::uint8_t>;
         ///Scaler Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> value{}; 
     }

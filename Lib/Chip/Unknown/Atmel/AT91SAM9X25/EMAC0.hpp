@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Ethernet MAC 10/100 0
     namespace Emac0Ncr{    ///<Network Control Register
-        using Addr = Register::Address<0xf802c000,0xfffff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c000,0xfffff800,0x00000000,std::uint32_t>;
         ///LoopBack
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lb{}; 
         ///Loopback local
@@ -28,7 +28,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,10),Register::ReadWriteAccess,unsigned> thalt{}; 
     }
     namespace Emac0Ncfgr{    ///<Network Configuration Register
-        using Addr = Register::Address<0xf802c004,0xfff00204,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c004,0xfff00204,0x00000000,std::uint32_t>;
         ///Speed
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> spd{}; 
         ///Full Duplex
@@ -87,14 +87,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> irxfcs{}; 
     }
     namespace Emac0Nsr{    ///<Network Status Register
-        using Addr = Register::Address<0xf802c008,0xfffffff9,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c008,0xfffffff9,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mdio{}; 
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idle{}; 
     }
     namespace Emac0Tsr{    ///<Transmit Status Register
-        using Addr = Register::Address<0xf802c014,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c014,0xffffff80,0x00000000,std::uint32_t>;
         ///Used Bit Read
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ubr{}; 
         ///Collision Occurred
@@ -111,17 +111,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> und{}; 
     }
     namespace Emac0Rbqp{    ///<Receive Buffer Queue Pointer Register
-        using Addr = Register::Address<0xf802c018,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c018,0x00000003,0x00000000,std::uint32_t>;
         ///Receive buffer queue pointer address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Tbqp{    ///<Transmit Buffer Queue Pointer Register
-        using Addr = Register::Address<0xf802c01c,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c01c,0x00000003,0x00000000,std::uint32_t>;
         ///Transmit buffer queue pointer address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Rsr{    ///<Receive Status Register
-        using Addr = Register::Address<0xf802c020,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c020,0xfffffff8,0x00000000,std::uint32_t>;
         ///Buffer Not Available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> bna{}; 
         ///Frame Received
@@ -130,7 +130,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> ovr{}; 
     }
     namespace Emac0Isr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0xf802c024,0xffffc300,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c024,0xffffc300,0x00000000,std::uint32_t>;
         ///Management Frame Done
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mfd{}; 
         ///Receive Complete
@@ -157,7 +157,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> ptz{}; 
     }
     namespace Emac0Ier{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xf802c028,0xffffc300,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c028,0xffffc300,0x00000000,std::uint32_t>;
         ///Management Frame sent
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mfd{}; 
         ///Receive Complete
@@ -184,7 +184,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ptz{}; 
     }
     namespace Emac0Idr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xf802c02c,0xffffc300,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c02c,0xffffc300,0x00000000,std::uint32_t>;
         ///Management Frame sent
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mfd{}; 
         ///Receive Complete
@@ -211,7 +211,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ptz{}; 
     }
     namespace Emac0Imr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xf802c030,0xffffc300,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c030,0xffffc300,0x00000000,std::uint32_t>;
         ///Management Frame sent
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mfd{}; 
         ///Receive Complete
@@ -238,7 +238,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ptz{}; 
     }
     namespace Emac0Man{    ///<Phy Maintenance Register
-        using Addr = Register::Address<0xf802c034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c034,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> data{}; 
         ///
@@ -253,167 +253,167 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> sof{}; 
     }
     namespace Emac0Ptr{    ///<Pause Time Register
-        using Addr = Register::Address<0xf802c038,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c038,0xffff0000,0x00000000,std::uint32_t>;
         ///Pause Time
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ptime{}; 
     }
     namespace Emac0Pfr{    ///<Pause Frames Received Register
-        using Addr = Register::Address<0xf802c03c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c03c,0xffff0000,0x00000000,std::uint32_t>;
         ///Pause Frames received OK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> frok{}; 
     }
     namespace Emac0Fto{    ///<Frames Transmitted Ok Register
-        using Addr = Register::Address<0xf802c040,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c040,0xff000000,0x00000000,std::uint32_t>;
         ///Frames Transmitted OK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ftok{}; 
     }
     namespace Emac0Scf{    ///<Single Collision Frames Register
-        using Addr = Register::Address<0xf802c044,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c044,0xffff0000,0x00000000,std::uint32_t>;
         ///Single Collision Frames
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> scf{}; 
     }
     namespace Emac0Mcf{    ///<Multiple Collision Frames Register
-        using Addr = Register::Address<0xf802c048,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c048,0xffff0000,0x00000000,std::uint32_t>;
         ///Multicollision Frames
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> mcf{}; 
     }
     namespace Emac0Fro{    ///<Frames Received Ok Register
-        using Addr = Register::Address<0xf802c04c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c04c,0xff000000,0x00000000,std::uint32_t>;
         ///Frames Received OK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> frok{}; 
     }
     namespace Emac0Fcse{    ///<Frame Check Sequence Errors Register
-        using Addr = Register::Address<0xf802c050,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c050,0xffffff00,0x00000000,std::uint32_t>;
         ///Frame Check Sequence Errors
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> fcse{}; 
     }
     namespace Emac0Ale{    ///<Alignment Errors Register
-        using Addr = Register::Address<0xf802c054,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c054,0xffffff00,0x00000000,std::uint32_t>;
         ///Alignment Errors
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ale{}; 
     }
     namespace Emac0Dtf{    ///<Deferred Transmission Frames Register
-        using Addr = Register::Address<0xf802c058,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c058,0xffff0000,0x00000000,std::uint32_t>;
         ///Deferred Transmission Frames
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dtf{}; 
     }
     namespace Emac0Lcol{    ///<Late Collisions Register
-        using Addr = Register::Address<0xf802c05c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c05c,0xffffff00,0x00000000,std::uint32_t>;
         ///Late Collisions
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> lcol{}; 
     }
     namespace Emac0Ecol{    ///<Excessive Collisions Register
-        using Addr = Register::Address<0xf802c060,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c060,0xffffff00,0x00000000,std::uint32_t>;
         ///Excessive Collisions
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> excol{}; 
     }
     namespace Emac0Tund{    ///<Transmit Underrun Errors Register
-        using Addr = Register::Address<0xf802c064,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c064,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmit Underruns
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> tund{}; 
     }
     namespace Emac0Cse{    ///<Carrier Sense Errors Register
-        using Addr = Register::Address<0xf802c068,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c068,0xffffff00,0x00000000,std::uint32_t>;
         ///Carrier Sense Errors
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> cse{}; 
     }
     namespace Emac0Rre{    ///<Receive Resource Errors Register
-        using Addr = Register::Address<0xf802c06c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c06c,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Resource Errors
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rre{}; 
     }
     namespace Emac0Rov{    ///<Receive Overrun Errors Register
-        using Addr = Register::Address<0xf802c070,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c070,0xffffff00,0x00000000,std::uint32_t>;
         ///Receive Overrun
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rovr{}; 
     }
     namespace Emac0Rse{    ///<Receive Symbol Errors Register
-        using Addr = Register::Address<0xf802c074,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c074,0xffffff00,0x00000000,std::uint32_t>;
         ///Receive Symbol Errors
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rse{}; 
     }
     namespace Emac0Ele{    ///<Excessive Length Errors Register
-        using Addr = Register::Address<0xf802c078,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c078,0xffffff00,0x00000000,std::uint32_t>;
         ///Excessive Length Errors
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> exl{}; 
     }
     namespace Emac0Rja{    ///<Receive Jabbers Register
-        using Addr = Register::Address<0xf802c07c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c07c,0xffffff00,0x00000000,std::uint32_t>;
         ///Receive Jabbers
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rjb{}; 
     }
     namespace Emac0Usf{    ///<Undersize Frames Register
-        using Addr = Register::Address<0xf802c080,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c080,0xffffff00,0x00000000,std::uint32_t>;
         ///Undersize frames
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> usf{}; 
     }
     namespace Emac0Ste{    ///<SQE Test Errors Register
-        using Addr = Register::Address<0xf802c084,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c084,0xffffff00,0x00000000,std::uint32_t>;
         ///SQE test errors
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sqer{}; 
     }
     namespace Emac0Rle{    ///<Received Length Field Mismatch Register
-        using Addr = Register::Address<0xf802c088,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c088,0xffffff00,0x00000000,std::uint32_t>;
         ///Receive Length Field Mismatch
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rlfm{}; 
     }
     namespace Emac0Hrb{    ///<Hash Register Bottom [31:0] Register
-        using Addr = Register::Address<0xf802c090,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c090,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Hrt{    ///<Hash Register Top [63:32] Register
-        using Addr = Register::Address<0xf802c094,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c094,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa1b{    ///<Specific Address 1 Bottom Register
-        using Addr = Register::Address<0xf802c098,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c098,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa1t{    ///<Specific Address 1 Top Register
-        using Addr = Register::Address<0xf802c09c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c09c,0xffff0000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa2b{    ///<Specific Address 2 Bottom Register
-        using Addr = Register::Address<0xf802c0a0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0a0,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa2t{    ///<Specific Address 2 Top Register
-        using Addr = Register::Address<0xf802c0a4,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0a4,0xffff0000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa3b{    ///<Specific Address 3 Bottom Register
-        using Addr = Register::Address<0xf802c0a8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0a8,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa3t{    ///<Specific Address 3 Top Register
-        using Addr = Register::Address<0xf802c0ac,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0ac,0xffff0000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa4b{    ///<Specific Address 4 Bottom Register
-        using Addr = Register::Address<0xf802c0b0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0b0,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Sa4t{    ///<Specific Address 4 Top Register
-        using Addr = Register::Address<0xf802c0b4,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0b4,0xffff0000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace Emac0Tid{    ///<Type ID Checking Register
-        using Addr = Register::Address<0xf802c0b8,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0b8,0xffff0000,0x00000000,std::uint32_t>;
         ///Type ID checking
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> tid{}; 
     }
     namespace Emac0Usrio{    ///<User Input/Output Register
-        using Addr = Register::Address<0xf802c0c0,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf802c0c0,0xfffffffc,0x00000000,std::uint32_t>;
         ///Reduce MII
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rmii{}; 
         ///Clock Enable

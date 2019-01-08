@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Floting point unit
     namespace FpuFpscr{    ///<Floating-point Status and Control          Register
-        using Addr = Register::Address<0xe000eb88,0x083fff60,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000eb88,0x083fff60,0x00000000,std::uint32_t>;
         ///Invalid Operation cumulative exception              bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ioc{}; 
         ///Division by Zero cumulative exception              bit

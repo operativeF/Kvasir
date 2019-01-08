@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB on the go high speed
     namespace OtgHsPwrclkOtgHsPcgcr{    ///<Power and clock gating control          register
-        using Addr = Register::Address<0x40040e00,0xffffffec,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040e00,0xffffffec,0x00000000,std::uint32_t>;
         ///Stop PHY clock
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> stppclk{}; 
         ///Gate HCLK

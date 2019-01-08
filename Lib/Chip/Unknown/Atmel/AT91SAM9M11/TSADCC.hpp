@@ -3,14 +3,14 @@
 namespace Kvasir {
 //Touch Screen ADC Controller
     namespace TsadccCr{    ///<Control Register
-        using Addr = Register::Address<0xfffb0000,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0000,0xfffffffc,0x00000000,std::uint32_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
         ///Start Conversion
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> start{}; 
     }
     namespace TsadccMr{    ///<Mode Register
-        using Addr = Register::Address<0xfffb0004,0x00800004,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0004,0x00800004,0x00000000,std::uint32_t>;
         ///Touch Screen ADC Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> tsamod{}; 
         ///PDC transfer in Touchscreen/Interleaved mode or Manual mode
@@ -33,21 +33,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> pendbc{}; 
     }
     namespace TsadccTrgr{    ///<Trigger Register
-        using Addr = Register::Address<0xfffb0008,0x0000fff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0008,0x0000fff8,0x00000000,std::uint32_t>;
         ///Trigger Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> trgmod{}; 
         ///Trigger Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> trgper{}; 
     }
     namespace TsadccTsr{    ///<Touch Screen Register
-        using Addr = Register::Address<0xfffb000c,0xf0fffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb000c,0xf0fffff0,0x00000000,std::uint32_t>;
         ///Touch Screen Frequency in Interleaved Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tsfreq{}; 
         ///Sample & Hold Time for Touch Screen Channels
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> tsshtim{}; 
     }
     namespace TsadccCher{    ///<Channel Enable Register
-        using Addr = Register::Address<0xfffb0010,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0010,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch0{}; 
         ///Channel 1 Enable
@@ -66,7 +66,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch7{}; 
     }
     namespace TsadccChdr{    ///<Channel Disable Register
-        using Addr = Register::Address<0xfffb0014,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0014,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch0{}; 
         ///Channel 1 Disable
@@ -85,7 +85,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch7{}; 
     }
     namespace TsadccChsr{    ///<Channel Status Register
-        using Addr = Register::Address<0xfffb0018,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0018,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch0{}; 
         ///Channel 1 Status
@@ -104,7 +104,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch7{}; 
     }
     namespace TsadccSr{    ///<Status Register
-        using Addr = Register::Address<0xfffb001c,0x88c00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb001c,0x88c00000,0x00000000,std::uint32_t>;
         ///End of Conversion 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion 1
@@ -163,12 +163,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ovrez2{}; 
     }
     namespace TsadccLcdr{    ///<Last Converted Data Register
-        using Addr = Register::Address<0xfffb0020,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0020,0xfffffc00,0x00000000,std::uint32_t>;
         ///Last Data Converted
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ldata{}; 
     }
     namespace TsadccIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xfffb0024,0x88c00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0024,0x88c00000,0x00000000,std::uint32_t>;
         ///End of Conversion Interrupt Enable 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion Interrupt Enable 1
@@ -227,7 +227,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ovrez2{}; 
     }
     namespace TsadccIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xfffb0028,0x88c00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0028,0x88c00000,0x00000000,std::uint32_t>;
         ///End of Conversion Interrupt Disable 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion Interrupt Disable 1
@@ -286,7 +286,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ovrez2{}; 
     }
     namespace TsadccImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfffb002c,0x88c00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb002c,0x88c00000,0x00000000,std::uint32_t>;
         ///End of Conversion Interrupt Mask 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion Interrupt Mask 1
@@ -345,22 +345,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ovrez2{}; 
     }
     namespace TsadccXpdr{    ///<X Position Data Register
-        using Addr = Register::Address<0xfffb0050,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0050,0xfffffc00,0x00000000,std::uint32_t>;
         ///X Position Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccZ1dr{    ///<Z1 Data Register
-        using Addr = Register::Address<0xfffb0054,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0054,0xfffffc00,0x00000000,std::uint32_t>;
         ///Z1 Measurement Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccZ2dr{    ///<Z2 Data Register
-        using Addr = Register::Address<0xfffb0058,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0058,0xfffffc00,0x00000000,std::uint32_t>;
         ///Z2 Measurement Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> z2{}; 
     }
     namespace TsadccMscr{    ///<Manual Switch Command Register
-        using Addr = Register::Address<0xfffb0060,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0060,0xfffffff0,0x00000000,std::uint32_t>;
         ///Switch Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xp{}; 
         ///Switch Command
@@ -371,41 +371,41 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> ym{}; 
     }
     namespace TsadccWpmr{    ///<Write Protection Mode Register
-        using Addr = Register::Address<0xfffb00e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb00e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection of TSADCC_MR, TSADCC_TRGR and TSADCC_TSR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpen{}; 
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> key{}; 
     }
     namespace TsadccWpsr{    ///<Write Protection Status Register
-        using Addr = Register::Address<0xfffb00e8,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb00e8,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wps{}; 
         ///Offset error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> offsetErr{}; 
     }
     namespace TsadccRpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0xfffb0100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0100,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace TsadccRcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0xfffb0104,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0104,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace TsadccRnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0xfffb0110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0110,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace TsadccRncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0xfffb0114,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0114,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace TsadccPtcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0xfffb0120,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0120,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -416,49 +416,49 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace TsadccPtsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0xfffb0124,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0124,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txten{}; 
     }
     namespace TsadccCdr0{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb0030,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0030,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccCdr1{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb0034,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0034,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccCdr2{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb0038,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0038,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccCdr3{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb003c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb003c,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccCdr4{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb0040,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0040,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccCdr5{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb0044,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0044,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccCdr6{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb0048,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb0048,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace TsadccCdr7{    ///<Channel Data Register
-        using Addr = Register::Address<0xfffb004c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffb004c,0xfffffc00,0x00000000,std::uint32_t>;
         ///Channel Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }

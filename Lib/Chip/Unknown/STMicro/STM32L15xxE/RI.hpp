@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Routing interface
     namespace RiIcr{    ///<RI input capture register
-        using Addr = Register::Address<0x40007c04,0xffc00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c04,0xffc00000,0x00000000,std::uint32_t>;
         ///IC4
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(21,21),Register::ReadWriteAccess,unsigned> ic4{}; 
         ///IC3
@@ -24,7 +24,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ic1ios{}; 
     }
     namespace RiAscr1{    ///<RI analog switches control register          1
-        using Addr = Register::Address<0x40007c08,0x00020000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c08,0x00020000,0x00000000,std::uint32_t>;
         ///Switch control mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> scm{}; 
         ///Analog switch control
@@ -89,7 +89,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ch0gr11{}; 
     }
     namespace RiAscr2{    ///<RI analog switches control register          2
-        using Addr = Register::Address<0x40007c0c,0xc000f000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c0c,0xc000f000,0x00000000,std::uint32_t>;
         ///GR5_4 analog switch              control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,29),Register::ReadWriteAccess,unsigned> gr54{}; 
         ///GR6_4 analog switch              control
@@ -144,103 +144,103 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gr101{}; 
     }
     namespace RiHyscr1{    ///<RI hysteresis control register          1
-        using Addr = Register::Address<0x40007c10,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c10,0x00000000,0x00000000,std::uint32_t>;
         ///Port B hysteresis control              on/off
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> pb{}; 
         ///Port A hysteresis control              on/off
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace RiHyscr2{    ///<RI hysteresis control register          2
-        using Addr = Register::Address<0x40007c14,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c14,0x00000000,0x00000000,std::uint32_t>;
         ///Port D hysteresis control              on/off
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> pd{}; 
         ///Port C hysteresis control              on/off
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pc{}; 
     }
     namespace RiHyscr3{    ///<RI hysteresis control register          3
-        using Addr = Register::Address<0x40007c18,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c18,0x00000000,0x00000000,std::uint32_t>;
         ///Port F hysteresis control              on/off
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> pf{}; 
         ///Port E hysteresis control              on/off
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pe{}; 
     }
     namespace RiHyscr4{    ///<Hysteresis control register
-        using Addr = Register::Address<0x40007c1c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c1c,0xffff0000,0x00000000,std::uint32_t>;
         ///Port G hysteresis control              on/off
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pg{}; 
     }
     namespace RiAsmr1{    ///<Analog switch mode register
-        using Addr = Register::Address<0x40007c20,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c20,0xffff0000,0x00000000,std::uint32_t>;
         ///Port A analog switch mode              selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace RiCmr1{    ///<Channel mask register
-        using Addr = Register::Address<0x40007c24,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c24,0xffff0000,0x00000000,std::uint32_t>;
         ///Port A channel masking
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace RiCicr1{    ///<Channel identification for capture          register
-        using Addr = Register::Address<0x40007c28,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c28,0xffff0000,0x00000000,std::uint32_t>;
         ///Port A channel identification for              capture
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace RiAsmr2{    ///<Analog switch mode register
-        using Addr = Register::Address<0x40007c2c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c2c,0xffff0000,0x00000000,std::uint32_t>;
         ///Port B analog switch mode              selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pb{}; 
     }
     namespace RiCmr2{    ///<Channel mask register
-        using Addr = Register::Address<0x40007c30,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c30,0xffff0000,0x00000000,std::uint32_t>;
         ///Port B channel masking
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pb{}; 
     }
     namespace RiCicr2{    ///<Channel identification for capture          register
-        using Addr = Register::Address<0x40007c34,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c34,0xffff0000,0x00000000,std::uint32_t>;
         ///Port B channel identification for              capture
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pb{}; 
     }
     namespace RiAsmr3{    ///<Analog switch mode register
-        using Addr = Register::Address<0x40007c38,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c38,0xffff0000,0x00000000,std::uint32_t>;
         ///Port C analog switch mode              selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pc{}; 
     }
     namespace RiCmr3{    ///<Channel mask register
-        using Addr = Register::Address<0x40007c3c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c3c,0xffff0000,0x00000000,std::uint32_t>;
         ///Port C channel masking
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pc{}; 
     }
     namespace RiCicr3{    ///<Channel identification for capture          register
-        using Addr = Register::Address<0x40007c40,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c40,0xffff0000,0x00000000,std::uint32_t>;
         ///Port C channel identification for              capture
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pc{}; 
     }
     namespace RiAsmr4{    ///<Analog switch mode register
-        using Addr = Register::Address<0x40007c44,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c44,0xffff0000,0x00000000,std::uint32_t>;
         ///Port F analog switch mode              selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pf{}; 
     }
     namespace RiCmr4{    ///<Channel mask register
-        using Addr = Register::Address<0x40007c48,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c48,0xffff0000,0x00000000,std::uint32_t>;
         ///Port F channel masking
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pf{}; 
     }
     namespace RiCicr4{    ///<Channel identification for capture          register
-        using Addr = Register::Address<0x40007c4c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c4c,0xffff0000,0x00000000,std::uint32_t>;
         ///Port F channel identification for              capture
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pf{}; 
     }
     namespace RiAsmr5{    ///<Analog switch mode register
-        using Addr = Register::Address<0x40007c50,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c50,0xffff0000,0x00000000,std::uint32_t>;
         ///Port G analog switch mode              selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pg{}; 
     }
     namespace RiCmr5{    ///<Channel mask register
-        using Addr = Register::Address<0x40007c54,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c54,0xffff0000,0x00000000,std::uint32_t>;
         ///Port G channel masking
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pg{}; 
     }
     namespace RiCicr5{    ///<Channel identification for capture          register
-        using Addr = Register::Address<0x40007c58,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c58,0xffff0000,0x00000000,std::uint32_t>;
         ///Port G channel identification for              capture
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pg{}; 
     }

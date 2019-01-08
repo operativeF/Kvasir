@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Inter-IC Sound Interface
     namespace I2sCtrla{    ///<Control A
-        using Addr = Register::Address<0x42005000,0xffffffc0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42005000,0xffffffc0,0x00000000,std::uint8_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///Enable
@@ -18,7 +18,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,unsigned> seren1{}; 
     }
     namespace I2sIntenclr{    ///<Interrupt Enable Clear
-        using Addr = Register::Address<0x4200500c,0xffffcccc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200500c,0xffffcccc,0x00000000,std::uint16_t>;
         ///Receive Ready 0 Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxrdy0{}; 
         ///Receive Ready 1 Interrupt Enable
@@ -37,7 +37,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> txur1{}; 
     }
     namespace I2sIntenset{    ///<Interrupt Enable Set
-        using Addr = Register::Address<0x42005010,0xffffcccc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005010,0xffffcccc,0x00000000,std::uint16_t>;
         ///Receive Ready 0 Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxrdy0{}; 
         ///Receive Ready 1 Interrupt Enable
@@ -56,7 +56,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> txur1{}; 
     }
     namespace I2sIntflag{    ///<Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x42005014,0xffffcccc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005014,0xffffcccc,0x00000000,std::uint16_t>;
         ///Receive Ready 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxrdy0{}; 
         ///Receive Ready 1
@@ -75,7 +75,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> txur1{}; 
     }
     namespace I2sSyncbusy{    ///<Synchronization Status
-        using Addr = Register::Address<0x42005018,0xfffffcc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005018,0xfffffcc0,0x00000000,std::uint16_t>;
         ///Software Reset Synchronization Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///Enable Synchronization Status
@@ -94,7 +94,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> data1{}; 
     }
     namespace I2sClkctrl0{    ///<Clock Unit n Control
-        using Addr = Register::Address<0x42005004,0x0002e600,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005004,0x0002e600,0x00000000,std::uint32_t>;
         ///Slot Size
         enum class SlotsizeVal {
             v8=0x00000000,     ///<8-bit Slot for Clock Unit n
@@ -181,7 +181,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> mckoutinv{}; 
     }
     namespace I2sClkctrl1{    ///<Clock Unit n Control
-        using Addr = Register::Address<0x42005008,0x0002e600,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005008,0x0002e600,0x00000000,std::uint32_t>;
         ///Slot Size
         enum class SlotsizeVal {
             v8=0x00000000,     ///<8-bit Slot for Clock Unit n
@@ -268,17 +268,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> mckoutinv{}; 
     }
     namespace I2sData0{    ///<Data n
-        using Addr = Register::Address<0x42005030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005030,0x00000000,0x00000000,std::uint32_t>;
         ///Sample Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace I2sData1{    ///<Data n
-        using Addr = Register::Address<0x42005034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005034,0x00000000,0x00000000,std::uint32_t>;
         ///Sample Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace I2sSerctrl0{    ///<Serializer n Control
-        using Addr = Register::Address<0x42005020,0xf8000840,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005020,0xf8000840,0x00000000,std::uint32_t>;
         ///Serializer Mode
         enum class SermodeVal {
             rx=0x00000000,     ///<Receive
@@ -429,7 +429,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> rxloop{}; 
     }
     namespace I2sSerctrl1{    ///<Serializer n Control
-        using Addr = Register::Address<0x42005024,0xf8000840,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42005024,0xf8000840,0x00000000,std::uint32_t>;
         ///Serializer Mode
         enum class SermodeVal {
             rx=0x00000000,     ///<Receive

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Triple Data Encryption Standard
     namespace TdesCr{    ///<Control Register
-        using Addr = Register::Address<0xfffc4000,0xfffefefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4000,0xfffefefe,0x00000000,std::uint32_t>;
         ///Start Processing
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> start{}; 
         ///Software Reset
@@ -12,7 +12,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> loadseed{}; 
     }
     namespace TdesMr{    ///<Mode Register
-        using Addr = Register::Address<0xfffc4004,0xc00c4cec,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4004,0xc00c4cec,0x00000000,std::uint32_t>;
         ///Processing Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cipher{}; 
         ///ALGORITHM mode
@@ -33,7 +33,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ctype{}; 
     }
     namespace TdesIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xfffc4010,0xfffffee0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4010,0xfffffee0,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///End of Receive Buffer Interrupt Enable
@@ -48,7 +48,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace TdesIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xfffc4014,0xfffffee0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4014,0xfffffee0,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///End of Receive Buffer Interrupt Disable
@@ -63,7 +63,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace TdesImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfffc4018,0xfffffee0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4018,0xfffffee0,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///End of Receive Buffer Interrupt Mask
@@ -78,7 +78,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace TdesIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0xfffc401c,0xffffcee0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc401c,0xffffcee0,0x00000000,std::uint32_t>;
         ///Data Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///End of RX Buffer
@@ -95,47 +95,47 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urat{}; 
     }
     namespace TdesRpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0xfffc4100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4100,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace TdesRcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0xfffc4104,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4104,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace TdesTpr{    ///<Transmit Pointer Register
-        using Addr = Register::Address<0xfffc4108,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4108,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txptr{}; 
     }
     namespace TdesTcr{    ///<Transmit Counter Register
-        using Addr = Register::Address<0xfffc410c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc410c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txctr{}; 
     }
     namespace TdesRnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0xfffc4110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4110,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace TdesRncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0xfffc4114,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4114,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace TdesTnpr{    ///<Transmit Next Pointer Register
-        using Addr = Register::Address<0xfffc4118,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4118,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txnptr{}; 
     }
     namespace TdesTncr{    ///<Transmit Next Counter Register
-        using Addr = Register::Address<0xfffc411c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc411c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Next
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txnctr{}; 
     }
     namespace TdesPtcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0xfffc4120,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4120,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -146,69 +146,69 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace TdesPtsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0xfffc4124,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4124,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txten{}; 
     }
     namespace TdesKey1wxr0{    ///<Key 1 Word Register
-        using Addr = Register::Address<0xfffc4020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4020,0x00000000,0x00000000,std::uint32_t>;
         ///Key 1 Word x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key1wx{}; 
     }
     namespace TdesKey1wxr1{    ///<Key 1 Word Register
-        using Addr = Register::Address<0xfffc4024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4024,0x00000000,0x00000000,std::uint32_t>;
         ///Key 1 Word x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key1wx{}; 
     }
     namespace TdesKey2wxr0{    ///<Key 2 Word Register
-        using Addr = Register::Address<0xfffc4028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4028,0x00000000,0x00000000,std::uint32_t>;
         ///Key 2 Word x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key2wx{}; 
     }
     namespace TdesKey2wxr1{    ///<Key 2 Word Register
-        using Addr = Register::Address<0xfffc402c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc402c,0x00000000,0x00000000,std::uint32_t>;
         ///Key 2 Word x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key2wx{}; 
     }
     namespace TdesKey3wxr0{    ///<Key 3 Word Register
-        using Addr = Register::Address<0xfffc4030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4030,0x00000000,0x00000000,std::uint32_t>;
         ///Key 3 Word x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key3wx{}; 
     }
     namespace TdesKey3wxr1{    ///<Key 3 Word Register
-        using Addr = Register::Address<0xfffc4034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4034,0x00000000,0x00000000,std::uint32_t>;
         ///Key 3 Word x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key3wx{}; 
     }
     namespace TdesIdataxr0{    ///<Input Data Register
-        using Addr = Register::Address<0xfffc4040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4040,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idatax{}; 
     }
     namespace TdesIdataxr1{    ///<Input Data Register
-        using Addr = Register::Address<0xfffc4044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4044,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idatax{}; 
     }
     namespace TdesOdataxr0{    ///<Output Data Register
-        using Addr = Register::Address<0xfffc4050,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4050,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odatax{}; 
     }
     namespace TdesOdataxr1{    ///<Output Data Register
-        using Addr = Register::Address<0xfffc4054,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4054,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odatax{}; 
     }
     namespace TdesIvxr0{    ///<Initialization Vector Register
-        using Addr = Register::Address<0xfffc4060,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4060,0x00000000,0x00000000,std::uint32_t>;
         ///Initialization Vector x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ivx{}; 
     }
     namespace TdesIvxr1{    ///<Initialization Vector Register
-        using Addr = Register::Address<0xfffc4064,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc4064,0x00000000,0x00000000,std::uint32_t>;
         ///Initialization Vector x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ivx{}; 
     }

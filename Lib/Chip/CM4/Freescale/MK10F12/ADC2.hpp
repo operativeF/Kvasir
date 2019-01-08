@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Analog-to-Digital Converter
     namespace Adc2Cfg1{    ///<ADC configuration register 1
-        using Addr = Register::Address<0x4003c008,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c008,0xffffff00,0x00000000,std::uint32_t>;
         ///Input clock select
         enum class AdiclkVal {
             v00=0x00000000,     ///<Bus clock.
@@ -68,7 +68,7 @@ namespace Kvasir {
         }
     }
     namespace Adc2Cfg2{    ///<Configuration register 2
-        using Addr = Register::Address<0x4003c00c,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c00c,0xffffffe0,0x00000000,std::uint32_t>;
         ///Long sample time select
         enum class AdlstsVal {
             v00=0x00000000,     ///<Default longest sample time (20 extra ADCK cycles; 24 ADCK cycles total).
@@ -115,7 +115,7 @@ namespace Kvasir {
         }
     }
     namespace Adc2Sc2{    ///<Status and control register 2
-        using Addr = Register::Address<0x4003c020,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c020,0xffffff00,0x00000000,std::uint32_t>;
         ///Voltage reference selection
         enum class RefselVal {
             v00=0x00000000,     ///<Default voltage reference pin pair (external pins VREFH and VREFL)
@@ -188,7 +188,7 @@ namespace Kvasir {
         }
     }
     namespace Adc2Sc3{    ///<Status and control register 3
-        using Addr = Register::Address<0x4003c024,0xffffff30,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c024,0xffffff30,0x00000000,std::uint32_t>;
         ///Hardware average select
         enum class AvgsVal {
             v00=0x00000000,     ///<4 samples averaged.
@@ -237,57 +237,57 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> cal{}; 
     }
     namespace Adc2Ofs{    ///<ADC offset correction register
-        using Addr = Register::Address<0x4003c028,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c028,0xffff0000,0x00000000,std::uint32_t>;
         ///Offset error correction value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ofs{}; 
     }
     namespace Adc2Pg{    ///<ADC plus-side gain register
-        using Addr = Register::Address<0x4003c02c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c02c,0xffff0000,0x00000000,std::uint32_t>;
         ///Plus-side gain
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> pg{}; 
     }
     namespace Adc2Mg{    ///<ADC minus-side gain register
-        using Addr = Register::Address<0x4003c030,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c030,0xffff0000,0x00000000,std::uint32_t>;
         ///Minus-side gain
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> mg{}; 
     }
     namespace Adc2Clpd{    ///<ADC plus-side general calibration value register
-        using Addr = Register::Address<0x4003c034,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c034,0xffffffc0,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> clpd{}; 
     }
     namespace Adc2Clps{    ///<ADC plus-side general calibration value register
-        using Addr = Register::Address<0x4003c038,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c038,0xffffffc0,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> clps{}; 
     }
     namespace Adc2Clp4{    ///<ADC plus-side general calibration value register
-        using Addr = Register::Address<0x4003c03c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c03c,0xfffffc00,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> clp4{}; 
     }
     namespace Adc2Clp3{    ///<ADC plus-side general calibration value register
-        using Addr = Register::Address<0x4003c040,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c040,0xfffffe00,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> clp3{}; 
     }
     namespace Adc2Clp2{    ///<ADC plus-side general calibration value register
-        using Addr = Register::Address<0x4003c044,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c044,0xffffff00,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> clp2{}; 
     }
     namespace Adc2Clp1{    ///<ADC plus-side general calibration value register
-        using Addr = Register::Address<0x4003c048,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c048,0xffffff80,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> clp1{}; 
     }
     namespace Adc2Clp0{    ///<ADC plus-side general calibration value register
-        using Addr = Register::Address<0x4003c04c,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c04c,0xffffffc0,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> clp0{}; 
     }
     namespace Adc2Pga{    ///<ADC PGA register
-        using Addr = Register::Address<0x4003c050,0xff40bfff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c050,0xff40bfff,0x00000000,std::uint32_t>;
         ///PGA Offset Measurement
         enum class PgaofsmVal {
             v0=0x00000000,     ///<PGA runs in normal operation.
@@ -350,42 +350,42 @@ namespace Kvasir {
         }
     }
     namespace Adc2Clmd{    ///<ADC minus-side general calibration value register
-        using Addr = Register::Address<0x4003c054,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c054,0xffffffc0,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> clmd{}; 
     }
     namespace Adc2Clms{    ///<ADC minus-side general calibration value register
-        using Addr = Register::Address<0x4003c058,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c058,0xffffffc0,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> clms{}; 
     }
     namespace Adc2Clm4{    ///<ADC minus-side general calibration value register
-        using Addr = Register::Address<0x4003c05c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c05c,0xfffffc00,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> clm4{}; 
     }
     namespace Adc2Clm3{    ///<ADC minus-side general calibration value register
-        using Addr = Register::Address<0x4003c060,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c060,0xfffffe00,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> clm3{}; 
     }
     namespace Adc2Clm2{    ///<ADC minus-side general calibration value register
-        using Addr = Register::Address<0x4003c064,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c064,0xffffff00,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> clm2{}; 
     }
     namespace Adc2Clm1{    ///<ADC minus-side general calibration value register
-        using Addr = Register::Address<0x4003c068,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c068,0xffffff80,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> clm1{}; 
     }
     namespace Adc2Clm0{    ///<ADC minus-side general calibration value register
-        using Addr = Register::Address<0x4003c06c,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c06c,0xffffffc0,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> clm0{}; 
     }
     namespace Adc2Sc1a{    ///<ADC status and control registers 1
-        using Addr = Register::Address<0x4003c000,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c000,0xffffff00,0x00000000,std::uint32_t>;
         ///Input channel select
         enum class AdchVal {
             v00000=0x00000000,     ///<When DIFF=0, DADP0 is selected as input; when DIFF=1, DAD0 is selected as input.
@@ -482,7 +482,7 @@ namespace Kvasir {
         }
     }
     namespace Adc2Sc1b{    ///<ADC status and control registers 1
-        using Addr = Register::Address<0x4003c004,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c004,0xffffff00,0x00000000,std::uint32_t>;
         ///Input channel select
         enum class AdchVal {
             v00000=0x00000000,     ///<When DIFF=0, DADP0 is selected as input; when DIFF=1, DAD0 is selected as input.
@@ -579,22 +579,22 @@ namespace Kvasir {
         }
     }
     namespace Adc2Ra{    ///<ADC data result register
-        using Addr = Register::Address<0x4003c010,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c010,0xffff0000,0x00000000,std::uint32_t>;
         ///Data result
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> d{}; 
     }
     namespace Adc2Rb{    ///<ADC data result register
-        using Addr = Register::Address<0x4003c014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c014,0xffff0000,0x00000000,std::uint32_t>;
         ///Data result
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> d{}; 
     }
     namespace Adc2Cv1{    ///<Compare value registers
-        using Addr = Register::Address<0x4003c018,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c018,0xffff0000,0x00000000,std::uint32_t>;
         ///Compare value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> cv{}; 
     }
     namespace Adc2Cv2{    ///<Compare value registers
-        using Addr = Register::Address<0x4003c01c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003c01c,0xffff0000,0x00000000,std::uint32_t>;
         ///Compare value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> cv{}; 
     }

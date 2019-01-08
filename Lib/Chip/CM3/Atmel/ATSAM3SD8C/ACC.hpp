@@ -3,12 +3,12 @@
 namespace Kvasir {
 //Analog Comparator Controller
     namespace AccCr{    ///<Control Register
-        using Addr = Register::Address<0x40040000,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040000,0xfffffffe,0x00000000,std::uint32_t>;
         ///SoftWare ReSeT
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace AccMr{    ///<Mode Register
-        using Addr = Register::Address<0x40040004,0xffff8888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040004,0xffff8888,0x00000000,std::uint32_t>;
         ///SELection for MINUS comparator input
         enum class SelminusVal {
             ts=0x00000000,     ///<SelectTS
@@ -107,22 +107,22 @@ namespace Kvasir {
         }
     }
     namespace AccIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x40040024,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040024,0xfffffffe,0x00000000,std::uint32_t>;
         ///Comparison Edge
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ce{}; 
     }
     namespace AccIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0x40040028,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040028,0xfffffffe,0x00000000,std::uint32_t>;
         ///Comparison Edge
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ce{}; 
     }
     namespace AccImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0x4004002c,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004002c,0xfffffffe,0x00000000,std::uint32_t>;
         ///Comparison Edge
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ce{}; 
     }
     namespace AccIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0x40040030,0x7ffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040030,0x7ffffffc,0x00000000,std::uint32_t>;
         ///Comparison Edge
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ce{}; 
         ///Synchronized Comparator Output
@@ -131,7 +131,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mask{}; 
     }
     namespace AccAcr{    ///<Analog Control Register
-        using Addr = Register::Address<0x40040094,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040094,0xfffffff8,0x00000000,std::uint32_t>;
         ///Current SELection
         enum class IselVal {
             lopw=0x00000000,     ///<low power option.
@@ -146,14 +146,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,1),Register::ReadWriteAccess,unsigned> hyst{}; 
     }
     namespace AccWpmr{    ///<Write Protect Mode Register
-        using Addr = Register::Address<0x400400e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400400e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protect Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpen{}; 
         ///Write Protect KEY
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpkey{}; 
     }
     namespace AccWpsr{    ///<Write Protect Status Register
-        using Addr = Register::Address<0x400400e8,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400400e8,0xfffffffe,0x00000000,std::uint32_t>;
         ///Write PROTection ERRor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wproterr{}; 
     }

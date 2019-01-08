@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Real-time Clock
     namespace RtcCr{    ///<Control Register
-        using Addr = Register::Address<0x400e1260,0xfffcfcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1260,0xfffcfcfc,0x00000000,std::uint32_t>;
         ///Update Request Time Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> updtim{}; 
         ///Update Request Calendar Register
@@ -36,12 +36,12 @@ namespace Kvasir {
         }
     }
     namespace RtcMr{    ///<Mode Register
-        using Addr = Register::Address<0x400e1264,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1264,0xfffffffe,0x00000000,std::uint32_t>;
         ///12-/24-hour Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> hrmod{}; 
     }
     namespace RtcTimr{    ///<Time Register
-        using Addr = Register::Address<0x400e1268,0xff808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1268,0xff808080,0x00000000,std::uint32_t>;
         ///Current Second
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> sec{}; 
         ///Current Minute
@@ -52,7 +52,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> ampm{}; 
     }
     namespace RtcCalr{    ///<Calendar Register
-        using Addr = Register::Address<0x400e126c,0xc0000080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e126c,0xc0000080,0x00000000,std::uint32_t>;
         ///Current Century
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> cent{}; 
         ///Current Year
@@ -65,7 +65,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> date{}; 
     }
     namespace RtcTimalr{    ///<Time Alarm Register
-        using Addr = Register::Address<0x400e1270,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1270,0xff000000,0x00000000,std::uint32_t>;
         ///Second Alarm
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> sec{}; 
         ///Second Alarm Enable
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> houren{}; 
     }
     namespace RtcCalalr{    ///<Calendar Alarm Register
-        using Addr = Register::Address<0x400e1274,0x4060ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1274,0x4060ffff,0x00000000,std::uint32_t>;
         ///Month Alarm
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,16),Register::ReadWriteAccess,unsigned> month{}; 
         ///Month Alarm Enable
@@ -93,7 +93,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> dateen{}; 
     }
     namespace RtcSr{    ///<Status Register
-        using Addr = Register::Address<0x400e1278,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1278,0xffffffe0,0x00000000,std::uint32_t>;
         ///Acknowledge for Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ackupd{}; 
         ///Alarm Flag
@@ -106,7 +106,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> calev{}; 
     }
     namespace RtcSccr{    ///<Status Clear Command Register
-        using Addr = Register::Address<0x400e127c,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e127c,0xffffffe0,0x00000000,std::uint32_t>;
         ///Acknowledge Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ackclr{}; 
         ///Alarm Clear
@@ -119,7 +119,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> calclr{}; 
     }
     namespace RtcIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x400e1280,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1280,0xffffffe0,0x00000000,std::uint32_t>;
         ///Acknowledge Update Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> acken{}; 
         ///Alarm Interrupt Enable
@@ -132,7 +132,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> calen{}; 
     }
     namespace RtcIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0x400e1284,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1284,0xffffffe0,0x00000000,std::uint32_t>;
         ///Acknowledge Update Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ackdis{}; 
         ///Alarm Interrupt Disable
@@ -145,7 +145,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> caldis{}; 
     }
     namespace RtcImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0x400e1288,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1288,0xffffffe0,0x00000000,std::uint32_t>;
         ///Acknowledge Update Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ack{}; 
         ///Alarm Interrupt Mask
@@ -158,7 +158,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cal{}; 
     }
     namespace RtcVer{    ///<Valid Entry Register
-        using Addr = Register::Address<0x400e128c,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e128c,0xfffffff0,0x00000000,std::uint32_t>;
         ///Non-valid Time
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nvtim{}; 
         ///Non-valid Calendar
@@ -169,7 +169,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nvcalalr{}; 
     }
     namespace RtcWpmr{    ///<Write Protect Mode Register
-        using Addr = Register::Address<0x400e1344,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1344,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protect Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpen{}; 
         ///

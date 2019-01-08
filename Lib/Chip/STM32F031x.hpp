@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32F031x/CRC.hpp>
 #include <Chip/Unknown/STMicro/STM32F031x/GPIOF.hpp>
 #include <Chip/Unknown/STMicro/STM32F031x/GPIOC.hpp>

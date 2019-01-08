@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Flash Memory Controller
     namespace FmcPfapr{    ///<Flash Access Protection Register
-        using Addr = Register::Address<0x4001f000,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f000,0xff000000,0x00000000,std::uint32_t>;
         ///Master 0 Access Protection
         enum class M0apVal {
             v00=0x00000000,     ///<No access may be performed by this master
@@ -198,7 +198,7 @@ namespace Kvasir {
         }
     }
     namespace FmcPfb0cr{    ///<Flash Bank 0 Control Register
-        using Addr = Register::Address<0x4001f004,0x0001ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f004,0x0001ff00,0x00000000,std::uint32_t>;
         ///Bank 0 Single Entry Buffer Enable
         enum class B0sebeVal {
             v0=0x00000000,     ///<Single entry buffer is disabled.
@@ -279,7 +279,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> b0rwsc{}; 
     }
     namespace FmcPfb1cr{    ///<Flash Bank 1 Control Register
-        using Addr = Register::Address<0x4001f008,0x0ff9ffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f008,0x0ff9ffe0,0x00000000,std::uint32_t>;
         ///Bank 1 Single Entry Buffer Enable
         enum class B1sebeVal {
             v0=0x00000000,     ///<Single entry buffer is disabled.
@@ -344,138 +344,138 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> b1rwsc{}; 
     }
     namespace FmcTagvdw0s0{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f100,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f100,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcTagvdw0s1{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f104,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f104,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcTagvdw1s0{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f108,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f108,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcTagvdw1s1{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f10c,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f10c,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcTagvdw2s0{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f110,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f110,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcTagvdw2s1{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f114,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f114,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcTagvdw3s0{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f118,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f118,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcTagvdw3s1{    ///<Cache Tag Storage
-        using Addr = Register::Address<0x4001f11c,0xfff8000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f11c,0xfff8000e,0x00000000,std::uint32_t>;
         ///1-bit valid for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> valid{}; 
         ///15-bit tag for cache entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,4),Register::ReadWriteAccess,unsigned> tag{}; 
     }
     namespace FmcDataw0s0u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f200,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f200,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw0s1u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f208,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f208,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw0s0l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f204,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f204,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw0s1l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f20c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f20c,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw1s0u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f210,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f210,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw1s1u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f218,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f218,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw1s0l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f214,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f214,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw1s1l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f21c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f21c,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw2s0u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f220,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f220,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw2s1u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f228,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f228,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw2s0l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f224,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f224,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw2s1l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f22c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f22c,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw3s0u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f230,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f230,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw3s1u{    ///<Cache Data Storage (upper word)
-        using Addr = Register::Address<0x4001f238,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f238,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [63:32] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw3s0l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f234,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f234,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace FmcDataw3s1l{    ///<Cache Data Storage (lower word)
-        using Addr = Register::Address<0x4001f23c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001f23c,0x00000000,0x00000000,std::uint32_t>;
         ///Bits [31:0] of data entry
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Reset event
     namespace RstRstSr{    ///<Reset Status Register
-        using Addr = Register::Address<0x4000002c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000002c,0xffffff00,0x00000000,std::uint32_t>;
         ///LKUP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> lkup{}; 
         ///OBFAIL

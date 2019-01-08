@@ -3,14 +3,14 @@
 namespace Kvasir {
 //Debug support
     namespace DbgmcuIdcode{    ///<MCU Device ID Code Register
-        using Addr = Register::Address<0xe0042000,0x0000f000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0042000,0x0000f000,0x00000000,std::uint32_t>;
         ///Device Identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> devId{}; 
         ///Revision Identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> revId{}; 
     }
     namespace DbgmcuCr{    ///<Debug MCU Configuration          Register
-        using Addr = Register::Address<0xe0042004,0xffffff18,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0042004,0xffffff18,0x00000000,std::uint32_t>;
         ///Debug Sleep mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dbgSleep{}; 
         ///Debug Stop Mode
@@ -23,7 +23,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,6),Register::ReadWriteAccess,unsigned> traceMode{}; 
     }
     namespace DbgmcuApb1fz{    ///<APB Low Freeze Register
-        using Addr = Register::Address<0xe0042008,0xfd9fe000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0042008,0xfd9fe000,0x00000000,std::uint32_t>;
         ///Debug Timer 2 stopped when Core is              halted
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dbgTim2Stop{}; 
         ///Debug Timer 3 stopped when Core is              halted
@@ -58,7 +58,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,25),Register::ReadWriteAccess,unsigned> dbgCanStop{}; 
     }
     namespace DbgmcuApb2fz{    ///<APB High Freeze Register
-        using Addr = Register::Address<0xe004200c,0xffffffc3,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe004200c,0xffffffc3,0x00000000,std::uint32_t>;
         ///Debug Timer 15 stopped when Core is              halted
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> dbgTim15Stop{}; 
         ///Debug Timer 16 stopped when Core is              halted

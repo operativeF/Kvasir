@@ -3,12 +3,12 @@
 namespace Kvasir {
 //Secure digital input/output      interface
     namespace SdioPower{    ///<Bits 1:0 = PWRCTRL: Power supply control          bits
-        using Addr = Register::Address<0x40018000,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018000,0xfffffffc,0x00000000,std::uint32_t>;
         ///PWRCTRL
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> pwrctrl{}; 
     }
     namespace SdioClkcr{    ///<SDI clock control register          (SDIO_CLKCR)
-        using Addr = Register::Address<0x40018004,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018004,0xffff8000,0x00000000,std::uint32_t>;
         ///Clock divide factor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> clkdiv{}; 
         ///Clock enable bit
@@ -25,12 +25,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> hwfcEn{}; 
     }
     namespace SdioArg{    ///<Bits 31:0 = : Command argument
-        using Addr = Register::Address<0x40018008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018008,0x00000000,0x00000000,std::uint32_t>;
         ///Command argument
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> cmdarg{}; 
     }
     namespace SdioCmd{    ///<SDIO command register          (SDIO_CMD)
-        using Addr = Register::Address<0x4001800c,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001800c,0xffff8000,0x00000000,std::uint32_t>;
         ///CMDINDEX
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> cmdindex{}; 
         ///WAITRESP
@@ -51,42 +51,42 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> ceAtacmd{}; 
     }
     namespace SdioRespcmd{    ///<SDIO command register
-        using Addr = Register::Address<0x40018010,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018010,0xffffffc0,0x00000000,std::uint32_t>;
         ///RESPCMD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> respcmd{}; 
     }
     namespace SdioRespi1{    ///<Bits 31:0 = CARDSTATUS1
-        using Addr = Register::Address<0x40018014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018014,0x00000000,0x00000000,std::uint32_t>;
         ///CARDSTATUS1
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> cardstatus1{}; 
     }
     namespace SdioResp2{    ///<Bits 31:0 = CARDSTATUS2
-        using Addr = Register::Address<0x40018018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018018,0x00000000,0x00000000,std::uint32_t>;
         ///CARDSTATUS2
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> cardstatus2{}; 
     }
     namespace SdioResp3{    ///<Bits 31:0 = CARDSTATUS3
-        using Addr = Register::Address<0x4001801c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001801c,0x00000000,0x00000000,std::uint32_t>;
         ///CARDSTATUS3
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> cardstatus3{}; 
     }
     namespace SdioResp4{    ///<Bits 31:0 = CARDSTATUS4
-        using Addr = Register::Address<0x40018020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018020,0x00000000,0x00000000,std::uint32_t>;
         ///CARDSTATUS4
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> cardstatus4{}; 
     }
     namespace SdioDtimer{    ///<Bits 31:0 = DATATIME: Data timeout          period
-        using Addr = Register::Address<0x40018024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018024,0x00000000,0x00000000,std::uint32_t>;
         ///Data timeout period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> datatime{}; 
     }
     namespace SdioDlen{    ///<Bits 24:0 = DATALENGTH: Data length          value
-        using Addr = Register::Address<0x40018028,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018028,0xfe000000,0x00000000,std::uint32_t>;
         ///Data length value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,0),Register::ReadWriteAccess,unsigned> datalength{}; 
     }
     namespace SdioDctrl{    ///<SDIO data control register          (SDIO_DCTRL)
-        using Addr = Register::Address<0x4001802c,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001802c,0xfffff000,0x00000000,std::uint32_t>;
         ///DTEN
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dten{}; 
         ///DTDIR
@@ -107,12 +107,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> sdioen{}; 
     }
     namespace SdioDcount{    ///<Bits 24:0 = DATACOUNT: Data count          value
-        using Addr = Register::Address<0x40018030,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018030,0xfe000000,0x00000000,std::uint32_t>;
         ///Data count value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,0),Register::ReadWriteAccess,unsigned> datacount{}; 
     }
     namespace SdioSta{    ///<SDIO status register          (SDIO_STA)
-        using Addr = Register::Address<0x40018034,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018034,0xff000000,0x00000000,std::uint32_t>;
         ///CCRCFAIL
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ccrcfail{}; 
         ///DCRCFAIL
@@ -163,7 +163,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> ceataend{}; 
     }
     namespace SdioIcr{    ///<SDIO interrupt clear register          (SDIO_ICR)
-        using Addr = Register::Address<0x40018038,0xff3ff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018038,0xff3ff800,0x00000000,std::uint32_t>;
         ///CCRCFAILC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ccrcfailc{}; 
         ///DCRCFAILC
@@ -192,7 +192,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> ceataendc{}; 
     }
     namespace SdioMask{    ///<SDIO mask register (SDIO_MASK)
-        using Addr = Register::Address<0x4001803c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001803c,0xff000000,0x00000000,std::uint32_t>;
         ///CCRCFAILIE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ccrcfailie{}; 
         ///DCRCFAILIE
@@ -243,12 +243,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> ceatendie{}; 
     }
     namespace SdioFifocnt{    ///<Bits 23:0 = FIFOCOUNT: Remaining number of          words to be written to or read from the          FIFO
-        using Addr = Register::Address<0x40018048,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018048,0xff000000,0x00000000,std::uint32_t>;
         ///FIF0COUNT
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> fif0count{}; 
     }
     namespace SdioFifo{    ///<bits 31:0 = FIFOData: Receive and transmit          FIFO data
-        using Addr = Register::Address<0x40018080,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018080,0x00000000,0x00000000,std::uint32_t>;
         ///FIFOData
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> fifodata{}; 
     }

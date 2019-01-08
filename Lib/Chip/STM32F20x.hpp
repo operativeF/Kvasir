@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32F20x/RNG.hpp>
 #include <Chip/Unknown/STMicro/STM32F20x/CRC.hpp>
 #include <Chip/Unknown/STMicro/STM32F20x/DCMI.hpp>

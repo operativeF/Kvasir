@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Crossbar switch
     namespace AxbsMgpcr0{    ///<Master General Purpose Control Register
-        using Addr = Register::Address<0x40004800,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004800,0xfffffff8,0x00000000,std::uint32_t>;
         ///Arbitrates On Undefined Length Bursts
         enum class AulbVal {
             v000=0x00000000,     ///<No arbitration is allowed during an undefined length burst
@@ -22,7 +22,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsMgpcr1{    ///<Master General Purpose Control Register
-        using Addr = Register::Address<0x40004900,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004900,0xfffffff8,0x00000000,std::uint32_t>;
         ///Arbitrates On Undefined Length Bursts
         enum class AulbVal {
             v000=0x00000000,     ///<No arbitration is allowed during an undefined length burst
@@ -41,7 +41,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsMgpcr2{    ///<Master General Purpose Control Register
-        using Addr = Register::Address<0x40004a00,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004a00,0xfffffff8,0x00000000,std::uint32_t>;
         ///Arbitrates On Undefined Length Bursts
         enum class AulbVal {
             v000=0x00000000,     ///<No arbitration is allowed during an undefined length burst
@@ -60,7 +60,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsMgpcr3{    ///<Master General Purpose Control Register
-        using Addr = Register::Address<0x40004b00,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004b00,0xfffffff8,0x00000000,std::uint32_t>;
         ///Arbitrates On Undefined Length Bursts
         enum class AulbVal {
             v000=0x00000000,     ///<No arbitration is allowed during an undefined length burst
@@ -79,7 +79,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsMgpcr6{    ///<Master General Purpose Control Register
-        using Addr = Register::Address<0x40004e00,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004e00,0xfffffff8,0x00000000,std::uint32_t>;
         ///Arbitrates On Undefined Length Bursts
         enum class AulbVal {
             v000=0x00000000,     ///<No arbitration is allowed during an undefined length burst
@@ -98,7 +98,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsPrs0{    ///<Priority Registers Slave
-        using Addr = Register::Address<0x40004000,0xf8888888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004000,0xf8888888,0x00000000,std::uint32_t>;
         ///Master 0 Priority. Sets the arbitration priority for this port on the associated slave port.
         enum class M0Val {
             v000=0x00000000,     ///<This master has level 1, or highest, priority when accessing the slave port.
@@ -255,7 +255,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsPrs1{    ///<Priority Registers Slave
-        using Addr = Register::Address<0x40004100,0xf8888888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004100,0xf8888888,0x00000000,std::uint32_t>;
         ///Master 0 Priority. Sets the arbitration priority for this port on the associated slave port.
         enum class M0Val {
             v000=0x00000000,     ///<This master has level 1, or highest, priority when accessing the slave port.
@@ -412,7 +412,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsPrs2{    ///<Priority Registers Slave
-        using Addr = Register::Address<0x40004200,0xf8888888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004200,0xf8888888,0x00000000,std::uint32_t>;
         ///Master 0 Priority. Sets the arbitration priority for this port on the associated slave port.
         enum class M0Val {
             v000=0x00000000,     ///<This master has level 1, or highest, priority when accessing the slave port.
@@ -569,7 +569,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsPrs3{    ///<Priority Registers Slave
-        using Addr = Register::Address<0x40004300,0xf8888888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004300,0xf8888888,0x00000000,std::uint32_t>;
         ///Master 0 Priority. Sets the arbitration priority for this port on the associated slave port.
         enum class M0Val {
             v000=0x00000000,     ///<This master has level 1, or highest, priority when accessing the slave port.
@@ -726,7 +726,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsPrs4{    ///<Priority Registers Slave
-        using Addr = Register::Address<0x40004400,0xf8888888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004400,0xf8888888,0x00000000,std::uint32_t>;
         ///Master 0 Priority. Sets the arbitration priority for this port on the associated slave port.
         enum class M0Val {
             v000=0x00000000,     ///<This master has level 1, or highest, priority when accessing the slave port.
@@ -883,7 +883,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsCrs0{    ///<Control Register
-        using Addr = Register::Address<0x40004010,0x3ffffcc8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004010,0x3ffffcc8,0x00000000,std::uint32_t>;
         ///Park
         enum class ParkVal {
             v000=0x00000000,     ///<Park on master port M0
@@ -950,7 +950,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsCrs1{    ///<Control Register
-        using Addr = Register::Address<0x40004110,0x3ffffcc8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004110,0x3ffffcc8,0x00000000,std::uint32_t>;
         ///Park
         enum class ParkVal {
             v000=0x00000000,     ///<Park on master port M0
@@ -1017,7 +1017,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsCrs2{    ///<Control Register
-        using Addr = Register::Address<0x40004210,0x3ffffcc8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004210,0x3ffffcc8,0x00000000,std::uint32_t>;
         ///Park
         enum class ParkVal {
             v000=0x00000000,     ///<Park on master port M0
@@ -1084,7 +1084,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsCrs3{    ///<Control Register
-        using Addr = Register::Address<0x40004310,0x3ffffcc8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004310,0x3ffffcc8,0x00000000,std::uint32_t>;
         ///Park
         enum class ParkVal {
             v000=0x00000000,     ///<Park on master port M0
@@ -1151,7 +1151,7 @@ namespace Kvasir {
         }
     }
     namespace AxbsCrs4{    ///<Control Register
-        using Addr = Register::Address<0x40004410,0x3ffffcc8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004410,0x3ffffcc8,0x00000000,std::uint32_t>;
         ///Park
         enum class ParkVal {
             v000=0x00000000,     ///<Park on master port M0

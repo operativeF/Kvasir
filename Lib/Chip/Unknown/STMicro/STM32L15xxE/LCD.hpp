@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Liquid crystal display controller
     namespace LcdCr{    ///<control register
-        using Addr = Register::Address<0x40002400,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002400,0xffffff00,0x00000000,std::uint32_t>;
         ///Mux segment enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> muxSeg{}; 
         ///Bias selector
@@ -16,7 +16,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lcden{}; 
     }
     namespace LcdFcr{    ///<frame control register
-        using Addr = Register::Address<0x40002404,0xfc000004,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002404,0xfc000004,0x00000000,std::uint32_t>;
         ///PS 16-bit prescaler
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,22),Register::ReadWriteAccess,unsigned> ps{}; 
         ///DIV clock divider
@@ -39,7 +39,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> hd{}; 
     }
     namespace LcdSr{    ///<status register
-        using Addr = Register::Address<0x40002408,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002408,0xffffffc0,0x00000000,std::uint32_t>;
         ///LCD Frame Control Register              Synchronization flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fcrsf{}; 
         ///Ready flag
@@ -54,14 +54,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ens{}; 
     }
     namespace LcdClr{    ///<clear register
-        using Addr = Register::Address<0x4000240c,0xfffffff5,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000240c,0xfffffff5,0x00000000,std::uint32_t>;
         ///Update display done clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> uddc{}; 
         ///Start of frame flag clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> sofc{}; 
     }
     namespace LcdRamCom0{    ///<display memory
-        using Addr = Register::Address<0x40002414,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002414,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30
@@ -128,7 +128,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> s00{}; 
     }
     namespace LcdRamCom1{    ///<display memory
-        using Addr = Register::Address<0x4000241c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000241c,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30
@@ -195,7 +195,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> s00{}; 
     }
     namespace LcdRamCom2{    ///<display memory
-        using Addr = Register::Address<0x40002424,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002424,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30
@@ -262,7 +262,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> s00{}; 
     }
     namespace LcdRamCom3{    ///<display memory
-        using Addr = Register::Address<0x4000242c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000242c,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30
@@ -329,7 +329,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> s00{}; 
     }
     namespace LcdRamCom4{    ///<display memory
-        using Addr = Register::Address<0x40002434,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002434,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30
@@ -396,7 +396,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> s00{}; 
     }
     namespace LcdRamCom5{    ///<display memory
-        using Addr = Register::Address<0x4000243c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000243c,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30
@@ -463,7 +463,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> s00{}; 
     }
     namespace LcdRamCom6{    ///<display memory
-        using Addr = Register::Address<0x40002444,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002444,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30
@@ -530,7 +530,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> s00{}; 
     }
     namespace LcdRamCom7{    ///<display memory
-        using Addr = Register::Address<0x4000244c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000244c,0x00000000,0x00000000,std::uint32_t>;
         ///S31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> s31{}; 
         ///S30

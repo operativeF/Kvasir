@@ -3,14 +3,14 @@
 namespace Kvasir {
 //Inter-Integrated Circuit
     namespace I2c0A1{    ///<I2C Address Register 1
-        using Addr = Register::Address<0x40066000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066000,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,1),Register::ReadWriteAccess,unsigned> ad{}; 
     }
     namespace I2c0F{    ///<I2C Frequency Divider register
-        using Addr = Register::Address<0x40066001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066001,0xffffff00,0x00000000,std::uint8_t>;
         ///ClockRate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> icr{}; 
         ///no description available
@@ -29,7 +29,7 @@ namespace Kvasir {
         }
     }
     namespace I2c0C1{    ///<I2C Control Register 1
-        using Addr = Register::Address<0x40066002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066002,0xffffff00,0x00000000,std::uint8_t>;
         ///DMA Enable
         enum class DmaenVal {
             v0=0x00000000,     ///<All DMA signalling disabled.
@@ -104,7 +104,7 @@ namespace Kvasir {
         }
     }
     namespace I2c0S{    ///<I2C Status register
-        using Addr = Register::Address<0x40066003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066003,0xffffff00,0x00000000,std::uint8_t>;
         ///Receive Acknowledge
         enum class RxakVal {
             v0=0x00000000,     ///<Acknowledge signal was received after the completion of one byte of data transmission on the bus
@@ -187,12 +187,12 @@ namespace Kvasir {
         }
     }
     namespace I2c0D{    ///<I2C Data I/O register
-        using Addr = Register::Address<0x40066004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066004,0xffffff00,0x00000000,std::uint8_t>;
         ///Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace I2c0C2{    ///<I2C Control Register 2
-        using Addr = Register::Address<0x40066005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066005,0xffffff00,0x00000000,std::uint8_t>;
         ///Slave Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> ad{}; 
         ///Range Address Matching Enable
@@ -247,7 +247,7 @@ namespace Kvasir {
         }
     }
     namespace I2c0Flt{    ///<I2C Programmable Input Glitch Filter register
-        using Addr = Register::Address<0x40066006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066006,0xffffff00,0x00000000,std::uint8_t>;
         ///I2C Programmable Filter Factor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> flt{}; 
         ///no description available
@@ -256,14 +256,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
     namespace I2c0Ra{    ///<I2C Range Address register
-        using Addr = Register::Address<0x40066007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066007,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///Range Slave Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,1),Register::ReadWriteAccess,unsigned> rad{}; 
     }
     namespace I2c0Smb{    ///<I2C SMBus Control and Status register
-        using Addr = Register::Address<0x40066008,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066008,0xffffff00,0x00000000,std::uint8_t>;
         ///SHTF2 Interrupt Enable
         enum class Shtf2ieVal {
             v0=0x00000000,     ///<SHTF2 interrupt is disabled
@@ -346,19 +346,19 @@ namespace Kvasir {
         }
     }
     namespace I2c0A2{    ///<I2C Address Register 2
-        using Addr = Register::Address<0x40066009,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40066009,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///SMBus Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,1),Register::ReadWriteAccess,unsigned> sad{}; 
     }
     namespace I2c0Slth{    ///<I2C SCL Low Timeout Register High
-        using Addr = Register::Address<0x4006600a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006600a,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sslt{}; 
     }
     namespace I2c0Sltl{    ///<I2C SCL Low Timeout Register Low
-        using Addr = Register::Address<0x4006600b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006600b,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sslt{}; 
     }

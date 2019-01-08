@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Inter-integrated circuit
     namespace I2c2Cr1{    ///<Control register 1
-        using Addr = Register::Address<0x40005800,0xffff4004,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005800,0xffff4004,0x00000000,std::uint32_t>;
         ///Software reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///SMBus alert
@@ -34,7 +34,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pe{}; 
     }
     namespace I2c2Cr2{    ///<Control register 2
-        using Addr = Register::Address<0x40005804,0xffffe0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005804,0xffffe0c0,0x00000000,std::uint32_t>;
         ///DMA last transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::ReadWriteAccess,unsigned> last{}; 
         ///DMA requests enable
@@ -49,7 +49,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> freq{}; 
     }
     namespace I2c2Oar1{    ///<Own address register 1
-        using Addr = Register::Address<0x40005808,0xffff7c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005808,0xffff7c00,0x00000000,std::uint32_t>;
         ///Addressing mode (slave              mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> addmode{}; 
         ///Interface address
@@ -60,19 +60,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> add0{}; 
     }
     namespace I2c2Oar2{    ///<Own address register 2
-        using Addr = Register::Address<0x4000580c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000580c,0xffffff00,0x00000000,std::uint32_t>;
         ///Interface address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,1),Register::ReadWriteAccess,unsigned> add2{}; 
         ///Dual addressing mode              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> endual{}; 
     }
     namespace I2c2Dr{    ///<Data register
-        using Addr = Register::Address<0x40005810,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005810,0xffffff00,0x00000000,std::uint32_t>;
         ///8-bit data register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dr{}; 
     }
     namespace I2c2Sr1{    ///<Status register 1
-        using Addr = Register::Address<0x40005814,0xffff2020,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005814,0xffff2020,0x00000000,std::uint32_t>;
         ///SMBus alert
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> smbalert{}; 
         ///Timeout or Tlow error
@@ -103,7 +103,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sb{}; 
     }
     namespace I2c2Sr2{    ///<Status register 2
-        using Addr = Register::Address<0x40005818,0xffff0008,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005818,0xffff0008,0x00000000,std::uint32_t>;
         ///acket error checking              register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> pec{}; 
         ///Dual flag (Slave mode)
@@ -122,7 +122,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> msl{}; 
     }
     namespace I2c2Ccr{    ///<Clock control register
-        using Addr = Register::Address<0x4000581c,0xffff3000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000581c,0xffff3000,0x00000000,std::uint32_t>;
         ///I2C master mode selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> fS{}; 
         ///Fast mode duty cycle
@@ -131,12 +131,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> ccr{}; 
     }
     namespace I2c2Trise{    ///<TRISE register
-        using Addr = Register::Address<0x40005820,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005820,0xffffffc0,0x00000000,std::uint32_t>;
         ///Maximum rise time in Fast/Standard mode              (Master mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> trise{}; 
     }
     namespace I2c2Fltr{    ///<I2C FLTR register
-        using Addr = Register::Address<0x40005824,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005824,0xffffffe0,0x00000000,std::uint32_t>;
         ///Digital noise filter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> dnf{}; 
         ///Analog noise filter OFF

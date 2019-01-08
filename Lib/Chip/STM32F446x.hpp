@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32F446x/DCMI.hpp>
 #include <Chip/Unknown/STMicro/STM32F446x/FMC.hpp>
 #include <Chip/Unknown/STMicro/STM32F446x/DBG.hpp>

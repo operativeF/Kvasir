@@ -3,7 +3,7 @@
 namespace Kvasir {
 //FlexTimer Module
     namespace Ftm0Sc{    ///<Status And Control
-        using Addr = Register::Address<0x40038000,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038000,0xffffff00,0x00000000,std::uint32_t>;
         ///Prescale Factor Selection
         enum class PsVal {
             v000=0x00000000,     ///<Divide by 1
@@ -72,22 +72,22 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Cnt{    ///<Counter
-        using Addr = Register::Address<0x40038004,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038004,0xffff0000,0x00000000,std::uint32_t>;
         ///Counter Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> count{}; 
     }
     namespace Ftm0Mod{    ///<Modulo
-        using Addr = Register::Address<0x40038008,0xffff0000,0x00000000,unsigned>;
-        ///no description available
+        using Addr = Register::Address<0x40038008,0xffff0000,0x00000000,std::uint32_t>;
+        ///Modulo Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> mod{}; 
     }
     namespace Ftm0Cntin{    ///<Counter Initial Value
-        using Addr = Register::Address<0x4003804c,0xffff0000,0x00000000,unsigned>;
-        ///no description available
+        using Addr = Register::Address<0x4003804c,0xffff0000,0x00000000,std::uint32_t>;
+        ///Initial Value Of The FTM Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> init{}; 
     }
     namespace Ftm0Status{    ///<Capture And Compare Status
-        using Addr = Register::Address<0x40038050,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038050,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Flag
         enum class Ch0fVal {
             v0=0x00000000,     ///<No channel event has occurred.
@@ -170,7 +170,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Mode{    ///<Features Mode Selection
-        using Addr = Register::Address<0x40038054,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038054,0xffffff00,0x00000000,std::uint32_t>;
         ///FTM Enable
         enum class FtmenVal {
             v0=0x00000000,     ///<Only the TPM-compatible registers (first set of registers) can be used without any restriction. Do not use the FTM-specific registers.
@@ -239,7 +239,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Sync{    ///<Synchronization
-        using Addr = Register::Address<0x40038058,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038058,0xffffff00,0x00000000,std::uint32_t>;
         ///Minimum Loading Point Enable
         enum class CntminVal {
             v0=0x00000000,     ///<The minimum loading point is disabled.
@@ -322,7 +322,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Outinit{    ///<Initial State For Channels Output
-        using Addr = Register::Address<0x4003805c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003805c,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Output Initialization Value
         enum class Ch0oiVal {
             v0=0x00000000,     ///<The initialization value is 0.
@@ -405,7 +405,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Outmask{    ///<Output Mask
-        using Addr = Register::Address<0x40038060,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038060,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Output Mask
         enum class Ch0omVal {
             v0=0x00000000,     ///<Channel output is not masked. It continues to operate normally.
@@ -488,7 +488,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Combine{    ///<Function For Linked Channels
-        using Addr = Register::Address<0x40038064,0x80808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038064,0x80808080,0x00000000,std::uint32_t>;
         ///Combine Channels For n = 0
         enum class Combine0Val {
             v0=0x00000000,     ///<Channels (n) and (n+1) are independent.
@@ -771,7 +771,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Deadtime{    ///<Deadtime Insertion Control
-        using Addr = Register::Address<0x40038068,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038068,0xffffff00,0x00000000,std::uint32_t>;
         ///Deadtime Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> dtval{}; 
         ///Deadtime Prescaler Value
@@ -788,7 +788,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Exttrig{    ///<FTM External Trigger
-        using Addr = Register::Address<0x4003806c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003806c,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 2 Trigger Enable
         enum class Ch2trigVal {
             v0=0x00000000,     ///<The generation of the channel trigger is disabled.
@@ -871,7 +871,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Pol{    ///<Channels Polarity
-        using Addr = Register::Address<0x40038070,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038070,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Polarity
         enum class Pol0Val {
             v0=0x00000000,     ///<The channel polarity is active high.
@@ -954,7 +954,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Fms{    ///<Fault Mode Status
-        using Addr = Register::Address<0x40038074,0xffffff10,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038074,0xffffff10,0x00000000,std::uint32_t>;
         ///Fault Detection Flag 0
         enum class Faultf0Val {
             v0=0x00000000,     ///<No fault condition was detected at the fault input.
@@ -1027,7 +1027,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Filter{    ///<Input Capture Filter Control
-        using Addr = Register::Address<0x40038078,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038078,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel 0 Input Filter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ch0fval{}; 
         ///Channel 1 Input Filter
@@ -1038,7 +1038,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> ch3fval{}; 
     }
     namespace Ftm0Fltctrl{    ///<Fault Control
-        using Addr = Register::Address<0x4003807c,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003807c,0xfffff000,0x00000000,std::uint32_t>;
         ///Fault Input 0 Enable
         enum class Fault0enVal {
             v0=0x00000000,     ///<Fault input is disabled.
@@ -1123,7 +1123,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,8),Register::ReadWriteAccess,unsigned> ffval{}; 
     }
     namespace Ftm0Qdctrl{    ///<Quadrature Decoder Control And Status
-        using Addr = Register::Address<0x40038080,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038080,0xffffff00,0x00000000,std::uint32_t>;
         ///Quadrature Decoder Mode Enable
         enum class QuadenVal {
             v0=0x00000000,     ///<Quadrature Decoder mode is disabled.
@@ -1206,7 +1206,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Conf{    ///<Configuration
-        using Addr = Register::Address<0x40038084,0xfffff920,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038084,0xfffff920,0x00000000,std::uint32_t>;
         ///TOF Frequency
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> numtof{}; 
         ///BDM Mode
@@ -1233,7 +1233,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Fltpol{    ///<FTM Fault Input Polarity
-        using Addr = Register::Address<0x40038088,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038088,0xfffffff0,0x00000000,std::uint32_t>;
         ///Fault Input 0 Polarity
         enum class Flt0polVal {
             v0=0x00000000,     ///<The fault input polarity is active high. A one at the fault input indicates a fault.
@@ -1276,7 +1276,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Synconf{    ///<Synchronization Configuration
-        using Addr = Register::Address<0x4003808c,0xffe0e04a,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003808c,0xffe0e04a,0x00000000,std::uint32_t>;
         ///Hardware Trigger Mode
         enum class HwtrigmodeVal {
             v0=0x00000000,     ///<FTM clears the TRIGj bit when the hardware trigger j is detected, where j = 0, 1,2.
@@ -1327,7 +1327,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(syncmode)::Type,SyncmodeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(syncmode)::Type,SyncmodeVal::v1> v1{};
         }
-        ///no description available
+        ///FTM counter synchronization is activated by the software trigger.
         enum class SwrstcntVal {
             v0=0x00000000,     ///<The software trigger does not activate the FTM counter synchronization.
             v1=0x00000001,     ///<The software trigger activates the FTM counter synchronization.
@@ -1337,7 +1337,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(swrstcnt)::Type,SwrstcntVal::v0> v0{};
             constexpr Register::FieldValue<decltype(swrstcnt)::Type,SwrstcntVal::v1> v1{};
         }
-        ///no description available
+        ///MOD, CNTIN, and CV registers synchronization is activated by the software trigger.
         enum class SwwrbufVal {
             v0=0x00000000,     ///<The software trigger does not activate MOD, CNTIN, and CV registers synchronization.
             v1=0x00000001,     ///<The software trigger activates MOD, CNTIN, and CV registers synchronization.
@@ -1347,7 +1347,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(swwrbuf)::Type,SwwrbufVal::v0> v0{};
             constexpr Register::FieldValue<decltype(swwrbuf)::Type,SwwrbufVal::v1> v1{};
         }
-        ///no description available
+        ///Output mask synchronization is activated by the software trigger.
         enum class SwomVal {
             v0=0x00000000,     ///<The software trigger does not activate the OUTMASK register synchronization.
             v1=0x00000001,     ///<The software trigger activates the OUTMASK register synchronization.
@@ -1357,7 +1357,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(swom)::Type,SwomVal::v0> v0{};
             constexpr Register::FieldValue<decltype(swom)::Type,SwomVal::v1> v1{};
         }
-        ///no description available
+        ///Inverting control synchronization is activated by the software trigger.
         enum class SwinvcVal {
             v0=0x00000000,     ///<The software trigger does not activate the INVCTRL register synchronization.
             v1=0x00000001,     ///<The software trigger activates the INVCTRL register synchronization.
@@ -1367,7 +1367,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(swinvc)::Type,SwinvcVal::v0> v0{};
             constexpr Register::FieldValue<decltype(swinvc)::Type,SwinvcVal::v1> v1{};
         }
-        ///no description available
+        ///Software output control synchronization is activated by the software trigger.
         enum class SwsocVal {
             v0=0x00000000,     ///<The software trigger does not activate the SWOCTRL register synchronization.
             v1=0x00000001,     ///<The software trigger activates the SWOCTRL register synchronization.
@@ -1377,7 +1377,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(swsoc)::Type,SwsocVal::v0> v0{};
             constexpr Register::FieldValue<decltype(swsoc)::Type,SwsocVal::v1> v1{};
         }
-        ///no description available
+        ///FTM counter synchronization is activated by a hardware trigger.
         enum class HwrstcntVal {
             v0=0x00000000,     ///<A hardware trigger does not activate the FTM counter synchronization.
             v1=0x00000001,     ///<A hardware trigger activates the FTM counter synchronization.
@@ -1387,7 +1387,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(hwrstcnt)::Type,HwrstcntVal::v0> v0{};
             constexpr Register::FieldValue<decltype(hwrstcnt)::Type,HwrstcntVal::v1> v1{};
         }
-        ///no description available
+        ///MOD, CNTIN, and CV registers synchronization is activated by a hardware trigger.
         enum class HwwrbufVal {
             v0=0x00000000,     ///<A hardware trigger does not activate MOD, CNTIN, and CV registers synchronization.
             v1=0x00000001,     ///<A hardware trigger activates MOD, CNTIN, and CV registers synchronization.
@@ -1397,7 +1397,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(hwwrbuf)::Type,HwwrbufVal::v0> v0{};
             constexpr Register::FieldValue<decltype(hwwrbuf)::Type,HwwrbufVal::v1> v1{};
         }
-        ///no description available
+        ///Output mask synchronization is activated by a hardware trigger.
         enum class HwomVal {
             v0=0x00000000,     ///<A hardware trigger does not activate the OUTMASK register synchronization.
             v1=0x00000001,     ///<A hardware trigger activates the OUTMASK register synchronization.
@@ -1407,7 +1407,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(hwom)::Type,HwomVal::v0> v0{};
             constexpr Register::FieldValue<decltype(hwom)::Type,HwomVal::v1> v1{};
         }
-        ///no description available
+        ///Inverting control synchronization is activated by a hardware trigger.
         enum class HwinvcVal {
             v0=0x00000000,     ///<A hardware trigger does not activate the INVCTRL register synchronization.
             v1=0x00000001,     ///<A hardware trigger activates the INVCTRL register synchronization.
@@ -1417,7 +1417,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(hwinvc)::Type,HwinvcVal::v0> v0{};
             constexpr Register::FieldValue<decltype(hwinvc)::Type,HwinvcVal::v1> v1{};
         }
-        ///no description available
+        ///Software output control synchronization is activated by a hardware trigger.
         enum class HwsocVal {
             v0=0x00000000,     ///<A hardware trigger does not activate the SWOCTRL register synchronization.
             v1=0x00000001,     ///<A hardware trigger activates the SWOCTRL register synchronization.
@@ -1429,7 +1429,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Invctrl{    ///<FTM Inverting Control
-        using Addr = Register::Address<0x40038090,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038090,0xfffffff0,0x00000000,std::uint32_t>;
         ///Pair Channels 0 Inverting Enable
         enum class Inv0enVal {
             v0=0x00000000,     ///<Inverting is disabled.
@@ -1472,7 +1472,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Swoctrl{    ///<FTM Software Output Control
-        using Addr = Register::Address<0x40038094,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038094,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel 0 Software Output Control Enable
         enum class Ch0ocVal {
             v0=0x00000000,     ///<The channel output is not affected by software output control.
@@ -1635,7 +1635,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0Pwmload{    ///<FTM PWM Load
-        using Addr = Register::Address<0x40038098,0xfffffd00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038098,0xfffffd00,0x00000000,std::uint32_t>;
         ///Channel 0 Select
         enum class Ch0selVal {
             v0=0x00000000,     ///<Do not include the channel in the matching process.
@@ -1728,7 +1728,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C0sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x4003800c,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003800c,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -1769,7 +1769,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C1sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x40038014,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038014,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -1810,7 +1810,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C2sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x4003801c,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003801c,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -1851,7 +1851,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C3sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x40038024,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038024,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -1892,7 +1892,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C4sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x4003802c,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003802c,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -1933,7 +1933,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C5sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x40038034,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038034,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -1974,7 +1974,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C6sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x4003803c,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003803c,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -2015,7 +2015,7 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C7sc{    ///<Channel (n) Status And Control
-        using Addr = Register::Address<0x40038044,0xffffff02,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038044,0xffffff02,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<Disable DMA transfers.
@@ -2056,42 +2056,42 @@ namespace Kvasir {
         }
     }
     namespace Ftm0C0v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038010,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038010,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }
     namespace Ftm0C1v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038018,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038018,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }
     namespace Ftm0C2v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038020,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038020,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }
     namespace Ftm0C3v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038028,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038028,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }
     namespace Ftm0C4v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038030,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038030,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }
     namespace Ftm0C5v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038038,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038038,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }
     namespace Ftm0C6v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038040,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038040,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }
     namespace Ftm0C7v{    ///<Channel (n) Value
-        using Addr = Register::Address<0x40038048,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40038048,0xffff0000,0x00000000,std::uint32_t>;
         ///Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> val{}; 
     }

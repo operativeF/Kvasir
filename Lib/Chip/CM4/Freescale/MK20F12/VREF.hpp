@@ -3,12 +3,12 @@
 namespace Kvasir {
 //Voltage Reference
     namespace VrefTrm{    ///<VREF Trim Register
-        using Addr = Register::Address<0x40074000,0xffffffc0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40074000,0xffffffc0,0x00000000,std::uint8_t>;
         ///Trim bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> trim{}; 
     }
     namespace VrefSc{    ///<VREF Status and Control Register
-        using Addr = Register::Address<0x40074001,0xffffff38,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40074001,0xffffff38,0x00000000,std::uint8_t>;
         ///Buffer Mode selection
         enum class ModelvVal {
             v00=0x00000000,     ///<Bandgap on only, for stabilization and startup

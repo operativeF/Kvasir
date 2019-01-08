@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Serial audio interface
     namespace SaiBcr1{    ///<BConfiguration register 1
-        using Addr = Register::Address<0x40015824,0xff04c010,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015824,0xff04c010,0x00000000,std::uint32_t>;
         ///Master clock divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> mcjdiv{}; 
         ///No divider
@@ -30,7 +30,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> mode{}; 
     }
     namespace SaiBcr2{    ///<BConfiguration register 2
-        using Addr = Register::Address<0x40015828,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015828,0xffff0000,0x00000000,std::uint32_t>;
         ///Companding mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,14),Register::ReadWriteAccess,unsigned> comp{}; 
         ///Complement bit
@@ -49,7 +49,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace SaiBfrcr{    ///<BFRCR
-        using Addr = Register::Address<0x4001582c,0xfff88000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001582c,0xfff88000,0x00000000,std::uint32_t>;
         ///Frame synchronization              offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> fsoff{}; 
         ///Frame synchronization              polarity
@@ -62,7 +62,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> frl{}; 
     }
     namespace SaiBslotr{    ///<BSlot register
-        using Addr = Register::Address<0x40015830,0x0000f020,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015830,0x0000f020,0x00000000,std::uint32_t>;
         ///Slot enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> sloten{}; 
         ///Number of slots in an audio              frame
@@ -73,7 +73,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> fboff{}; 
     }
     namespace SaiBim{    ///<BInterrupt mask register2
-        using Addr = Register::Address<0x40015834,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015834,0xffffff80,0x00000000,std::uint32_t>;
         ///Late frame synchronization detection              interrupt enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> lfsdetie{}; 
         ///Anticipated frame synchronization              detection interrupt enable
@@ -90,7 +90,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovrudrie{}; 
     }
     namespace SaiBsr{    ///<BStatus register
-        using Addr = Register::Address<0x40015838,0xfff8ff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015838,0xfff8ff80,0x00000000,std::uint32_t>;
         ///FIFO level threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,16),Register::ReadWriteAccess,unsigned> flvl{}; 
         ///Late frame synchronization              detection
@@ -109,7 +109,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovrudr{}; 
     }
     namespace SaiBclrfr{    ///<BClear flag register
-        using Addr = Register::Address<0x4001583c,0xffffff88,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001583c,0xffffff88,0x00000000,std::uint32_t>;
         ///Clear late frame synchronization              detection flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> lfsdet{}; 
         ///Clear anticipated frame synchronization              detection flag
@@ -124,12 +124,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovrudr{}; 
     }
     namespace SaiBdr{    ///<BData register
-        using Addr = Register::Address<0x40015840,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015840,0x00000000,0x00000000,std::uint32_t>;
         ///Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace SaiAcr1{    ///<AConfiguration register 1
-        using Addr = Register::Address<0x40015804,0xff04c010,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015804,0xff04c010,0x00000000,std::uint32_t>;
         ///Master clock divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> mcjdiv{}; 
         ///No divider
@@ -156,7 +156,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> mode{}; 
     }
     namespace SaiAcr2{    ///<AConfiguration register 2
-        using Addr = Register::Address<0x40015808,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015808,0xffff0000,0x00000000,std::uint32_t>;
         ///Companding mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,14),Register::ReadWriteAccess,unsigned> comp{}; 
         ///Complement bit
@@ -175,7 +175,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace SaiAfrcr{    ///<AFRCR
-        using Addr = Register::Address<0x4001580c,0xfff88000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001580c,0xfff88000,0x00000000,std::uint32_t>;
         ///Frame synchronization              offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> fsoff{}; 
         ///Frame synchronization              polarity
@@ -188,7 +188,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> frl{}; 
     }
     namespace SaiAslotr{    ///<ASlot register
-        using Addr = Register::Address<0x40015810,0x0000f020,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015810,0x0000f020,0x00000000,std::uint32_t>;
         ///Slot enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> sloten{}; 
         ///Number of slots in an audio              frame
@@ -199,7 +199,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> fboff{}; 
     }
     namespace SaiAim{    ///<AInterrupt mask register2
-        using Addr = Register::Address<0x40015814,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015814,0xffffff80,0x00000000,std::uint32_t>;
         ///Late frame synchronization detection              interrupt enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> lfsdet{}; 
         ///Anticipated frame synchronization              detection interrupt enable
@@ -216,7 +216,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovrudrie{}; 
     }
     namespace SaiAsr{    ///<AStatus register
-        using Addr = Register::Address<0x40015818,0xfff8ff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015818,0xfff8ff80,0x00000000,std::uint32_t>;
         ///FIFO level threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,16),Register::ReadWriteAccess,unsigned> flvl{}; 
         ///Late frame synchronization              detection
@@ -235,7 +235,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovrudr{}; 
     }
     namespace SaiAclrfr{    ///<AClear flag register
-        using Addr = Register::Address<0x4001581c,0xffffff88,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001581c,0xffffff88,0x00000000,std::uint32_t>;
         ///Clear late frame synchronization              detection flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> lfsdet{}; 
         ///Clear anticipated frame synchronization              detection flag.
@@ -250,7 +250,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovrudr{}; 
     }
     namespace SaiAdr{    ///<AData register
-        using Addr = Register::Address<0x40015820,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40015820,0x00000000,0x00000000,std::uint32_t>;
         ///Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }

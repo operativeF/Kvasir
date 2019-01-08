@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Static Memory Controller
     namespace SmcCfg{    ///<SMC NFC Configuration Register
-        using Addr = Register::Address<0x400e0000,0xff80ccfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0000,0xff80ccfc,0x00000000,std::uint32_t>;
         ///
         enum class PagesizeVal {
             ps51216=0x00000000,     ///<Main area 512 Bytes + Spare area 16 Bytes = 528 Bytes
@@ -52,14 +52,14 @@ namespace Kvasir {
         }
     }
     namespace SmcCtrl{    ///<SMC NFC Control Register
-        using Addr = Register::Address<0x400e0004,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0004,0xfffffffc,0x00000000,std::uint32_t>;
         ///NAND Flash Controller Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nfcen{}; 
         ///NAND Flash Controller Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nfcdis{}; 
     }
     namespace SmcSr{    ///<SMC NFC Status Register
-        using Addr = Register::Address<0x400e0008,0xfe0c86ce,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0008,0xfe0c86ce,0x00000000,std::uint32_t>;
         ///NAND Flash Controller status (this field cannot be reset)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> smcsts{}; 
         ///Selected Ready Busy Rising Edge Detected
@@ -88,7 +88,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rbEdge0{}; 
     }
     namespace SmcIer{    ///<SMC NFC Interrupt Enable Register
-        using Addr = Register::Address<0x400e000c,0xfe0cffcf,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e000c,0xfe0cffcf,0x00000000,std::uint32_t>;
         ///Ready Busy Rising Edge Detection Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rbRise{}; 
         ///Ready Busy Falling Edge Detection Interrupt Enable
@@ -109,7 +109,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rbEdge0{}; 
     }
     namespace SmcIdr{    ///<SMC NFC Interrupt Disable Register
-        using Addr = Register::Address<0x400e0010,0xfe0cffcf,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0010,0xfe0cffcf,0x00000000,std::uint32_t>;
         ///Ready Busy Rising Edge Detection Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rbRise{}; 
         ///Ready Busy Falling Edge Detection Interrupt Disable
@@ -130,7 +130,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rbEdge0{}; 
     }
     namespace SmcImr{    ///<SMC NFC Interrupt Mask Register
-        using Addr = Register::Address<0x400e0014,0xfe0cffcf,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0014,0xfe0cffcf,0x00000000,std::uint32_t>;
         ///Ready Busy Rising Edge Detection Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rbRise{}; 
         ///Ready Busy Falling Edge Detection Interrupt Mask
@@ -151,24 +151,24 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rbEdge0{}; 
     }
     namespace SmcAddr{    ///<SMC NFC Address Cycle Zero Register
-        using Addr = Register::Address<0x400e0018,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0018,0xffffff00,0x00000000,std::uint32_t>;
         ///NAND Flash Array Address cycle 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> addrCycle0{}; 
     }
     namespace SmcBank{    ///<SMC Bank Address Register
-        using Addr = Register::Address<0x400e001c,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e001c,0xfffffff8,0x00000000,std::uint32_t>;
         ///Bank Identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> bank{}; 
     }
     namespace SmcEccCtrl{    ///<SMC ECC Control Register
-        using Addr = Register::Address<0x400e0020,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0020,0xfffffffc,0x00000000,std::uint32_t>;
         ///Reset ECC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rst{}; 
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace SmcEccMd{    ///<SMC ECC Mode Register
-        using Addr = Register::Address<0x400e0024,0xffffffcc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0024,0xffffffcc,0x00000000,std::uint32_t>;
         ///ECC Page Size
         enum class EccpagesizeVal {
             ps51216=0x00000000,     ///<Main area 512 Bytes + Spare area 16 Bytes = 528 Bytes
@@ -197,7 +197,7 @@ namespace Kvasir {
         }
     }
     namespace SmcEccSr1{    ///<SMC ECC Status 1 Register
-        using Addr = Register::Address<0x400e0028,0x88888888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0028,0x88888888,0x00000000,std::uint32_t>;
         ///Recoverable Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> recerr0{}; 
         ///ECC Error
@@ -238,14 +238,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eccerr7{}; 
     }
     namespace SmcEccPr0{    ///<SMC ECC Parity 0 Register
-        using Addr = Register::Address<0x400e002c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e002c,0xffff0000,0x00000000,std::uint32_t>;
         ///Bit Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Word Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wordaddr{}; 
     }
     namespace SmcEccPr0W9bit{    ///<SMC ECC Parity 0 Register
-        using Addr = Register::Address<0x400e002c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e002c,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -254,7 +254,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr0W8bit{    ///<SMC ECC Parity 0 Register
-        using Addr = Register::Address<0x400e002c,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e002c,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -263,12 +263,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr1{    ///<SMC ECC parity 1 Register
-        using Addr = Register::Address<0x400e0030,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0030,0xffff0000,0x00000000,std::uint32_t>;
         ///Parity N
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr1W9bit{    ///<SMC ECC parity 1 Register
-        using Addr = Register::Address<0x400e0030,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0030,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -277,7 +277,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr1W8bit{    ///<SMC ECC parity 1 Register
-        using Addr = Register::Address<0x400e0030,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0030,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -286,7 +286,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccSr2{    ///<SMC ECC status 2 Register
-        using Addr = Register::Address<0x400e0034,0x88888888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0034,0x88888888,0x00000000,std::uint32_t>;
         ///Recoverable Error in the page between the 2048th and the 2303rd bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> recerr8{}; 
         ///ECC Error in the page between the 2048th and the 2303rd bytes
@@ -327,7 +327,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eccerr15{}; 
     }
     namespace SmcEccPr2{    ///<SMC ECC parity 2 Register
-        using Addr = Register::Address<0x400e0038,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0038,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -336,7 +336,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr2W8bit{    ///<SMC ECC parity 2 Register
-        using Addr = Register::Address<0x400e0038,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0038,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -345,7 +345,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr3{    ///<SMC ECC parity 3 Register
-        using Addr = Register::Address<0x400e003c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e003c,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -354,7 +354,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr3W8bit{    ///<SMC ECC parity 3 Register
-        using Addr = Register::Address<0x400e003c,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e003c,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -363,7 +363,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr4{    ///<SMC ECC parity 4 Register
-        using Addr = Register::Address<0x400e0040,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0040,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -372,7 +372,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr4W8bit{    ///<SMC ECC parity 4 Register
-        using Addr = Register::Address<0x400e0040,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0040,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -381,7 +381,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr5{    ///<SMC ECC parity 5 Register
-        using Addr = Register::Address<0x400e0044,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0044,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -390,7 +390,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr5W8bit{    ///<SMC ECC parity 5 Register
-        using Addr = Register::Address<0x400e0044,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0044,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -399,7 +399,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr6{    ///<SMC ECC parity 6 Register
-        using Addr = Register::Address<0x400e0048,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0048,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -408,7 +408,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr6W8bit{    ///<SMC ECC parity 6 Register
-        using Addr = Register::Address<0x400e0048,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0048,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -417,7 +417,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr7{    ///<SMC ECC parity 7 Register
-        using Addr = Register::Address<0x400e004c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e004c,0xff000000,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 512) and ((i + 1) x 512) - 1) Bytes
@@ -426,7 +426,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr7W8bit{    ///<SMC ECC parity 7 Register
-        using Addr = Register::Address<0x400e004c,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e004c,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -435,7 +435,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr8{    ///<SMC ECC parity 8 Register
-        using Addr = Register::Address<0x400e0050,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0050,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -444,7 +444,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr9{    ///<SMC ECC parity 9 Register
-        using Addr = Register::Address<0x400e0054,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0054,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -453,7 +453,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr10{    ///<SMC ECC parity 10 Register
-        using Addr = Register::Address<0x400e0058,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0058,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -462,7 +462,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr11{    ///<SMC ECC parity 11 Register
-        using Addr = Register::Address<0x400e005c,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e005c,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -471,7 +471,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr12{    ///<SMC ECC parity 12 Register
-        using Addr = Register::Address<0x400e0060,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0060,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -480,7 +480,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr13{    ///<SMC ECC parity 13 Register
-        using Addr = Register::Address<0x400e0064,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0064,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -489,7 +489,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr14{    ///<SMC ECC parity 14 Register
-        using Addr = Register::Address<0x400e0068,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0068,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -498,7 +498,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcEccPr15{    ///<SMC ECC parity 15 Register
-        using Addr = Register::Address<0x400e006c,0xff800800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e006c,0xff800800,0x00000000,std::uint32_t>;
         ///Corrupted Bit Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bitaddr{}; 
         ///Corrupted Word Address in the Page between (i x 256) and ((i + 1) x 512) - 1) Bytes
@@ -507,7 +507,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nparity{}; 
     }
     namespace SmcSetup0{    ///<SMC Setup Register (CS_number = 0)
-        using Addr = Register::Address<0x400e0070,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0070,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -518,7 +518,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse0{    ///<SMC Pulse Register (CS_number = 0)
-        using Addr = Register::Address<0x400e0074,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0074,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -529,14 +529,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle0{    ///<SMC Cycle Register (CS_number = 0)
-        using Addr = Register::Address<0x400e0078,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0078,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings0{    ///<SMC Timings Register (CS_number = 0)
-        using Addr = Register::Address<0x400e007c,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e007c,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -555,7 +555,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode0{    ///<SMC Mode Register (CS_number = 0)
-        using Addr = Register::Address<0x400e0080,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0080,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -606,7 +606,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcSetup1{    ///<SMC Setup Register (CS_number = 1)
-        using Addr = Register::Address<0x400e0084,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0084,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -617,7 +617,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse1{    ///<SMC Pulse Register (CS_number = 1)
-        using Addr = Register::Address<0x400e0088,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0088,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -628,14 +628,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle1{    ///<SMC Cycle Register (CS_number = 1)
-        using Addr = Register::Address<0x400e008c,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e008c,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings1{    ///<SMC Timings Register (CS_number = 1)
-        using Addr = Register::Address<0x400e0090,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0090,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -654,7 +654,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode1{    ///<SMC Mode Register (CS_number = 1)
-        using Addr = Register::Address<0x400e0094,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0094,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -705,7 +705,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcSetup2{    ///<SMC Setup Register (CS_number = 2)
-        using Addr = Register::Address<0x400e0098,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0098,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -716,7 +716,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse2{    ///<SMC Pulse Register (CS_number = 2)
-        using Addr = Register::Address<0x400e009c,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e009c,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -727,14 +727,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle2{    ///<SMC Cycle Register (CS_number = 2)
-        using Addr = Register::Address<0x400e00a0,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00a0,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings2{    ///<SMC Timings Register (CS_number = 2)
-        using Addr = Register::Address<0x400e00a4,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00a4,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -753,7 +753,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode2{    ///<SMC Mode Register (CS_number = 2)
-        using Addr = Register::Address<0x400e00a8,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00a8,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -804,7 +804,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcSetup3{    ///<SMC Setup Register (CS_number = 3)
-        using Addr = Register::Address<0x400e00ac,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00ac,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -815,7 +815,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse3{    ///<SMC Pulse Register (CS_number = 3)
-        using Addr = Register::Address<0x400e00b0,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00b0,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -826,14 +826,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle3{    ///<SMC Cycle Register (CS_number = 3)
-        using Addr = Register::Address<0x400e00b4,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00b4,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings3{    ///<SMC Timings Register (CS_number = 3)
-        using Addr = Register::Address<0x400e00b8,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00b8,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -852,7 +852,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode3{    ///<SMC Mode Register (CS_number = 3)
-        using Addr = Register::Address<0x400e00bc,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00bc,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -903,7 +903,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcSetup4{    ///<SMC Setup Register (CS_number = 4)
-        using Addr = Register::Address<0x400e00c0,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00c0,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -914,7 +914,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse4{    ///<SMC Pulse Register (CS_number = 4)
-        using Addr = Register::Address<0x400e00c4,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00c4,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -925,14 +925,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle4{    ///<SMC Cycle Register (CS_number = 4)
-        using Addr = Register::Address<0x400e00c8,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00c8,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings4{    ///<SMC Timings Register (CS_number = 4)
-        using Addr = Register::Address<0x400e00cc,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00cc,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -951,7 +951,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode4{    ///<SMC Mode Register (CS_number = 4)
-        using Addr = Register::Address<0x400e00d0,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00d0,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -1002,7 +1002,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcSetup5{    ///<SMC Setup Register (CS_number = 5)
-        using Addr = Register::Address<0x400e00d4,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00d4,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -1013,7 +1013,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse5{    ///<SMC Pulse Register (CS_number = 5)
-        using Addr = Register::Address<0x400e00d8,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00d8,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -1024,14 +1024,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle5{    ///<SMC Cycle Register (CS_number = 5)
-        using Addr = Register::Address<0x400e00dc,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00dc,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings5{    ///<SMC Timings Register (CS_number = 5)
-        using Addr = Register::Address<0x400e00e0,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00e0,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -1050,7 +1050,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode5{    ///<SMC Mode Register (CS_number = 5)
-        using Addr = Register::Address<0x400e00e4,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00e4,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -1101,7 +1101,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcSetup6{    ///<SMC Setup Register (CS_number = 6)
-        using Addr = Register::Address<0x400e00e8,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00e8,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -1112,7 +1112,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse6{    ///<SMC Pulse Register (CS_number = 6)
-        using Addr = Register::Address<0x400e00ec,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00ec,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -1123,14 +1123,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle6{    ///<SMC Cycle Register (CS_number = 6)
-        using Addr = Register::Address<0x400e00f0,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00f0,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings6{    ///<SMC Timings Register (CS_number = 6)
-        using Addr = Register::Address<0x400e00f4,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00f4,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -1149,7 +1149,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode6{    ///<SMC Mode Register (CS_number = 6)
-        using Addr = Register::Address<0x400e00f8,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00f8,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -1200,7 +1200,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcSetup7{    ///<SMC Setup Register (CS_number = 7)
-        using Addr = Register::Address<0x400e00fc,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e00fc,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Setup Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nweSetup{}; 
         ///NCS Setup Length in Write Access
@@ -1211,7 +1211,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdSetup{}; 
     }
     namespace SmcPulse7{    ///<SMC Pulse Register (CS_number = 7)
-        using Addr = Register::Address<0x400e0100,0xc0c0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0100,0xc0c0c0c0,0x00000000,std::uint32_t>;
         ///NWE Pulse Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> nwePulse{}; 
         ///NCS Pulse Length in WRITE Access
@@ -1222,14 +1222,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> ncsRdPulse{}; 
     }
     namespace SmcCycle7{    ///<SMC Cycle Register (CS_number = 7)
-        using Addr = Register::Address<0x400e0104,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0104,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Total Write Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> nweCycle{}; 
         ///Total Read Cycle Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,16),Register::ReadWriteAccess,unsigned> nrdCycle{}; 
     }
     namespace SmcTimings7{    ///<SMC Timings Register (CS_number = 7)
-        using Addr = Register::Address<0x400e0108,0x00f0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0108,0x00f0e000,0x00000000,std::uint32_t>;
         ///CLE to REN Low Delay
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> tclr{}; 
         ///ALE to Data Start
@@ -1248,7 +1248,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> nfsel{}; 
     }
     namespace SmcMode7{    ///<SMC Mode Register (CS_number = 7)
-        using Addr = Register::Address<0x400e010c,0xffe0eecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e010c,0xffe0eecc,0x00000000,std::uint32_t>;
         ///
         enum class ReadmodeVal {
             ncsCtrl=0x00000000,     ///<The Read operation is controlled by the NCS signal.
@@ -1299,31 +1299,31 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> tdfMode{}; 
     }
     namespace SmcOcms{    ///<SMC OCMS Register
-        using Addr = Register::Address<0x400e0110,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0110,0xfffffffc,0x00000000,std::uint32_t>;
         ///Static Memory Controller Scrambling Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> smse{}; 
         ///SRAM Scrambling Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> srse{}; 
     }
     namespace SmcKey1{    ///<SMC OCMS KEY1 Register
-        using Addr = Register::Address<0x400e0114,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0114,0x00000000,0x00000000,std::uint32_t>;
         ///Off Chip Memory Scrambling (OCMS) Key Part 1
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key1{}; 
     }
     namespace SmcKey2{    ///<SMC OCMS KEY2 Register
-        using Addr = Register::Address<0x400e0118,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0118,0x00000000,0x00000000,std::uint32_t>;
         ///Off Chip Memory Scrambling (OCMS) Key Part 2
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key2{}; 
     }
     namespace SmcWpcr{    ///<Write Protection Control Register
-        using Addr = Register::Address<0x400e01e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e01e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpEn{}; 
         ///Write Protection KEY password
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpKey{}; 
     }
     namespace SmcWpsr{    ///<Write Protection Status Register
-        using Addr = Register::Address<0x400e01e8,0xff0000f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e01e8,0xff0000f0,0x00000000,std::uint32_t>;
         ///Write Protection Violation Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpVs{}; 
         ///Write Protection Violation Source

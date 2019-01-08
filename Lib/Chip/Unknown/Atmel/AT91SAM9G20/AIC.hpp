@@ -3,22 +3,22 @@
 namespace Kvasir {
 //Advanced Interrupt Controller
     namespace AicIvr{    ///<Interrupt Vector Register
-        using Addr = Register::Address<0xfffff100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff100,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Vector Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> irqv{}; 
     }
     namespace AicFvr{    ///<FIQ Interrupt Vector Register
-        using Addr = Register::Address<0xfffff104,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff104,0x00000000,0x00000000,std::uint32_t>;
         ///FIQ Vector Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiqv{}; 
     }
     namespace AicIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0xfffff108,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff108,0xffffffe0,0x00000000,std::uint32_t>;
         ///Current Interrupt Identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> irqid{}; 
     }
     namespace AicIpr{    ///<Interrupt Pending Register
-        using Addr = Register::Address<0xfffff10c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff10c,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Pending
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiq{}; 
         ///Interrupt Pending
@@ -85,7 +85,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfffff110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff110,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiq{}; 
         ///Interrupt Mask
@@ -152,14 +152,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicCisr{    ///<Core Interrupt Status Register
-        using Addr = Register::Address<0xfffff114,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff114,0xfffffffc,0x00000000,std::uint32_t>;
         ///NFIQ Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nfiq{}; 
         ///NIRQ Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nirq{}; 
     }
     namespace AicIecr{    ///<Interrupt Enable Command Register
-        using Addr = Register::Address<0xfffff120,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff120,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiq{}; 
         ///Interrupt Enable
@@ -226,7 +226,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicIdcr{    ///<Interrupt Disable Command Register
-        using Addr = Register::Address<0xfffff124,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff124,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiq{}; 
         ///Interrupt Disable
@@ -293,7 +293,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicIccr{    ///<Interrupt Clear Command Register
-        using Addr = Register::Address<0xfffff128,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff128,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiq{}; 
         ///Interrupt Clear
@@ -360,7 +360,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicIscr{    ///<Interrupt Set Command Register
-        using Addr = Register::Address<0xfffff12c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff12c,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiq{}; 
         ///Interrupt Set
@@ -427,22 +427,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicEoicr{    ///<End of Interrupt Command Register
-        using Addr = Register::Address<0xfffff130,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff130,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace AicSpu{    ///<Spurious Interrupt Vector Register
-        using Addr = Register::Address<0xfffff134,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff134,0x00000000,0x00000000,std::uint32_t>;
         ///Spurious Interrupt Vector Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sivr{}; 
     }
     namespace AicDcr{    ///<Debug Control Register
-        using Addr = Register::Address<0xfffff138,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff138,0xfffffffc,0x00000000,std::uint32_t>;
         ///Protection Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> prot{}; 
         ///General Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> gmsk{}; 
     }
     namespace AicFfer{    ///<Fast Forcing Enable Register
-        using Addr = Register::Address<0xfffff140,0x00000001,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff140,0x00000001,0x00000000,std::uint32_t>;
         ///Fast Forcing Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sys{}; 
         ///Fast Forcing Enable
@@ -507,7 +507,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicFfdr{    ///<Fast Forcing Disable Register
-        using Addr = Register::Address<0xfffff144,0x00000001,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff144,0x00000001,0x00000000,std::uint32_t>;
         ///Fast Forcing Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sys{}; 
         ///Fast Forcing Disable
@@ -572,7 +572,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicFfsr{    ///<Fast Forcing Status Register
-        using Addr = Register::Address<0xfffff148,0x00000001,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff148,0x00000001,0x00000000,std::uint32_t>;
         ///Fast Forcing Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sys{}; 
         ///Fast Forcing Status
@@ -637,7 +637,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace AicSmr0{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff000,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff000,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -656,7 +656,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr1{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff004,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff004,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -675,7 +675,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr2{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff008,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff008,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -694,7 +694,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr3{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff00c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff00c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -713,7 +713,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr4{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff010,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff010,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -732,7 +732,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr5{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff014,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff014,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -751,7 +751,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr6{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff018,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff018,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -770,7 +770,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr7{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff01c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff01c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -789,7 +789,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr8{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff020,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff020,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -808,7 +808,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr9{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff024,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff024,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -827,7 +827,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr10{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff028,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff028,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -846,7 +846,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr11{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff02c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff02c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -865,7 +865,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr12{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff030,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff030,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -884,7 +884,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr13{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff034,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff034,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -903,7 +903,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr14{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff038,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff038,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -922,7 +922,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr15{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff03c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff03c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -941,7 +941,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr16{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff040,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff040,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -960,7 +960,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr17{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff044,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff044,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -979,7 +979,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr18{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff048,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff048,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -998,7 +998,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr19{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff04c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff04c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1017,7 +1017,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr20{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff050,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff050,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1036,7 +1036,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr21{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff054,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff054,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1055,7 +1055,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr22{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff058,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff058,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1074,7 +1074,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr23{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff05c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff05c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1093,7 +1093,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr24{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff060,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff060,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1112,7 +1112,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr25{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff064,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff064,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1131,7 +1131,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr26{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff068,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff068,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1150,7 +1150,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr27{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff06c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff06c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1169,7 +1169,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr28{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff070,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff070,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1188,7 +1188,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr29{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff074,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff074,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1207,7 +1207,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr30{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff078,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff078,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1226,7 +1226,7 @@ namespace Kvasir {
         }
     }
     namespace AicSmr31{    ///<Source Mode Register
-        using Addr = Register::Address<0xfffff07c,0xffffff98,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff07c,0xffffff98,0x00000000,std::uint32_t>;
         ///Priority Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> prior{}; 
         ///Interrupt Source Type
@@ -1245,162 +1245,162 @@ namespace Kvasir {
         }
     }
     namespace AicSvr0{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff080,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff080,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr1{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff084,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff084,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr2{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff088,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff088,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr3{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff08c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff08c,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr4{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff090,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff090,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr5{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff094,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff094,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr6{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff098,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff098,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr7{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff09c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff09c,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr8{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0a0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0a0,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr9{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0a4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0a4,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr10{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0a8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0a8,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr11{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0ac,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0ac,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr12{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0b0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0b0,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr13{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0b4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0b4,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr14{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0b8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0b8,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr15{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0bc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0bc,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr16{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0c0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0c0,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr17{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0c4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0c4,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr18{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0c8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0c8,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr19{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0cc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0cc,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr20{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0d0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0d0,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr21{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0d4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0d4,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr22{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0d8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0d8,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr23{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0dc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0dc,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr24{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0e0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0e0,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr25{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0e4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0e4,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr26{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0e8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0e8,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr27{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0ec,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0ec,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr28{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0f0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0f0,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr29{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0f4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0f4,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr30{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0f8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0f8,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }
     namespace AicSvr31{    ///<Source Vector Register
-        using Addr = Register::Address<0xfffff0fc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff0fc,0x00000000,0x00000000,std::uint32_t>;
         ///Source Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> vector{}; 
     }

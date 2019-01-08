@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Debug Unit
     namespace DbguCr{    ///<Control Register
-        using Addr = Register::Address<0xffffee00,0xfffffe03,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee00,0xfffffe03,0x00000000,std::uint32_t>;
         ///Reset Receiver
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstrx{}; 
         ///Reset Transmitter
@@ -20,14 +20,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rststa{}; 
     }
     namespace DbguMr{    ///<Mode Register
-        using Addr = Register::Address<0xffffee04,0xffff31ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee04,0xffff31ff,0x00000000,std::uint32_t>;
         ///Parity Type
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,9),Register::ReadWriteAccess,unsigned> par{}; 
         ///Channel Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,14),Register::ReadWriteAccess,unsigned> chmode{}; 
     }
     namespace DbguIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xffffee08,0x3fffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee08,0x3fffe504,0x00000000,std::uint32_t>;
         ///Enable RXRDY Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Enable TXRDY Interrupt
@@ -54,7 +54,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> commrx{}; 
     }
     namespace DbguIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xffffee0c,0x3fffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee0c,0x3fffe504,0x00000000,std::uint32_t>;
         ///Disable RXRDY Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Disable TXRDY Interrupt
@@ -81,7 +81,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> commrx{}; 
     }
     namespace DbguImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xffffee10,0x3fffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee10,0x3fffe504,0x00000000,std::uint32_t>;
         ///Mask RXRDY Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Disable TXRDY Interrupt
@@ -108,7 +108,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> commrx{}; 
     }
     namespace DbguSr{    ///<Status Register
-        using Addr = Register::Address<0xffffee14,0x3fffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee14,0x3fffe504,0x00000000,std::uint32_t>;
         ///Receiver Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Transmitter Ready
@@ -135,22 +135,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> commrx{}; 
     }
     namespace DbguRhr{    ///<Receive Holding Register
-        using Addr = Register::Address<0xffffee18,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee18,0xffffff00,0x00000000,std::uint32_t>;
         ///Received Character
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxchr{}; 
     }
     namespace DbguThr{    ///<Transmit Holding Register
-        using Addr = Register::Address<0xffffee1c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee1c,0xffffff00,0x00000000,std::uint32_t>;
         ///Character to be Transmitted
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txchr{}; 
     }
     namespace DbguBrgr{    ///<Baud Rate Generator Register
-        using Addr = Register::Address<0xffffee20,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee20,0xffff0000,0x00000000,std::uint32_t>;
         ///Clock Divisor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> cd{}; 
     }
     namespace DbguCidr{    ///<Chip ID Register
-        using Addr = Register::Address<0xffffee40,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee40,0x00000000,0x00000000,std::uint32_t>;
         ///Version of the Device
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> version{}; 
         ///Embedded Processor
@@ -169,57 +169,57 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ext{}; 
     }
     namespace DbguExid{    ///<Chip ID Extension Register
-        using Addr = Register::Address<0xffffee44,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee44,0x00000000,0x00000000,std::uint32_t>;
         ///Chip ID Extension
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> exid{}; 
     }
     namespace DbguFnr{    ///<Force NTRST Register
-        using Addr = Register::Address<0xffffee48,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffee48,0xfffffffe,0x00000000,std::uint32_t>;
         ///Force NTRST
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fntrst{}; 
     }
     namespace DbguRpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0xffffef00,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef00,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace DbguRcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0xffffef04,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef04,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace DbguTpr{    ///<Transmit Pointer Register
-        using Addr = Register::Address<0xffffef08,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef08,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txptr{}; 
     }
     namespace DbguTcr{    ///<Transmit Counter Register
-        using Addr = Register::Address<0xffffef0c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef0c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txctr{}; 
     }
     namespace DbguRnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0xffffef10,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef10,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace DbguRncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0xffffef14,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef14,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace DbguTnpr{    ///<Transmit Next Pointer Register
-        using Addr = Register::Address<0xffffef18,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef18,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txnptr{}; 
     }
     namespace DbguTncr{    ///<Transmit Next Counter Register
-        using Addr = Register::Address<0xffffef1c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef1c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Next
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txnctr{}; 
     }
     namespace DbguPtcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0xffffef20,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef20,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -230,7 +230,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace DbguPtsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0xffffef24,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffef24,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable

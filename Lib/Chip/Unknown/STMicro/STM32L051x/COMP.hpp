@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Comparator
     namespace CompComp1Csr{    ///<Comparator 1 control and status          register
-        using Addr = Register::Address<0x40010030,0x3fff0ece,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010030,0x3fff0ece,0x00000000,std::uint32_t>;
         ///Comparator 1 enable bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> comp1En{}; 
         ///Comparator 1 Input Minus connection              configuration bit
@@ -20,7 +20,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> comp1Lock{}; 
     }
     namespace CompComp2Csr{    ///<Comparator 2 control and status          register
-        using Addr = Register::Address<0x40010034,0x3fff0886,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010034,0x3fff0886,0x00000000,std::uint32_t>;
         ///COMP2_CSR register lock              bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> comp2Lock{}; 
         ///Comparator 2 output status              bit

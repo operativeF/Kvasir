@@ -3,14 +3,14 @@
 namespace Kvasir {
 //NAND flash controller
     namespace NfcCmd1{    ///<Flash command 1
-        using Addr = Register::Address<0x400abf00,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf00,0x0000ffff,0x00000000,std::uint32_t>;
         ///Third command byte that may be sent to the flash device
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> byte3{}; 
         ///Second command byte that may be sent to the flash device
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> byte2{}; 
     }
     namespace NfcCmd2{    ///<Flash command 2
-        using Addr = Register::Address<0x400abf04,0x000000f8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf04,0x000000f8,0x00000000,std::uint32_t>;
         ///Busy indicator and start command
         enum class BusystartVal {
             v0=0x00000000,     ///<During reads, flash controller is idle and it is okay to send next command. During writes, no action.
@@ -29,14 +29,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> byte1{}; 
     }
     namespace NfcCar{    ///<Column address
-        using Addr = Register::Address<0x400abf08,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf08,0xffff0000,0x00000000,std::uint32_t>;
         ///First byte of column address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> byte1{}; 
         ///Second byte of column address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> byte2{}; 
     }
     namespace NfcRar{    ///<Row address
-        using Addr = Register::Address<0x400abf0c,0xcc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf0c,0xcc000000,0x00000000,std::uint32_t>;
         ///First byte of row address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> byte1{}; 
         ///Second byte of row address
@@ -85,12 +85,12 @@ namespace Kvasir {
         }
     }
     namespace NfcRpt{    ///<Flash command repeat
-        using Addr = Register::Address<0x400abf10,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf10,0xffff0000,0x00000000,std::uint32_t>;
         ///16-bit repeat count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> count{}; 
     }
     namespace NfcRai{    ///<Row address increment
-        using Addr = Register::Address<0x400abf14,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf14,0xff000000,0x00000000,std::uint32_t>;
         ///Increment for the first byte of row address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inc1{}; 
         ///Increment for the second byte of row address
@@ -99,7 +99,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> inc3{}; 
     }
     namespace NfcSr1{    ///<Flash status 1
-        using Addr = Register::Address<0x400abf18,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf18,0x00000000,0x00000000,std::uint32_t>;
         ///Fourth byte returned by read ID command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> id4{}; 
         ///Third byte returned by read ID command
@@ -110,19 +110,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> id1{}; 
     }
     namespace NfcSr2{    ///<Flash status 2
-        using Addr = Register::Address<0x400abf1c,0x00ffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf1c,0x00ffff00,0x00000000,std::uint32_t>;
         ///Byte returned by read status command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> status1{}; 
         ///Fifth byte returned by read ID command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> id5{}; 
     }
     namespace NfcDma1{    ///<DMA channel 1 address
-        using Addr = Register::Address<0x400abf20,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf20,0x00000000,0x00000000,std::uint32_t>;
         ///DMA channel 1 address. DMA channel 1 address, it is 8-byte aligned.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> address{}; 
     }
     namespace NfcDmacfg{    ///<DMA configuration
-        using Addr = Register::Address<0x400abf24,0x000001fc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf24,0x000001fc,0x00000000,std::uint32_t>;
         ///DMA channel 2 status
         enum class Act2Val {
             v0=0x00000000,     ///<Inactive
@@ -151,19 +151,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,20),Register::ReadWriteAccess,unsigned> count1{}; 
     }
     namespace NfcSwap{    ///<Cach swap
-        using Addr = Register::Address<0x400abf28,0xf001f001,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf28,0xf001f001,0x00000000,std::uint32_t>;
         ///Upper swap address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,1),Register::ReadWriteAccess,unsigned> addr2{}; 
         ///Lower swap address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,17),Register::ReadWriteAccess,unsigned> addr1{}; 
     }
     namespace NfcSecsz{    ///<Sector size
-        using Addr = Register::Address<0x400abf2c,0xffffe000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf2c,0xffffe000,0x00000000,std::uint32_t>;
         ///Size in bytes of one elementary transfer unit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,0),Register::ReadWriteAccess,unsigned> size{}; 
     }
     namespace NfcCfg{    ///<Flash configuration
-        using Addr = Register::Address<0x400abf30,0x00000040,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf30,0x00000040,0x00000000,std::uint32_t>;
         ///Number of virtual pages (in one physical flash page) to be programmed or read, etc.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> pagecnt{}; 
         ///no description available
@@ -266,12 +266,12 @@ namespace Kvasir {
         }
     }
     namespace NfcDma2{    ///<DMA channel 2 address
-        using Addr = Register::Address<0x400abf34,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf34,0x00000000,0x00000000,std::uint32_t>;
         ///DMA channel 2 address. DMA channel 2 address, it is 8-byte aligned.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> address{}; 
     }
     namespace NfcIsr{    ///<Interrupt status
-        using Addr = Register::Address<0x400abf38,0x1001ffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400abf38,0x1001ffc0,0x00000000,std::uint32_t>;
         ///DMA buffer number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dmabn{}; 
         ///ECC buffer number

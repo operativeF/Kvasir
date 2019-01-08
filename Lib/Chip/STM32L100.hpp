@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32L100/C_ADC.hpp>
 #include <Chip/Unknown/STMicro/STM32L100/COMP.hpp>
 #include <Chip/Unknown/STMicro/STM32L100/CRC.hpp>

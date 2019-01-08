@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Serial peripheral interface
     namespace Spi1Cr1{    ///<control register 1
-        using Addr = Register::Address<0x40013000,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40013000,0xffff0000,0x00000000,std::uint32_t>;
         ///Bidirectional data mode              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> bidimode{}; 
         ///Output enable in bidirectional              mode
@@ -34,7 +34,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cpha{}; 
     }
     namespace Spi1Cr2{    ///<control register 2
-        using Addr = Register::Address<0x40013004,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40013004,0xffffff08,0x00000000,std::uint32_t>;
         ///Rx buffer DMA enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxdmaen{}; 
         ///Tx buffer DMA enable
@@ -51,7 +51,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> txeie{}; 
     }
     namespace Spi1Sr{    ///<status register
-        using Addr = Register::Address<0x40013008,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40013008,0xfffffe00,0x00000000,std::uint32_t>;
         ///Receive buffer not empty
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxne{}; 
         ///Transmit buffer empty
@@ -72,27 +72,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> tifrfe{}; 
     }
     namespace Spi1Dr{    ///<data register
-        using Addr = Register::Address<0x4001300c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001300c,0xffff0000,0x00000000,std::uint32_t>;
         ///Data register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dr{}; 
     }
     namespace Spi1Crcpr{    ///<CRC polynomial register
-        using Addr = Register::Address<0x40013010,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40013010,0xffff0000,0x00000000,std::uint32_t>;
         ///CRC polynomial register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> crcpoly{}; 
     }
     namespace Spi1Rxcrcr{    ///<RX CRC register
-        using Addr = Register::Address<0x40013014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40013014,0xffff0000,0x00000000,std::uint32_t>;
         ///Rx CRC register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxcrc{}; 
     }
     namespace Spi1Txcrcr{    ///<TX CRC register
-        using Addr = Register::Address<0x40013018,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40013018,0xffff0000,0x00000000,std::uint32_t>;
         ///Tx CRC register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txcrc{}; 
     }
     namespace Spi1I2scfgr{    ///<I2S configuration register
-        using Addr = Register::Address<0x4001301c,0xfffff040,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001301c,0xfffff040,0x00000000,std::uint32_t>;
         ///I2S mode selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> i2smod{}; 
         ///I2S Enable
@@ -111,7 +111,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> chlen{}; 
     }
     namespace Spi1I2spr{    ///<I2S prescaler register
-        using Addr = Register::Address<0x40013020,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40013020,0xfffffc00,0x00000000,std::uint32_t>;
         ///Master clock output enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> mckoe{}; 
         ///Odd factor for the              prescaler

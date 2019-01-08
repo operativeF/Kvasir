@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Real-time Timer
     namespace RttMr{    ///<Mode Register
-        using Addr = Register::Address<0x400e1430,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1430,0xfff80000,0x00000000,std::uint32_t>;
         ///Real-time Timer Prescaler Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rtpres{}; 
         ///Alarm Interrupt Enable
@@ -14,17 +14,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> rttrst{}; 
     }
     namespace RttAr{    ///<Alarm Register
-        using Addr = Register::Address<0x400e1434,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1434,0x00000000,0x00000000,std::uint32_t>;
         ///Alarm Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> almv{}; 
     }
     namespace RttVr{    ///<Value Register
-        using Addr = Register::Address<0x400e1438,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1438,0x00000000,0x00000000,std::uint32_t>;
         ///Current Real-time Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> crtv{}; 
     }
     namespace RttSr{    ///<Status Register
-        using Addr = Register::Address<0x400e143c,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e143c,0xfffffffc,0x00000000,std::uint32_t>;
         ///Real-time Alarm Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> alms{}; 
         ///Real-time Timer Increment

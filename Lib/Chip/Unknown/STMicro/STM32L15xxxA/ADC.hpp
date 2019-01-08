@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Analog-to-digital converter
     namespace AdcSr{    ///<status register
-        using Addr = Register::Address<0x40012400,0xfffffc80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012400,0xfffffc80,0x00000000,std::uint32_t>;
         ///Injected channel not ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> jcnr{}; 
         ///Regular channel not ready
@@ -24,7 +24,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> awd{}; 
     }
     namespace AdcCr1{    ///<control register 1
-        using Addr = Register::Address<0x40012404,0xf83c0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012404,0xf83c0000,0x00000000,std::uint32_t>;
         ///Overrun interrupt enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> ovrie{}; 
         ///Resolution
@@ -59,7 +59,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> awdch{}; 
     }
     namespace AdcCr2{    ///<control register 2
-        using Addr = Register::Address<0x40012408,0x8080f088,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012408,0x8080f088,0x00000000,std::uint32_t>;
         ///Start conversion of regular               channels
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::ReadWriteAccess,unsigned> swstart{}; 
         ///External trigger enable for regular               channels
@@ -90,52 +90,52 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> adon{}; 
     }
     namespace AdcSmpr1{    ///<sample time register 1
-        using Addr = Register::Address<0x4001240c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001240c,0x00000000,0x00000000,std::uint32_t>;
         ///Reserved
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sampletimebitssmpxX{}; 
     }
     namespace AdcSmpr2{    ///<sample time register 2
-        using Addr = Register::Address<0x40012410,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012410,0x00000000,0x00000000,std::uint32_t>;
         ///Reserved
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sampletimebitssmpxX{}; 
     }
     namespace AdcSmpr3{    ///<sample time register 3
-        using Addr = Register::Address<0x40012414,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012414,0x00000000,0x00000000,std::uint32_t>;
         ///Reserved
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sampletimebitssmpxX{}; 
     }
     namespace AdcJofr1{    ///<injected channel data offset register           x
-        using Addr = Register::Address<0x40012418,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012418,0xfffff000,0x00000000,std::uint32_t>;
         ///Data offset for injected channel               x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> joffset1{}; 
     }
     namespace AdcJofr2{    ///<injected channel data offset register           x
-        using Addr = Register::Address<0x4001241c,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001241c,0xfffff000,0x00000000,std::uint32_t>;
         ///Data offset for injected channel               x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> joffset2{}; 
     }
     namespace AdcJofr3{    ///<injected channel data offset register           x
-        using Addr = Register::Address<0x40012420,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012420,0xfffff000,0x00000000,std::uint32_t>;
         ///Data offset for injected channel               x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> joffset3{}; 
     }
     namespace AdcJofr4{    ///<injected channel data offset register           x
-        using Addr = Register::Address<0x40012424,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012424,0xfffff000,0x00000000,std::uint32_t>;
         ///Data offset for injected channel               x
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> joffset4{}; 
     }
     namespace AdcHtr{    ///<watchdog higher threshold           register
-        using Addr = Register::Address<0x40012428,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012428,0xfffff000,0x00000000,std::uint32_t>;
         ///Analog watchdog higher               threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> ht{}; 
     }
     namespace AdcLtr{    ///<watchdog lower threshold           register
-        using Addr = Register::Address<0x4001242c,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001242c,0xfffff000,0x00000000,std::uint32_t>;
         ///Analog watchdog lower               threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> lt{}; 
     }
     namespace AdcSqr1{    ///<regular sequence register 1
-        using Addr = Register::Address<0x40012430,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012430,0xff000000,0x00000000,std::uint32_t>;
         ///Regular channel sequence               length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> l{}; 
         ///28th conversion in regular               sequence
@@ -148,7 +148,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> sq25{}; 
     }
     namespace AdcSqr2{    ///<regular sequence register 2
-        using Addr = Register::Address<0x40012434,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012434,0xc0000000,0x00000000,std::uint32_t>;
         ///24th conversion in regular               sequence
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,25),Register::ReadWriteAccess,unsigned> sq24{}; 
         ///23rd conversion in regular               sequence
@@ -163,7 +163,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> sq19{}; 
     }
     namespace AdcSqr3{    ///<regular sequence register 3
-        using Addr = Register::Address<0x40012438,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012438,0xc0000000,0x00000000,std::uint32_t>;
         ///18th conversion in regular               sequence
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,25),Register::ReadWriteAccess,unsigned> sq18{}; 
         ///17th conversion in regular               sequence
@@ -178,7 +178,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> sq13{}; 
     }
     namespace AdcSqr4{    ///<regular sequence register 4
-        using Addr = Register::Address<0x4001243c,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001243c,0xc0000000,0x00000000,std::uint32_t>;
         ///12th conversion in regular               sequence
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,25),Register::ReadWriteAccess,unsigned> sq12{}; 
         ///11th conversion in regular               sequence
@@ -193,7 +193,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> sq7{}; 
     }
     namespace AdcSqr5{    ///<regular sequence register 5
-        using Addr = Register::Address<0x40012440,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012440,0xc0000000,0x00000000,std::uint32_t>;
         ///6th conversion in regular               sequence
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,25),Register::ReadWriteAccess,unsigned> sq6{}; 
         ///5th conversion in regular               sequence
@@ -208,7 +208,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> sq1{}; 
     }
     namespace AdcJsqr{    ///<injected sequence register
-        using Addr = Register::Address<0x40012444,0xffc00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012444,0xffc00000,0x00000000,std::uint32_t>;
         ///Injected sequence length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(21,20),Register::ReadWriteAccess,unsigned> jl{}; 
         ///4th conversion in injected               sequence
@@ -221,32 +221,32 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> jsq1{}; 
     }
     namespace AdcJdr1{    ///<injected data register x
-        using Addr = Register::Address<0x40012448,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012448,0xffff0000,0x00000000,std::uint32_t>;
         ///Injected data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> jdata{}; 
     }
     namespace AdcJdr2{    ///<injected data register x
-        using Addr = Register::Address<0x4001244c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001244c,0xffff0000,0x00000000,std::uint32_t>;
         ///Injected data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> jdata{}; 
     }
     namespace AdcJdr3{    ///<injected data register x
-        using Addr = Register::Address<0x40012450,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012450,0xffff0000,0x00000000,std::uint32_t>;
         ///Injected data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> jdata{}; 
     }
     namespace AdcJdr4{    ///<injected data register x
-        using Addr = Register::Address<0x40012454,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012454,0xffff0000,0x00000000,std::uint32_t>;
         ///Injected data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> jdata{}; 
     }
     namespace AdcDr{    ///<regular data register
-        using Addr = Register::Address<0x40012458,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012458,0xffff0000,0x00000000,std::uint32_t>;
         ///Regular data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> regulardata{}; 
     }
     namespace AdcSmpr0{    ///<sample time register 0
-        using Addr = Register::Address<0x4001245c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001245c,0x00000000,0x00000000,std::uint32_t>;
         ///Reserved
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sampletimebitssmpxX{}; 
     }

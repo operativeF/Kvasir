@@ -3,12 +3,12 @@
 namespace Kvasir {
 //Non-Volatile Memory Controller
     namespace NvmctrlAddr{    ///<Address
-        using Addr = Register::Address<0x4100401c,0xffc00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4100401c,0xffc00000,0x00000000,std::uint32_t>;
         ///NVM Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(21,0),Register::ReadWriteAccess,unsigned> addr{}; 
     }
     namespace NvmctrlCtrla{    ///<Control A
-        using Addr = Register::Address<0x41004000,0xffff0080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004000,0xffff0080,0x00000000,std::uint16_t>;
         ///Command
         enum class CmdVal {
             er=0x00000002,     ///<Erase Row - Erases the row addressed by the ADDR register.
@@ -45,7 +45,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> cmdex{}; 
     }
     namespace NvmctrlCtrlb{    ///<Control B
-        using Addr = Register::Address<0x41004004,0xfff8fc61,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004004,0xfff8fc61,0x00000000,std::uint32_t>;
         ///NVM Read Wait States
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,1),Register::ReadWriteAccess,unsigned> rws{}; 
         ///Manual Write
@@ -78,33 +78,33 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> cachedis{}; 
     }
     namespace NvmctrlIntenclr{    ///<Interrupt Enable Clear
-        using Addr = Register::Address<0x4100400c,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100400c,0xfffffffc,0x00000000,std::uint8_t>;
         ///NVM Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ready{}; 
         ///Error Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> error{}; 
     }
     namespace NvmctrlIntenset{    ///<Interrupt Enable Set
-        using Addr = Register::Address<0x41004010,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x41004010,0xfffffffc,0x00000000,std::uint8_t>;
         ///NVM Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ready{}; 
         ///Error Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> error{}; 
     }
     namespace NvmctrlIntflag{    ///<Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x41004014,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x41004014,0xfffffffc,0x00000000,std::uint8_t>;
         ///NVM Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ready{}; 
         ///Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> error{}; 
     }
     namespace NvmctrlLock{    ///<Lock Section
-        using Addr = Register::Address<0x41004020,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004020,0xffff0000,0x00000000,std::uint16_t>;
         ///Region Lock Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> lock{}; 
     }
     namespace NvmctrlParam{    ///<NVM Parameter
-        using Addr = Register::Address<0x41004008,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004008,0xfff80000,0x00000000,std::uint32_t>;
         ///NVM Pages
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nvmp{}; 
         ///Page Size
@@ -131,7 +131,7 @@ namespace Kvasir {
         }
     }
     namespace NvmctrlStatus{    ///<Status
-        using Addr = Register::Address<0x41004018,0xfffffee0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004018,0xfffffee0,0x00000000,std::uint16_t>;
         ///Power Reduction Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> prm{}; 
         ///NVM Page Buffer Active Loading

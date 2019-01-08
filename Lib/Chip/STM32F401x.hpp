@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32F401x/DBG.hpp>
 #include <Chip/Unknown/STMicro/STM32F401x/DMA2.hpp>
 #include <Chip/Unknown/STMicro/STM32F401x/DMA1.hpp>

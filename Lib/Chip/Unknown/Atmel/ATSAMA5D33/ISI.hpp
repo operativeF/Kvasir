@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Image Sensor Interface
     namespace IsiCfg1{    ///<ISI Configuration 1 Register
-        using Addr = Register::Address<0xf0034000,0x00008023,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034000,0x00008023,0x00000000,std::uint32_t>;
         ///Horizontal Synchronization Polarity
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> hsyncPol{}; 
         ///Vertical Synchronization Polarity
@@ -38,7 +38,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> sfd{}; 
     }
     namespace IsiCfg2{    ///<ISI Configuration 2 Register
-        using Addr = Register::Address<0xf0034004,0x08000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034004,0x08000000,0x00000000,std::uint32_t>;
         ///Vertical Size of the Image Sensor [0..2047]:
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> imVsize{}; 
         ///
@@ -59,19 +59,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> rgbCfg{}; 
     }
     namespace IsiPsize{    ///<ISI Preview Size Register
-        using Addr = Register::Address<0xf0034008,0xfc00fc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034008,0xfc00fc00,0x00000000,std::uint32_t>;
         ///Vertical Size for the Preview Path
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> prevVsize{}; 
         ///Horizontal Size for the Preview Path
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> prevHsize{}; 
     }
     namespace IsiPdecf{    ///<ISI Preview Decimation Factor Register
-        using Addr = Register::Address<0xf003400c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf003400c,0xffffff00,0x00000000,std::uint32_t>;
         ///Decimation Factor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> decFactor{}; 
     }
     namespace IsiY2rSet0{    ///<ISI CSC YCrCb To RGB Set 0 Register
-        using Addr = Register::Address<0xf0034010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034010,0x00000000,0x00000000,std::uint32_t>;
         ///Color Space Conversion Matrix Coefficient C0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> c0{}; 
         ///Color Space Conversion Matrix Coefficient C1
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> c3{}; 
     }
     namespace IsiY2rSet1{    ///<ISI CSC YCrCb To RGB Set 1 Register
-        using Addr = Register::Address<0xf0034014,0xffff8e00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034014,0xffff8e00,0x00000000,std::uint32_t>;
         ///Color Space Conversion Matrix Coefficient C4
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> c4{}; 
         ///Color Space Conversion Luminance Default Offset
@@ -93,7 +93,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> cboff{}; 
     }
     namespace IsiR2ySet0{    ///<ISI CSC RGB To YCrCb Set 0 Register
-        using Addr = Register::Address<0xf0034018,0xfe808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034018,0xfe808080,0x00000000,std::uint32_t>;
         ///Color Space Conversion Matrix Coefficient C0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> c0{}; 
         ///Color Space Conversion Matrix Coefficient C1
@@ -104,7 +104,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> roff{}; 
     }
     namespace IsiR2ySet1{    ///<ISI CSC RGB To YCrCb Set 1 Register
-        using Addr = Register::Address<0xf003401c,0xfe808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf003401c,0xfe808080,0x00000000,std::uint32_t>;
         ///Color Space Conversion Matrix Coefficient C3
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> c3{}; 
         ///Color Space Conversion Matrix Coefficient C4
@@ -115,7 +115,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> goff{}; 
     }
     namespace IsiR2ySet2{    ///<ISI CSC RGB To YCrCb Set 2 Register
-        using Addr = Register::Address<0xf0034020,0xfe808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034020,0xfe808080,0x00000000,std::uint32_t>;
         ///Color Space Conversion Matrix Coefficient C6
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> c6{}; 
         ///Color Space Conversion Matrix Coefficient C7
@@ -126,7 +126,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> boff{}; 
     }
     namespace IsiCr{    ///<ISI Control Register
-        using Addr = Register::Address<0xf0034024,0xfffffef8,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034024,0xfffffef8,0x00000000,std::uint32_t>;
         ///ISI Module Enable Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> isiEn{}; 
         ///ISI Module Disable Request
@@ -137,7 +137,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> isiCdc{}; 
     }
     namespace IsiSr{    ///<ISI Status Register
-        using Addr = Register::Address<0xf0034028,0xf0f4faf8,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034028,0xf0f4faf8,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> enable{}; 
         ///Module Disable Request has Terminated
@@ -164,7 +164,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frOvr{}; 
     }
     namespace IsiIer{    ///<ISI Interrupt Enable Register
-        using Addr = Register::Address<0xf003402c,0xf0fcfbf9,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf003402c,0xf0fcfbf9,0x00000000,std::uint32_t>;
         ///Disable Done Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> disDone{}; 
         ///Software Reset Interrupt Enable
@@ -185,7 +185,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frOvr{}; 
     }
     namespace IsiIdr{    ///<ISI Interrupt Disable Register
-        using Addr = Register::Address<0xf0034030,0xf0fcfbf9,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034030,0xf0fcfbf9,0x00000000,std::uint32_t>;
         ///Disable Done Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> disDone{}; 
         ///Software Reset Interrupt Disable
@@ -206,7 +206,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frOvr{}; 
     }
     namespace IsiImr{    ///<ISI Interrupt Mask Register
-        using Addr = Register::Address<0xf0034034,0xf0fcfbf9,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034034,0xf0fcfbf9,0x00000000,std::uint32_t>;
         ///Module Disable Operation Completed
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> disDone{}; 
         ///Software Reset Completed
@@ -227,33 +227,33 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frOvr{}; 
     }
     namespace IsiDmaCher{    ///<DMA Channel Enable Register
-        using Addr = Register::Address<0xf0034038,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034038,0xfffffffc,0x00000000,std::uint32_t>;
         ///Preview Channel Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pChEn{}; 
         ///Codec Channel Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cChEn{}; 
     }
     namespace IsiDmaChdr{    ///<DMA Channel Disable Register
-        using Addr = Register::Address<0xf003403c,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf003403c,0xfffffffc,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pChDis{}; 
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cChDis{}; 
     }
     namespace IsiDmaChsr{    ///<DMA Channel Status Register
-        using Addr = Register::Address<0xf0034040,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034040,0xfffffffc,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pChS{}; 
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cChS{}; 
     }
     namespace IsiDmaPAddr{    ///<DMA Preview Base Address Register
-        using Addr = Register::Address<0xf0034044,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034044,0x00000003,0x00000000,std::uint32_t>;
         ///Preview Image Base Address. (This address is word aligned.)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> pAddr{}; 
     }
     namespace IsiDmaPCtrl{    ///<DMA Preview Control Register
-        using Addr = Register::Address<0xf0034048,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034048,0xfffffff0,0x00000000,std::uint32_t>;
         ///Descriptor Fetch Control Field
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pFetch{}; 
         ///Descriptor Writeback Control Field
@@ -264,17 +264,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> pDone{}; 
     }
     namespace IsiDmaPDscr{    ///<DMA Preview Descriptor Address Register
-        using Addr = Register::Address<0xf003404c,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf003404c,0x00000003,0x00000000,std::uint32_t>;
         ///Preview Descriptor Base Address (This address is word aligned.)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> pDscr{}; 
     }
     namespace IsiDmaCAddr{    ///<DMA Codec Base Address Register
-        using Addr = Register::Address<0xf0034050,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034050,0x00000003,0x00000000,std::uint32_t>;
         ///Codec Image Base Address (This address is word aligned.)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> cAddr{}; 
     }
     namespace IsiDmaCCtrl{    ///<DMA Codec Control Register
-        using Addr = Register::Address<0xf0034054,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034054,0xfffffff0,0x00000000,std::uint32_t>;
         ///Descriptor Fetch Control Field
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cFetch{}; 
         ///Descriptor Writeback Control Field
@@ -285,19 +285,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> cDone{}; 
     }
     namespace IsiDmaCDscr{    ///<DMA Codec Descriptor Address Register
-        using Addr = Register::Address<0xf0034058,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0034058,0x00000003,0x00000000,std::uint32_t>;
         ///Codec Descriptor Base Address (This address is word aligned.)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> cDscr{}; 
     }
     namespace IsiWpcr{    ///<Write Protection Control Register
-        using Addr = Register::Address<0xf00340e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf00340e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpEn{}; 
         ///Write Protection KEY Password
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpKey{}; 
     }
     namespace IsiWpsr{    ///<Write Protection Status Register
-        using Addr = Register::Address<0xf00340e8,0xff0000f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf00340e8,0xff0000f0,0x00000000,std::uint32_t>;
         ///Write Protection Violation Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpVs{}; 
         ///Write Protection Violation Source

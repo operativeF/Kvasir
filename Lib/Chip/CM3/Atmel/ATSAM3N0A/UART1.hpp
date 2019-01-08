@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal Asynchronous Receiver Transmitter 1
     namespace Uart1Cr{    ///<Control Register
-        using Addr = Register::Address<0x400e0800,0xfffffe03,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0800,0xfffffe03,0x00000000,std::uint32_t>;
         ///Reset Receiver
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstrx{}; 
         ///Reset Transmitter
@@ -20,7 +20,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rststa{}; 
     }
     namespace Uart1Mr{    ///<Mode Register
-        using Addr = Register::Address<0x400e0804,0xffff31ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0804,0xffff31ff,0x00000000,std::uint32_t>;
         ///Parity Type
         enum class ParVal {
             even=0x00000000,     ///<Even parity
@@ -53,7 +53,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Ier{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x400e0808,0xffffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0808,0xffffe504,0x00000000,std::uint32_t>;
         ///Enable RXRDY Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Enable TXRDY Interrupt
@@ -76,7 +76,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace Uart1Idr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0x400e080c,0xffffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e080c,0xffffe504,0x00000000,std::uint32_t>;
         ///Disable RXRDY Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Disable TXRDY Interrupt
@@ -99,7 +99,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace Uart1Imr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0x400e0810,0xffffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0810,0xffffe504,0x00000000,std::uint32_t>;
         ///Mask RXRDY Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Disable TXRDY Interrupt
@@ -122,7 +122,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace Uart1Sr{    ///<Status Register
-        using Addr = Register::Address<0x400e0814,0xffffe504,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0814,0xffffe504,0x00000000,std::uint32_t>;
         ///Receiver Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxrdy{}; 
         ///Transmitter Ready
@@ -145,17 +145,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace Uart1Rhr{    ///<Receive Holding Register
-        using Addr = Register::Address<0x400e0818,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0818,0xffffff00,0x00000000,std::uint32_t>;
         ///Received Character
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxchr{}; 
     }
     namespace Uart1Thr{    ///<Transmit Holding Register
-        using Addr = Register::Address<0x400e081c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e081c,0xffffff00,0x00000000,std::uint32_t>;
         ///Character to be Transmitted
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txchr{}; 
     }
     namespace Uart1Brgr{    ///<Baud Rate Generator Register
-        using Addr = Register::Address<0x400e0820,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0820,0xffff0000,0x00000000,std::uint32_t>;
         ///Clock Divisor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> cd{}; 
     }

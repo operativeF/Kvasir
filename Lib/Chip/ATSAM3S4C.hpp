@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/CM3/Atmel/ATSAM3S4C/HSMCI.hpp>
 #include <Chip/CM3/Atmel/ATSAM3S4C/SSC.hpp>
 #include <Chip/CM3/Atmel/ATSAM3S4C/SPI.hpp>

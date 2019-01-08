@@ -3,7 +3,7 @@
 namespace Kvasir {
 //DMA controller
     namespace Dma2Lisr{    ///<low interrupt status register
-        using Addr = Register::Address<0x40026400,0xf082f082,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026400,0xf082f082,0x00000000,std::uint32_t>;
         ///Stream x transfer complete interrupt               flag (x = 3..0)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> tcif3{}; 
         ///Stream x half transfer interrupt flag               (x=3..0)
@@ -46,7 +46,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> feif0{}; 
     }
     namespace Dma2Hisr{    ///<high interrupt status register
-        using Addr = Register::Address<0x40026404,0xf082f082,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026404,0xf082f082,0x00000000,std::uint32_t>;
         ///Stream x transfer complete interrupt               flag (x=7..4)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> tcif7{}; 
         ///Stream x half transfer interrupt flag               (x=7..4)
@@ -89,7 +89,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> feif4{}; 
     }
     namespace Dma2Lifcr{    ///<low interrupt flag clear           register
-        using Addr = Register::Address<0x40026408,0xf082f082,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026408,0xf082f082,0x00000000,std::uint32_t>;
         ///Stream x clear transfer complete               interrupt flag (x = 3..0)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> ctcif3{}; 
         ///Stream x clear half transfer interrupt               flag (x = 3..0)
@@ -132,7 +132,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cfeif0{}; 
     }
     namespace Dma2Hifcr{    ///<high interrupt flag clear           register
-        using Addr = Register::Address<0x4002640c,0xf082f082,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002640c,0xf082f082,0x00000000,std::uint32_t>;
         ///Stream x clear transfer complete               interrupt flag (x = 7..4)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> ctcif7{}; 
         ///Stream x clear half transfer interrupt               flag (x = 7..4)
@@ -175,7 +175,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cfeif4{}; 
     }
     namespace Dma2S0cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x40026410,0xf0100000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026410,0xf0100000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -216,27 +216,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S0ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x40026414,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026414,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S0par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x40026418,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026418,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S0m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x4002641c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002641c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S0m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x40026420,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026420,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S0fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x40026424,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026424,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status
@@ -247,7 +247,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace Dma2S1cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x40026428,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026428,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -290,27 +290,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S1ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x4002642c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002642c,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S1par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x40026430,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026430,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S1m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x40026434,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026434,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S1m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x40026438,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026438,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S1fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x4002643c,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002643c,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status
@@ -321,7 +321,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace Dma2S2cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x40026440,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026440,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -364,27 +364,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S2ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x40026444,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026444,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S2par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x40026448,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026448,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S2m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x4002644c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002644c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S2m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x40026450,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026450,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S2fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x40026454,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026454,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status
@@ -395,7 +395,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace Dma2S3cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x40026458,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026458,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -438,27 +438,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S3ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x4002645c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002645c,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S3par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x40026460,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026460,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S3m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x40026464,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026464,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S3m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x40026468,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026468,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S3fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x4002646c,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002646c,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status
@@ -469,7 +469,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace Dma2S4cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x40026470,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026470,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -512,27 +512,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S4ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x40026474,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026474,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S4par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x40026478,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026478,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S4m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x4002647c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002647c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S4m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x40026480,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026480,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S4fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x40026484,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026484,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status
@@ -543,7 +543,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace Dma2S5cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x40026488,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026488,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -586,27 +586,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S5ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x4002648c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002648c,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S5par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x40026490,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026490,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S5m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x40026494,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026494,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S5m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x40026498,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40026498,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S5fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x4002649c,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002649c,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status
@@ -617,7 +617,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace Dma2S6cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x400264a0,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264a0,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -660,27 +660,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S6ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x400264a4,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264a4,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S6par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x400264a8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264a8,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S6m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x400264ac,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264ac,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S6m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x400264b0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264b0,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S6fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x400264b4,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264b4,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status
@@ -691,7 +691,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> fth{}; 
     }
     namespace Dma2S7cr{    ///<stream x configuration           register
-        using Addr = Register::Address<0x400264b8,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264b8,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> chsel{}; 
         ///Memory burst transfer               configuration
@@ -734,27 +734,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2S7ndtr{    ///<stream x number of data           register
-        using Addr = Register::Address<0x400264bc,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264bc,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data items to               transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma2S7par{    ///<stream x peripheral address           register
-        using Addr = Register::Address<0x400264c0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264c0,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma2S7m0ar{    ///<stream x memory 0 address           register
-        using Addr = Register::Address<0x400264c4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264c4,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 0 address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m0a{}; 
     }
     namespace Dma2S7m1ar{    ///<stream x memory 1 address           register
-        using Addr = Register::Address<0x400264c8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264c8,0x00000000,0x00000000,std::uint32_t>;
         ///Memory 1 address (used in case of Double               buffer mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> m1a{}; 
     }
     namespace Dma2S7fcr{    ///<stream x FIFO control register
-        using Addr = Register::Address<0x400264cc,0xffffff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400264cc,0xffffff40,0x00000000,std::uint32_t>;
         ///FIFO error interrupt               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> feie{}; 
         ///FIFO status

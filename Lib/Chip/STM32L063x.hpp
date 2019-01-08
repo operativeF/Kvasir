@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32L063x/AES.hpp>
 #include <Chip/Unknown/STMicro/STM32L063x/DAC.hpp>
 #include <Chip/Unknown/STMicro/STM32L063x/DMA1.hpp>

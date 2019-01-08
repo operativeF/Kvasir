@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Multipurpose Clock Generator module
     namespace McgC1{    ///<MCG Control 1 Register
-        using Addr = Register::Address<0x40064000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064000,0xffffff00,0x00000000,std::uint8_t>;
         ///Internal Reference Stop Enable
         enum class IrefstenVal {
             v0=0x00000000,     ///<Internal reference clock is disabled in Stop mode.
@@ -72,7 +72,7 @@ namespace Kvasir {
         }
     }
     namespace McgC2{    ///<MCG Control 2 Register
-        using Addr = Register::Address<0x40064001,0xffffff40,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064001,0xffffff40,0x00000000,std::uint8_t>;
         ///Internal Reference Clock Select
         enum class IrcsVal {
             v0=0x00000000,     ///<Slow internal reference clock selected.
@@ -135,12 +135,12 @@ namespace Kvasir {
         }
     }
     namespace McgC3{    ///<MCG Control 3 Register
-        using Addr = Register::Address<0x40064002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064002,0xffffff00,0x00000000,std::uint8_t>;
         ///Slow Internal Reference Clock Trim Setting
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sctrim{}; 
     }
     namespace McgC4{    ///<MCG Control 4 Register
-        using Addr = Register::Address<0x40064003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064003,0xffffff00,0x00000000,std::uint8_t>;
         ///Slow Internal Reference Clock Fine Trim
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> scftrim{}; 
         ///Fast Internal Reference Clock Trim Setting
@@ -171,9 +171,63 @@ namespace Kvasir {
         }
     }
     namespace McgC5{    ///<MCG Control 5 Register
-        using Addr = Register::Address<0x40064004,0xffffff80,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064004,0xffffff80,0x00000000,std::uint8_t>;
         ///PLL External Reference Divider
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> prdiv0{}; 
+        enum class Prdiv0Val {
+            v0=0x00000000,     ///<Divide Factor is 1
+            v1=0x00000001,     ///<Divide Factor is 2
+            v2=0x00000002,     ///<Divide Factor is 3
+            v3=0x00000003,     ///<Divide Factor is 4
+            v4=0x00000004,     ///<Divide Factor is 5
+            v5=0x00000005,     ///<Divide Factor is 6
+            v6=0x00000006,     ///<Divide Factor is 7
+            v7=0x00000007,     ///<Divide Factor is 8
+            v8=0x00000008,     ///<Divide Factor is 9
+            v9=0x00000009,     ///<Divide Factor is 10
+            v10=0x0000000a,     ///<Divide Factor is 11
+            v11=0x0000000b,     ///<Divide Factor is 12
+            v12=0x0000000c,     ///<Divide Factor is 13
+            v13=0x0000000d,     ///<Divide Factor is 14
+            v14=0x0000000e,     ///<Divide Factor is 15
+            v15=0x0000000f,     ///<Divide Factor is 16
+            v16=0x00000010,     ///<Divide Factor is 17
+            v17=0x00000011,     ///<Divide Factor is 18
+            v18=0x00000012,     ///<Divide Factor is 19
+            v19=0x00000013,     ///<Divide Factor is 20
+            v20=0x00000014,     ///<Divide Factor is 21
+            v21=0x00000015,     ///<Divide Factor is 22
+            v22=0x00000016,     ///<Divide Factor is 23
+            v23=0x00000017,     ///<Divide Factor is 24
+            v24=0x00000018,     ///<Divide Factor is 25
+        };
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,Prdiv0Val> prdiv0{}; 
+        namespace Prdiv0ValC{
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v0> v0{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v1> v1{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v2> v2{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v3> v3{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v4> v4{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v5> v5{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v6> v6{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v7> v7{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v8> v8{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v9> v9{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v10> v10{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v11> v11{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v12> v12{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v13> v13{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v14> v14{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v15> v15{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v16> v16{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v17> v17{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v18> v18{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v19> v19{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v20> v20{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v21> v21{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v22> v22{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v23> v23{};
+            constexpr Register::FieldValue<decltype(prdiv0)::Type,Prdiv0Val::v24> v24{};
+        }
         ///PLL Stop Enable
         enum class Pllsten0Val {
             v0=0x00000000,     ///<MCGPLLCLK is disabled in any of the Stop modes.
@@ -196,9 +250,77 @@ namespace Kvasir {
         }
     }
     namespace McgC6{    ///<MCG Control 6 Register
-        using Addr = Register::Address<0x40064005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064005,0xffffff00,0x00000000,std::uint8_t>;
         ///VCO 0 Divider
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> vdiv0{}; 
+        enum class Vdiv0Val {
+            v0=0x00000000,     ///<Multiply Factor is 24
+            v1=0x00000001,     ///<Multiply Factor is 25
+            v2=0x00000002,     ///<Multiply Factor is 26
+            v3=0x00000003,     ///<Multiply Factor is 27
+            v4=0x00000004,     ///<Multiply Factor is 28
+            v5=0x00000005,     ///<Multiply Factor is 29
+            v6=0x00000006,     ///<Multiply Factor is 30
+            v7=0x00000007,     ///<Multiply Factor is 31
+            v8=0x00000008,     ///<Multiply Factor is 32
+            v9=0x00000009,     ///<Multiply Factor is 33
+            v10=0x0000000a,     ///<Multiply Factor is 34
+            v11=0x0000000b,     ///<Multiply Factor is 35
+            v12=0x0000000c,     ///<Multiply Factor is 36
+            v13=0x0000000d,     ///<Multiply Factor is 37
+            v14=0x0000000e,     ///<Multiply Factor is 38
+            v15=0x0000000f,     ///<Multiply Factor is 39
+            v16=0x00000010,     ///<Multiply Factor is 40
+            v17=0x00000011,     ///<Multiply Factor is 41
+            v18=0x00000012,     ///<Multiply Factor is 42
+            v19=0x00000013,     ///<Multiply Factor is 43
+            v20=0x00000014,     ///<Multiply Factor is 44
+            v21=0x00000015,     ///<Multiply Factor is 45
+            v22=0x00000016,     ///<Multiply Factor is 46
+            v23=0x00000017,     ///<Multiply Factor is 47
+            v24=0x00000018,     ///<Multiply Factor is 48
+            v25=0x00000019,     ///<Multiply Factor is 49
+            v26=0x0000001a,     ///<Multiply Factor is 50
+            v27=0x0000001b,     ///<Multiply Factor is 51
+            v28=0x0000001c,     ///<Multiply Factor is 52
+            v29=0x0000001d,     ///<Multiply Factor is 53
+            v30=0x0000001e,     ///<Multiply Factor is 54
+            v31=0x0000001f,     ///<Multiply Factor is 55
+        };
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,Vdiv0Val> vdiv0{}; 
+        namespace Vdiv0ValC{
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v0> v0{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v1> v1{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v2> v2{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v3> v3{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v4> v4{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v5> v5{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v6> v6{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v7> v7{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v8> v8{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v9> v9{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v10> v10{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v11> v11{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v12> v12{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v13> v13{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v14> v14{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v15> v15{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v16> v16{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v17> v17{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v18> v18{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v19> v19{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v20> v20{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v21> v21{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v22> v22{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v23> v23{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v24> v24{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v25> v25{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v26> v26{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v27> v27{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v28> v28{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v29> v29{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v30> v30{};
+            constexpr Register::FieldValue<decltype(vdiv0)::Type,Vdiv0Val::v31> v31{};
+        }
         ///Clock Monitor Enable
         enum class Cme0Val {
             v0=0x00000000,     ///<External clock monitor is disabled for OSC0.
@@ -231,7 +353,7 @@ namespace Kvasir {
         }
     }
     namespace McgS{    ///<MCG Status Register
-        using Addr = Register::Address<0x40064006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064006,0xffffff00,0x00000000,std::uint8_t>;
         ///Internal Reference Clock Status
         enum class IrcstVal {
             v0=0x00000000,     ///<Source of internal reference clock is the slow clock (32 kHz IRC).
@@ -300,7 +422,7 @@ namespace Kvasir {
         }
     }
     namespace McgSc{    ///<MCG Status and Control Register
-        using Addr = Register::Address<0x40064008,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40064008,0xffffff00,0x00000000,std::uint8_t>;
         ///OSC0 Loss of Clock Status
         enum class Locs0Val {
             v0=0x00000000,     ///<Loss of OSC0 has not occurred.
@@ -375,17 +497,17 @@ namespace Kvasir {
         }
     }
     namespace McgAtcvh{    ///<MCG Auto Trim Compare Value High Register
-        using Addr = Register::Address<0x4006400a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006400a,0xffffff00,0x00000000,std::uint8_t>;
         ///ATM Compare Value High
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> atcvh{}; 
     }
     namespace McgAtcvl{    ///<MCG Auto Trim Compare Value Low Register
-        using Addr = Register::Address<0x4006400b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006400b,0xffffff00,0x00000000,std::uint8_t>;
         ///ATM Compare Value Low
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> atcvl{}; 
     }
     namespace McgC7{    ///<MCG Control 7 Register
-        using Addr = Register::Address<0x4006400c,0xfffffffe,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006400c,0xfffffffe,0x00000000,std::uint8_t>;
         ///MCG OSC Clock Select
         enum class OscselVal {
             v0=0x00000000,     ///<Selects System Oscillator (OSCCLK).
@@ -398,7 +520,7 @@ namespace Kvasir {
         }
     }
     namespace McgC8{    ///<MCG Control 8 Register
-        using Addr = Register::Address<0x4006400d,0xffffff1e,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006400d,0xffffff1e,0x00000000,std::uint8_t>;
         ///RTC Loss of Clock Status
         enum class Locs1Val {
             v0=0x00000000,     ///<Loss of RTC has not occur.
@@ -441,9 +563,9 @@ namespace Kvasir {
         }
     }
     namespace McgC9{    ///<MCG Control 9 Register
-        using Addr = Register::Address<0x4006400e,0xffffffff,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006400e,0xffffffff,0x00000000,std::uint8_t>;
     }
     namespace McgC10{    ///<MCG Control 10 Register
-        using Addr = Register::Address<0x4006400f,0xffffffff,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006400f,0xffffffff,0x00000000,std::uint8_t>;
     }
 }

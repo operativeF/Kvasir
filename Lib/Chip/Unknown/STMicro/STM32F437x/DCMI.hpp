@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Digital camera interface
     namespace DcmiCr{    ///<control register 1
-        using Addr = Register::Address<0x50050000,0xffffb000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050000,0xffffb000,0x00000000,std::uint32_t>;
         ///DCMI enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> enable{}; 
         ///Extended data mode
@@ -28,7 +28,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> capture{}; 
     }
     namespace DcmiSr{    ///<status register
-        using Addr = Register::Address<0x50050004,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050004,0xfffffff8,0x00000000,std::uint32_t>;
         ///FIFO not empty
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> fne{}; 
         ///VSYNC
@@ -37,7 +37,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> hsync{}; 
     }
     namespace DcmiRis{    ///<raw interrupt status register
-        using Addr = Register::Address<0x50050008,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050008,0xffffffe0,0x00000000,std::uint32_t>;
         ///Line raw interrupt status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> lineRis{}; 
         ///VSYNC raw interrupt status
@@ -50,7 +50,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> frameRis{}; 
     }
     namespace DcmiIer{    ///<interrupt enable register
-        using Addr = Register::Address<0x5005000c,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5005000c,0xffffffe0,0x00000000,std::uint32_t>;
         ///Line interrupt enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> lineIe{}; 
         ///VSYNC interrupt enable
@@ -63,7 +63,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> frameIe{}; 
     }
     namespace DcmiMis{    ///<masked interrupt status          register
-        using Addr = Register::Address<0x50050010,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050010,0xffffffe0,0x00000000,std::uint32_t>;
         ///Line masked interrupt              status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> lineMis{}; 
         ///VSYNC masked interrupt              status
@@ -76,7 +76,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> frameMis{}; 
     }
     namespace DcmiIcr{    ///<interrupt clear register
-        using Addr = Register::Address<0x50050014,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050014,0xffffffe0,0x00000000,std::uint32_t>;
         ///line interrupt status              clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> lineIsc{}; 
         ///Vertical synch interrupt status              clear
@@ -89,7 +89,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> frameIsc{}; 
     }
     namespace DcmiEscr{    ///<embedded synchronization code          register
-        using Addr = Register::Address<0x50050018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050018,0x00000000,0x00000000,std::uint32_t>;
         ///Frame end delimiter code
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> fec{}; 
         ///Line end delimiter code
@@ -100,7 +100,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> fsc{}; 
     }
     namespace DcmiEsur{    ///<embedded synchronization unmask          register
-        using Addr = Register::Address<0x5005001c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5005001c,0x00000000,0x00000000,std::uint32_t>;
         ///Frame end delimiter unmask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> feu{}; 
         ///Line end delimiter unmask
@@ -111,21 +111,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> fsu{}; 
     }
     namespace DcmiCwstrt{    ///<crop window start
-        using Addr = Register::Address<0x50050020,0xe000c000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050020,0xe000c000,0x00000000,std::uint32_t>;
         ///Vertical start line count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(28,16),Register::ReadWriteAccess,unsigned> vst{}; 
         ///Horizontal offset count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> hoffcnt{}; 
     }
     namespace DcmiCwsize{    ///<crop window size
-        using Addr = Register::Address<0x50050024,0xc000c000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050024,0xc000c000,0x00000000,std::uint32_t>;
         ///Vertical line count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,16),Register::ReadWriteAccess,unsigned> vline{}; 
         ///Capture count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> capcnt{}; 
     }
     namespace DcmiDr{    ///<data register
-        using Addr = Register::Address<0x50050028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50050028,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> byte3{}; 
         ///Data byte 2

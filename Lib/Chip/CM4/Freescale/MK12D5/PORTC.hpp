@@ -2,50 +2,8 @@
 #include <Register/Utility.hpp>
 namespace Kvasir {
 //Pin Control and Interrupts
-    namespace PortcGpclr{    ///<Global Pin Control Low Register
-        using Addr = Register::Address<0x4004b080,0x00000000,0x00000000,unsigned>;
-        ///Global Pin Write Data
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
-        ///Global Pin Write Enable
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
-    }
-    namespace PortcGpchr{    ///<Global Pin Control High Register
-        using Addr = Register::Address<0x4004b084,0x00000000,0x00000000,unsigned>;
-        ///Global Pin Write Data
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
-        ///Global Pin Write Enable
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
-    }
-    namespace PortcIsfr{    ///<Interrupt Status Flag Register
-        using Addr = Register::Address<0x4004b0a0,0x00000000,0x00000000,unsigned>;
-        ///Interrupt Status Flag
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> isf{}; 
-    }
-    namespace PortcDfer{    ///<Digital Filter Enable Register
-        using Addr = Register::Address<0x4004b0c0,0x00000000,0x00000000,unsigned>;
-        ///Digital Filter Enable
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dfe{}; 
-    }
-    namespace PortcDfcr{    ///<Digital Filter Clock Register
-        using Addr = Register::Address<0x4004b0c4,0xfffffffe,0x00000000,unsigned>;
-        ///Clock Source
-        enum class CsVal {
-            v0=0x00000000,     ///<Digital filters are clocked by the bus clock.
-            v1=0x00000001,     ///<Digital filters are clocked by the 1 kHz LPO clock.
-        };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,CsVal> cs{}; 
-        namespace CsValC{
-            constexpr Register::FieldValue<decltype(cs)::Type,CsVal::v0> v0{};
-            constexpr Register::FieldValue<decltype(cs)::Type,CsVal::v1> v1{};
-        }
-    }
-    namespace PortcDfwr{    ///<Digital Filter Width Register
-        using Addr = Register::Address<0x4004b0c8,0xffffffe0,0x00000000,unsigned>;
-        ///Filter Length
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> filt{}; 
-    }
     namespace PortcPcr0{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b000,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b000,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -174,7 +132,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr1{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b004,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b004,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -303,7 +261,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr2{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b008,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b008,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -432,7 +390,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr3{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b00c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b00c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -561,7 +519,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr4{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b010,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b010,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -690,7 +648,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr5{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b014,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b014,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -819,7 +777,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr6{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b018,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b018,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -948,7 +906,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr7{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b01c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b01c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1077,7 +1035,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr8{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b020,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b020,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1206,7 +1164,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr9{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b024,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b024,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1335,7 +1293,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr10{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b028,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b028,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1464,7 +1422,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr11{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b02c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b02c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1593,7 +1551,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr12{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b030,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b030,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1722,7 +1680,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr13{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b034,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b034,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1851,13 +1809,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr14{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b038,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b038,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -1867,7 +1825,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -1877,7 +1835,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -1887,7 +1845,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -1897,7 +1855,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -1907,7 +1865,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -1980,13 +1938,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr15{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b03c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b03c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -1996,7 +1954,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -2006,7 +1964,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -2016,7 +1974,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -2026,7 +1984,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -2036,7 +1994,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -2109,7 +2067,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr16{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b040,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b040,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2238,7 +2196,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr17{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b044,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b044,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2367,13 +2325,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr18{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b048,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b048,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -2383,7 +2341,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -2393,7 +2351,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -2403,7 +2361,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -2413,7 +2371,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -2423,7 +2381,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -2496,13 +2454,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr19{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b04c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b04c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -2512,7 +2470,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -2522,7 +2480,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -2532,7 +2490,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -2542,7 +2500,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -2552,7 +2510,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -2625,13 +2583,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr20{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b050,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b050,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -2641,7 +2599,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -2651,7 +2609,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -2661,7 +2619,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -2671,7 +2629,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -2681,7 +2639,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -2754,13 +2712,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr21{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b054,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b054,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -2770,7 +2728,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -2780,7 +2738,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -2790,7 +2748,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -2800,7 +2758,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -2810,7 +2768,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -2883,13 +2841,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr22{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b058,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b058,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -2899,7 +2857,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -2909,7 +2867,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -2919,7 +2877,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -2929,7 +2887,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -2939,7 +2897,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3012,13 +2970,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr23{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b05c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b05c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3028,7 +2986,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3038,7 +2996,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3048,7 +3006,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3058,7 +3016,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3068,7 +3026,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3141,13 +3099,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr24{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b060,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b060,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3157,7 +3115,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3167,7 +3125,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3177,7 +3135,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3187,7 +3145,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3197,7 +3155,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3270,13 +3228,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr25{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b064,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b064,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3286,7 +3244,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3296,7 +3254,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3306,7 +3264,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3316,7 +3274,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3326,7 +3284,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3399,13 +3357,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr26{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b068,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b068,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3415,7 +3373,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3425,7 +3383,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3435,7 +3393,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3445,7 +3403,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3455,7 +3413,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3528,13 +3486,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr27{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b06c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b06c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3544,7 +3502,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3554,7 +3512,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3564,7 +3522,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3574,7 +3532,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3584,7 +3542,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3657,13 +3615,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr28{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b070,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b070,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3673,7 +3631,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3683,7 +3641,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3693,7 +3651,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3703,7 +3661,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3713,7 +3671,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3786,13 +3744,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr29{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b074,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b074,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3802,7 +3760,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3812,7 +3770,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3822,7 +3780,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3832,7 +3790,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3842,7 +3800,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -3915,13 +3873,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr30{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b078,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b078,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -3931,7 +3889,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -3941,7 +3899,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -3951,7 +3909,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -3961,7 +3919,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -3971,7 +3929,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -4044,13 +4002,13 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr31{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b07c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b07c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
             v1=0x00000001,     ///<Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,PsVal> ps{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PsVal> ps{}; 
         namespace PsValC{
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ps)::Type,PsVal::v1> v1{};
@@ -4060,7 +4018,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Internal pullup or pulldown resistor is not enabled on the corresponding pin.
             v1=0x00000001,     ///<Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,PeVal> pe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PeVal> pe{}; 
         namespace PeValC{
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pe)::Type,PeVal::v1> v1{};
@@ -4070,7 +4028,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
             v1=0x00000001,     ///<Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,SreVal> sre{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,SreVal> sre{}; 
         namespace SreValC{
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v0> v0{};
             constexpr Register::FieldValue<decltype(sre)::Type,SreVal::v1> v1{};
@@ -4080,7 +4038,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Passive input filter is disabled on the corresponding pin.
             v1=0x00000001,     ///<Passive input filter is enabled on the corresponding pin, if the pin is configured as a digital input. Refer to the device data sheet for filter characteristics.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,PfeVal> pfe{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,PfeVal> pfe{}; 
         namespace PfeValC{
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(pfe)::Type,PfeVal::v1> v1{};
@@ -4090,7 +4048,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Open drain output is disabled on the corresponding pin.
             v1=0x00000001,     ///<Open drain output is enabled on the corresponding pin, if the pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,OdeVal> ode{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,OdeVal> ode{}; 
         namespace OdeValC{
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ode)::Type,OdeVal::v1> v1{};
@@ -4100,7 +4058,7 @@ namespace Kvasir {
             v0=0x00000000,     ///<Low drive strength is configured on the corresponding pin, if pin is configured as a digital output.
             v1=0x00000001,     ///<High drive strength is configured on the corresponding pin, if pin is configured as a digital output.
         };
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,DseVal> dse{}; 
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,DseVal> dse{}; 
         namespace DseValC{
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v0> v0{};
             constexpr Register::FieldValue<decltype(dse)::Type,DseVal::v1> v1{};
@@ -4171,5 +4129,47 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(isf)::Type,IsfVal::v0> v0{};
             constexpr Register::FieldValue<decltype(isf)::Type,IsfVal::v1> v1{};
         }
+    }
+    namespace PortcGpclr{    ///<Global Pin Control Low Register
+        using Addr = Register::Address<0x4004b080,0x00000000,0x00000000,std::uint32_t>;
+        ///Global Pin Write Data
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
+        ///Global Pin Write Enable
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
+    }
+    namespace PortcGpchr{    ///<Global Pin Control High Register
+        using Addr = Register::Address<0x4004b084,0x00000000,0x00000000,std::uint32_t>;
+        ///Global Pin Write Data
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
+        ///Global Pin Write Enable
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
+    }
+    namespace PortcIsfr{    ///<Interrupt Status Flag Register
+        using Addr = Register::Address<0x4004b0a0,0x00000000,0x00000000,std::uint32_t>;
+        ///Interrupt Status Flag
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> isf{}; 
+    }
+    namespace PortcDfer{    ///<Digital Filter Enable Register
+        using Addr = Register::Address<0x4004b0c0,0x00000000,0x00000000,std::uint32_t>;
+        ///Digital Filter Enable
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dfe{}; 
+    }
+    namespace PortcDfcr{    ///<Digital Filter Clock Register
+        using Addr = Register::Address<0x4004b0c4,0xfffffffe,0x00000000,std::uint32_t>;
+        ///Clock Source
+        enum class CsVal {
+            v0=0x00000000,     ///<Digital filters are clocked by the bus clock.
+            v1=0x00000001,     ///<Digital filters are clocked by the 1 kHz LPO clock.
+        };
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,CsVal> cs{}; 
+        namespace CsValC{
+            constexpr Register::FieldValue<decltype(cs)::Type,CsVal::v0> v0{};
+            constexpr Register::FieldValue<decltype(cs)::Type,CsVal::v1> v1{};
+        }
+    }
+    namespace PortcDfwr{    ///<Digital Filter Width Register
+        using Addr = Register::Address<0x4004b0c8,0xffffffe0,0x00000000,std::uint32_t>;
+        ///Filter Length
+        constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> filt{}; 
     }
 }

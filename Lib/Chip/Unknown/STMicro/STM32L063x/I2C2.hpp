@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Inter-integrated circuit
     namespace I2c2Cr1{    ///<Control register 1
-        using Addr = Register::Address<0x40005800,0xff002000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005800,0xff002000,0x00000000,std::uint32_t>;
         ///Peripheral enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pe{}; 
         ///TX Interrupt enable
@@ -46,7 +46,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> pecen{}; 
     }
     namespace I2c2Cr2{    ///<Control register 2
-        using Addr = Register::Address<0x40005804,0xf8000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005804,0xf8000000,0x00000000,std::uint32_t>;
         ///Packet error checking byte
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> pecbyte{}; 
         ///Automatic end mode (master              mode)
@@ -71,7 +71,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> sadd{}; 
     }
     namespace I2c2Oar1{    ///<Own address register 1
-        using Addr = Register::Address<0x40005808,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005808,0xffff7800,0x00000000,std::uint32_t>;
         ///Interface address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> oa1{}; 
         ///Own Address 1 10-bit mode
@@ -80,7 +80,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> oa1en{}; 
     }
     namespace I2c2Oar2{    ///<Own address register 2
-        using Addr = Register::Address<0x4000580c,0xffff7801,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000580c,0xffff7801,0x00000000,std::uint32_t>;
         ///Interface address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,1),Register::ReadWriteAccess,unsigned> oa2{}; 
         ///Own Address 2 masks
@@ -89,7 +89,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> oa2en{}; 
     }
     namespace I2c2Timingr{    ///<Timing register
-        using Addr = Register::Address<0x40005810,0x0f000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005810,0x0f000000,0x00000000,std::uint32_t>;
         ///SCL low period (master              mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> scll{}; 
         ///SCL high period (master              mode)
@@ -102,7 +102,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> presc{}; 
     }
     namespace I2c2Timeoutr{    ///<Status register 1
-        using Addr = Register::Address<0x40005814,0x70006000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005814,0x70006000,0x00000000,std::uint32_t>;
         ///Bus timeout A
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> timeouta{}; 
         ///Idle clock timeout              detection
@@ -115,7 +115,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> texten{}; 
     }
     namespace I2c2Isr{    ///<Interrupt and Status register
-        using Addr = Register::Address<0x40005818,0xff004000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005818,0xff004000,0x00000000,std::uint32_t>;
         ///Address match code (Slave              mode)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,17),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> addcode{}; 
         ///Transfer direction (Slave              mode)
@@ -152,7 +152,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> txe{}; 
     }
     namespace I2c2Icr{    ///<Interrupt clear register
-        using Addr = Register::Address<0x4000581c,0xffffc0c7,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000581c,0xffffc0c7,0x00000000,std::uint32_t>;
         ///Alert flag clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> alertcf{}; 
         ///Timeout detection flag              clear
@@ -173,17 +173,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> addrcf{}; 
     }
     namespace I2c2Pecr{    ///<PEC register
-        using Addr = Register::Address<0x40005820,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005820,0xffffff00,0x00000000,std::uint32_t>;
         ///Packet error checking              register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> pec{}; 
     }
     namespace I2c2Rxdr{    ///<Receive data register
-        using Addr = Register::Address<0x40005824,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005824,0xffffff00,0x00000000,std::uint32_t>;
         ///8-bit receive data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rxdata{}; 
     }
     namespace I2c2Txdr{    ///<Transmit data register
-        using Addr = Register::Address<0x40005828,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005828,0xffffff00,0x00000000,std::uint32_t>;
         ///8-bit transmit data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> txdata{}; 
     }

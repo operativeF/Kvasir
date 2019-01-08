@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Serial Communication Interface
     namespace Uart1Bdh{    ///<UART Baud Rate Registers: High
-        using Addr = Register::Address<0x4006b000,0xffffff20,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b000,0xffffff20,0x00000000,std::uint8_t>;
         ///UART Baud Rate Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> sbr{}; 
         ///RxD Input Active Edge Interrupt Enable
@@ -28,12 +28,12 @@ namespace Kvasir {
         }
     }
     namespace Uart1Bdl{    ///<UART Baud Rate Registers: Low
-        using Addr = Register::Address<0x4006b001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b001,0xffffff00,0x00000000,std::uint8_t>;
         ///UART Baud Rate Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sbr{}; 
     }
     namespace Uart1C1{    ///<UART Control Register 1
-        using Addr = Register::Address<0x4006b002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b002,0xffffff00,0x00000000,std::uint8_t>;
         ///Parity Type
         enum class PtVal {
             v0=0x00000000,     ///<Even parity.
@@ -116,7 +116,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1C2{    ///<UART Control Register 2
-        using Addr = Register::Address<0x4006b003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b003,0xffffff00,0x00000000,std::uint8_t>;
         ///Send Break
         enum class SbkVal {
             v0=0x00000000,     ///<Normal transmitter operation.
@@ -199,7 +199,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1S1{    ///<UART Status Register 1
-        using Addr = Register::Address<0x4006b004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b004,0xffffff00,0x00000000,std::uint8_t>;
         ///Parity Error Flag
         enum class PfVal {
             v0=0x00000000,     ///<No parity error detected since the last time this flag was cleared. If the receive buffer has a depth greater than 1, then there may be data in the receive buffer what was received with a parity error.
@@ -282,7 +282,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1S2{    ///<UART Status Register 2
-        using Addr = Register::Address<0x4006b005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b005,0xffffff00,0x00000000,std::uint8_t>;
         ///Receiver Active Flag
         enum class RafVal {
             v0=0x00000000,     ///<UART receiver idle/inactive waiting for a start bit.
@@ -365,7 +365,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1C3{    ///<UART Control Register 3
-        using Addr = Register::Address<0x4006b006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b006,0xffffff00,0x00000000,std::uint8_t>;
         ///Parity Error Interrupt Enable
         enum class PeieVal {
             v0=0x00000000,     ///<PF interrupt requests are disabled.
@@ -432,22 +432,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> r8{}; 
     }
     namespace Uart1D{    ///<UART Data Register
-        using Addr = Register::Address<0x4006b007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b007,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rt{}; 
     }
     namespace Uart1Ma1{    ///<UART Match Address Registers 1
-        using Addr = Register::Address<0x4006b008,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b008,0xffffff00,0x00000000,std::uint8_t>;
         ///Match Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Uart1Ma2{    ///<UART Match Address Registers 2
-        using Addr = Register::Address<0x4006b009,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b009,0xffffff00,0x00000000,std::uint8_t>;
         ///Match Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Uart1C4{    ///<UART Control Register 4
-        using Addr = Register::Address<0x4006b00a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b00a,0xffffff00,0x00000000,std::uint8_t>;
         ///Baud Rate Fine Adjust
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> brfa{}; 
         ///10-bit Mode select
@@ -482,7 +482,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1C5{    ///<UART Control Register 5
-        using Addr = Register::Address<0x4006b00b,0xffffff5f,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b00b,0xffffff5f,0x00000000,std::uint8_t>;
         ///Receiver Full DMA Select
         enum class RdmasVal {
             v0=0x00000000,     ///<If C2[RIE] and S1[RDRF] are set, the RDFR interrupt request signal is asserted to request an interrupt service.
@@ -505,7 +505,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Ed{    ///<UART Extended Data Register
-        using Addr = Register::Address<0x4006b00c,0xffffff3f,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b00c,0xffffff3f,0x00000000,std::uint8_t>;
         ///no description available
         enum class ParityeVal {
             v0=0x00000000,     ///<The dataword was received without a parity error.
@@ -528,7 +528,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Modem{    ///<UART Modem Register
-        using Addr = Register::Address<0x4006b00d,0xfffffff0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b00d,0xfffffff0,0x00000000,std::uint8_t>;
         ///Transmitter clear-to-send enable
         enum class TxctseVal {
             v0=0x00000000,     ///<CTS has no effect on the transmitter.
@@ -571,7 +571,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Ir{    ///<UART Infrared Register
-        using Addr = Register::Address<0x4006b00e,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b00e,0xfffffff8,0x00000000,std::uint8_t>;
         ///Transmitter narrow pulse
         enum class TnpVal {
             v00=0x00000000,     ///<3/16.
@@ -598,7 +598,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Pfifo{    ///<UART FIFO Parameters
-        using Addr = Register::Address<0x4006b010,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b010,0xffffff00,0x00000000,std::uint8_t>;
         ///Receive FIFO. Buffer Depth
         enum class RxfifosizeVal {
             v000=0x00000000,     ///<Receive FIFO/Buffer depth = 1 dataword.
@@ -661,7 +661,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Cfifo{    ///<UART FIFO Control Register
-        using Addr = Register::Address<0x4006b011,0xffffff38,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b011,0xffffff38,0x00000000,std::uint8_t>;
         ///Receive FIFO Underflow Interrupt Enable
         enum class RxufeVal {
             v0=0x00000000,     ///<RXUF flag does not generate an interrupt to the host.
@@ -714,7 +714,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Sfifo{    ///<UART FIFO Status Register
-        using Addr = Register::Address<0x4006b012,0xffffff38,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b012,0xffffff38,0x00000000,std::uint8_t>;
         ///Receiver Buffer Underflow Flag
         enum class RxufVal {
             v0=0x00000000,     ///<No receive buffer underflow has occurred since the last time the flag was cleared.
@@ -767,27 +767,27 @@ namespace Kvasir {
         }
     }
     namespace Uart1Twfifo{    ///<UART FIFO Transmit Watermark
-        using Addr = Register::Address<0x4006b013,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b013,0xffffff00,0x00000000,std::uint8_t>;
         ///Transmit Watermark
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> txwater{}; 
     }
     namespace Uart1Tcfifo{    ///<UART FIFO Transmit Count
-        using Addr = Register::Address<0x4006b014,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b014,0xffffff00,0x00000000,std::uint8_t>;
         ///Transmit Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcount{}; 
     }
     namespace Uart1Rwfifo{    ///<UART FIFO Receive Watermark
-        using Addr = Register::Address<0x4006b015,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b015,0xffffff00,0x00000000,std::uint8_t>;
         ///Receive Watermark
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rxwater{}; 
     }
     namespace Uart1Rcfifo{    ///<UART FIFO Receive Count
-        using Addr = Register::Address<0x4006b016,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b016,0xffffff00,0x00000000,std::uint8_t>;
         ///Receive Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxcount{}; 
     }
     namespace Uart1C7816{    ///<UART 7816 Control Register
-        using Addr = Register::Address<0x4006b018,0xffffffe0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b018,0xffffffe0,0x00000000,std::uint8_t>;
         ///ISO-7816 Functionality Enabled
         enum class Iso7816eVal {
             v0=0x00000000,     ///<ISO-7816 functionality is turned off/not enabled.
@@ -840,7 +840,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Ie7816{    ///<UART 7816 Interrupt Enable Register
-        using Addr = Register::Address<0x4006b019,0xffffff08,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b019,0xffffff08,0x00000000,std::uint8_t>;
         ///Receive Threshold Exceeded Interrupt Enable
         enum class RxteVal {
             v0=0x00000000,     ///<The assertion of IS7816[RXT] does not result in the generation of an interrupt.
@@ -913,7 +913,7 @@ namespace Kvasir {
         }
     }
     namespace Uart1Is7816{    ///<UART 7816 Interrupt Status Register
-        using Addr = Register::Address<0x4006b01a,0xffffff08,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b01a,0xffffff08,0x00000000,std::uint8_t>;
         ///Receive Threshold Exceeded Interrupt
         enum class RxtVal {
             v0=0x00000000,     ///<The number of consecutive NACKS generated as a result of parity errors and buffer overruns is less than or equal to the value in ET7816[RXTHRESHOLD].
@@ -986,36 +986,36 @@ namespace Kvasir {
         }
     }
     namespace Uart1Wp7816t0{    ///<UART 7816 Wait Parameter Register
-        using Addr = Register::Address<0x4006b01b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b01b,0xffffff00,0x00000000,std::uint8_t>;
         ///Wait Timer Interrupt (C7816[TTYPE] = 0)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> wi{}; 
     }
     namespace Uart1Wp7816t1{    ///<UART 7816 Wait Parameter Register
-        using Addr = Register::Address<0x4006b01b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b01b,0xffffff00,0x00000000,std::uint8_t>;
         ///Block Wait Time Integer(C7816[TTYPE] = 1)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> bwi{}; 
         ///Character Wait Time Integer (C7816[TTYPE] = 1)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::ReadWriteAccess,unsigned> cwi{}; 
     }
     namespace Uart1Wn7816{    ///<UART 7816 Wait N Register
-        using Addr = Register::Address<0x4006b01c,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b01c,0xffffff00,0x00000000,std::uint8_t>;
         ///Guard Band N
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> gtn{}; 
     }
     namespace Uart1Wf7816{    ///<UART 7816 Wait FD Register
-        using Addr = Register::Address<0x4006b01d,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b01d,0xffffff00,0x00000000,std::uint8_t>;
         ///FD Multiplier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> gtfd{}; 
     }
     namespace Uart1Et7816{    ///<UART 7816 Error Threshold Register
-        using Addr = Register::Address<0x4006b01e,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b01e,0xffffff00,0x00000000,std::uint8_t>;
         ///Receive NACK Threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> rxthreshold{}; 
         ///Transmit NACK Threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::ReadWriteAccess,unsigned> txthreshold{}; 
     }
     namespace Uart1Tl7816{    ///<UART 7816 Transmit Length Register
-        using Addr = Register::Address<0x4006b01f,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006b01f,0xffffff00,0x00000000,std::uint8_t>;
         ///Transmit Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> tlen{}; 
     }

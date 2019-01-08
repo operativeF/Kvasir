@@ -3,7 +3,7 @@
 namespace Kvasir {
 //High Speed MultiMedia Card Interface 0
     namespace Hsmci0Cr{    ///<Control Register
-        using Addr = Register::Address<0xfff80000,0xffffff70,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80000,0xffffff70,0x00000000,std::uint32_t>;
         ///Multi-Media Interface Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mcien{}; 
         ///Multi-Media Interface Disable
@@ -16,7 +16,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace Hsmci0Mr{    ///<Mode Register
-        using Addr = Register::Address<0xfff80004,0x00008000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80004,0x00008000,0x00000000,std::uint32_t>;
         ///Clock Divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> clkdiv{}; 
         ///Power Saving Divider
@@ -33,7 +33,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> blklen{}; 
     }
     namespace Hsmci0Dtor{    ///<Data Timeout Register
-        using Addr = Register::Address<0xfff80008,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80008,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Timeout Cycle Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> dtocyc{}; 
         ///Data Timeout Multiplier
@@ -60,7 +60,7 @@ namespace Kvasir {
         }
     }
     namespace Hsmci0Sdcr{    ///<SD/SDIO Card Register
-        using Addr = Register::Address<0xfff8000c,0xffffff3c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff8000c,0xffffff3c,0x00000000,std::uint32_t>;
         ///SDCard/SDIO Slot
         enum class SdcselVal {
             slota=0x00000000,     ///<Slot A is selected.
@@ -89,12 +89,12 @@ namespace Kvasir {
         }
     }
     namespace Hsmci0Argr{    ///<Argument Register
-        using Addr = Register::Address<0xfff80010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80010,0x00000000,0x00000000,std::uint32_t>;
         ///Command Argument
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> arg{}; 
     }
     namespace Hsmci0Cmdr{    ///<Command Register
-        using Addr = Register::Address<0xfff80014,0xf0c0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80014,0xf0c0e000,0x00000000,std::uint32_t>;
         ///Command Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdnb{}; 
         ///Response Type
@@ -217,14 +217,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bootAck{}; 
     }
     namespace Hsmci0Blkr{    ///<Block Register
-        using Addr = Register::Address<0xfff80018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80018,0x00000000,0x00000000,std::uint32_t>;
         ///MMC/SDIO Block Count - SDIO Byte Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> bcnt{}; 
         ///Data Block Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> blklen{}; 
     }
     namespace Hsmci0Cstor{    ///<Completion Signal Timeout Register
-        using Addr = Register::Address<0xfff8001c,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff8001c,0xffffff80,0x00000000,std::uint32_t>;
         ///Completion Signal Timeout Cycle Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> cstocyc{}; 
         ///Completion Signal Timeout Multiplier
@@ -251,17 +251,17 @@ namespace Kvasir {
         }
     }
     namespace Hsmci0Rdr{    ///<Receive Data Register
-        using Addr = Register::Address<0xfff80030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80030,0x00000000,0x00000000,std::uint32_t>;
         ///Data to Read
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace Hsmci0Tdr{    ///<Transmit Data Register
-        using Addr = Register::Address<0xfff80034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80034,0x00000000,0x00000000,std::uint32_t>;
         ///Data to Write
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace Hsmci0Sr{    ///<Status Register
-        using Addr = Register::Address<0xfff80040,0x0000cec0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80040,0x0000cec0,0x00000000,std::uint32_t>;
         ///Command Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready
@@ -314,7 +314,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace Hsmci0Ier{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xfff80044,0x0000cec0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80044,0x0000cec0,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Enable
@@ -367,7 +367,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace Hsmci0Idr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xfff80048,0x0000cec0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80048,0x0000cec0,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Disable
@@ -420,7 +420,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace Hsmci0Imr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfff8004c,0x0000cec0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff8004c,0x0000cec0,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Mask
@@ -473,7 +473,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace Hsmci0Dma{    ///<DMA Configuration Register
-        using Addr = Register::Address<0xfff80050,0xffffeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80050,0xffffeecc,0x00000000,std::uint32_t>;
         ///DMA Write Buffer Offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> offset{}; 
         ///DMA Channel Read and Write Chunk Size
@@ -496,7 +496,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::ReadWriteAccess,unsigned> ropt{}; 
     }
     namespace Hsmci0Cfg{    ///<Configuration Register
-        using Addr = Register::Address<0xfff80054,0xffffeeee,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80054,0xffffeeee,0x00000000,std::uint32_t>;
         ///HSMCI Internal FIFO control mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fifomode{}; 
         ///Flow Error flag reset control mode
@@ -507,36 +507,36 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::ReadWriteAccess,unsigned> lsync{}; 
     }
     namespace Hsmci0Wpmr{    ///<Write Protection Mode Register
-        using Addr = Register::Address<0xfff800e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff800e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpEn{}; 
         ///Write Protection Key password
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpKey{}; 
     }
     namespace Hsmci0Wpsr{    ///<Write Protection Status Register
-        using Addr = Register::Address<0xfff800e8,0xff0000f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff800e8,0xff0000f0,0x00000000,std::uint32_t>;
         ///Write Protection Violation Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpVs{}; 
         ///Write Protection Violation SouRCe
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpVsrc{}; 
     }
     namespace Hsmci0Rspr0{    ///<Response Register
-        using Addr = Register::Address<0xfff80020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80020,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace Hsmci0Rspr1{    ///<Response Register
-        using Addr = Register::Address<0xfff80024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80024,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace Hsmci0Rspr2{    ///<Response Register
-        using Addr = Register::Address<0xfff80028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff80028,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace Hsmci0Rspr3{    ///<Response Register
-        using Addr = Register::Address<0xfff8002c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfff8002c,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }

@@ -3,14 +3,14 @@
 namespace Kvasir {
 //Watchdog Timer
     namespace WdtCr{    ///<Control Register
-        using Addr = Register::Address<0x400e1a50,0x00fffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1a50,0x00fffffe,0x00000000,std::uint32_t>;
         ///Watchdog Restart
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wdrstt{}; 
         ///Password
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key{}; 
     }
     namespace WdtMr{    ///<Mode Register
-        using Addr = Register::Address<0x400e1a54,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1a54,0xc0000000,0x00000000,std::uint32_t>;
         ///Watchdog Counter Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> wdv{}; 
         ///Watchdog Fault Interrupt Enable
@@ -29,7 +29,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,29),Register::ReadWriteAccess,unsigned> wdidlehlt{}; 
     }
     namespace WdtSr{    ///<Status Register
-        using Addr = Register::Address<0x400e1a58,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1a58,0xfffffffc,0x00000000,std::uint32_t>;
         ///Watchdog Underflow
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wdunf{}; 
         ///Watchdog Error

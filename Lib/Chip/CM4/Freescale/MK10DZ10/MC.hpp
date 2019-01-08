@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Mode Controller
     namespace McSrsh{    ///<System Reset Status Register High
-        using Addr = Register::Address<0x4007e000,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e000,0xfffffff8,0x00000000,std::uint8_t>;
         ///JTAG generated reset
         enum class JtagVal {
             v0=0x00000000,     ///<Reset not caused by JTAG
@@ -36,7 +36,7 @@ namespace Kvasir {
         }
     }
     namespace McSrsl{    ///<System Reset Status Register Low
-        using Addr = Register::Address<0x4007e001,0xffffff18,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e001,0xffffff18,0x00000000,std::uint8_t>;
         ///Low-leakage wakeup reset
         enum class WakeupVal {
             v0=0x00000000,     ///<Reset not caused by LLWU module wakeup source
@@ -99,7 +99,7 @@ namespace Kvasir {
         }
     }
     namespace McPmprot{    ///<Power Mode Protection Register
-        using Addr = Register::Address<0x4007e002,0xffffffc8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e002,0xffffffc8,0x00000000,std::uint8_t>;
         ///Allow very low leakage stop 1 mode
         enum class Avlls1Val {
             v0=0x00000000,     ///<VLLS1 is not allowed
@@ -152,7 +152,7 @@ namespace Kvasir {
         }
     }
     namespace McPmctrl{    ///<Power Mode Control Register
-        using Addr = Register::Address<0x4007e003,0xffffff18,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e003,0xffffff18,0x00000000,std::uint8_t>;
         ///Low Power, Low Leakage Stop Mode
         enum class LpllsmVal {
             v000=0x00000000,     ///<Normal stop

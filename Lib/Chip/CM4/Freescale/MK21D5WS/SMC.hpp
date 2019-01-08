@@ -3,7 +3,7 @@
 namespace Kvasir {
 //System Mode Controller
     namespace SmcPmprot{    ///<Power Mode Protection register
-        using Addr = Register::Address<0x4007e000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e000,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///Allow Very-Low-Leakage Stop Mode
@@ -46,7 +46,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace SmcPmctrl{    ///<Power Mode Control register
-        using Addr = Register::Address<0x4007e001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e001,0xffffff00,0x00000000,std::uint8_t>;
         ///Stop Mode Control
         enum class StopmVal {
             v000=0x00000000,     ///<Normal Stop (STOP)
@@ -107,7 +107,7 @@ namespace Kvasir {
         }
     }
     namespace SmcVllsctrl{    ///<VLLS Control register
-        using Addr = Register::Address<0x4007e002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e002,0xffffff00,0x00000000,std::uint8_t>;
         ///VLLS Mode Control
         enum class VllsmVal {
             v000=0x00000000,     ///<VLLS0
@@ -156,7 +156,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace SmcPmstat{    ///<Power Mode Status register
-        using Addr = Register::Address<0x4007e003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e003,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pmstat{}; 
         ///no description available

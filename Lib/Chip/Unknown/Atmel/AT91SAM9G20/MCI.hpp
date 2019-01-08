@@ -3,7 +3,7 @@
 namespace Kvasir {
 //MultiMedia Card Interface
     namespace MciCr{    ///<Control Register
-        using Addr = Register::Address<0xfffa8000,0xffffff70,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8000,0xffffff70,0x00000000,std::uint32_t>;
         ///Multi-Media Interface Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mcien{}; 
         ///Multi-Media Interface Disable
@@ -16,7 +16,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace MciMr{    ///<Mode Register
-        using Addr = Register::Address<0xfffa8004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8004,0x00000000,0x00000000,std::uint32_t>;
         ///Clock Divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> clkdiv{}; 
         ///Power Saving Divider
@@ -35,26 +35,26 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> blklen{}; 
     }
     namespace MciDtor{    ///<Data Timeout Register
-        using Addr = Register::Address<0xfffa8008,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8008,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Timeout Cycle Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> dtocyc{}; 
         ///Data Timeout Multiplier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,4),Register::ReadWriteAccess,unsigned> dtomul{}; 
     }
     namespace MciSdcr{    ///<SD/SDIO Card Register
-        using Addr = Register::Address<0xfffa800c,0xffffff7c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa800c,0xffffff7c,0x00000000,std::uint32_t>;
         ///SDCard/SDIO Slot
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> sdcsel{}; 
         ///SDCard/SDIO Bus Width
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> sdcbus{}; 
     }
     namespace MciArgr{    ///<Argument Register
-        using Addr = Register::Address<0xfffa8010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8010,0x00000000,0x00000000,std::uint32_t>;
         ///Command Argument
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> arg{}; 
     }
     namespace MciCmdr{    ///<Command Register
-        using Addr = Register::Address<0xfffa8014,0xfcc0e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8014,0xfcc0e000,0x00000000,std::uint32_t>;
         ///Command Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdnb{}; 
         ///Response Type
@@ -75,24 +75,24 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> iospcmd{}; 
     }
     namespace MciBlkr{    ///<Block Register
-        using Addr = Register::Address<0xfffa8018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8018,0x00000000,0x00000000,std::uint32_t>;
         ///MMC/SDIO Block Count - SDIO Byte Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> bcnt{}; 
         ///Data Block Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> blklen{}; 
     }
     namespace MciRdr{    ///<Receive Data Register
-        using Addr = Register::Address<0xfffa8030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8030,0x00000000,0x00000000,std::uint32_t>;
         ///Data to Read
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace MciTdr{    ///<Transmit Data Register
-        using Addr = Register::Address<0xfffa8034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8034,0x00000000,0x00000000,std::uint32_t>;
         ///Data to Write
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace MciSr{    ///<Status Register
-        using Addr = Register::Address<0xfffa8040,0x3f803f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8040,0x3f803f00,0x00000000,std::uint32_t>;
         ///Command Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready
@@ -133,7 +133,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace MciIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xfffa8044,0x3f803f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8044,0x3f803f00,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Enable
@@ -174,7 +174,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace MciIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xfffa8048,0x3f803f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8048,0x3f803f00,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Disable
@@ -215,7 +215,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace MciImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfffa804c,0x3f803f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa804c,0x3f803f00,0x00000000,std::uint32_t>;
         ///Command Ready Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrdy{}; 
         ///Receiver Ready Interrupt Mask
@@ -256,47 +256,47 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> unre{}; 
     }
     namespace MciRpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0xfffa8100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8100,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace MciRcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0xfffa8104,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8104,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace MciTpr{    ///<Transmit Pointer Register
-        using Addr = Register::Address<0xfffa8108,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8108,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txptr{}; 
     }
     namespace MciTcr{    ///<Transmit Counter Register
-        using Addr = Register::Address<0xfffa810c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa810c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txctr{}; 
     }
     namespace MciRnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0xfffa8110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8110,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace MciRncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0xfffa8114,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8114,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace MciTnpr{    ///<Transmit Next Pointer Register
-        using Addr = Register::Address<0xfffa8118,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8118,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txnptr{}; 
     }
     namespace MciTncr{    ///<Transmit Next Counter Register
-        using Addr = Register::Address<0xfffa811c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa811c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Next
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txnctr{}; 
     }
     namespace MciPtcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0xfffa8120,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8120,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -307,29 +307,29 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace MciPtsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0xfffa8124,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8124,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txten{}; 
     }
     namespace MciRspr0{    ///<Response Register
-        using Addr = Register::Address<0xfffa8020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8020,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace MciRspr1{    ///<Response Register
-        using Addr = Register::Address<0xfffa8024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8024,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace MciRspr2{    ///<Response Register
-        using Addr = Register::Address<0xfffa8028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa8028,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }
     namespace MciRspr3{    ///<Response Register
-        using Addr = Register::Address<0xfffa802c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffa802c,0x00000000,0x00000000,std::uint32_t>;
         ///Response
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rsp{}; 
     }

@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32L15xxE/ADC.hpp>
 #include <Chip/Unknown/STMicro/STM32L15xxE/TIM6.hpp>
 #include <Chip/Unknown/STMicro/STM32L15xxE/TIM7.hpp>

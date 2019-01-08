@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Supply Controller
     namespace SupcCr{    ///<Supply Controller Control Register
-        using Addr = Register::Address<0x400e1210,0x00fffff3,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1210,0x00fffff3,0x00000000,std::uint32_t>;
         ///Voltage Regulator Off
         enum class VroffVal {
             noEffect=0x00000000,     ///<no effect.
@@ -28,7 +28,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key{}; 
     }
     namespace SupcSmmr{    ///<Supply Controller Supply Monitor Mode Register
-        using Addr = Register::Address<0x400e1214,0xffffc8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1214,0xffffc8f0,0x00000000,std::uint32_t>;
         ///Supply Monitor Threshold
         enum class SmthVal {
             v19v=0x00000000,     ///<1.9 V
@@ -105,7 +105,7 @@ namespace Kvasir {
         }
     }
     namespace SupcMr{    ///<Supply Controller Mode Register
-        using Addr = Register::Address<0x400e1218,0x00ef8fff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1218,0x00ef8fff,0x00000000,std::uint32_t>;
         ///Brownout Detector Reset Enable
         enum class BodrstenVal {
             notEnable=0x00000000,     ///<the core reset signal "vddcore_nreset" is not affected when a brownout detection occurs.
@@ -142,7 +142,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> key{}; 
     }
     namespace SupcWumr{    ///<Supply Controller Wake Up Mode Register
-        using Addr = Register::Address<0x400e121c,0xffff88f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e121c,0xffff88f0,0x00000000,std::uint32_t>;
         ///Force Wake Up Enable
         enum class FwupenVal {
             notEnable=0x00000000,     ///<the Force Wake Up pin has no wake up effect.
@@ -221,7 +221,7 @@ namespace Kvasir {
         }
     }
     namespace SupcWuir{    ///<Supply Controller Wake Up Inputs Register
-        using Addr = Register::Address<0x400e1220,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1220,0x00000000,0x00000000,std::uint32_t>;
         ///Wake Up Input Enable 0
         enum class Wkupen0Val {
             disable=0x00000000,     ///<the corresponding wake-up input has no wake up effect.
@@ -544,7 +544,7 @@ namespace Kvasir {
         }
     }
     namespace SupcSr{    ///<Supply Controller Status Register
-        using Addr = Register::Address<0x400e1224,0x0000ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1224,0x0000ef00,0x00000000,std::uint32_t>;
         ///FWUP Wake Up Status
         enum class FwupsVal {
             no=0x00000000,     ///<no wake up due to the assertion of the FWUP pin has occurred since the last read of SUPC_SR.

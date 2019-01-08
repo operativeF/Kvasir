@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Embedded Flash Controller 0
     namespace Efc0Fmr{    ///<EEFC Flash Mode Register
-        using Addr = Register::Address<0x400e0800,0xfefef0fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0800,0xfefef0fe,0x00000000,std::uint32_t>;
         ///Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> frdy{}; 
         ///Flash Wait State
@@ -14,7 +14,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> fam{}; 
     }
     namespace Efc0Fcr{    ///<EEFC Flash Command Register
-        using Addr = Register::Address<0x400e0804,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0804,0x00000000,0x00000000,std::uint32_t>;
         ///Flash Command
         enum class FcmdVal {
             getd=0x00000000,     ///<Get Flash Descriptor
@@ -55,7 +55,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fkey{}; 
     }
     namespace Efc0Fsr{    ///<EEFC Flash Status Register
-        using Addr = Register::Address<0x400e0808,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0808,0xfffffff8,0x00000000,std::uint32_t>;
         ///Flash Ready Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> frdy{}; 
         ///Flash Command Error Status
@@ -64,7 +64,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> flocke{}; 
     }
     namespace Efc0Frr{    ///<EEFC Flash Result Register
-        using Addr = Register::Address<0x400e080c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e080c,0x00000000,0x00000000,std::uint32_t>;
         ///Flash Result Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fvalue{}; 
     }

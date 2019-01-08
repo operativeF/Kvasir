@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB HS/FS/LS OTG Controller
     namespace UsbhsId{    ///<Identification Register
-        using Addr = Register::Address<0x40034000,0x0000c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034000,0x0000c0c0,0x00000000,std::uint32_t>;
         ///Configuration number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> id{}; 
         ///no description available
@@ -18,14 +18,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> versionid{}; 
     }
     namespace UsbhsHwgeneral{    ///<General Hardware Parameters Register
-        using Addr = Register::Address<0x40034004,0xfffff83f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034004,0xfffff83f,0x00000000,std::uint32_t>;
         ///PHY Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,6),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> phym{}; 
         ///Serial mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,9),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sm{}; 
     }
     namespace UsbhsHwhost{    ///<Host Hardware Parameters Register
-        using Addr = Register::Address<0x40034008,0x0000fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034008,0x0000fff0,0x00000000,std::uint32_t>;
         ///Host Capable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> hc{}; 
         ///Number of Ports
@@ -36,14 +36,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ttper{}; 
     }
     namespace UsbhsHwdevice{    ///<Device Hardware Parameters Register
-        using Addr = Register::Address<0x4003400c,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003400c,0xffffffc0,0x00000000,std::uint32_t>;
         ///Device Capable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dc{}; 
         ///Device endpoints.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> devep{}; 
     }
     namespace UsbhsHwtxbuf{    ///<Transmit Buffer Hardware Parameters Register
-        using Addr = Register::Address<0x40034010,0x7f000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034010,0x7f000000,0x00000000,std::uint32_t>;
         ///Transmit Burst.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txburst{}; 
         ///Transmit Address.
@@ -62,14 +62,14 @@ namespace Kvasir {
         }
     }
     namespace UsbhsHwrxbuf{    ///<Receive Buffer Hardware Parameters Register
-        using Addr = Register::Address<0x40034014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034014,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Burst.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxburst{}; 
         ///Receive Address.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxadd{}; 
     }
     namespace UsbhsUsbSbuscfg{    ///<System Bus Interface Configuration Register
-        using Addr = Register::Address<0x40034090,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034090,0xfffffff8,0x00000000,std::uint32_t>;
         ///Burst mode
         enum class BurstmodeVal {
             v000=0x00000000,     ///<INCR burst of unspecified length
@@ -94,14 +94,14 @@ namespace Kvasir {
         }
     }
     namespace UsbhsHciversion{    ///<Host Controller Interface Version and Capability Registers Length Register
-        using Addr = Register::Address<0x40034100,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034100,0x0000ff00,0x00000000,std::uint32_t>;
         ///Capability registers length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> caplength{}; 
         ///EHCI revision number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> hciversion{}; 
     }
     namespace UsbhsHcsparams{    ///<Host Controller Structural Parameters Register
-        using Addr = Register::Address<0x40034104,0xf00e00e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034104,0xf00e00e0,0x00000000,std::uint32_t>;
         ///Number of Ports
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nPorts{}; 
         ///Power Port Control
@@ -132,7 +132,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nTt{}; 
     }
     namespace UsbhsHccparams{    ///<Host Controller Capability Parameters Register
-        using Addr = Register::Address<0x40034108,0xffff0008,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034108,0xffff0008,0x00000000,std::uint32_t>;
         ///64-bit addressing capability.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> adc{}; 
         ///Programmable Frame List flag
@@ -153,12 +153,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eecp{}; 
     }
     namespace UsbhsDciversion{    ///<Device Controller Interface Version
-        using Addr = Register::Address<0x40034122,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034122,0xffff0000,0x00000000,std::uint16_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dciversion{}; 
     }
     namespace UsbhsDccparams{    ///<Device Controller Capability Parameters
-        using Addr = Register::Address<0x40034124,0xfffffe60,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034124,0xfffffe60,0x00000000,std::uint32_t>;
         ///Device Endpoint Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> den{}; 
         ///Device Capable
@@ -167,7 +167,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> hc{}; 
     }
     namespace UsbhsUsbcmd{    ///<USB Command Register
-        using Addr = Register::Address<0x40034140,0xff001480,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034140,0xff001480,0x00000000,std::uint32_t>;
         ///Run/Stop
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rs{}; 
         ///Controller Reset
@@ -250,7 +250,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsUsbsts{    ///<USB Status Register
-        using Addr = Register::Address<0x40034144,0xfcf20a00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034144,0xfcf20a00,0x00000000,std::uint32_t>;
         ///USB Interrupt (USBINT)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ui{}; 
         ///USB Error Interrupt
@@ -379,7 +379,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsUsbintr{    ///<USB Interrupt Enable Register
-        using Addr = Register::Address<0x40034148,0xfcf2fa00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034148,0xfcf2fa00,0x00000000,std::uint32_t>;
         ///USB interrupt Enable
         enum class UeVal {
             v0=0x00000000,     ///<Disabled
@@ -508,14 +508,14 @@ namespace Kvasir {
         }
     }
     namespace UsbhsFrindex{    ///<Frame Index Register
-        using Addr = Register::Address<0x4003414c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003414c,0x00000000,0x00000000,std::uint32_t>;
         ///Frame Index
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> frindex{}; 
         ///Reserved
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,14),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reerved{}; 
     }
     namespace UsbhsDeviceaddr{    ///<Device Address Register
-        using Addr = Register::Address<0x40034154,0x00ffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034154,0x00ffffff,0x00000000,std::uint32_t>;
         ///Device Address Advance
         enum class UsbadraVal {
             v0=0x00000000,     ///<Writes to USBADR are instantaneous.
@@ -530,36 +530,36 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::ReadWriteAccess,unsigned> usbadr{}; 
     }
     namespace UsbhsPeriodiclistbase{    ///<Periodic Frame List Base Address Register
-        using Addr = Register::Address<0x40034154,0x00000fff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034154,0x00000fff,0x00000000,std::uint32_t>;
         ///Base address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,12),Register::ReadWriteAccess,unsigned> perbase{}; 
     }
     namespace UsbhsAsynclistaddr{    ///<Current Asynchronous List Address Register
-        using Addr = Register::Address<0x40034158,0x0000001f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034158,0x0000001f,0x00000000,std::uint32_t>;
         ///Link pointer low (LPL)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,5),Register::ReadWriteAccess,unsigned> asybase{}; 
     }
     namespace UsbhsEplistaddr{    ///<Endpoint List Address Register
-        using Addr = Register::Address<0x40034158,0x000007ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034158,0x000007ff,0x00000000,std::uint32_t>;
         ///Endpoint list address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,11),Register::ReadWriteAccess,unsigned> epbase{}; 
     }
     namespace UsbhsTtctrl{    ///<Host TT Asynchronous Buffer Control
-        using Addr = Register::Address<0x4003415c,0x00ffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003415c,0x00ffffff,0x00000000,std::uint32_t>;
         ///TT Hub Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ttha{}; 
         ///Reserved
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reerved{}; 
     }
     namespace UsbhsBurstsize{    ///<Master Interface Data Burst Size Register
-        using Addr = Register::Address<0x40034160,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034160,0xffff0000,0x00000000,std::uint32_t>;
         ///Programable RX Burst length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rxpburst{}; 
         ///Programable TX Burst length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> txpburst{}; 
     }
     namespace UsbhsTxfilltuning{    ///<Transmit FIFO Tuning Control Register
-        using Addr = Register::Address<0x40034164,0xffc0e080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034164,0xffc0e080,0x00000000,std::uint32_t>;
         ///Scheduler Overhead
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> txschoh{}; 
         ///Scheduler Health counter
@@ -568,7 +568,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(21,16),Register::ReadWriteAccess,unsigned> txfifothres{}; 
     }
     namespace UsbhsUlpiViewport{    ///<ULPI Register Access
-        using Addr = Register::Address<0x40034170,0x10000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034170,0x10000000,0x00000000,std::uint32_t>;
         ///ULPI Data Write
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ulpiDatwr{}; 
         ///ULPI Data Read
@@ -603,24 +603,24 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ulpiWu{}; 
     }
     namespace UsbhsEndptnak{    ///<Endpoint NAK Register
-        using Addr = Register::Address<0x40034178,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034178,0xfff0fff0,0x00000000,std::uint32_t>;
         ///RX Endpoint NAK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> eprn{}; 
         ///TX Endpoint NAK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::ReadWriteAccess,unsigned> eptn{}; 
     }
     namespace UsbhsEndptnaken{    ///<Endpoint NAK Enable Register
-        using Addr = Register::Address<0x4003417c,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003417c,0xfff0fff0,0x00000000,std::uint32_t>;
         ///RX Endpoint NAK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> eprne{}; 
         ///TX Endpoint NAK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::ReadWriteAccess,unsigned> eptne{}; 
     }
     namespace UsbhsConfigflag{    ///<Configure Flag Register
-        using Addr = Register::Address<0x40034180,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034180,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace UsbhsPortsc1{    ///<Port Status and Control Registers
-        using Addr = Register::Address<0x40034184,0x32000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034184,0x32000000,0x00000000,std::uint32_t>;
         ///Current Connect Status
         enum class CcsVal {
             v0=0x00000000,     ///<No device present (host mode) or attached (device mode)
@@ -791,7 +791,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> pts{}; 
     }
     namespace UsbhsOtgsc{    ///<On-the-Go Status and Control Register
-        using Addr = Register::Address<0x400341a4,0x80808040,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341a4,0x80808040,0x00000000,std::uint32_t>;
         ///VBUS Discharge
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> vd{}; 
         ///VBUS Charge
@@ -994,7 +994,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsUsbmode{    ///<USB Mode Register
-        using Addr = Register::Address<0x400341a8,0xffff8fe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341a8,0xffff8fe0,0x00000000,std::uint32_t>;
         ///Controller Mode
         enum class CmVal {
             v00=0x00000000,     ///<Idle (default for the USBHS module)
@@ -1053,40 +1053,40 @@ namespace Kvasir {
         }
     }
     namespace UsbhsEpsetupsr{    ///<Endpoint Setup Status Register
-        using Addr = Register::Address<0x400341ac,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341ac,0xfffffff0,0x00000000,std::uint32_t>;
         ///Setup Endpoint Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> epsetupstat{}; 
     }
     namespace UsbhsEpprime{    ///<Endpoint Initialization Register
-        using Addr = Register::Address<0x400341b0,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341b0,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Prime Endpoint Receive Buffer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> perb{}; 
         ///Prime Endpoint tTansmit Buffer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::ReadWriteAccess,unsigned> petb{}; 
     }
     namespace UsbhsEpflush{    ///<Endpoint Flush Register
-        using Addr = Register::Address<0x400341b4,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341b4,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Flush Endpoint Receive Buffer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ferb{}; 
         ///Flush Endpoint Transmit Buffer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::ReadWriteAccess,unsigned> fetb{}; 
     }
     namespace UsbhsEpsr{    ///<Endpoint Status Register
-        using Addr = Register::Address<0x400341b8,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341b8,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Endpoint Receive Buffer Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> erbr{}; 
         ///Endpoint Transmit Buffer Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> etbr{}; 
     }
     namespace UsbhsEpcomplete{    ///<Endpoint Complete Register
-        using Addr = Register::Address<0x400341bc,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341bc,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Endpoint Receive Complete Event
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> erce{}; 
         ///Endpoint Transmit Complete Event
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::ReadWriteAccess,unsigned> etce{}; 
     }
     namespace UsbhsEpcr0{    ///<Endpoint Control Register 0
-        using Addr = Register::Address<0x400341c0,0xff72ff72,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341c0,0xff72ff72,0x00000000,std::uint32_t>;
         ///RX endpoint Stall
         enum class RxsVal {
             v0=0x00000000,     ///<Endpoint OK
@@ -1141,7 +1141,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsUsbgenctrl{    ///<USB General Control Register
-        using Addr = Register::Address<0x40034200,0xffffffdc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034200,0xffffffdc,0x00000000,std::uint32_t>;
         ///Wakeup Interrupt Enable
         enum class WuieVal {
             v0=0x00000000,     ///<Disabled
@@ -1174,17 +1174,17 @@ namespace Kvasir {
         }
     }
     namespace UsbhsGptimer0ld{    ///<General Purpose Timer n Load Register
-        using Addr = Register::Address<0x40034080,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034080,0xff000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> gptld{}; 
     }
     namespace UsbhsGptimer1ld{    ///<General Purpose Timer n Load Register
-        using Addr = Register::Address<0x40034088,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034088,0xff000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> gptld{}; 
     }
     namespace UsbhsGptimer0ctl{    ///<General Purpose Timer n Control Register
-        using Addr = Register::Address<0x40034084,0x3e000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40034084,0x3e000000,0x00000000,std::uint32_t>;
         ///Timer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gptcnt{}; 
         ///Timer Mode
@@ -1219,7 +1219,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsGptimer1ctl{    ///<General Purpose Timer n Control Register
-        using Addr = Register::Address<0x4003408c,0x3e000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003408c,0x3e000000,0x00000000,std::uint32_t>;
         ///Timer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gptcnt{}; 
         ///Timer Mode
@@ -1254,7 +1254,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsEpcr1{    ///<Endpoint Control Register n
-        using Addr = Register::Address<0x400341c4,0xff10ff10,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341c4,0xff10ff10,0x00000000,std::uint32_t>;
         ///RX endpoint Stall
         enum class RxsVal {
             v0=0x00000000,     ///<Endpoint OK
@@ -1353,7 +1353,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsEpcr2{    ///<Endpoint Control Register n
-        using Addr = Register::Address<0x400341c8,0xff10ff10,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341c8,0xff10ff10,0x00000000,std::uint32_t>;
         ///RX endpoint Stall
         enum class RxsVal {
             v0=0x00000000,     ///<Endpoint OK
@@ -1452,7 +1452,7 @@ namespace Kvasir {
         }
     }
     namespace UsbhsEpcr3{    ///<Endpoint Control Register n
-        using Addr = Register::Address<0x400341cc,0xff10ff10,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400341cc,0xff10ff10,0x00000000,std::uint32_t>;
         ///RX endpoint Stall
         enum class RxsVal {
             v0=0x00000000,     ///<Endpoint OK

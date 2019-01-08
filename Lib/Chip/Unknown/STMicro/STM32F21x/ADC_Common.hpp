@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Common ADC registers
     namespace AdcCommonCsr{    ///<ADC Common status register
-        using Addr = Register::Address<0x40012300,0xffc0c0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012300,0xffc0c0c0,0x00000000,std::uint32_t>;
         ///Overrun flag of ADC3
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(21,21),Register::ReadWriteAccess,unsigned> ovr3{}; 
         ///Regular channel Start flag of ADC              3
@@ -42,7 +42,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> awd1{}; 
     }
     namespace AdcCommonCcr{    ///<ADC common control register
-        using Addr = Register::Address<0x40012304,0xff3c10e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012304,0xff3c10e0,0x00000000,std::uint32_t>;
         ///Temperature sensor and VREFINT              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> tsvrefe{}; 
         ///VBAT enable
@@ -59,7 +59,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> mult{}; 
     }
     namespace AdcCommonCdr{    ///<ADC common regular data register for dual          and triple modes
-        using Addr = Register::Address<0x40012308,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012308,0x00000000,0x00000000,std::uint32_t>;
         ///2nd data item of a pair of regular              conversions
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> data2{}; 
         ///1st data item of a pair of regular              conversions

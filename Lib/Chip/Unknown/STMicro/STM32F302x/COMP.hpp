@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Comparator
     namespace CompComp2Csr{    ///<control and status register
-        using Addr = Register::Address<0x40010024,0x3fe04102,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010024,0x3fe04102,0x00000000,std::uint32_t>;
         ///Comparator 2 enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> comp2en{}; 
         ///Comparator 2 mode
@@ -28,7 +28,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> comp2lock{}; 
     }
     namespace CompComp4Csr{    ///<control and status register
-        using Addr = Register::Address<0x4001002c,0x3fe04102,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001002c,0x3fe04102,0x00000000,std::uint32_t>;
         ///Comparator 4 enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> comp4en{}; 
         ///Comparator 4 mode
@@ -53,7 +53,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> comp4lock{}; 
     }
     namespace CompComp6Csr{    ///<control and status register
-        using Addr = Register::Address<0x40010034,0x3fe04102,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010034,0x3fe04102,0x00000000,std::uint32_t>;
         ///Comparator 6 enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> comp6en{}; 
         ///Comparator 6 mode

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal synchronous asynchronous receiver      transmitter
     namespace Uart7Sr{    ///<Status register
-        using Addr = Register::Address<0x40007800,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007800,0xfffffc00,0x00000000,std::uint32_t>;
         ///CTS flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> cts{}; 
         ///LIN break detection flag
@@ -26,19 +26,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pe{}; 
     }
     namespace Uart7Dr{    ///<Data register
-        using Addr = Register::Address<0x40007804,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007804,0xfffffe00,0x00000000,std::uint32_t>;
         ///Data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> dr{}; 
     }
     namespace Uart7Brr{    ///<Baud rate register
-        using Addr = Register::Address<0x40007808,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007808,0xffff0000,0x00000000,std::uint32_t>;
         ///mantissa of USARTDIV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,4),Register::ReadWriteAccess,unsigned> divMantissa{}; 
         ///fraction of USARTDIV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> divFraction{}; 
     }
     namespace Uart7Cr1{    ///<Control register 1
-        using Addr = Register::Address<0x4000780c,0xffff4000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000780c,0xffff4000,0x00000000,std::uint32_t>;
         ///Oversampling mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> over8{}; 
         ///USART enable
@@ -71,7 +71,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> sbk{}; 
     }
     namespace Uart7Cr2{    ///<Control register 2
-        using Addr = Register::Address<0x40007810,0xffff8090,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007810,0xffff8090,0x00000000,std::uint32_t>;
         ///LIN mode enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> linen{}; 
         ///STOP bits
@@ -92,7 +92,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> add{}; 
     }
     namespace Uart7Cr3{    ///<Control register 3
-        using Addr = Register::Address<0x40007814,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007814,0xfffff000,0x00000000,std::uint32_t>;
         ///One sample bit method              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> onebit{}; 
         ///CTS interrupt enable
@@ -119,7 +119,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eie{}; 
     }
     namespace Uart7Gtpr{    ///<Guard time and prescaler          register
-        using Addr = Register::Address<0x40007818,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007818,0xffff0000,0x00000000,std::uint32_t>;
         ///Guard time value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> gt{}; 
         ///Prescaler value

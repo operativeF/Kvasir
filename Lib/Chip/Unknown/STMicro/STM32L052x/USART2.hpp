@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal synchronous asynchronous receiver      transmitter
     namespace Usart2Cr1{    ///<Control register 1
-        using Addr = Register::Address<0x40004400,0xe0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004400,0xe0000000,0x00000000,std::uint32_t>;
         ///Word length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(28,28),Register::ReadWriteAccess,unsigned> m1{}; 
         ///End of Block interrupt              enable
@@ -64,7 +64,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ue{}; 
     }
     namespace Usart2Cr2{    ///<Control register 2
-        using Addr = Register::Address<0x40004404,0x0000008f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004404,0x0000008f,0x00000000,std::uint32_t>;
         ///Address of the USART node
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> add47{}; 
         ///Address of the USART node
@@ -107,7 +107,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> addm7{}; 
     }
     namespace Usart2Cr3{    ///<Control register 3
-        using Addr = Register::Address<0x40004408,0xff810000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004408,0xff810000,0x00000000,std::uint32_t>;
         ///Wakeup from Stop mode interrupt              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> wufie{}; 
         ///Wakeup from Stop mode interrupt flag              selection
@@ -148,28 +148,28 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eie{}; 
     }
     namespace Usart2Brr{    ///<Baud rate register
-        using Addr = Register::Address<0x4000440c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000440c,0xffff0000,0x00000000,std::uint32_t>;
         ///DIV_Mantissa
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,4),Register::ReadWriteAccess,unsigned> divMantissa{}; 
         ///DIV_Fraction
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> divFraction{}; 
     }
     namespace Usart2Gtpr{    ///<Guard time and prescaler          register
-        using Addr = Register::Address<0x40004410,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004410,0xffff0000,0x00000000,std::uint32_t>;
         ///Guard time value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> gt{}; 
         ///Prescaler value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> psc{}; 
     }
     namespace Usart2Rtor{    ///<Receiver timeout register
-        using Addr = Register::Address<0x40004414,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004414,0x00000000,0x00000000,std::uint32_t>;
         ///Block Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> blen{}; 
         ///Receiver timeout value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> rto{}; 
     }
     namespace Usart2Rqr{    ///<Request register
-        using Addr = Register::Address<0x40004418,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004418,0xffffffe0,0x00000000,std::uint32_t>;
         ///Transmit data flush              request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> txfrq{}; 
         ///Receive data flush request
@@ -182,7 +182,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> abrrq{}; 
     }
     namespace Usart2Isr{    ///<Interrupt & status          register
-        using Addr = Register::Address<0x4000441c,0xff802000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000441c,0xff802000,0x00000000,std::uint32_t>;
         ///REACK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> reack{}; 
         ///TEACK
@@ -229,7 +229,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pe{}; 
     }
     namespace Usart2Icr{    ///<Interrupt flag clear register
-        using Addr = Register::Address<0x40004420,0xffede4a0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004420,0xffede4a0,0x00000000,std::uint32_t>;
         ///Wakeup from Stop mode clear              flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> wucf{}; 
         ///Character match clear flag
@@ -256,12 +256,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pecf{}; 
     }
     namespace Usart2Rdr{    ///<Receive data register
-        using Addr = Register::Address<0x40004424,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004424,0xfffffe00,0x00000000,std::uint32_t>;
         ///Receive data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> rdr{}; 
     }
     namespace Usart2Tdr{    ///<Transmit data register
-        using Addr = Register::Address<0x40004428,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004428,0xfffffe00,0x00000000,std::uint32_t>;
         ///Transmit data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> tdr{}; 
     }

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB On-The-Go Interface
     namespace UotghsDevctrl{    ///<Device General Control Register
-        using Addr = Register::Address<0x400ac000,0xfffe0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac000,0xfffe0000,0x00000000,std::uint32_t>;
         ///USB Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> uadd{}; 
         ///Address Enable
@@ -38,7 +38,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::ReadWriteAccess,unsigned> opmode2{}; 
     }
     namespace UotghsDevisr{    ///<Device Global Interrupt Status Register
-        using Addr = Register::Address<0x400ac004,0x81c00f80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac004,0x81c00f80,0x00000000,std::uint32_t>;
         ///Suspend Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> susp{}; 
         ///Micro Start of Frame Interrupt
@@ -87,7 +87,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsDevicr{    ///<Device Global Interrupt Clear Register
-        using Addr = Register::Address<0x400ac008,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac008,0xffffff80,0x00000000,std::uint32_t>;
         ///Suspend Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> suspc{}; 
         ///Micro Start of Frame Interrupt Clear
@@ -104,7 +104,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> uprsmc{}; 
     }
     namespace UotghsDevifr{    ///<Device Global Interrupt Set Register
-        using Addr = Register::Address<0x400ac00c,0x81ffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac00c,0x81ffff80,0x00000000,std::uint32_t>;
         ///Suspend Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> susps{}; 
         ///Micro Start of Frame Interrupt Set
@@ -133,7 +133,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsDevimr{    ///<Device Global Interrupt Mask Register
-        using Addr = Register::Address<0x400ac010,0x81c00f80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac010,0x81c00f80,0x00000000,std::uint32_t>;
         ///Suspend Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> suspe{}; 
         ///Micro Start of Frame Interrupt Mask
@@ -182,7 +182,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsDevidr{    ///<Device Global Interrupt Disable Register
-        using Addr = Register::Address<0x400ac014,0x81c00f80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac014,0x81c00f80,0x00000000,std::uint32_t>;
         ///Suspend Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> suspec{}; 
         ///Micro Start of Frame Interrupt Disable
@@ -231,7 +231,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsDevier{    ///<Device Global Interrupt Enable Register
-        using Addr = Register::Address<0x400ac018,0x81c00f80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac018,0x81c00f80,0x00000000,std::uint32_t>;
         ///Suspend Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> suspes{}; 
         ///Micro Start of Frame Interrupt Enable
@@ -280,7 +280,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsDevept{    ///<Device Endpoint Register
-        using Addr = Register::Address<0x400ac01c,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac01c,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Endpoint 0 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> epen0{}; 
         ///Endpoint 1 Enable
@@ -319,7 +319,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> eprst8{}; 
     }
     namespace UotghsDevfnum{    ///<Device Frame Number Register
-        using Addr = Register::Address<0x400ac020,0xffff4000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac020,0xffff4000,0x00000000,std::uint32_t>;
         ///Micro Frame Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mfnum{}; 
         ///Frame Number
@@ -328,7 +328,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fncerr{}; 
     }
     namespace UotghsDeveptisr0Isoenpt{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac130,0x800a0800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac130,0x800a0800,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -395,7 +395,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDevepticr0Isoenpt{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac160,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac160,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -414,7 +414,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDeveptifr0Isoenpt{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac190,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac190,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -435,7 +435,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptimr0Isoenpt{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1c0,0xfffa8800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1c0,0xfffa8800,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -470,7 +470,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsDeveptier0Isoenpt{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac1f0,0xfff28800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1f0,0xfff28800,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -507,7 +507,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptidr0Isoenpt{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac220,0xfffea800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac220,0xfffea800,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -538,17 +538,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> epdishdmac{}; 
     }
     namespace UotghsDevdmanxtdsc1{    ///<Device DMA Channel Next Descriptor Address Register (n = 1)
-        using Addr = Register::Address<0x400ac310,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac310,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsDevdmaaddress1{    ///<Device DMA Channel Address Register (n = 1)
-        using Addr = Register::Address<0x400ac314,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac314,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsDevdmacontrol1{    ///<Device DMA Channel Control Register (n = 1)
-        using Addr = Register::Address<0x400ac318,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac318,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -569,7 +569,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsDevdmastatus1{    ///<Device DMA Channel Status Register (n = 1)
-        using Addr = Register::Address<0x400ac31c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac31c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -584,17 +584,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsDevdmanxtdsc2{    ///<Device DMA Channel Next Descriptor Address Register (n = 2)
-        using Addr = Register::Address<0x400ac320,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac320,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsDevdmaaddress2{    ///<Device DMA Channel Address Register (n = 2)
-        using Addr = Register::Address<0x400ac324,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac324,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsDevdmacontrol2{    ///<Device DMA Channel Control Register (n = 2)
-        using Addr = Register::Address<0x400ac328,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac328,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -615,7 +615,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsDevdmastatus2{    ///<Device DMA Channel Status Register (n = 2)
-        using Addr = Register::Address<0x400ac32c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac32c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -630,17 +630,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsDevdmanxtdsc3{    ///<Device DMA Channel Next Descriptor Address Register (n = 3)
-        using Addr = Register::Address<0x400ac330,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac330,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsDevdmaaddress3{    ///<Device DMA Channel Address Register (n = 3)
-        using Addr = Register::Address<0x400ac334,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac334,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsDevdmacontrol3{    ///<Device DMA Channel Control Register (n = 3)
-        using Addr = Register::Address<0x400ac338,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac338,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -661,7 +661,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsDevdmastatus3{    ///<Device DMA Channel Status Register (n = 3)
-        using Addr = Register::Address<0x400ac33c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac33c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -676,17 +676,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsDevdmanxtdsc4{    ///<Device DMA Channel Next Descriptor Address Register (n = 4)
-        using Addr = Register::Address<0x400ac340,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac340,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsDevdmaaddress4{    ///<Device DMA Channel Address Register (n = 4)
-        using Addr = Register::Address<0x400ac344,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac344,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsDevdmacontrol4{    ///<Device DMA Channel Control Register (n = 4)
-        using Addr = Register::Address<0x400ac348,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac348,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -707,7 +707,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsDevdmastatus4{    ///<Device DMA Channel Status Register (n = 4)
-        using Addr = Register::Address<0x400ac34c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac34c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -722,17 +722,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsDevdmanxtdsc5{    ///<Device DMA Channel Next Descriptor Address Register (n = 5)
-        using Addr = Register::Address<0x400ac350,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac350,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsDevdmaaddress5{    ///<Device DMA Channel Address Register (n = 5)
-        using Addr = Register::Address<0x400ac354,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac354,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsDevdmacontrol5{    ///<Device DMA Channel Control Register (n = 5)
-        using Addr = Register::Address<0x400ac358,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac358,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -753,7 +753,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsDevdmastatus5{    ///<Device DMA Channel Status Register (n = 5)
-        using Addr = Register::Address<0x400ac35c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac35c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -768,17 +768,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsDevdmanxtdsc6{    ///<Device DMA Channel Next Descriptor Address Register (n = 6)
-        using Addr = Register::Address<0x400ac360,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac360,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsDevdmaaddress6{    ///<Device DMA Channel Address Register (n = 6)
-        using Addr = Register::Address<0x400ac364,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac364,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsDevdmacontrol6{    ///<Device DMA Channel Control Register (n = 6)
-        using Addr = Register::Address<0x400ac368,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac368,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -799,7 +799,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsDevdmastatus6{    ///<Device DMA Channel Status Register (n = 6)
-        using Addr = Register::Address<0x400ac36c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac36c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -814,17 +814,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsDevdmanxtdsc7{    ///<Device DMA Channel Next Descriptor Address Register (n = 7)
-        using Addr = Register::Address<0x400ac370,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac370,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsDevdmaaddress7{    ///<Device DMA Channel Address Register (n = 7)
-        using Addr = Register::Address<0x400ac374,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac374,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsDevdmacontrol7{    ///<Device DMA Channel Control Register (n = 7)
-        using Addr = Register::Address<0x400ac378,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac378,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -845,7 +845,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsDevdmastatus7{    ///<Device DMA Channel Status Register (n = 7)
-        using Addr = Register::Address<0x400ac37c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac37c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -860,7 +860,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsHstctrl{    ///<Host General Control Register
-        using Addr = Register::Address<0x400ac400,0xffffc8ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac400,0xffffc8ff,0x00000000,std::uint32_t>;
         ///Start of Frame Generation Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> sofe{}; 
         ///Send USB Reset
@@ -883,7 +883,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsHstisr{    ///<Host Global Interrupt Status Register
-        using Addr = Register::Address<0x400ac404,0x81fc0080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac404,0x81fc0080,0x00000000,std::uint32_t>;
         ///Device Connection Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dconni{}; 
         ///Device Disconnection Interrupt
@@ -932,7 +932,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsHsticr{    ///<Host Global Interrupt Clear Register
-        using Addr = Register::Address<0x400ac408,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac408,0xffffff80,0x00000000,std::uint32_t>;
         ///Device Connection Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dconnic{}; 
         ///Device Disconnection Interrupt Clear
@@ -949,7 +949,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> hwupic{}; 
     }
     namespace UotghsHstifr{    ///<Host Global Interrupt Set Register
-        using Addr = Register::Address<0x400ac40c,0x81ffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac40c,0x81ffff80,0x00000000,std::uint32_t>;
         ///Device Connection Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dconnis{}; 
         ///Device Disconnection Interrupt Set
@@ -978,7 +978,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsHstimr{    ///<Host Global Interrupt Mask Register
-        using Addr = Register::Address<0x400ac410,0x81fc0080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac410,0x81fc0080,0x00000000,std::uint32_t>;
         ///Device Connection Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dconnie{}; 
         ///Device Disconnection Interrupt Enable
@@ -1027,7 +1027,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsHstidr{    ///<Host Global Interrupt Disable Register
-        using Addr = Register::Address<0x400ac414,0x81fc0080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac414,0x81fc0080,0x00000000,std::uint32_t>;
         ///Device Connection Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dconniec{}; 
         ///Device Disconnection Interrupt Disable
@@ -1076,7 +1076,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsHstier{    ///<Host Global Interrupt Enable Register
-        using Addr = Register::Address<0x400ac418,0x81fc0080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac418,0x81fc0080,0x00000000,std::uint32_t>;
         ///Device Connection Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dconnies{}; 
         ///Device Disconnection Interrupt Enable
@@ -1125,7 +1125,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dma6{}; 
     }
     namespace UotghsHstpip{    ///<Host Pipe Register
-        using Addr = Register::Address<0x400ac41c,0xfe00fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac41c,0xfe00fe00,0x00000000,std::uint32_t>;
         ///Pipe 0 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pen0{}; 
         ///Pipe 1 Enable
@@ -1164,7 +1164,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> prst8{}; 
     }
     namespace UotghsHstfnum{    ///<Host Frame Number Register
-        using Addr = Register::Address<0x400ac420,0xff00c000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac420,0xff00c000,0x00000000,std::uint32_t>;
         ///Micro Frame Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> mfnum{}; 
         ///Frame Number
@@ -1173,7 +1173,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> flenhigh{}; 
     }
     namespace UotghsHstaddr1{    ///<Host Address 1 Register
-        using Addr = Register::Address<0x400ac424,0x80808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac424,0x80808080,0x00000000,std::uint32_t>;
         ///USB Host Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> hstaddrp0{}; 
         ///USB Host Address
@@ -1184,7 +1184,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,24),Register::ReadWriteAccess,unsigned> hstaddrp3{}; 
     }
     namespace UotghsHstaddr2{    ///<Host Address 2 Register
-        using Addr = Register::Address<0x400ac428,0x80808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac428,0x80808080,0x00000000,std::uint32_t>;
         ///USB Host Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> hstaddrp4{}; 
         ///USB Host Address
@@ -1195,14 +1195,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,24),Register::ReadWriteAccess,unsigned> hstaddrp7{}; 
     }
     namespace UotghsHstaddr3{    ///<Host Address 3 Register
-        using Addr = Register::Address<0x400ac42c,0xffff8080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac42c,0xffff8080,0x00000000,std::uint32_t>;
         ///USB Host Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> hstaddrp8{}; 
         ///USB Host Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,8),Register::ReadWriteAccess,unsigned> hstaddrp9{}; 
     }
     namespace UotghsHstpipcfg0Hsbohscp{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac500,0x00e0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac500,0x00e0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -1271,7 +1271,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> binterval{}; 
     }
     namespace UotghsHstpipisr0Intpipes{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac530,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac530,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -1332,7 +1332,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr0Isopipes{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac530,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac530,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -1393,7 +1393,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipicr0Intpipes{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac560,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac560,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -1410,7 +1410,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr0Isopipes{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac560,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac560,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -1427,7 +1427,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipifr0Intpipes{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac590,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac590,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -1448,7 +1448,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr0Isopipes{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac590,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac590,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -1469,7 +1469,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipimr0Intpipes{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5c0,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5c0,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -1498,7 +1498,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr0Isopipes{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5c0,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5c0,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -1527,7 +1527,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipier0Intpipes{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac5f0,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5f0,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -1554,7 +1554,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier0Isopipes{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac5f0,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5f0,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -1581,7 +1581,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipidr0Intpipes{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac620,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac620,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -1608,7 +1608,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr0Isopipes{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac620,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac620,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -1635,17 +1635,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstdmanxtdsc1{    ///<Host DMA Channel Next Descriptor Address Register (n = 1)
-        using Addr = Register::Address<0x400ac710,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac710,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsHstdmaaddress1{    ///<Host DMA Channel Address Register (n = 1)
-        using Addr = Register::Address<0x400ac714,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac714,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsHstdmacontrol1{    ///<Host DMA Channel Control Register (n = 1)
-        using Addr = Register::Address<0x400ac718,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac718,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -1666,7 +1666,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsHstdmastatus1{    ///<Host DMA Channel Status Register (n = 1)
-        using Addr = Register::Address<0x400ac71c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac71c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -1681,17 +1681,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsHstdmanxtdsc2{    ///<Host DMA Channel Next Descriptor Address Register (n = 2)
-        using Addr = Register::Address<0x400ac720,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac720,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsHstdmaaddress2{    ///<Host DMA Channel Address Register (n = 2)
-        using Addr = Register::Address<0x400ac724,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac724,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsHstdmacontrol2{    ///<Host DMA Channel Control Register (n = 2)
-        using Addr = Register::Address<0x400ac728,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac728,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -1712,7 +1712,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsHstdmastatus2{    ///<Host DMA Channel Status Register (n = 2)
-        using Addr = Register::Address<0x400ac72c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac72c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -1727,17 +1727,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsHstdmanxtdsc3{    ///<Host DMA Channel Next Descriptor Address Register (n = 3)
-        using Addr = Register::Address<0x400ac730,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac730,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsHstdmaaddress3{    ///<Host DMA Channel Address Register (n = 3)
-        using Addr = Register::Address<0x400ac734,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac734,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsHstdmacontrol3{    ///<Host DMA Channel Control Register (n = 3)
-        using Addr = Register::Address<0x400ac738,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac738,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -1758,7 +1758,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsHstdmastatus3{    ///<Host DMA Channel Status Register (n = 3)
-        using Addr = Register::Address<0x400ac73c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac73c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -1773,17 +1773,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsHstdmanxtdsc4{    ///<Host DMA Channel Next Descriptor Address Register (n = 4)
-        using Addr = Register::Address<0x400ac740,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac740,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsHstdmaaddress4{    ///<Host DMA Channel Address Register (n = 4)
-        using Addr = Register::Address<0x400ac744,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac744,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsHstdmacontrol4{    ///<Host DMA Channel Control Register (n = 4)
-        using Addr = Register::Address<0x400ac748,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac748,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -1804,7 +1804,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsHstdmastatus4{    ///<Host DMA Channel Status Register (n = 4)
-        using Addr = Register::Address<0x400ac74c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac74c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -1819,17 +1819,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsHstdmanxtdsc5{    ///<Host DMA Channel Next Descriptor Address Register (n = 5)
-        using Addr = Register::Address<0x400ac750,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac750,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsHstdmaaddress5{    ///<Host DMA Channel Address Register (n = 5)
-        using Addr = Register::Address<0x400ac754,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac754,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsHstdmacontrol5{    ///<Host DMA Channel Control Register (n = 5)
-        using Addr = Register::Address<0x400ac758,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac758,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -1850,7 +1850,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsHstdmastatus5{    ///<Host DMA Channel Status Register (n = 5)
-        using Addr = Register::Address<0x400ac75c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac75c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -1865,17 +1865,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsHstdmanxtdsc6{    ///<Host DMA Channel Next Descriptor Address Register (n = 6)
-        using Addr = Register::Address<0x400ac760,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac760,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsHstdmaaddress6{    ///<Host DMA Channel Address Register (n = 6)
-        using Addr = Register::Address<0x400ac764,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac764,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsHstdmacontrol6{    ///<Host DMA Channel Control Register (n = 6)
-        using Addr = Register::Address<0x400ac768,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac768,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -1896,7 +1896,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsHstdmastatus6{    ///<Host DMA Channel Status Register (n = 6)
-        using Addr = Register::Address<0x400ac76c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac76c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -1911,17 +1911,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsHstdmanxtdsc7{    ///<Host DMA Channel Next Descriptor Address Register (n = 7)
-        using Addr = Register::Address<0x400ac770,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac770,0x00000000,0x00000000,std::uint32_t>;
         ///Next Descriptor Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nxtDscAdd{}; 
     }
     namespace UotghsHstdmaaddress7{    ///<Host DMA Channel Address Register (n = 7)
-        using Addr = Register::Address<0x400ac774,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac774,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buffAdd{}; 
     }
     namespace UotghsHstdmacontrol7{    ///<Host DMA Channel Control Register (n = 7)
-        using Addr = Register::Address<0x400ac778,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac778,0x0000ff00,0x00000000,std::uint32_t>;
         ///Channel Enable Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Load Next Channel Transfer Descriptor Enable Command
@@ -1942,7 +1942,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffLength{}; 
     }
     namespace UotghsHstdmastatus7{    ///<Host DMA Channel Status Register (n = 7)
-        using Addr = Register::Address<0x400ac77c,0x0000ff8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac77c,0x0000ff8c,0x00000000,std::uint32_t>;
         ///Channel Enable Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> channEnb{}; 
         ///Channel Active Status
@@ -1957,7 +1957,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> buffCount{}; 
     }
     namespace UotghsCtrl{    ///<General Control Register
-        using Addr = Register::Address<0x400ac800,0xfc8c0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac800,0xfc8c0000,0x00000000,std::uint32_t>;
         ///ID Transition Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> idte{}; 
         ///VBus Transition Interrupt Enable
@@ -2018,7 +2018,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsSr{    ///<General Status Register
-        using Addr = Register::Address<0x400ac804,0xffff8100,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac804,0xffff8100,0x00000000,std::uint32_t>;
         ///ID Transition Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idti{}; 
         ///VBus Transition Interrupt
@@ -2057,7 +2057,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> clkusable{}; 
     }
     namespace UotghsScr{    ///<General Status Clear Register
-        using Addr = Register::Address<0x400ac808,0xfffffd00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac808,0xfffffd00,0x00000000,std::uint32_t>;
         ///ID Transition Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idtic{}; 
         ///VBus Transition Interrupt Clear
@@ -2078,7 +2078,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> vbusrqc{}; 
     }
     namespace UotghsSfr{    ///<General Status Set Register
-        using Addr = Register::Address<0x400ac80c,0xfffffd00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac80c,0xfffffd00,0x00000000,std::uint32_t>;
         ///ID Transition Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idtis{}; 
         ///VBus Transition Interrupt Set
@@ -2099,7 +2099,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> vbusrqs{}; 
     }
     namespace UotghsFsm{    ///<General Finite State Machine Register
-        using Addr = Register::Address<0x400ac82c,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac82c,0xfffffff0,0x00000000,std::uint32_t>;
         ///Dual Role Device State
         enum class DrdstateVal {
             aIdlestate=0x00000000,     ///<This is the start state for A-devices (when the ID pin is 0)
@@ -2140,7 +2140,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg0{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac100,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac100,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2219,7 +2219,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg1{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac104,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac104,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2298,7 +2298,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg2{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac108,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac108,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2377,7 +2377,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg3{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac10c,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac10c,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2456,7 +2456,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg4{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac110,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac110,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2535,7 +2535,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg5{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac114,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac114,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2614,7 +2614,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg6{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac118,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac118,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2693,7 +2693,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg7{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac11c,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac11c,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2772,7 +2772,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg8{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac120,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac120,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2851,7 +2851,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptcfg9{    ///<Device Endpoint Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac124,0xffff8481,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac124,0xffff8481,0x00000000,std::uint32_t>;
         ///Endpoint Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Endpoint Banks
@@ -2930,7 +2930,7 @@ namespace Kvasir {
         }
     }
     namespace UotghsDeveptisr0{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac130,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac130,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -2997,7 +2997,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr1{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac134,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac134,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3064,7 +3064,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr2{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac138,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac138,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3131,7 +3131,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr3{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac13c,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac13c,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3198,7 +3198,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr4{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac140,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac140,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3265,7 +3265,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr5{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac144,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac144,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3332,7 +3332,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr6{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac148,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac148,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3399,7 +3399,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr7{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac14c,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac14c,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3466,7 +3466,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr8{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac150,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac150,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3533,7 +3533,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDeveptisr9{    ///<Device Endpoint Status Register (n = 0)
-        using Addr = Register::Address<0x400ac154,0x80080c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac154,0x80080c00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txini{}; 
         ///Received OUT Data Interrupt
@@ -3600,7 +3600,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> byct{}; 
     }
     namespace UotghsDevepticr0{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac160,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac160,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3619,7 +3619,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr1{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac164,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac164,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3638,7 +3638,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr2{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac168,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac168,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3657,7 +3657,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr3{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac16c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac16c,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3676,7 +3676,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr4{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac170,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac170,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3695,7 +3695,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr5{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac174,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac174,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3714,7 +3714,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr6{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac178,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac178,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3733,7 +3733,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr7{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac17c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac17c,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3752,7 +3752,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr8{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac180,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac180,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3771,7 +3771,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDevepticr9{    ///<Device Endpoint Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac184,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac184,0xffffff00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinic{}; 
         ///Received OUT Data Interrupt Clear
@@ -3790,7 +3790,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketc{}; 
     }
     namespace UotghsDeveptifr0{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac190,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac190,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3811,7 +3811,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr1{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac194,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac194,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3832,7 +3832,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr2{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac198,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac198,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3853,7 +3853,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr3{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac19c,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac19c,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3874,7 +3874,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr4{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac1a0,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1a0,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3895,7 +3895,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr5{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac1a4,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1a4,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3916,7 +3916,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr6{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac1a8,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1a8,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3937,7 +3937,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr7{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac1ac,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1ac,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3958,7 +3958,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr8{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac1b0,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1b0,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -3979,7 +3979,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptifr9{    ///<Device Endpoint Set Register (n = 0)
-        using Addr = Register::Address<0x400ac1b4,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1b4,0xffffef00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinis{}; 
         ///Received OUT Data Interrupt Set
@@ -4000,7 +4000,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsDeveptimr0{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1c0,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1c0,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4033,7 +4033,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr1{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1c4,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1c4,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4066,7 +4066,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr2{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1c8,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1c8,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4099,7 +4099,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr3{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1cc,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1cc,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4132,7 +4132,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr4{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1d0,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1d0,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4165,7 +4165,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr5{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1d4,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1d4,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4198,7 +4198,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr6{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1d8,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1d8,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4231,7 +4231,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr7{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1dc,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1dc,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4264,7 +4264,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr8{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1e0,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1e0,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4297,7 +4297,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptimr9{    ///<Device Endpoint Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac1e4,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1e4,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txine{}; 
         ///Received OUT Data Interrupt
@@ -4330,7 +4330,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrq{}; 
     }
     namespace UotghsDeveptier0{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac1f0,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1f0,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4363,7 +4363,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier1{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac1f4,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1f4,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4396,7 +4396,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier2{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac1f8,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1f8,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4429,7 +4429,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier3{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac1fc,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac1fc,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4462,7 +4462,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier4{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac200,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac200,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4495,7 +4495,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier5{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac204,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac204,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4528,7 +4528,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier6{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac208,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac208,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4561,7 +4561,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier7{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac20c,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac20c,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4594,7 +4594,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier8{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac210,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac210,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4627,7 +4627,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptier9{    ///<Device Endpoint Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac214,0xfff08f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac214,0xfff08f00,0x00000000,std::uint32_t>;
         ///Transmitted IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txines{}; 
         ///Received OUT Data Interrupt Enable
@@ -4660,7 +4660,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqs{}; 
     }
     namespace UotghsDeveptidr0{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac220,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac220,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4689,7 +4689,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr1{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac224,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac224,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4718,7 +4718,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr2{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac228,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac228,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4747,7 +4747,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr3{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac22c,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac22c,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4776,7 +4776,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr4{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac230,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac230,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4805,7 +4805,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr5{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac234,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac234,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4834,7 +4834,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr6{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac238,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac238,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4863,7 +4863,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr7{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac23c,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac23c,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4892,7 +4892,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr8{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac240,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac240,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4921,7 +4921,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsDeveptidr9{    ///<Device Endpoint Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac244,0xfff4af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac244,0xfff4af00,0x00000000,std::uint32_t>;
         ///Transmitted IN Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txinec{}; 
         ///Received OUT Data Interrupt Clear
@@ -4950,7 +4950,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stallrqc{}; 
     }
     namespace UotghsHstpipcfg0{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac500,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac500,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5021,7 +5021,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg1{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac504,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac504,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5092,7 +5092,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg2{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac508,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac508,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5163,7 +5163,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg3{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac50c,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac50c,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5234,7 +5234,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg4{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac510,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac510,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5305,7 +5305,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg5{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac514,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac514,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5376,7 +5376,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg6{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac518,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac518,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5447,7 +5447,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg7{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac51c,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac51c,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5518,7 +5518,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg8{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac520,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac520,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5589,7 +5589,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipcfg9{    ///<Host Pipe Configuration Register (n = 0)
-        using Addr = Register::Address<0x400ac524,0x00f0c881,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac524,0x00f0c881,0x00000000,std::uint32_t>;
         ///Pipe Memory Allocate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> alloc{}; 
         ///Pipe Banks
@@ -5660,7 +5660,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> intfrq{}; 
     }
     namespace UotghsHstpipisr0{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac530,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac530,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -5721,7 +5721,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr1{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac534,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac534,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -5782,7 +5782,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr2{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac538,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac538,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -5843,7 +5843,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr3{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac53c,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac53c,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -5904,7 +5904,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr4{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac540,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac540,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -5965,7 +5965,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr5{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac544,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac544,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -6026,7 +6026,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr6{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac548,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac548,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -6087,7 +6087,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr7{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac54c,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac54c,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -6148,7 +6148,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr8{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac550,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac550,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -6209,7 +6209,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipisr9{    ///<Host Pipe Status Register (n = 0)
-        using Addr = Register::Address<0x400ac554,0x800a0c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac554,0x800a0c00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxini{}; 
         ///Transmitted OUT Data Interrupt
@@ -6270,7 +6270,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pbyct{}; 
     }
     namespace UotghsHstpipicr0{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac560,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac560,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6287,7 +6287,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr1{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac564,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac564,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6304,7 +6304,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr2{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac568,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac568,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6321,7 +6321,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr3{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac56c,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac56c,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6338,7 +6338,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr4{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac570,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac570,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6355,7 +6355,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr5{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac574,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac574,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6372,7 +6372,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr6{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac578,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac578,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6389,7 +6389,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr7{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac57c,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac57c,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6406,7 +6406,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr8{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac580,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac580,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6423,7 +6423,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipicr9{    ///<Host Pipe Clear Register (n = 0)
-        using Addr = Register::Address<0x400ac584,0xffffff08,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac584,0xffffff08,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinic{}; 
         ///Transmitted OUT Data Interrupt Clear
@@ -6440,7 +6440,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> shortpacketic{}; 
     }
     namespace UotghsHstpipifr0{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac590,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac590,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6461,7 +6461,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr1{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac594,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac594,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6482,7 +6482,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr2{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac598,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac598,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6503,7 +6503,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr3{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac59c,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac59c,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6524,7 +6524,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr4{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac5a0,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5a0,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6545,7 +6545,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr5{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac5a4,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5a4,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6566,7 +6566,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr6{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac5a8,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5a8,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6587,7 +6587,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr7{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac5ac,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5ac,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6608,7 +6608,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr8{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac5b0,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5b0,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6629,7 +6629,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipifr9{    ///<Host Pipe Set Register (n = 0)
-        using Addr = Register::Address<0x400ac5b4,0xffffef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5b4,0xffffef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Set
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinis{}; 
         ///Transmitted OUT Data Interrupt Set
@@ -6650,7 +6650,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> nbusybks{}; 
     }
     namespace UotghsHstpipimr0{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5c0,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5c0,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6679,7 +6679,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr1{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5c4,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5c4,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6708,7 +6708,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr2{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5c8,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5c8,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6737,7 +6737,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr3{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5cc,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5cc,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6766,7 +6766,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr4{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5d0,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5d0,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6795,7 +6795,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr5{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5d4,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5d4,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6824,7 +6824,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr6{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5d8,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5d8,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6853,7 +6853,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr7{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5dc,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5dc,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6882,7 +6882,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr8{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5e0,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5e0,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6911,7 +6911,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipimr9{    ///<Host Pipe Mask Register (n = 0)
-        using Addr = Register::Address<0x400ac5e4,0xfff8af00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5e4,0xfff8af00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxine{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6940,7 +6940,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdt{}; 
     }
     namespace UotghsHstpipier0{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac5f0,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5f0,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6967,7 +6967,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier1{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac5f4,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5f4,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -6994,7 +6994,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier2{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac5f8,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5f8,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7021,7 +7021,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier3{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac5fc,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac5fc,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7048,7 +7048,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier4{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac600,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac600,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7075,7 +7075,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier5{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac604,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac604,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7102,7 +7102,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier6{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac608,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac608,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7129,7 +7129,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier7{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac60c,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac60c,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7156,7 +7156,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier8{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac610,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac610,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7183,7 +7183,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipier9{    ///<Host Pipe Enable Register (n = 0)
-        using Addr = Register::Address<0x400ac614,0xfff8ef00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac614,0xfff8ef00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxines{}; 
         ///Transmitted OUT Data Interrupt Enable
@@ -7210,7 +7210,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rstdts{}; 
     }
     namespace UotghsHstpipidr0{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac620,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac620,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7237,7 +7237,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr1{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac624,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac624,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7264,7 +7264,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr2{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac628,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac628,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7291,7 +7291,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr3{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac62c,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac62c,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7318,7 +7318,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr4{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac630,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac630,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7345,7 +7345,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr5{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac634,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac634,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7372,7 +7372,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr6{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac638,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac638,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7399,7 +7399,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr7{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac63c,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac63c,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7426,7 +7426,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr8{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac640,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac640,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7453,7 +7453,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipidr9{    ///<Host Pipe Disable Register (n = 0)
-        using Addr = Register::Address<0x400ac644,0xfffcaf00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac644,0xfffcaf00,0x00000000,std::uint32_t>;
         ///Received IN Data Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxinec{}; 
         ///Transmitted OUT Data Interrupt Disable
@@ -7480,77 +7480,77 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pfreezec{}; 
     }
     namespace UotghsHstpipinrq0{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac650,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac650,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq1{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac654,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac654,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq2{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac658,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac658,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq3{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac65c,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac65c,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq4{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac660,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac660,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq5{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac664,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac664,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq6{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac668,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac668,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq7{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac66c,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac66c,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq8{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac670,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac670,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpipinrq9{    ///<Host Pipe IN Request Register (n = 0)
-        using Addr = Register::Address<0x400ac674,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac674,0xfffffe00,0x00000000,std::uint32_t>;
         ///IN Request Number before Freeze
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> inrq{}; 
         ///IN Request Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> inmode{}; 
     }
     namespace UotghsHstpiperr0{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac680,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac680,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7565,7 +7565,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr1{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac684,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac684,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7580,7 +7580,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr2{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac688,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac688,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7595,7 +7595,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr3{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac68c,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac68c,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7610,7 +7610,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr4{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac690,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac690,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7625,7 +7625,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr5{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac694,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac694,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7640,7 +7640,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr6{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac698,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac698,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7655,7 +7655,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr7{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac69c,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac69c,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7670,7 +7670,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr8{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac6a0,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac6a0,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error
@@ -7685,7 +7685,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,5),Register::ReadWriteAccess,unsigned> counter{}; 
     }
     namespace UotghsHstpiperr9{    ///<Host Pipe Error Register (n = 0)
-        using Addr = Register::Address<0x400ac6a4,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac6a4,0xffffff80,0x00000000,std::uint32_t>;
         ///Data Toggle Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> datatgl{}; 
         ///Data PID Error

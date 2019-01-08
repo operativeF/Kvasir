@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/CM4/Freescale/MK20D5/Io.hpp>
 #include <Chip/CM4/Freescale/MK20D5/FTFL_FlashConfig.hpp>
 #include <Chip/CM4/Freescale/MK20D5/DMA.hpp>
@@ -47,6 +48,3 @@
 #include <Chip/CM4/Freescale/MK20D5/PTC.hpp>
 #include <Chip/CM4/Freescale/MK20D5/PTD.hpp>
 #include <Chip/CM4/Freescale/MK20D5/PTE.hpp>
-#include <Chip/CM4/Freescale/MK20D5/SystemControl.hpp>
-#include <Chip/CM4/Freescale/MK20D5/SysTick.hpp>
-#include <Chip/CM4/Freescale/MK20D5/NVIC.hpp>

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Direct Memory Access Controller
     namespace DmacActive{    ///<Active Channel and Levels
-        using Addr = Register::Address<0x41004830,0x000060f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004830,0x000060f0,0x00000000,std::uint32_t>;
         ///Level 0 Channel Trigger Request Executing
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> lvlex0{}; 
         ///Level 1 Channel Trigger Request Executing
@@ -20,12 +20,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> btcnt{}; 
     }
     namespace DmacBaseaddr{    ///<Descriptor Memory Section Base Address
-        using Addr = Register::Address<0x41004834,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004834,0x00000000,0x00000000,std::uint32_t>;
         ///Descriptor Memory Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> baseaddr{}; 
     }
     namespace DmacBusych{    ///<Busy Channels
-        using Addr = Register::Address<0x41004828,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004828,0xfffff000,0x00000000,std::uint32_t>;
         ///Busy Channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> busych0{}; 
         ///Busy Channel 1
@@ -52,14 +52,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> busych11{}; 
     }
     namespace DmacChctrla{    ///<Channel Control A
-        using Addr = Register::Address<0x41004840,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x41004840,0xfffffffc,0x00000000,std::uint8_t>;
         ///Channel Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///Channel Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> enable{}; 
     }
     namespace DmacChctrlb{    ///<Channel Control B
-        using Addr = Register::Address<0x41004844,0xfc3fc080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004844,0xfc3fc080,0x00000000,std::uint32_t>;
         ///Event Input Action
         enum class EvactVal {
             noact=0x00000000,     ///<No action
@@ -114,12 +114,12 @@ namespace Kvasir {
         }
     }
     namespace DmacChid{    ///<Channel ID
-        using Addr = Register::Address<0x4100483f,0xfffffff0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100483f,0xfffffff0,0x00000000,std::uint8_t>;
         ///Channel ID
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> id{}; 
     }
     namespace DmacChintenclr{    ///<Channel Interrupt Enable Clear
-        using Addr = Register::Address<0x4100484c,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100484c,0xfffffff8,0x00000000,std::uint8_t>;
         ///Transfer Error Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> terr{}; 
         ///Transfer Complete Interrupt Enable
@@ -128,7 +128,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> susp{}; 
     }
     namespace DmacChintenset{    ///<Channel Interrupt Enable Set
-        using Addr = Register::Address<0x4100484d,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100484d,0xfffffff8,0x00000000,std::uint8_t>;
         ///Transfer Error Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> terr{}; 
         ///Transfer Complete Interrupt Enable
@@ -137,7 +137,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> susp{}; 
     }
     namespace DmacChintflag{    ///<Channel Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x4100484e,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100484e,0xfffffff8,0x00000000,std::uint8_t>;
         ///Transfer Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> terr{}; 
         ///Transfer Complete
@@ -146,7 +146,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> susp{}; 
     }
     namespace DmacChstatus{    ///<Channel Status
-        using Addr = Register::Address<0x4100484f,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100484f,0xfffffff8,0x00000000,std::uint8_t>;
         ///Channel Pending
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pend{}; 
         ///Channel Busy
@@ -155,12 +155,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ferr{}; 
     }
     namespace DmacCrcchksum{    ///<CRC Checksum
-        using Addr = Register::Address<0x41004808,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004808,0x00000000,0x00000000,std::uint32_t>;
         ///CRC Checksum
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> crcchksum{}; 
     }
     namespace DmacCrcctrl{    ///<CRC Control
-        using Addr = Register::Address<0x41004802,0xffffc0f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004802,0xffffc0f0,0x00000000,std::uint16_t>;
         ///CRC Beat Size
         enum class CrcbeatsizeVal {
             byte=0x00000000,     ///<Byte bus access
@@ -187,19 +187,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,8),Register::ReadWriteAccess,unsigned> crcsrc{}; 
     }
     namespace DmacCrcdatain{    ///<CRC Data Input
-        using Addr = Register::Address<0x41004804,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004804,0x00000000,0x00000000,std::uint32_t>;
         ///CRC Data Input
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> crcdatain{}; 
     }
     namespace DmacCrcstatus{    ///<CRC Status
-        using Addr = Register::Address<0x4100480c,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100480c,0xfffffffc,0x00000000,std::uint8_t>;
         ///CRC Module Busy
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> crcbusy{}; 
         ///CRC Zero
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> crczero{}; 
     }
     namespace DmacCtrl{    ///<Control
-        using Addr = Register::Address<0x41004800,0xfffff0f8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004800,0xfffff0f8,0x00000000,std::uint16_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///DMA Enable
@@ -216,12 +216,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> lvlen3{}; 
     }
     namespace DmacDbgctrl{    ///<Debug Control
-        using Addr = Register::Address<0x4100480d,0xfffffffe,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4100480d,0xfffffffe,0x00000000,std::uint8_t>;
         ///Debug Run
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dbgrun{}; 
     }
     namespace DmacIntpend{    ///<Interrupt Pending
-        using Addr = Register::Address<0x41004820,0xffff18f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004820,0xffff18f0,0x00000000,std::uint16_t>;
         ///Channel ID
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> id{}; 
         ///Transfer Error
@@ -238,7 +238,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pend{}; 
     }
     namespace DmacIntstatus{    ///<Interrupt Status
-        using Addr = Register::Address<0x41004824,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004824,0xfffff000,0x00000000,std::uint32_t>;
         ///Channel 0 Pending Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chint0{}; 
         ///Channel 1 Pending Interrupt
@@ -265,7 +265,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chint11{}; 
     }
     namespace DmacPendch{    ///<Pending Channels
-        using Addr = Register::Address<0x4100482c,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4100482c,0xfffff000,0x00000000,std::uint32_t>;
         ///Pending Channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pendch0{}; 
         ///Pending Channel 1
@@ -292,7 +292,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pendch11{}; 
     }
     namespace DmacPrictrl0{    ///<Priority Control 0
-        using Addr = Register::Address<0x41004814,0x70707070,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004814,0x70707070,0x00000000,std::uint32_t>;
         ///Level 0 Channel Priority Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> lvlpri0{}; 
         ///Level 0 Round-Robin Scheduling Enable
@@ -311,7 +311,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> rrlvlen3{}; 
     }
     namespace DmacSwtrigctrl{    ///<Software Trigger Control
-        using Addr = Register::Address<0x41004810,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004810,0xfffff000,0x00000000,std::uint32_t>;
         ///Channel 0 Software Trigger
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swtrig0{}; 
         ///Channel 1 Software Trigger
@@ -338,7 +338,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> swtrig11{}; 
     }
     namespace DmacWrbaddr{    ///<Write-Back Memory Section Base Address
-        using Addr = Register::Address<0x41004838,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x41004838,0x00000000,0x00000000,std::uint32_t>;
         ///Write-Back Memory Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> wrbaddr{}; 
     }

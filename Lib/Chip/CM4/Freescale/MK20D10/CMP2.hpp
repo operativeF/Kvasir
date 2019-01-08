@@ -3,7 +3,7 @@
 namespace Kvasir {
 //High-Speed Comparator (CMP), Voltage Reference (VREF) Digital-to-Analog Converter (DAC), and Analog Mux (ANMUX)
     namespace Cmp2Cr0{    ///<CMP Control Register 0
-        using Addr = Register::Address<0x40073010,0xffffff8c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40073010,0xffffff8c,0x00000000,std::uint8_t>;
         ///Comparator hard block hysteresis control
         enum class HystctrVal {
             v00=0x00000000,     ///<Level 0
@@ -42,7 +42,7 @@ namespace Kvasir {
         }
     }
     namespace Cmp2Cr1{    ///<CMP Control Register 1
-        using Addr = Register::Address<0x40073011,0xffffff20,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40073011,0xffffff20,0x00000000,std::uint8_t>;
         ///Comparator Module Enable
         enum class EnVal {
             v0=0x00000000,     ///<Analog Comparator is disabled.
@@ -115,12 +115,12 @@ namespace Kvasir {
         }
     }
     namespace Cmp2Fpr{    ///<CMP Filter Period Register
-        using Addr = Register::Address<0x40073012,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40073012,0xffffff00,0x00000000,std::uint8_t>;
         ///Filter Sample Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> filtPer{}; 
     }
     namespace Cmp2Scr{    ///<CMP Status and Control Register
-        using Addr = Register::Address<0x40073013,0xffffffa0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40073013,0xffffffa0,0x00000000,std::uint8_t>;
         ///Analog Comparator Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cout{}; 
         ///Analog Comparator Flag Falling
@@ -175,7 +175,7 @@ namespace Kvasir {
         }
     }
     namespace Cmp2Daccr{    ///<DAC Control Register
-        using Addr = Register::Address<0x40073014,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40073014,0xffffff00,0x00000000,std::uint8_t>;
         ///DAC Output Voltage Select
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> vosel{}; 
         ///Supply Voltage Reference Source Select
@@ -200,7 +200,7 @@ namespace Kvasir {
         }
     }
     namespace Cmp2Muxcr{    ///<MUX Control Register
-        using Addr = Register::Address<0x40073015,0xffffff80,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40073015,0xffffff80,0x00000000,std::uint8_t>;
         ///Minus Input Mux Control
         enum class MselVal {
             v000=0x00000000,     ///<IN0

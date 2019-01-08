@@ -3,17 +3,17 @@
 namespace Kvasir {
 //Core Platform Miscellaneous Control Module
     namespace McmPlasc{    ///<Crossbar switch (AXBS) slave configuration
-        using Addr = Register::Address<0xe0080008,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0080008,0xffffff00,0x00000000,std::uint16_t>;
         ///Each bit in the ASC field indicates if there is a corresponding connection to the crossbar switch's slave input port.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> asc{}; 
     }
     namespace McmPlamc{    ///<Crossbar switch (AXBS) master configuration
-        using Addr = Register::Address<0xe008000a,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe008000a,0xffffff00,0x00000000,std::uint16_t>;
         ///Each bit in the AMC field indicates if there is a corresponding connection to the AXBS master input port.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> amc{}; 
     }
     namespace McmSramap{    ///<SRAM arbitration and protection
-        using Addr = Register::Address<0xe008000c,0x88ffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe008000c,0x88ffffff,0x00000000,std::uint32_t>;
         ///SRAM_U arbitration priority
         enum class SramuapVal {
             v00=0x00000000,     ///<Round robin
@@ -48,7 +48,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::ReadWriteAccess,unsigned> sramlwp{}; 
     }
     namespace McmIsr{    ///<Interrupt status register
-        using Addr = Register::Address<0xe0080010,0xfffffff9,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0080010,0xfffffff9,0x00000000,std::uint32_t>;
         ///Normal interrupt pending
         enum class IrqVal {
             v0=0x00000000,     ///<No pending interrupt
@@ -71,7 +71,7 @@ namespace Kvasir {
         }
     }
     namespace McmEtbcc{    ///<ETB counter control register
-        using Addr = Register::Address<0xe0080014,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0080014,0xffffffc0,0x00000000,std::uint32_t>;
         ///Counter enable
         enum class CntenVal {
             v0=0x00000000,     ///<ETB counter disabled
@@ -128,12 +128,12 @@ namespace Kvasir {
         }
     }
     namespace McmEtbrl{    ///<ETB reload register
-        using Addr = Register::Address<0xe0080018,0xfffff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0080018,0xfffff800,0x00000000,std::uint32_t>;
         ///Byte count reload value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> reload{}; 
     }
     namespace McmEtbcnt{    ///<ETB counter value register
-        using Addr = Register::Address<0xe008001c,0xfffff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe008001c,0xfffff800,0x00000000,std::uint32_t>;
         ///Byte count counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> counter{}; 
     }

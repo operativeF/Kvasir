@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/CM4/Freescale/MK20DZ10/Io.hpp>
 #include <Chip/CM4/Freescale/MK20DZ10/FTFL_FlashConfig.hpp>
 #include <Chip/CM4/Freescale/MK20DZ10/AIPS0.hpp>

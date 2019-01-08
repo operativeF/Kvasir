@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32L1xx/AES.hpp>
 #include <Chip/Unknown/STMicro/STM32L1xx/C_ADC.hpp>
 #include <Chip/Unknown/STMicro/STM32L1xx/COMP.hpp>

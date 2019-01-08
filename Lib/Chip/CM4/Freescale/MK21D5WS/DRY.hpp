@@ -3,28 +3,28 @@
 namespace Kvasir {
 //Tamper Detect and Secure Key Storage
     namespace DrySkvr{    ///<DryIce Secure Key Valid Register
-        using Addr = Register::Address<0x40042004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042004,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key Valid
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> skv{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DrySkwlr{    ///<DryIce Secure Key Write Lock Register
-        using Addr = Register::Address<0x40042008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042008,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key Write Lock
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> skwl{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DrySkrlr{    ///<DryIce Secure Key Read Lock Register
-        using Addr = Register::Address<0x4004200c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004200c,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key Read Lock
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> skrl{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryCr{    ///<DryIce Control Register
-        using Addr = Register::Address<0x40042010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042010,0x00000000,0x00000000,std::uint32_t>;
         ///Software Reset
         enum class SwrVal {
             v0=0x00000000,     ///<No effect.
@@ -113,7 +113,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,17),Register::ReadWriteAccess,unsigned> dpr{}; 
     }
     namespace DrySr{    ///<DryIce Status Register
-        using Addr = Register::Address<0x40042014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042014,0x00000000,0x00000000,std::uint32_t>;
         ///DryIce Tamper Flag
         enum class DtfVal {
             v0=0x00000000,     ///<DryIce tampering not detected.
@@ -222,7 +222,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryLr{    ///<DryIce Lock Register
-        using Addr = Register::Address<0x40042018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042018,0x00000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> reserved{}; 
         ///Key Valid Lock
@@ -353,7 +353,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryIer{    ///<DryIce Interrupt Enable Register
-        using Addr = Register::Address<0x4004201c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004201c,0x00000000,0x00000000,std::uint32_t>;
         ///DryIce Tamper Interrupt Enable
         enum class DtieVal {
             v0=0x00000000,     ///<When DryIce Tamper Flag (SR[DTF]) is set, an interrupt is not generated.
@@ -454,12 +454,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryTsr{    ///<DryIce Tamper Seconds Register
-        using Addr = Register::Address<0x40042020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042020,0x00000000,0x00000000,std::uint32_t>;
         ///Tamper Time Seconds
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tts{}; 
     }
     namespace DryTer{    ///<DryIce Tamper Enable Register
-        using Addr = Register::Address<0x40042024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042024,0x00000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///Time Overflow Enable
@@ -550,7 +550,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryPdr{    ///<DryIce Pin Direction Register
-        using Addr = Register::Address<0x40042028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042028,0x00000000,0x00000000,std::uint32_t>;
         ///Tamper Pin Direction
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> tpd{}; 
         ///no description available
@@ -561,7 +561,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryPpr{    ///<DryIce Pin Polarity Register
-        using Addr = Register::Address<0x4004202c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004202c,0x00000000,0x00000000,std::uint32_t>;
         ///Tamper Pin Polarity
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> tpp{}; 
         ///no description available
@@ -572,7 +572,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryWac{    ///<DryIce Write Access Control Register
-        using Addr = Register::Address<0x40042800,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042800,0x00000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> reserved{}; 
         ///Secure Key Valid Write
@@ -703,7 +703,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryRac{    ///<DryIce Read Access Control Register
-        using Addr = Register::Address<0x40042804,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042804,0x00000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> reserved{}; 
         ///Secure Key Valid Read
@@ -834,35 +834,35 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DrySwac{    ///<Secure Write Access Control
-        using Addr = Register::Address<0x40043800,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043800,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key Register Write
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> skrw{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DrySrac{    ///<Secure Read Access Control
-        using Addr = Register::Address<0x40043804,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043804,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key Register Read
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> skrr{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryAtr0{    ///<DryIce Active Tamper Register
-        using Addr = Register::Address<0x40042030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042030,0x00000000,0x00000000,std::uint32_t>;
         ///Active Tamper Shift Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> atsr{}; 
         ///Active Tamper Polynomial
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> atp{}; 
     }
     namespace DryAtr1{    ///<DryIce Active Tamper Register
-        using Addr = Register::Address<0x40042034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042034,0x00000000,0x00000000,std::uint32_t>;
         ///Active Tamper Shift Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> atsr{}; 
         ///Active Tamper Polynomial
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> atp{}; 
     }
     namespace DryPgfr0{    ///<DryIce Pin Glitch Filter Register
-        using Addr = Register::Address<0x40042040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042040,0x00000000,0x00000000,std::uint32_t>;
         ///Glitch Filter Width
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> gfw{}; 
         ///Glitch Filter Prescaler
@@ -917,7 +917,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryPgfr1{    ///<DryIce Pin Glitch Filter Register
-        using Addr = Register::Address<0x40042044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042044,0x00000000,0x00000000,std::uint32_t>;
         ///Glitch Filter Width
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> gfw{}; 
         ///Glitch Filter Prescaler
@@ -972,7 +972,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DryPgfr2{    ///<DryIce Pin Glitch Filter Register
-        using Addr = Register::Address<0x40042048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40042048,0x00000000,0x00000000,std::uint32_t>;
         ///Glitch Filter Width
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> gfw{}; 
         ///Glitch Filter Prescaler
@@ -1027,42 +1027,42 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace DrySkr0{    ///<Secure Key Register
-        using Addr = Register::Address<0x40043000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043000,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }
     namespace DrySkr1{    ///<Secure Key Register
-        using Addr = Register::Address<0x40043004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043004,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }
     namespace DrySkr2{    ///<Secure Key Register
-        using Addr = Register::Address<0x40043008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043008,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }
     namespace DrySkr3{    ///<Secure Key Register
-        using Addr = Register::Address<0x4004300c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004300c,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }
     namespace DrySkr4{    ///<Secure Key Register
-        using Addr = Register::Address<0x40043010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043010,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }
     namespace DrySkr5{    ///<Secure Key Register
-        using Addr = Register::Address<0x40043014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043014,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }
     namespace DrySkr6{    ///<Secure Key Register
-        using Addr = Register::Address<0x40043018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40043018,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }
     namespace DrySkr7{    ///<Secure Key Register
-        using Addr = Register::Address<0x4004301c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004301c,0x00000000,0x00000000,std::uint32_t>;
         ///Secure Key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> sk{}; 
     }

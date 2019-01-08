@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Analog Digital Converter
     namespace AdcAvgctrl{    ///<Average Control
-        using Addr = Register::Address<0x42004002,0xffffff80,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004002,0xffffff80,0x00000000,std::uint8_t>;
         ///Number of Samples to be Collected
         enum class SamplenumVal {
             v1=0x00000000,     ///<1 sample
@@ -36,14 +36,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,4),Register::ReadWriteAccess,unsigned> adjres{}; 
     }
     namespace AdcCalib{    ///<Calibration
-        using Addr = Register::Address<0x42004028,0xfffff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004028,0xfffff800,0x00000000,std::uint16_t>;
         ///Linearity Calibration Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> linearityCal{}; 
         ///Bias Calibration Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,8),Register::ReadWriteAccess,unsigned> biasCal{}; 
     }
     namespace AdcCtrla{    ///<Control A
-        using Addr = Register::Address<0x42004000,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004000,0xfffffff8,0x00000000,std::uint8_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///Enable
@@ -52,7 +52,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> runstdby{}; 
     }
     namespace AdcCtrlb{    ///<Control B
-        using Addr = Register::Address<0x42004004,0xfffff8c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004004,0xfffff8c0,0x00000000,std::uint16_t>;
         ///Differential Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> diffmode{}; 
         ///Left-Adjusted Result
@@ -99,12 +99,12 @@ namespace Kvasir {
         }
     }
     namespace AdcDbgctrl{    ///<Debug Control
-        using Addr = Register::Address<0x4200402a,0xfffffffe,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4200402a,0xfffffffe,0x00000000,std::uint8_t>;
         ///Debug Run
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dbgrun{}; 
     }
     namespace AdcEvctrl{    ///<Event Control
-        using Addr = Register::Address<0x42004014,0xffffffcc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004014,0xffffffcc,0x00000000,std::uint8_t>;
         ///Start Conversion Event In
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> startei{}; 
         ///Synchronization Event In
@@ -115,12 +115,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,unsigned> winmoneo{}; 
     }
     namespace AdcGaincorr{    ///<Gain Correction
-        using Addr = Register::Address<0x42004024,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004024,0xfffff000,0x00000000,std::uint16_t>;
         ///Gain Correction Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> gaincorr{}; 
     }
     namespace AdcInputctrl{    ///<Input Control
-        using Addr = Register::Address<0x42004010,0xf000e0e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004010,0xf000e0e0,0x00000000,std::uint32_t>;
         ///Positive Mux Input Selection
         enum class MuxposVal {
             pin0=0x00000000,     ///<ADC AIN0 Pin
@@ -227,7 +227,7 @@ namespace Kvasir {
         }
     }
     namespace AdcIntenclr{    ///<Interrupt Enable Clear
-        using Addr = Register::Address<0x42004016,0xfffffff0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004016,0xfffffff0,0x00000000,std::uint8_t>;
         ///Result Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> resrdy{}; 
         ///Overrun Interrupt Enable
@@ -238,7 +238,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> syncrdy{}; 
     }
     namespace AdcIntenset{    ///<Interrupt Enable Set
-        using Addr = Register::Address<0x42004017,0xfffffff0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004017,0xfffffff0,0x00000000,std::uint8_t>;
         ///Result Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> resrdy{}; 
         ///Overrun Interrupt Enable
@@ -249,7 +249,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> syncrdy{}; 
     }
     namespace AdcIntflag{    ///<Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x42004018,0xfffffff0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004018,0xfffffff0,0x00000000,std::uint8_t>;
         ///Result Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> resrdy{}; 
         ///Overrun
@@ -260,12 +260,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> syncrdy{}; 
     }
     namespace AdcOffsetcorr{    ///<Offset Correction
-        using Addr = Register::Address<0x42004026,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004026,0xfffff000,0x00000000,std::uint16_t>;
         ///Offset Correction Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> offsetcorr{}; 
     }
     namespace AdcRefctrl{    ///<Reference Control
-        using Addr = Register::Address<0x42004001,0xffffff70,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004001,0xffffff70,0x00000000,std::uint8_t>;
         ///Reference Selection
         enum class RefselVal {
             int1v=0x00000000,     ///<1.0V voltage reference
@@ -286,29 +286,29 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> refcomp{}; 
     }
     namespace AdcResult{    ///<Result
-        using Addr = Register::Address<0x4200401a,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200401a,0xffff0000,0x00000000,std::uint16_t>;
         ///Result Conversion Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> result{}; 
     }
     namespace AdcSampctrl{    ///<Sampling Time Control
-        using Addr = Register::Address<0x42004003,0xffffffc0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004003,0xffffffc0,0x00000000,std::uint8_t>;
         ///Sampling Time Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> samplen{}; 
     }
     namespace AdcStatus{    ///<Status
-        using Addr = Register::Address<0x42004019,0xffffff7f,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004019,0xffffff7f,0x00000000,std::uint8_t>;
         ///Synchronization Busy
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> syncbusy{}; 
     }
     namespace AdcSwtrig{    ///<Software Trigger
-        using Addr = Register::Address<0x4200400c,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4200400c,0xfffffffc,0x00000000,std::uint8_t>;
         ///ADC Conversion Flush
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> flush{}; 
         ///ADC Start Conversion
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> start{}; 
     }
     namespace AdcWinctrl{    ///<Window Monitor Control
-        using Addr = Register::Address<0x42004008,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42004008,0xfffffff8,0x00000000,std::uint8_t>;
         ///Window Monitor Mode
         enum class WinmodeVal {
             disable=0x00000000,     ///<No window mode (default)
@@ -327,12 +327,12 @@ namespace Kvasir {
         }
     }
     namespace AdcWinlt{    ///<Window Monitor Lower Threshold
-        using Addr = Register::Address<0x4200401c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200401c,0xffff0000,0x00000000,std::uint16_t>;
         ///Window Lower Threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> winlt{}; 
     }
     namespace AdcWinut{    ///<Window Monitor Upper Threshold
-        using Addr = Register::Address<0x42004020,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42004020,0xffff0000,0x00000000,std::uint16_t>;
         ///Window Upper Threshold
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> winut{}; 
     }

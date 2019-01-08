@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB on the go full speed
     namespace OtgFsDeviceFsDcfg{    ///<OTG_FS device configuration register           (OTG_FS_DCFG)
-        using Addr = Register::Address<0x50000800,0xffffe008,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000800,0xffffe008,0x00000000,std::uint32_t>;
         ///Device speed
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> dspd{}; 
         ///Non-zero-length status OUT               handshake
@@ -14,7 +14,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,11),Register::ReadWriteAccess,unsigned> pfivl{}; 
     }
     namespace OtgFsDeviceFsDctl{    ///<OTG_FS device control register           (OTG_FS_DCTL)
-        using Addr = Register::Address<0x50000804,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000804,0xfffff000,0x00000000,std::uint32_t>;
         ///Remote wakeup signaling
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rwusig{}; 
         ///Soft disconnect
@@ -37,7 +37,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> poprgdne{}; 
     }
     namespace OtgFsDeviceFsDsts{    ///<OTG_FS device status register           (OTG_FS_DSTS)
-        using Addr = Register::Address<0x50000808,0xffc000f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000808,0xffc000f0,0x00000000,std::uint32_t>;
         ///Suspend status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> suspsts{}; 
         ///Enumerated speed
@@ -48,7 +48,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(21,8),Register::ReadWriteAccess,unsigned> fnsof{}; 
     }
     namespace OtgFsDeviceFsDiepmsk{    ///<OTG_FS device IN endpoint common interrupt           mask register (OTG_FS_DIEPMSK)
-        using Addr = Register::Address<0x50000810,0xffffff84,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000810,0xffffff84,0x00000000,std::uint32_t>;
         ///Transfer completed interrupt               mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrcm{}; 
         ///Endpoint disabled interrupt               mask
@@ -63,7 +63,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> inepnem{}; 
     }
     namespace OtgFsDeviceFsDoepmsk{    ///<OTG_FS device OUT endpoint common interrupt           mask register (OTG_FS_DOEPMSK)
-        using Addr = Register::Address<0x50000814,0xffffffe4,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000814,0xffffffe4,0x00000000,std::uint32_t>;
         ///Transfer completed interrupt               mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrcm{}; 
         ///Endpoint disabled interrupt               mask
@@ -74,36 +74,36 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> otepdm{}; 
     }
     namespace OtgFsDeviceFsDaint{    ///<OTG_FS device all endpoints interrupt           register (OTG_FS_DAINT)
-        using Addr = Register::Address<0x50000818,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000818,0x00000000,0x00000000,std::uint32_t>;
         ///IN endpoint interrupt bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> iepint{}; 
         ///OUT endpoint interrupt               bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> oepint{}; 
     }
     namespace OtgFsDeviceFsDaintmsk{    ///<OTG_FS all endpoints interrupt mask register           (OTG_FS_DAINTMSK)
-        using Addr = Register::Address<0x5000081c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000081c,0x00000000,0x00000000,std::uint32_t>;
         ///IN EP interrupt mask bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> iepm{}; 
         ///OUT endpoint interrupt               bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> oepint{}; 
     }
     namespace OtgFsDeviceDvbusdis{    ///<OTG_FS device VBUS discharge time           register
-        using Addr = Register::Address<0x50000828,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000828,0xffff0000,0x00000000,std::uint32_t>;
         ///Device VBUS discharge time
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> vbusdt{}; 
     }
     namespace OtgFsDeviceDvbuspulse{    ///<OTG_FS device VBUS pulsing time           register
-        using Addr = Register::Address<0x5000082c,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000082c,0xfffff000,0x00000000,std::uint32_t>;
         ///Device VBUS pulsing time
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> dvbusp{}; 
     }
     namespace OtgFsDeviceDiepempmsk{    ///<OTG_FS device IN endpoint FIFO empty           interrupt mask register
-        using Addr = Register::Address<0x50000834,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000834,0xffff0000,0x00000000,std::uint32_t>;
         ///IN EP Tx FIFO empty interrupt mask               bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptxfem{}; 
     }
     namespace OtgFsDeviceFsDiepctl0{    ///<OTG_FS device control IN endpoint 0 control           register (OTG_FS_DIEPCTL0)
-        using Addr = Register::Address<0x50000900,0x30117ffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000900,0x30117ffc,0x00000000,std::uint32_t>;
         ///Maximum packet size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> mpsiz{}; 
         ///USB active endpoint
@@ -126,7 +126,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> epena{}; 
     }
     namespace OtgFsDeviceDiepctl1{    ///<OTG device endpoint-1 control           register
-        using Addr = Register::Address<0x50000920,0x00107800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000920,0x00107800,0x00000000,std::uint32_t>;
         ///EPENA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> epena{}; 
         ///EPDIS
@@ -155,7 +155,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> mpsiz{}; 
     }
     namespace OtgFsDeviceDiepctl2{    ///<OTG device endpoint-2 control           register
-        using Addr = Register::Address<0x50000940,0x00107800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000940,0x00107800,0x00000000,std::uint32_t>;
         ///EPENA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> epena{}; 
         ///EPDIS
@@ -184,7 +184,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> mpsiz{}; 
     }
     namespace OtgFsDeviceDiepctl3{    ///<OTG device endpoint-3 control           register
-        using Addr = Register::Address<0x50000960,0x00107800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000960,0x00107800,0x00000000,std::uint32_t>;
         ///EPENA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> epena{}; 
         ///EPDIS
@@ -213,7 +213,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> mpsiz{}; 
     }
     namespace OtgFsDeviceDoepctl0{    ///<device endpoint-0 control           register
-        using Addr = Register::Address<0x50000b00,0x33c17ffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b00,0x33c17ffc,0x00000000,std::uint32_t>;
         ///EPENA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> epena{}; 
         ///EPDIS
@@ -236,7 +236,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mpsiz{}; 
     }
     namespace OtgFsDeviceDoepctl1{    ///<device endpoint-1 control           register
-        using Addr = Register::Address<0x50000b20,0x03c07800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b20,0x03c07800,0x00000000,std::uint32_t>;
         ///EPENA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> epena{}; 
         ///EPDIS
@@ -265,7 +265,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> mpsiz{}; 
     }
     namespace OtgFsDeviceDoepctl2{    ///<device endpoint-2 control           register
-        using Addr = Register::Address<0x50000b40,0x03c07800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b40,0x03c07800,0x00000000,std::uint32_t>;
         ///EPENA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> epena{}; 
         ///EPDIS
@@ -294,7 +294,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> mpsiz{}; 
     }
     namespace OtgFsDeviceDoepctl3{    ///<device endpoint-3 control           register
-        using Addr = Register::Address<0x50000b60,0x03c07800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b60,0x03c07800,0x00000000,std::uint32_t>;
         ///EPENA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> epena{}; 
         ///EPDIS
@@ -323,7 +323,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> mpsiz{}; 
     }
     namespace OtgFsDeviceDiepint0{    ///<device endpoint-x interrupt           register
-        using Addr = Register::Address<0x50000908,0xffffff24,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000908,0xffffff24,0x00000000,std::uint32_t>;
         ///TXFE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txfe{}; 
         ///INEPNE
@@ -338,7 +338,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDiepint1{    ///<device endpoint-1 interrupt           register
-        using Addr = Register::Address<0x50000928,0xffffff24,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000928,0xffffff24,0x00000000,std::uint32_t>;
         ///TXFE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txfe{}; 
         ///INEPNE
@@ -353,7 +353,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDiepint2{    ///<device endpoint-2 interrupt           register
-        using Addr = Register::Address<0x50000948,0xffffff24,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000948,0xffffff24,0x00000000,std::uint32_t>;
         ///TXFE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txfe{}; 
         ///INEPNE
@@ -368,7 +368,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDiepint3{    ///<device endpoint-3 interrupt           register
-        using Addr = Register::Address<0x50000968,0xffffff24,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000968,0xffffff24,0x00000000,std::uint32_t>;
         ///TXFE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txfe{}; 
         ///INEPNE
@@ -383,7 +383,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDoepint0{    ///<device endpoint-0 interrupt           register
-        using Addr = Register::Address<0x50000b08,0xffffffa4,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b08,0xffffffa4,0x00000000,std::uint32_t>;
         ///B2BSTUP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> b2bstup{}; 
         ///OTEPDIS
@@ -396,7 +396,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDoepint1{    ///<device endpoint-1 interrupt           register
-        using Addr = Register::Address<0x50000b28,0xffffffa4,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b28,0xffffffa4,0x00000000,std::uint32_t>;
         ///B2BSTUP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> b2bstup{}; 
         ///OTEPDIS
@@ -409,7 +409,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDoepint2{    ///<device endpoint-2 interrupt           register
-        using Addr = Register::Address<0x50000b48,0xffffffa4,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b48,0xffffffa4,0x00000000,std::uint32_t>;
         ///B2BSTUP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> b2bstup{}; 
         ///OTEPDIS
@@ -422,7 +422,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDoepint3{    ///<device endpoint-3 interrupt           register
-        using Addr = Register::Address<0x50000b68,0xffffffa4,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b68,0xffffffa4,0x00000000,std::uint32_t>;
         ///B2BSTUP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> b2bstup{}; 
         ///OTEPDIS
@@ -435,14 +435,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> xfrc{}; 
     }
     namespace OtgFsDeviceDieptsiz0{    ///<device endpoint-0 transfer size           register
-        using Addr = Register::Address<0x50000910,0xffe7ff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000910,0xffe7ff80,0x00000000,std::uint32_t>;
         ///Packet count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,19),Register::ReadWriteAccess,unsigned> pktcnt{}; 
         ///Transfer size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> xfrsiz{}; 
     }
     namespace OtgFsDeviceDoeptsiz0{    ///<device OUT endpoint-0 transfer size           register
-        using Addr = Register::Address<0x50000b10,0x9ff7ff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b10,0x9ff7ff80,0x00000000,std::uint32_t>;
         ///SETUP packet count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::ReadWriteAccess,unsigned> stupcnt{}; 
         ///Packet count
@@ -451,7 +451,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> xfrsiz{}; 
     }
     namespace OtgFsDeviceDieptsiz1{    ///<device endpoint-1 transfer size           register
-        using Addr = Register::Address<0x50000930,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000930,0x80000000,0x00000000,std::uint32_t>;
         ///Multi count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::ReadWriteAccess,unsigned> mcnt{}; 
         ///Packet count
@@ -460,7 +460,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,0),Register::ReadWriteAccess,unsigned> xfrsiz{}; 
     }
     namespace OtgFsDeviceDieptsiz2{    ///<device endpoint-2 transfer size           register
-        using Addr = Register::Address<0x50000950,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000950,0x80000000,0x00000000,std::uint32_t>;
         ///Multi count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::ReadWriteAccess,unsigned> mcnt{}; 
         ///Packet count
@@ -469,7 +469,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,0),Register::ReadWriteAccess,unsigned> xfrsiz{}; 
     }
     namespace OtgFsDeviceDieptsiz3{    ///<device endpoint-3 transfer size           register
-        using Addr = Register::Address<0x50000970,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000970,0x80000000,0x00000000,std::uint32_t>;
         ///Multi count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::ReadWriteAccess,unsigned> mcnt{}; 
         ///Packet count
@@ -478,27 +478,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,0),Register::ReadWriteAccess,unsigned> xfrsiz{}; 
     }
     namespace OtgFsDeviceDtxfsts0{    ///<OTG_FS device IN endpoint transmit FIFO           status register
-        using Addr = Register::Address<0x50000918,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000918,0xffff0000,0x00000000,std::uint32_t>;
         ///IN endpoint TxFIFO space               available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptfsav{}; 
     }
     namespace OtgFsDeviceDtxfsts1{    ///<OTG_FS device IN endpoint transmit FIFO           status register
-        using Addr = Register::Address<0x50000938,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000938,0xffff0000,0x00000000,std::uint32_t>;
         ///IN endpoint TxFIFO space               available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptfsav{}; 
     }
     namespace OtgFsDeviceDtxfsts2{    ///<OTG_FS device IN endpoint transmit FIFO           status register
-        using Addr = Register::Address<0x50000958,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000958,0xffff0000,0x00000000,std::uint32_t>;
         ///IN endpoint TxFIFO space               available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptfsav{}; 
     }
     namespace OtgFsDeviceDtxfsts3{    ///<OTG_FS device IN endpoint transmit FIFO           status register
-        using Addr = Register::Address<0x50000978,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000978,0xffff0000,0x00000000,std::uint32_t>;
         ///IN endpoint TxFIFO space               available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptfsav{}; 
     }
     namespace OtgFsDeviceDoeptsiz1{    ///<device OUT endpoint-1 transfer size           register
-        using Addr = Register::Address<0x50000b30,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b30,0x80000000,0x00000000,std::uint32_t>;
         ///Received data PID/SETUP packet               count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::ReadWriteAccess,unsigned> rxdpidStupcnt{}; 
         ///Packet count
@@ -507,7 +507,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,0),Register::ReadWriteAccess,unsigned> xfrsiz{}; 
     }
     namespace OtgFsDeviceDoeptsiz2{    ///<device OUT endpoint-2 transfer size           register
-        using Addr = Register::Address<0x50000b50,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b50,0x80000000,0x00000000,std::uint32_t>;
         ///Received data PID/SETUP packet               count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::ReadWriteAccess,unsigned> rxdpidStupcnt{}; 
         ///Packet count
@@ -516,7 +516,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,0),Register::ReadWriteAccess,unsigned> xfrsiz{}; 
     }
     namespace OtgFsDeviceDoeptsiz3{    ///<device OUT endpoint-3 transfer size           register
-        using Addr = Register::Address<0x50000b70,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000b70,0x80000000,0x00000000,std::uint32_t>;
         ///Received data PID/SETUP packet               count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,29),Register::ReadWriteAccess,unsigned> rxdpidStupcnt{}; 
         ///Packet count

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Flash Memory Interface
     namespace FtfaFstat{    ///<Flash Status Register
-        using Addr = Register::Address<0x40020000,0xffffff0e,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020000,0xffffff0e,0x00000000,std::uint8_t>;
         ///Memory Controller Command Completion Status Flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mgstat0{}; 
         ///Flash Protection Violation Flag
@@ -48,7 +48,7 @@ namespace Kvasir {
         }
     }
     namespace FtfaFcnfg{    ///<Flash Configuration Register
-        using Addr = Register::Address<0x40020001,0xffffff0f,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020001,0xffffff0f,0x00000000,std::uint8_t>;
         ///Erase Suspend
         enum class ErssuspVal {
             v0=0x00000000,     ///<No suspend requested
@@ -91,7 +91,7 @@ namespace Kvasir {
         }
     }
     namespace FtfaFsec{    ///<Flash Security Register
-        using Addr = Register::Address<0x40020002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020002,0xffffff00,0x00000000,std::uint8_t>;
         ///Flash Security
         enum class SecVal {
             v00=0x00000000,     ///<MCU security status is secure.
@@ -150,177 +150,177 @@ namespace Kvasir {
         }
     }
     namespace FtfaFopt{    ///<Flash Option Register
-        using Addr = Register::Address<0x40020003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020003,0xffffff00,0x00000000,std::uint8_t>;
         ///Nonvolatile Option
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> opt{}; 
     }
     namespace FtfaFacss{    ///<Flash Access Segment Size Register
-        using Addr = Register::Address<0x40020028,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020028,0xffffff00,0x00000000,std::uint8_t>;
         ///Segment Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sgsize{}; 
     }
     namespace FtfaFacsn{    ///<Flash Access Segment Number Register
-        using Addr = Register::Address<0x4002002b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002002b,0xffffff00,0x00000000,std::uint8_t>;
         ///Number of Segments Indicator
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> numsg{}; 
     }
     namespace FtfaFccob3{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020004,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x40020004,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob2{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020005,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x40020005,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob1{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020006,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x40020006,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob0{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020007,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x40020007,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob7{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020008,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x40020008,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob6{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x40020009,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x40020009,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob5{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000a,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x4002000a,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob4{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000b,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x4002000b,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccobb{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000c,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x4002000c,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccoba{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000d,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x4002000d,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob9{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000e,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x4002000e,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFccob8{    ///<Flash Common Command Object Registers
-        using Addr = Register::Address<0x4002000f,0xffffff00,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x4002000f,0xffffff00,0x00000000,std::uint8_t>;
+        ///The FCCOB register provides a command code and relevant parameters to the memory controller
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ccobn{}; 
     }
     namespace FtfaFprot3{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020010,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020010,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }
     namespace FtfaFprot2{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020011,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020011,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }
     namespace FtfaFprot1{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020012,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020012,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }
     namespace FtfaFprot0{    ///<Program Flash Protection Registers
-        using Addr = Register::Address<0x40020013,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020013,0xffffff00,0x00000000,std::uint8_t>;
         ///Program Flash Region Protect
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> prot{}; 
     }
     namespace FtfaXacch3{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x40020018,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020018,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaXacch2{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x40020019,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020019,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaXacch1{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x4002001a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002001a,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaXacch0{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x4002001b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002001b,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaXaccl3{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x4002001c,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002001c,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaXaccl2{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x4002001d,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002001d,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaXaccl1{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x4002001e,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002001e,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaXaccl0{    ///<Execute-only Access Registers
-        using Addr = Register::Address<0x4002001f,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4002001f,0xffffff00,0x00000000,std::uint8_t>;
         ///Execute-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> xa{}; 
     }
     namespace FtfaSacch3{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020020,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020020,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }
     namespace FtfaSacch2{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020021,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020021,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }
     namespace FtfaSacch1{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020022,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020022,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }
     namespace FtfaSacch0{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020023,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020023,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }
     namespace FtfaSaccl3{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020024,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020024,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }
     namespace FtfaSaccl2{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020025,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020025,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }
     namespace FtfaSaccl1{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020026,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020026,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }
     namespace FtfaSaccl0{    ///<Supervisor-only Access Registers
-        using Addr = Register::Address<0x40020027,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40020027,0xffffff00,0x00000000,std::uint8_t>;
         ///Supervisor-only access control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> sa{}; 
     }

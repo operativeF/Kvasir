@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32L051x/DAC.hpp>
 #include <Chip/Unknown/STMicro/STM32L051x/DMA1.hpp>
 #include <Chip/Unknown/STMicro/STM32L051x/CRC.hpp>

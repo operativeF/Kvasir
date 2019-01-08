@@ -3,17 +3,17 @@
 namespace Kvasir {
 //Core Platform Miscellaneous Control Module
     namespace McmPlasc{    ///<Crossbar Switch (AXBS) Slave Configuration
-        using Addr = Register::Address<0xe0080008,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0080008,0xffffff00,0x00000000,std::uint16_t>;
         ///Each bit in the ASC field indicates whether there is a corresponding connection to the crossbar switch's slave input port.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> asc{}; 
     }
     namespace McmPlamc{    ///<Crossbar Switch (AXBS) Master Configuration
-        using Addr = Register::Address<0xe008000a,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe008000a,0xffffff00,0x00000000,std::uint16_t>;
         ///Each bit in the AMC field indicates whether there is a corresponding connection to the AXBS master input port.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> amc{}; 
     }
     namespace McmPlacr{    ///<Crossbar Switch (AXBS) Control Register
-        using Addr = Register::Address<0xe008000c,0xfffffdff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe008000c,0xfffffdff,0x00000000,std::uint32_t>;
         ///Arbitration select
         enum class ArbVal {
             v0=0x00000000,     ///<Fixed-priority arbitration for the crossbar masters
@@ -26,7 +26,7 @@ namespace Kvasir {
         }
     }
     namespace McmIscr{    ///<Interrupt Status and Control Register
-        using Addr = Register::Address<0xe0080010,0x60ff60ff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0080010,0x60ff60ff,0x00000000,std::uint32_t>;
         ///FPU invalid operation interrupt status
         enum class FiocVal {
             v0=0x00000000,     ///<No interrupt
@@ -149,7 +149,7 @@ namespace Kvasir {
         }
     }
     namespace McmCpo{    ///<Compute Operation Control Register
-        using Addr = Register::Address<0xe0080040,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0080040,0xfffffff8,0x00000000,std::uint32_t>;
         ///Compute Operation request
         enum class CporeqVal {
             v0=0x00000000,     ///<Request is cleared.

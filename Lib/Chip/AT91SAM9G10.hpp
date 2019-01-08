@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/Atmel/AT91SAM9G10/UHP.hpp>
 #include <Chip/Unknown/Atmel/AT91SAM9G10/LCDC.hpp>
 #include <Chip/Unknown/Atmel/AT91SAM9G10/TC0.hpp>

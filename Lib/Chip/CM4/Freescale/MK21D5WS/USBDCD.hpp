@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB Device Charger Detection module
     namespace UsbdcdControl{    ///<Control register
-        using Addr = Register::Address<0x40035000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035000,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Acknowledge
         enum class IackVal {
             v0=0x00000000,     ///<Do not clear the interrupt.
@@ -64,7 +64,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace UsbdcdClock{    ///<Clock register
-        using Addr = Register::Address<0x40035004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035004,0x00000000,0x00000000,std::uint32_t>;
         ///Unit of Measurement Encoding for Clock Speed
         enum class ClockunitVal {
             v0=0x00000000,     ///<kHz Speed (between 1 kHz and 1023 kHz)
@@ -83,7 +83,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace UsbdcdStatus{    ///<Status register
-        using Addr = Register::Address<0x40035008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035008,0x00000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///Charger Detection Sequence Results
@@ -148,7 +148,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,23),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace UsbdcdTimer0{    ///<TIMER0 register
-        using Addr = Register::Address<0x40035010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035010,0x00000000,0x00000000,std::uint32_t>;
         ///Unit Connection Timer Elapse (in ms)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> tunitcon{}; 
         ///no description available
@@ -159,7 +159,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace UsbdcdTimer1{    ///<TIMER1 register
-        using Addr = Register::Address<0x40035014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035014,0x00000000,0x00000000,std::uint32_t>;
         ///Time Period Comparator Enabled
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> tvdpsrcOn{}; 
         ///no description available
@@ -170,7 +170,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace UsbdcdTimer2{    ///<TIMER2 register
-        using Addr = Register::Address<0x40035018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40035018,0x00000000,0x00000000,std::uint32_t>;
         ///Time Before Check of D- Line
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> checkDm{}; 
         ///no description available

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Low power timer
     namespace LptimIsr{    ///<Interrupt and Status Register
-        using Addr = Register::Address<0x40007c00,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c00,0xffffff80,0x00000000,std::uint32_t>;
         ///Counter direction change up to              down
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> down{}; 
         ///Counter direction change down to              up
@@ -20,7 +20,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cmpm{}; 
     }
     namespace LptimIcr{    ///<Interrupt Clear Register
-        using Addr = Register::Address<0x40007c04,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c04,0xffffff80,0x00000000,std::uint32_t>;
         ///Direction change to down Clear              Flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> downcf{}; 
         ///Direction change to UP Clear              Flag
@@ -37,7 +37,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cmpmcf{}; 
     }
     namespace LptimIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x40007c08,0xffffff80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c08,0xffffff80,0x00000000,std::uint32_t>;
         ///Direction change to down Interrupt              Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,6),Register::ReadWriteAccess,unsigned> downie{}; 
         ///Direction change to UP Interrupt              Enable
@@ -54,7 +54,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cmpmie{}; 
     }
     namespace LptimCfgr{    ///<Configuration Register
-        using Addr = Register::Address<0x40007c0c,0xfe011120,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c0c,0xfe011120,0x00000000,std::uint32_t>;
         ///Encoder mode enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> enc{}; 
         ///counter mode enabled
@@ -83,7 +83,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cksel{}; 
     }
     namespace LptimCr{    ///<Control Register
-        using Addr = Register::Address<0x40007c10,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c10,0xfffffff8,0x00000000,std::uint32_t>;
         ///Timer start in continuous              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> cntstrt{}; 
         ///LPTIM start in single mode
@@ -92,17 +92,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> enable{}; 
     }
     namespace LptimCmp{    ///<Compare Register
-        using Addr = Register::Address<0x40007c14,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c14,0xffff0000,0x00000000,std::uint32_t>;
         ///Compare value.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> cmp{}; 
     }
     namespace LptimArr{    ///<Autoreload Register
-        using Addr = Register::Address<0x40007c18,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c18,0xffff0000,0x00000000,std::uint32_t>;
         ///Auto reload value.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> arr{}; 
     }
     namespace LptimCnt{    ///<Counter Register
-        using Addr = Register::Address<0x40007c1c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c1c,0xffff0000,0x00000000,std::uint32_t>;
         ///Counter value.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }

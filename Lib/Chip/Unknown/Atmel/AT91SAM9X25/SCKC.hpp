@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Slow Clock Controller
     namespace SckcCr{    ///<Slow Clock Configuration Register
-        using Addr = Register::Address<0xfffffe50,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffffe50,0xfffffff0,0x00000000,std::uint32_t>;
         ///Internal 32 kHz RC Oscillator
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rcen{}; 
         ///32,768 Hz Oscillator

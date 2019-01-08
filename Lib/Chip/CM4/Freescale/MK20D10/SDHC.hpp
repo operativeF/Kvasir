@@ -3,12 +3,12 @@
 namespace Kvasir {
 //Secured Digital Host Controller
     namespace SdhcDsaddr{    ///<DMA System Address register
-        using Addr = Register::Address<0x400b1000,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1000,0x00000003,0x00000000,std::uint32_t>;
         ///DMA System Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dsaddr{}; 
     }
     namespace SdhcBlkattr{    ///<Block Attributes register
-        using Addr = Register::Address<0x400b1004,0x0000e000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1004,0x0000e000,0x00000000,std::uint32_t>;
         ///Transfer Block Size
         enum class BlksizeVal {
             v0=0x00000000,     ///<No data transfer.
@@ -37,12 +37,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> blkcnt{}; 
     }
     namespace SdhcCmdarg{    ///<Command Argument register
-        using Addr = Register::Address<0x400b1008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1008,0x00000000,0x00000000,std::uint32_t>;
         ///Command Argument
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> cmdarg{}; 
     }
     namespace SdhcXfertyp{    ///<Transfer Type register
-        using Addr = Register::Address<0x400b100c,0xc004ffc8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b100c,0xc004ffc8,0x00000000,std::uint32_t>;
         ///DMA Enable
         enum class DmaenVal {
             v0=0x00000000,     ///<Disable
@@ -155,32 +155,32 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,24),Register::ReadWriteAccess,unsigned> cmdinx{}; 
     }
     namespace SdhcCmdrsp0{    ///<Command Response 0
-        using Addr = Register::Address<0x400b1010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1010,0x00000000,0x00000000,std::uint32_t>;
         ///Command Response 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrsp0{}; 
     }
     namespace SdhcCmdrsp1{    ///<Command Response 1
-        using Addr = Register::Address<0x400b1014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1014,0x00000000,0x00000000,std::uint32_t>;
         ///Command Response 1
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrsp1{}; 
     }
     namespace SdhcCmdrsp2{    ///<Command Response 2
-        using Addr = Register::Address<0x400b1018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1018,0x00000000,0x00000000,std::uint32_t>;
         ///Command Response 2
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrsp2{}; 
     }
     namespace SdhcCmdrsp3{    ///<Command Response 3
-        using Addr = Register::Address<0x400b101c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b101c,0x00000000,0x00000000,std::uint32_t>;
         ///Command Response 3
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmdrsp3{}; 
     }
     namespace SdhcDatport{    ///<Buffer Data Port register
-        using Addr = Register::Address<0x400b1020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1020,0x00000000,0x00000000,std::uint32_t>;
         ///Data Content
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> datcont{}; 
     }
     namespace SdhcPrsstat{    ///<Present State register
-        using Addr = Register::Address<0x400b1024,0x007ef000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1024,0x007ef000,0x00000000,std::uint32_t>;
         ///Command Inhibit (CMD)
         enum class CihbVal {
             v0=0x00000000,     ///<Can issue command using only CMD line.
@@ -317,7 +317,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dlsl{}; 
     }
     namespace SdhcProctl{    ///<Protocol Control register
-        using Addr = Register::Address<0x400b1028,0xf8f0fc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1028,0xf8f0fc00,0x00000000,std::uint32_t>;
         ///LED Control
         enum class LctlVal {
             v0=0x00000000,     ///<LED off.
@@ -466,7 +466,7 @@ namespace Kvasir {
         }
     }
     namespace SdhcSysctl{    ///<System Control register
-        using Addr = Register::Address<0x400b102c,0xf0f00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b102c,0xf0f00000,0x00000000,std::uint32_t>;
         ///IPG Clock Enable
         enum class IpgenVal {
             v0=0x00000000,     ///<Bus clock will be internally gated off.
@@ -559,7 +559,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> inita{}; 
     }
     namespace SdhcIrqstat{    ///<Interrupt Status register
-        using Addr = Register::Address<0x400b1030,0xee80fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1030,0xee80fe00,0x00000000,std::uint32_t>;
         ///Command Complete
         enum class CcVal {
             v0=0x00000000,     ///<Command not complete.
@@ -742,7 +742,7 @@ namespace Kvasir {
         }
     }
     namespace SdhcIrqstaten{    ///<Interrupt Status Enable register
-        using Addr = Register::Address<0x400b1034,0xee80fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1034,0xee80fe00,0x00000000,std::uint32_t>;
         ///Command Complete Status Enable
         enum class CcsenVal {
             v0=0x00000000,     ///<Masked
@@ -925,7 +925,7 @@ namespace Kvasir {
         }
     }
     namespace SdhcIrqsigen{    ///<Interrupt Signal Enable register
-        using Addr = Register::Address<0x400b1038,0xee80fe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1038,0xee80fe00,0x00000000,std::uint32_t>;
         ///Command Complete Interrupt Enable
         enum class CcienVal {
             v0=0x00000000,     ///<Masked
@@ -1108,7 +1108,7 @@ namespace Kvasir {
         }
     }
     namespace SdhcAc12err{    ///<Auto CMD12 Error Status Register
-        using Addr = Register::Address<0x400b103c,0xffffff60,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b103c,0xffffff60,0x00000000,std::uint32_t>;
         ///Auto CMD12 Not Executed
         enum class Ac12neVal {
             v0=0x00000000,     ///<Executed.
@@ -1171,7 +1171,7 @@ namespace Kvasir {
         }
     }
     namespace SdhcHtcapblt{    ///<Host Controller Capabilities
-        using Addr = Register::Address<0x400b1040,0xf808ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1040,0xf808ffff,0x00000000,std::uint32_t>;
         ///Max Block Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mbl{}; 
         ///ADMA Support
@@ -1246,14 +1246,14 @@ namespace Kvasir {
         }
     }
     namespace SdhcWml{    ///<Watermark Level Register
-        using Addr = Register::Address<0x400b1044,0xff00ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1044,0xff00ff00,0x00000000,std::uint32_t>;
         ///Read Watermark Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> rdwml{}; 
         ///Write Watermark Level
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> wrwml{}; 
     }
     namespace SdhcFevt{    ///<Force Event register
-        using Addr = Register::Address<0x400b1050,0x6e80ff60,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1050,0x6e80ff60,0x00000000,std::uint32_t>;
         ///Force Event Auto Command 12 Not Executed
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ac12ne{}; 
         ///Force Event Auto Command 12 Time Out Error
@@ -1288,7 +1288,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cint{}; 
     }
     namespace SdhcAdmaes{    ///<ADMA Error Status register
-        using Addr = Register::Address<0x400b1054,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1054,0xfffffff0,0x00000000,std::uint32_t>;
         ///ADMA Error State (When ADMA Error Is Occurred.)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> admaes{}; 
         ///ADMA Length Mismatch Error
@@ -1313,12 +1313,12 @@ namespace Kvasir {
         }
     }
     namespace SdhcAdsaddr{    ///<ADMA System Addressregister
-        using Addr = Register::Address<0x400b1058,0x00000003,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b1058,0x00000003,0x00000000,std::uint32_t>;
         ///ADMA System Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> adsaddr{}; 
     }
     namespace SdhcVendor{    ///<Vendor Specific register
-        using Addr = Register::Address<0x400b10c0,0xff00fffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b10c0,0xff00fffc,0x00000000,std::uint32_t>;
         ///External DMA Request Enable
         enum class ExtdmaenVal {
             v0=0x00000000,     ///<In any scenario, SDHC does not send out the external DMA request.
@@ -1343,7 +1343,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> intstval{}; 
     }
     namespace SdhcMmcboot{    ///<MMC Boot register
-        using Addr = Register::Address<0x400b10c4,0x0000ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b10c4,0x0000ff00,0x00000000,std::uint32_t>;
         ///Boot ACK Time Out Counter Value
         enum class DtocvackVal {
             v0000=0x00000000,     ///<SDCLK x 2^8
@@ -1398,13 +1398,13 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(booten)::Type,BootenVal::v0> v0{};
             constexpr Register::FieldValue<decltype(booten)::Type,BootenVal::v1> v1{};
         }
-        ///no description available
+        ///When boot, enable auto stop at block gap function
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> autosabgen{}; 
-        ///no description available
+        ///Defines the stop at block gap value of automatic mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> bootblkcnt{}; 
     }
     namespace SdhcHostver{    ///<Host Controller Version
-        using Addr = Register::Address<0x400b10fc,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400b10fc,0xffff0000,0x00000000,std::uint32_t>;
         ///Specification Version Number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> svn{}; 
         ///Vendor Version Number

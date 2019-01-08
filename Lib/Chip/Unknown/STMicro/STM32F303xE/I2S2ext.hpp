@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Serial peripheral interface/Inter-IC       sound
     namespace I2s2extCr1{    ///<control register 1
-        using Addr = Register::Address<0x40003400,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40003400,0xffff0000,0x00000000,std::uint32_t>;
         ///Bidirectional data mode               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> bidimode{}; 
         ///Output enable in bidirectional               mode
@@ -34,7 +34,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cpha{}; 
     }
     namespace I2s2extCr2{    ///<control register 2
-        using Addr = Register::Address<0x40003404,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40003404,0xffff8000,0x00000000,std::uint32_t>;
         ///Rx buffer DMA enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxdmaen{}; 
         ///Tx buffer DMA enable
@@ -61,7 +61,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> ldmaTx{}; 
     }
     namespace I2s2extSr{    ///<status register
-        using Addr = Register::Address<0x40003408,0xffffe000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40003408,0xffffe000,0x00000000,std::uint32_t>;
         ///Receive buffer not empty
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxne{}; 
         ///Transmit buffer empty
@@ -86,27 +86,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,11),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ftlvl{}; 
     }
     namespace I2s2extDr{    ///<data register
-        using Addr = Register::Address<0x4000340c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000340c,0xffff0000,0x00000000,std::uint32_t>;
         ///Data register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dr{}; 
     }
     namespace I2s2extCrcpr{    ///<CRC polynomial register
-        using Addr = Register::Address<0x40003410,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40003410,0xffff0000,0x00000000,std::uint32_t>;
         ///CRC polynomial register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> crcpoly{}; 
     }
     namespace I2s2extRxcrcr{    ///<RX CRC register
-        using Addr = Register::Address<0x40003414,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40003414,0xffff0000,0x00000000,std::uint32_t>;
         ///Rx CRC register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxcrc{}; 
     }
     namespace I2s2extTxcrcr{    ///<TX CRC register
-        using Addr = Register::Address<0x40003418,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40003418,0xffff0000,0x00000000,std::uint32_t>;
         ///Tx CRC register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txcrc{}; 
     }
     namespace I2s2extI2scfgr{    ///<I2S configuration register
-        using Addr = Register::Address<0x4000341c,0xfffff040,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000341c,0xfffff040,0x00000000,std::uint32_t>;
         ///I2S mode selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> i2smod{}; 
         ///I2S Enable
@@ -125,7 +125,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> chlen{}; 
     }
     namespace I2s2extI2spr{    ///<I2S prescaler register
-        using Addr = Register::Address<0x40003420,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40003420,0xfffffc00,0x00000000,std::uint32_t>;
         ///Master clock output enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> mckoe{}; 
         ///Odd factor for the               prescaler

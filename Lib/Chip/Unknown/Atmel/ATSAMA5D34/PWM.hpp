@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Pulse Width Modulation Controller
     namespace PwmClk{    ///<PWM Clock Register
-        using Addr = Register::Address<0xf002c000,0xf000f000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c000,0xf000f000,0x00000000,std::uint32_t>;
         ///CLKA, CLKB Divide Factor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> diva{}; 
         ///CLKA, CLKB Source Clock Selection
@@ -14,7 +14,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> preb{}; 
     }
     namespace PwmEna{    ///<PWM Enable Register
-        using Addr = Register::Address<0xf002c004,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c004,0xfffffff0,0x00000000,std::uint32_t>;
         ///Channel ID
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid0{}; 
         ///Channel ID
@@ -25,7 +25,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid3{}; 
     }
     namespace PwmDis{    ///<PWM Disable Register
-        using Addr = Register::Address<0xf002c008,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c008,0xfffffff0,0x00000000,std::uint32_t>;
         ///Channel ID
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid0{}; 
         ///Channel ID
@@ -36,7 +36,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid3{}; 
     }
     namespace PwmSr{    ///<PWM Status Register
-        using Addr = Register::Address<0xf002c00c,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c00c,0xfffffff0,0x00000000,std::uint32_t>;
         ///Channel ID
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid0{}; 
         ///Channel ID
@@ -47,7 +47,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid3{}; 
     }
     namespace PwmIer1{    ///<PWM Interrupt Enable Register 1
-        using Addr = Register::Address<0xf002c010,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c010,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Counter Event on Channel 0 Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid0{}; 
         ///Counter Event on Channel 1 Interrupt Enable
@@ -66,7 +66,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fchid3{}; 
     }
     namespace PwmIdr1{    ///<PWM Interrupt Disable Register 1
-        using Addr = Register::Address<0xf002c014,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c014,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Counter Event on Channel 0 Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid0{}; 
         ///Counter Event on Channel 1 Interrupt Disable
@@ -85,7 +85,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fchid3{}; 
     }
     namespace PwmImr1{    ///<PWM Interrupt Mask Register 1
-        using Addr = Register::Address<0xf002c018,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c018,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Counter Event on Channel 0 Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid0{}; 
         ///Counter Event on Channel 1 Interrupt Mask
@@ -104,7 +104,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fchid3{}; 
     }
     namespace PwmIsr1{    ///<PWM Interrupt Status Register 1
-        using Addr = Register::Address<0xf002c01c,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c01c,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Counter Event on Channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chid0{}; 
         ///Counter Event on Channel 1
@@ -123,7 +123,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fchid3{}; 
     }
     namespace PwmScm{    ///<PWM Sync Channels Mode Register
-        using Addr = Register::Address<0xf002c020,0xfffcfff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c020,0xfffcfff0,0x00000000,std::uint32_t>;
         ///Synchronous Channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> sync0{}; 
         ///Synchronous Channel 1
@@ -144,24 +144,24 @@ namespace Kvasir {
         }
     }
     namespace PwmScuc{    ///<PWM Sync Channels Update Control Register
-        using Addr = Register::Address<0xf002c028,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c028,0xfffffffe,0x00000000,std::uint32_t>;
         ///Synchronous Channels Update Unlock
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> updulock{}; 
     }
     namespace PwmScup{    ///<PWM Sync Channels Update Period Register
-        using Addr = Register::Address<0xf002c02c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c02c,0xffffff00,0x00000000,std::uint32_t>;
         ///Update Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> upr{}; 
         ///Update Period Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::ReadWriteAccess,unsigned> uprcnt{}; 
     }
     namespace PwmScupupd{    ///<PWM Sync Channels Update Period Update Register
-        using Addr = Register::Address<0xf002c030,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c030,0xfffffff0,0x00000000,std::uint32_t>;
         ///Update Period Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> uprupd{}; 
     }
     namespace PwmIer2{    ///<PWM Interrupt Enable Register 2
-        using Addr = Register::Address<0xf002c034,0xff0000f6,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c034,0xff0000f6,0x00000000,std::uint32_t>;
         ///Write Ready for Synchronous Channels Update Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wrdy{}; 
         ///Synchronous Channels Update Underrun Error Interrupt Enable
@@ -200,7 +200,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmpu7{}; 
     }
     namespace PwmIdr2{    ///<PWM Interrupt Disable Register 2
-        using Addr = Register::Address<0xf002c038,0xff0000f6,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c038,0xff0000f6,0x00000000,std::uint32_t>;
         ///Write Ready for Synchronous Channels Update Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wrdy{}; 
         ///Synchronous Channels Update Underrun Error Interrupt Disable
@@ -239,7 +239,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmpu7{}; 
     }
     namespace PwmImr2{    ///<PWM Interrupt Mask Register 2
-        using Addr = Register::Address<0xf002c03c,0xff0000f6,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c03c,0xff0000f6,0x00000000,std::uint32_t>;
         ///Write Ready for Synchronous Channels Update Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wrdy{}; 
         ///Synchronous Channels Update Underrun Error Interrupt Mask
@@ -278,7 +278,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmpu7{}; 
     }
     namespace PwmIsr2{    ///<PWM Interrupt Status Register 2
-        using Addr = Register::Address<0xf002c040,0xff0000f6,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c040,0xff0000f6,0x00000000,std::uint32_t>;
         ///Write Ready for Synchronous Channels Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wrdy{}; 
         ///Synchronous Channels Update Underrun Error
@@ -317,7 +317,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmpu7{}; 
     }
     namespace PwmOov{    ///<PWM Output Override Value Register
-        using Addr = Register::Address<0xf002c044,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c044,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Output Override Value for PWMH output of the channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> oovh0{}; 
         ///Output Override Value for PWMH output of the channel 1
@@ -336,7 +336,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> oovl3{}; 
     }
     namespace PwmOs{    ///<PWM Output Selection Register
-        using Addr = Register::Address<0xf002c048,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c048,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Output Selection for PWMH output of the channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> osh0{}; 
         ///Output Selection for PWMH output of the channel 1
@@ -355,7 +355,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> osl3{}; 
     }
     namespace PwmOss{    ///<PWM Output Selection Set Register
-        using Addr = Register::Address<0xf002c04c,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c04c,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Output Selection Set for PWMH output of the channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ossh0{}; 
         ///Output Selection Set for PWMH output of the channel 1
@@ -374,7 +374,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ossl3{}; 
     }
     namespace PwmOsc{    ///<PWM Output Selection Clear Register
-        using Addr = Register::Address<0xf002c050,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c050,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Output Selection Clear for PWMH output of the channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> osch0{}; 
         ///Output Selection Clear for PWMH output of the channel 1
@@ -393,7 +393,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> oscl3{}; 
     }
     namespace PwmOssupd{    ///<PWM Output Selection Set Update Register
-        using Addr = Register::Address<0xf002c054,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c054,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Output Selection Set for PWMH output of the channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ossuph0{}; 
         ///Output Selection Set for PWMH output of the channel 1
@@ -412,7 +412,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ossupl3{}; 
     }
     namespace PwmOscupd{    ///<PWM Output Selection Clear Update Register
-        using Addr = Register::Address<0xf002c058,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c058,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Output Selection Clear for PWMH output of the channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> oscuph0{}; 
         ///Output Selection Clear for PWMH output of the channel 1
@@ -431,7 +431,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> oscupl3{}; 
     }
     namespace PwmFmr{    ///<PWM Fault Mode Register
-        using Addr = Register::Address<0xf002c05c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c05c,0xff000000,0x00000000,std::uint32_t>;
         ///Fault Polarity (fault input bit varies from 0 to )
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> fpol{}; 
         ///Fault Activation Mode (fault input bit varies from 0 to )
@@ -440,19 +440,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> ffil{}; 
     }
     namespace PwmFsr{    ///<PWM Fault Status Register
-        using Addr = Register::Address<0xf002c060,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c060,0xffff0000,0x00000000,std::uint32_t>;
         ///Fault Input Value (fault input bit varies from 0 to )
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fiv{}; 
         ///Fault Status (fault input bit varies from 0 to )
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fs{}; 
     }
     namespace PwmFcr{    ///<PWM Fault Clear Register
-        using Addr = Register::Address<0xf002c064,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c064,0xffffff00,0x00000000,std::uint32_t>;
         ///Fault Clear (fault input bit varies from 0 to )
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fclr{}; 
     }
     namespace PwmFpv{    ///<PWM Fault Protection Value Register
-        using Addr = Register::Address<0xf002c068,0xfff0fff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c068,0xfff0fff0,0x00000000,std::uint32_t>;
         ///Fault Protection Value for PWMH output on channel 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fpvh0{}; 
         ///Fault Protection Value for PWMH output on channel 1
@@ -471,7 +471,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> fpvl3{}; 
     }
     namespace PwmFpe{    ///<PWM Fault Protection Enable Register
-        using Addr = Register::Address<0xf002c06c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c06c,0x00000000,0x00000000,std::uint32_t>;
         ///Fault Protection Enable for channel 0 (fault input bit varies from 0 to )
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> fpe0{}; 
         ///Fault Protection Enable for channel 1 (fault input bit varies from 0 to )
@@ -482,7 +482,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> fpe3{}; 
     }
     namespace PwmSmmr{    ///<PWM Stepper Motor Mode Register
-        using Addr = Register::Address<0xf002c0b0,0xfffcfffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c0b0,0xfffcfffc,0x00000000,std::uint32_t>;
         ///Gray Count ENable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gcen0{}; 
         ///Gray Count ENable
@@ -493,7 +493,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::ReadWriteAccess,unsigned> down1{}; 
     }
     namespace PwmWpcr{    ///<PWM Write Protect Control Register
-        using Addr = Register::Address<0xf002c0e4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c0e4,0x00000000,0x00000000,std::uint32_t>;
         ///Write Protect Command
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpcmd{}; 
         ///Write Protect Register Group 0
@@ -512,7 +512,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpkey{}; 
     }
     namespace PwmWpsr{    ///<PWM Write Protect Status Register
-        using Addr = Register::Address<0xf002c0e8,0x0000c040,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c0e8,0x0000c040,0x00000000,std::uint32_t>;
         ///Write Protect SW Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpsws0{}; 
         ///Write Protect SW Status
@@ -543,21 +543,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvsrc{}; 
     }
     namespace PwmCmpv0{    ///<PWM Comparison 0 Value Register
-        using Addr = Register::Address<0xf002c130,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c130,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd0{    ///<PWM Comparison 0 Value Update Register
-        using Addr = Register::Address<0xf002c134,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c134,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm0{    ///<PWM Comparison 0 Mode Register
-        using Addr = Register::Address<0xf002c138,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c138,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -572,7 +572,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd0{    ///<PWM Comparison 0 Mode Update Register
-        using Addr = Register::Address<0xf002c13c,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c13c,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -583,21 +583,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmpv1{    ///<PWM Comparison 1 Value Register
-        using Addr = Register::Address<0xf002c140,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c140,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd1{    ///<PWM Comparison 1 Value Update Register
-        using Addr = Register::Address<0xf002c144,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c144,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm1{    ///<PWM Comparison 1 Mode Register
-        using Addr = Register::Address<0xf002c148,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c148,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -612,7 +612,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd1{    ///<PWM Comparison 1 Mode Update Register
-        using Addr = Register::Address<0xf002c14c,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c14c,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -623,21 +623,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmpv2{    ///<PWM Comparison 2 Value Register
-        using Addr = Register::Address<0xf002c150,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c150,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd2{    ///<PWM Comparison 2 Value Update Register
-        using Addr = Register::Address<0xf002c154,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c154,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm2{    ///<PWM Comparison 2 Mode Register
-        using Addr = Register::Address<0xf002c158,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c158,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -652,7 +652,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd2{    ///<PWM Comparison 2 Mode Update Register
-        using Addr = Register::Address<0xf002c15c,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c15c,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -663,21 +663,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmpv3{    ///<PWM Comparison 3 Value Register
-        using Addr = Register::Address<0xf002c160,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c160,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd3{    ///<PWM Comparison 3 Value Update Register
-        using Addr = Register::Address<0xf002c164,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c164,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm3{    ///<PWM Comparison 3 Mode Register
-        using Addr = Register::Address<0xf002c168,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c168,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -692,7 +692,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd3{    ///<PWM Comparison 3 Mode Update Register
-        using Addr = Register::Address<0xf002c16c,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c16c,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -703,21 +703,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmpv4{    ///<PWM Comparison 4 Value Register
-        using Addr = Register::Address<0xf002c170,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c170,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd4{    ///<PWM Comparison 4 Value Update Register
-        using Addr = Register::Address<0xf002c174,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c174,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm4{    ///<PWM Comparison 4 Mode Register
-        using Addr = Register::Address<0xf002c178,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c178,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -732,7 +732,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd4{    ///<PWM Comparison 4 Mode Update Register
-        using Addr = Register::Address<0xf002c17c,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c17c,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -743,21 +743,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmpv5{    ///<PWM Comparison 5 Value Register
-        using Addr = Register::Address<0xf002c180,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c180,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd5{    ///<PWM Comparison 5 Value Update Register
-        using Addr = Register::Address<0xf002c184,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c184,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm5{    ///<PWM Comparison 5 Mode Register
-        using Addr = Register::Address<0xf002c188,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c188,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -772,7 +772,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd5{    ///<PWM Comparison 5 Mode Update Register
-        using Addr = Register::Address<0xf002c18c,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c18c,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -783,21 +783,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmpv6{    ///<PWM Comparison 6 Value Register
-        using Addr = Register::Address<0xf002c190,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c190,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd6{    ///<PWM Comparison 6 Value Update Register
-        using Addr = Register::Address<0xf002c194,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c194,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm6{    ///<PWM Comparison 6 Mode Register
-        using Addr = Register::Address<0xf002c198,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c198,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -812,7 +812,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd6{    ///<PWM Comparison 6 Mode Update Register
-        using Addr = Register::Address<0xf002c19c,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c19c,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -823,21 +823,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmpv7{    ///<PWM Comparison 7 Value Register
-        using Addr = Register::Address<0xf002c1a0,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c1a0,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cv{}; 
         ///Comparison x Value Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> cvm{}; 
     }
     namespace PwmCmpvupd7{    ///<PWM Comparison 7 Value Update Register
-        using Addr = Register::Address<0xf002c1a4,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c1a4,0xfe000000,0x00000000,std::uint32_t>;
         ///Comparison x Value Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvupd{}; 
         ///Comparison x Value Mode Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cvmupd{}; 
     }
     namespace PwmCmpm7{    ///<PWM Comparison 7 Mode Register
-        using Addr = Register::Address<0xf002c1a8,0xff00000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c1a8,0xff00000e,0x00000000,std::uint32_t>;
         ///Comparison x Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Comparison x Trigger
@@ -852,7 +852,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> cuprcnt{}; 
     }
     namespace PwmCmpmupd7{    ///<PWM Comparison 7 Mode Update Register
-        using Addr = Register::Address<0xf002c1ac,0xfff0f00e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c1ac,0xfff0f00e,0x00000000,std::uint32_t>;
         ///Comparison x Enable Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cenupd{}; 
         ///Comparison x Trigger Update
@@ -863,7 +863,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cuprupd{}; 
     }
     namespace PwmCmr0{    ///<PWM Channel Mode Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c200,0xfff8f8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c200,0xfff8f8f0,0x00000000,std::uint32_t>;
         ///Channel Pre-scaler
         enum class CpreVal {
             mck=0x00000000,     ///<Master clock
@@ -910,46 +910,46 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> dtli{}; 
     }
     namespace PwmCdty0{    ///<PWM Channel Duty Cycle Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c204,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c204,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cdty{}; 
     }
     namespace PwmCdtyupd0{    ///<PWM Channel Duty Cycle Update Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c208,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c208,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cdtyupd{}; 
     }
     namespace PwmCprd0{    ///<PWM Channel Period Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c20c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c20c,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cprd{}; 
     }
     namespace PwmCprdupd0{    ///<PWM Channel Period Update Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c210,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c210,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cprdupd{}; 
     }
     namespace PwmCcnt0{    ///<PWM Channel Counter Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c214,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c214,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cnt{}; 
     }
     namespace PwmDt0{    ///<PWM Channel Dead Time Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c218,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c218,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dth{}; 
         ///Dead-Time Value for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> dtl{}; 
     }
     namespace PwmDtupd0{    ///<PWM Channel Dead Time Update Register (ch_num = 0)
-        using Addr = Register::Address<0xf002c21c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c21c,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value Update for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dthupd{}; 
         ///Dead-Time Value Update for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dtlupd{}; 
     }
     namespace PwmCmr1{    ///<PWM Channel Mode Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c220,0xfff8f8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c220,0xfff8f8f0,0x00000000,std::uint32_t>;
         ///Channel Pre-scaler
         enum class CpreVal {
             mck=0x00000000,     ///<Master clock
@@ -996,46 +996,46 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> dtli{}; 
     }
     namespace PwmCdty1{    ///<PWM Channel Duty Cycle Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c224,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c224,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cdty{}; 
     }
     namespace PwmCdtyupd1{    ///<PWM Channel Duty Cycle Update Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c228,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c228,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cdtyupd{}; 
     }
     namespace PwmCprd1{    ///<PWM Channel Period Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c22c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c22c,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cprd{}; 
     }
     namespace PwmCprdupd1{    ///<PWM Channel Period Update Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c230,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c230,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cprdupd{}; 
     }
     namespace PwmCcnt1{    ///<PWM Channel Counter Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c234,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c234,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cnt{}; 
     }
     namespace PwmDt1{    ///<PWM Channel Dead Time Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c238,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c238,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dth{}; 
         ///Dead-Time Value for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> dtl{}; 
     }
     namespace PwmDtupd1{    ///<PWM Channel Dead Time Update Register (ch_num = 1)
-        using Addr = Register::Address<0xf002c23c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c23c,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value Update for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dthupd{}; 
         ///Dead-Time Value Update for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dtlupd{}; 
     }
     namespace PwmCmr2{    ///<PWM Channel Mode Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c240,0xfff8f8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c240,0xfff8f8f0,0x00000000,std::uint32_t>;
         ///Channel Pre-scaler
         enum class CpreVal {
             mck=0x00000000,     ///<Master clock
@@ -1082,46 +1082,46 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> dtli{}; 
     }
     namespace PwmCdty2{    ///<PWM Channel Duty Cycle Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c244,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c244,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cdty{}; 
     }
     namespace PwmCdtyupd2{    ///<PWM Channel Duty Cycle Update Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c248,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c248,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cdtyupd{}; 
     }
     namespace PwmCprd2{    ///<PWM Channel Period Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c24c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c24c,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cprd{}; 
     }
     namespace PwmCprdupd2{    ///<PWM Channel Period Update Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c250,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c250,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cprdupd{}; 
     }
     namespace PwmCcnt2{    ///<PWM Channel Counter Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c254,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c254,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cnt{}; 
     }
     namespace PwmDt2{    ///<PWM Channel Dead Time Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c258,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c258,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dth{}; 
         ///Dead-Time Value for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> dtl{}; 
     }
     namespace PwmDtupd2{    ///<PWM Channel Dead Time Update Register (ch_num = 2)
-        using Addr = Register::Address<0xf002c25c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c25c,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value Update for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dthupd{}; 
         ///Dead-Time Value Update for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dtlupd{}; 
     }
     namespace PwmCmr3{    ///<PWM Channel Mode Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c260,0xfff8f8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c260,0xfff8f8f0,0x00000000,std::uint32_t>;
         ///Channel Pre-scaler
         enum class CpreVal {
             mck=0x00000000,     ///<Master clock
@@ -1168,46 +1168,46 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> dtli{}; 
     }
     namespace PwmCdty3{    ///<PWM Channel Duty Cycle Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c264,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c264,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cdty{}; 
     }
     namespace PwmCdtyupd3{    ///<PWM Channel Duty Cycle Update Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c268,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c268,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Duty-Cycle Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cdtyupd{}; 
     }
     namespace PwmCprd3{    ///<PWM Channel Period Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c26c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c26c,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cprd{}; 
     }
     namespace PwmCprdupd3{    ///<PWM Channel Period Update Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c270,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c270,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Period Update
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cprdupd{}; 
     }
     namespace PwmCcnt3{    ///<PWM Channel Counter Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c274,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c274,0xff000000,0x00000000,std::uint32_t>;
         ///Channel Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cnt{}; 
     }
     namespace PwmDt3{    ///<PWM Channel Dead Time Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c278,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c278,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dth{}; 
         ///Dead-Time Value for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> dtl{}; 
     }
     namespace PwmDtupd3{    ///<PWM Channel Dead Time Update Register (ch_num = 3)
-        using Addr = Register::Address<0xf002c27c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c27c,0x00000000,0x00000000,std::uint32_t>;
         ///Dead-Time Value Update for PWMHx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dthupd{}; 
         ///Dead-Time Value Update for PWMLx Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dtlupd{}; 
     }
     namespace PwmElmr0{    ///<PWM Event Line 0 Mode Register
-        using Addr = Register::Address<0xf002c07c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c07c,0xffffff00,0x00000000,std::uint32_t>;
         ///Comparison 0 Selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> csel0{}; 
         ///Comparison 1 Selection
@@ -1226,7 +1226,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> csel7{}; 
     }
     namespace PwmElmr1{    ///<PWM Event Line 0 Mode Register
-        using Addr = Register::Address<0xf002c080,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf002c080,0xffffff00,0x00000000,std::uint32_t>;
         ///Comparison 0 Selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> csel0{}; 
         ///Comparison 1 Selection

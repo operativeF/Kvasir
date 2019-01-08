@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Event System Interface
     namespace EvsysChannel{    ///<Channel
-        using Addr = Register::Address<0x42000404,0xf080fef0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42000404,0xf080fef0,0x00000000,std::uint32_t>;
         ///Channel Selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> channel{}; 
         ///Software Event
@@ -38,7 +38,7 @@ namespace Kvasir {
         }
     }
     namespace EvsysChstatus{    ///<Channel Status
-        using Addr = Register::Address<0x4200040c,0xf0f00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200040c,0xf0f00000,0x00000000,std::uint32_t>;
         ///Channel 0 User Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> usrrdy0{}; 
         ///Channel 1 User Ready
@@ -89,14 +89,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> chbusy11{}; 
     }
     namespace EvsysCtrl{    ///<Control
-        using Addr = Register::Address<0x42000400,0xffffffee,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42000400,0xffffffee,0x00000000,std::uint8_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
         ///Generic Clock Requests
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> gclkreq{}; 
     }
     namespace EvsysIntenclr{    ///<Interrupt Enable Clear
-        using Addr = Register::Address<0x42000410,0xf0f00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42000410,0xf0f00000,0x00000000,std::uint32_t>;
         ///Channel 0 Overrun Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovr0{}; 
         ///Channel 1 Overrun Interrupt Enable
@@ -147,7 +147,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> evd11{}; 
     }
     namespace EvsysIntenset{    ///<Interrupt Enable Set
-        using Addr = Register::Address<0x42000414,0xf0f00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42000414,0xf0f00000,0x00000000,std::uint32_t>;
         ///Channel 0 Overrun Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovr0{}; 
         ///Channel 1 Overrun Interrupt Enable
@@ -198,7 +198,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> evd11{}; 
     }
     namespace EvsysIntflag{    ///<Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x42000418,0xf0f00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42000418,0xf0f00000,0x00000000,std::uint32_t>;
         ///Channel 0 Overrun
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovr0{}; 
         ///Channel 1 Overrun
@@ -249,7 +249,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> evd11{}; 
     }
     namespace EvsysUser{    ///<User Multiplexer
-        using Addr = Register::Address<0x42000408,0xffffe0e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42000408,0xffffe0e0,0x00000000,std::uint16_t>;
         ///User Multiplexer Selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> user{}; 
         ///Channel Event Selection

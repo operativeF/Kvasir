@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/CM4/Freescale/MK02F12810/FTFA_FlashConfig.hpp>
 #include <Chip/CM4/Freescale/MK02F12810/DMA.hpp>
 #include <Chip/CM4/Freescale/MK02F12810/FMC.hpp>
@@ -39,7 +40,4 @@
 #include <Chip/CM4/Freescale/MK02F12810/PTC.hpp>
 #include <Chip/CM4/Freescale/MK02F12810/PTD.hpp>
 #include <Chip/CM4/Freescale/MK02F12810/PTE.hpp>
-#include <Chip/CM4/Freescale/MK02F12810/SystemControl.hpp>
-#include <Chip/CM4/Freescale/MK02F12810/SysTick.hpp>
-#include <Chip/CM4/Freescale/MK02F12810/NVIC.hpp>
 #include <Chip/CM4/Freescale/MK02F12810/MCM.hpp>

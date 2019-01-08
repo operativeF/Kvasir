@@ -3,7 +3,7 @@
 namespace Kvasir {
 //USB on the go full speed
     namespace OtgFsGlobalFsGotgctl{    ///<OTG_FS control and status register          (OTG_FS_GOTGCTL)
-        using Addr = Register::Address<0x50000000,0xfff0f0fc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000000,0xfff0f0fc,0x00000000,std::uint32_t>;
         ///Session request success
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> srqscs{}; 
         ///Session request
@@ -26,7 +26,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bsvld{}; 
     }
     namespace OtgFsGlobalFsGotgint{    ///<OTG_FS interrupt register          (OTG_FS_GOTGINT)
-        using Addr = Register::Address<0x50000004,0xfff1fcfb,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000004,0xfff1fcfb,0x00000000,std::uint32_t>;
         ///Session end detected
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> sedet{}; 
         ///Session request success status              change
@@ -41,7 +41,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> dbcdne{}; 
     }
     namespace OtgFsGlobalFsGahbcfg{    ///<OTG_FS AHB configuration register          (OTG_FS_GAHBCFG)
-        using Addr = Register::Address<0x50000008,0xfffffe7e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000008,0xfffffe7e,0x00000000,std::uint32_t>;
         ///Global interrupt mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gint{}; 
         ///TxFIFO empty level
@@ -50,7 +50,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> ptxfelvl{}; 
     }
     namespace OtgFsGlobalFsGusbcfg{    ///<OTG_FS USB configuration register          (OTG_FS_GUSBCFG)
-        using Addr = Register::Address<0x5000000c,0x1fffc0b8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000000c,0x1fffc0b8,0x00000000,std::uint32_t>;
         ///FS timeout calibration
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> tocal{}; 
         ///Full Speed serial transceiver              select
@@ -69,7 +69,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ctxpkt{}; 
     }
     namespace OtgFsGlobalFsGrstctl{    ///<OTG_FS reset register          (OTG_FS_GRSTCTL)
-        using Addr = Register::Address<0x50000010,0x7ffff808,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000010,0x7ffff808,0x00000000,std::uint32_t>;
         ///Core soft reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> csrst{}; 
         ///HCLK soft reset
@@ -86,7 +86,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ahbidl{}; 
     }
     namespace OtgFsGlobalFsGintsts{    ///<OTG_FS core interrupt register          (OTG_FS_GINTSTS)
-        using Addr = Register::Address<0x50000014,0x08c30300,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000014,0x08c30300,0x00000000,std::uint32_t>;
         ///Current mode of operation
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmod{}; 
         ///Mode mismatch interrupt
@@ -139,7 +139,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> wkupint{}; 
     }
     namespace OtgFsGlobalFsGintmsk{    ///<OTG_FS interrupt mask register          (OTG_FS_GINTMSK)
-        using Addr = Register::Address<0x50000018,0x08c10301,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000018,0x08c10301,0x00000000,std::uint32_t>;
         ///Mode mismatch interrupt              mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> mmism{}; 
         ///OTG interrupt mask
@@ -192,7 +192,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> wuim{}; 
     }
     namespace OtgFsGlobalFsGrxstsrDevice{    ///<OTG_FS Receive status debug read(Device          mode)
-        using Addr = Register::Address<0x5000001c,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000001c,0xfe000000,0x00000000,std::uint32_t>;
         ///Endpoint number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> epnum{}; 
         ///Byte count
@@ -205,7 +205,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,21),Register::ReadWriteAccess,unsigned> frmnum{}; 
     }
     namespace OtgFsGlobalFsGrxstsrHost{    ///<OTG_FS Receive status debug read(Hostmode)
-        using Addr = Register::Address<0x5000001c,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000001c,0xfe000000,0x00000000,std::uint32_t>;
         ///Endpoint number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> epnum{}; 
         ///Byte count
@@ -218,26 +218,26 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,21),Register::ReadWriteAccess,unsigned> frmnum{}; 
     }
     namespace OtgFsGlobalFsGrxfsiz{    ///<OTG_FS Receive FIFO size register          (OTG_FS_GRXFSIZ)
-        using Addr = Register::Address<0x50000024,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000024,0xffff0000,0x00000000,std::uint32_t>;
         ///RxFIFO depth
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxfd{}; 
     }
     namespace OtgFsGlobalFsGnptxfsizDevice{    ///<OTG_FS non-periodic transmit FIFO size          register (Device mode)
-        using Addr = Register::Address<0x50000028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000028,0x00000000,0x00000000,std::uint32_t>;
         ///Endpoint 0 transmit RAM start              address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> tx0fsa{}; 
         ///Endpoint 0 TxFIFO depth
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> tx0fd{}; 
     }
     namespace OtgFsGlobalFsGnptxfsizHost{    ///<OTG_FS non-periodic transmit FIFO size          register (Host mode)
-        using Addr = Register::Address<0x50000028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000028,0x00000000,0x00000000,std::uint32_t>;
         ///Non-periodic transmit RAM start              address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> nptxfsa{}; 
         ///Non-periodic TxFIFO depth
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> nptxfd{}; 
     }
     namespace OtgFsGlobalFsGnptxsts{    ///<OTG_FS non-periodic transmit FIFO/queue          status register (OTG_FS_GNPTXSTS)
-        using Addr = Register::Address<0x5000002c,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000002c,0x80000000,0x00000000,std::uint32_t>;
         ///Non-periodic TxFIFO space              available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> nptxfsav{}; 
         ///Non-periodic transmit request queue              space available
@@ -246,7 +246,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,24),Register::ReadWriteAccess,unsigned> nptxqtop{}; 
     }
     namespace OtgFsGlobalFsGccfg{    ///<OTG_FS general core configuration register          (OTG_FS_GCCFG)
-        using Addr = Register::Address<0x50000038,0xffe2ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000038,0xffe2ffff,0x00000000,std::uint32_t>;
         ///Power down
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::ReadWriteAccess,unsigned> pwrdwn{}; 
         ///Enable the VBUS sensing              device
@@ -257,33 +257,33 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> sofouten{}; 
     }
     namespace OtgFsGlobalFsCid{    ///<core ID register
-        using Addr = Register::Address<0x5000003c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000003c,0x00000000,0x00000000,std::uint32_t>;
         ///Product ID field
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> productId{}; 
     }
     namespace OtgFsGlobalFsHptxfsiz{    ///<OTG_FS Host periodic transmit FIFO size          register (OTG_FS_HPTXFSIZ)
-        using Addr = Register::Address<0x50000100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000100,0x00000000,0x00000000,std::uint32_t>;
         ///Host periodic TxFIFO start              address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ptxsa{}; 
         ///Host periodic TxFIFO depth
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ptxfsiz{}; 
     }
     namespace OtgFsGlobalFsDieptxf1{    ///<OTG_FS device IN endpoint transmit FIFO size          register (OTG_FS_DIEPTXF2)
-        using Addr = Register::Address<0x50000104,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000104,0x00000000,0x00000000,std::uint32_t>;
         ///IN endpoint FIFO2 transmit RAM start              address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptxsa{}; 
         ///IN endpoint TxFIFO depth
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ineptxfd{}; 
     }
     namespace OtgFsGlobalFsDieptxf2{    ///<OTG_FS device IN endpoint transmit FIFO size          register (OTG_FS_DIEPTXF3)
-        using Addr = Register::Address<0x50000108,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000108,0x00000000,0x00000000,std::uint32_t>;
         ///IN endpoint FIFO3 transmit RAM start              address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptxsa{}; 
         ///IN endpoint TxFIFO depth
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ineptxfd{}; 
     }
     namespace OtgFsGlobalFsDieptxf3{    ///<OTG_FS device IN endpoint transmit FIFO size          register (OTG_FS_DIEPTXF4)
-        using Addr = Register::Address<0x5000010c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000010c,0x00000000,0x00000000,std::uint32_t>;
         ///IN endpoint FIFO4 transmit RAM start              address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ineptxsa{}; 
         ///IN endpoint TxFIFO depth

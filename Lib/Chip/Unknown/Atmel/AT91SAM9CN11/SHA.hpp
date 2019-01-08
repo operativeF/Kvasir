@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Secure Hash Algorithm
     namespace ShaCr{    ///<Control Register
-        using Addr = Register::Address<0xf0014000,0xfffffeee,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014000,0xfffffeee,0x00000000,std::uint32_t>;
         ///Start Processing
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> start{}; 
         ///First Block of a Message
@@ -12,7 +12,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace ShaMr{    ///<Mode Register
-        using Addr = Register::Address<0xf0014004,0xfffef8ec,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014004,0xfffef8ec,0x00000000,std::uint32_t>;
         ///Start Mode
         enum class SmodVal {
             manualStart=0x00000000,     ///<Manual Mode
@@ -49,28 +49,28 @@ namespace Kvasir {
         }
     }
     namespace ShaIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xf0014010,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014010,0xfffffefe,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace ShaIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xf0014014,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014014,0xfffffefe,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace ShaImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xf0014018,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014018,0xfffffefe,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace ShaIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0xf001401c,0xffff8efe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf001401c,0xffff8efe,0x00000000,std::uint32_t>;
         ///Data Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Status
@@ -79,122 +79,122 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,12),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urat{}; 
     }
     namespace ShaIdatar0{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014040,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar1{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014044,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar2{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014048,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar3{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf001404c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf001404c,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar4{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014050,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014050,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar5{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014054,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014054,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar6{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014058,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014058,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar7{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf001405c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf001405c,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar8{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014060,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014060,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar9{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014064,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014064,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar10{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014068,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014068,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar11{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf001406c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf001406c,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar12{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014070,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014070,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar13{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014074,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014074,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar14{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf0014078,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014078,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaIdatar15{    ///<Input Data 0 Register
-        using Addr = Register::Address<0xf001407c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf001407c,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace ShaOdatar0{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf0014080,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014080,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace ShaOdatar1{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf0014084,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014084,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace ShaOdatar2{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf0014088,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014088,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace ShaOdatar3{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf001408c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf001408c,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace ShaOdatar4{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf0014090,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014090,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace ShaOdatar5{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf0014094,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014094,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace ShaOdatar6{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf0014098,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf0014098,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace ShaOdatar7{    ///<Output Data 0 Register
-        using Addr = Register::Address<0xf001409c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf001409c,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }

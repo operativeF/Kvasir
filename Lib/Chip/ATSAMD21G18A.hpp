@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/CM0+/Atmel/ATSAMD21G18A/AC.hpp>
 #include <Chip/CM0+/Atmel/ATSAMD21G18A/ADC.hpp>
 #include <Chip/CM0+/Atmel/ATSAMD21G18A/DAC.hpp>

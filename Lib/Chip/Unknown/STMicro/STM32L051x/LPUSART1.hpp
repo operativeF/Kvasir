@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal synchronous asynchronous receiver      transmitter
     namespace Lpusart1Cr1{    ///<Control register 1
-        using Addr = Register::Address<0x40004800,0xec008000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004800,0xec008000,0x00000000,std::uint32_t>;
         ///Word length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(28,28),Register::ReadWriteAccess,unsigned> m1{}; 
         ///Driver Enable assertion              time
@@ -58,7 +58,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ue{}; 
     }
     namespace Lpusart1Cr2{    ///<Control register 2
-        using Addr = Register::Address<0x40004804,0x00f047ef,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004804,0x00f047ef,0x00000000,std::uint32_t>;
         ///Address of the USART node
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> add47{}; 
         ///Address of the USART node
@@ -81,7 +81,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> addm7{}; 
     }
     namespace Lpusart1Cr3{    ///<Control register 3
-        using Addr = Register::Address<0x40004808,0xff8f0836,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004808,0xff8f0836,0x00000000,std::uint32_t>;
         ///Wakeup from Stop mode interrupt              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> wufie{}; 
         ///Wakeup from Stop mode interrupt flag              selection
@@ -110,12 +110,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eie{}; 
     }
     namespace Lpusart1Brr{    ///<Baud rate register
-        using Addr = Register::Address<0x4000480c,0xfff00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000480c,0xfff00000,0x00000000,std::uint32_t>;
         ///BRR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,0),Register::ReadWriteAccess,unsigned> brr{}; 
     }
     namespace Lpusart1Rqr{    ///<Request register
-        using Addr = Register::Address<0x40004818,0xfffffff1,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004818,0xfffffff1,0x00000000,std::uint32_t>;
         ///Receive data flush request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> rxfrq{}; 
         ///Mute mode request
@@ -124,7 +124,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> sbkrq{}; 
     }
     namespace Lpusart1Isr{    ///<Interrupt & status          register
-        using Addr = Register::Address<0x4000481c,0xff80f900,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000481c,0xff80f900,0x00000000,std::uint32_t>;
         ///REACK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> reack{}; 
         ///TEACK
@@ -161,7 +161,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pe{}; 
     }
     namespace Lpusart1Icr{    ///<Interrupt flag clear register
-        using Addr = Register::Address<0x40004820,0xffedfda0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004820,0xffedfda0,0x00000000,std::uint32_t>;
         ///Wakeup from Stop mode clear              flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> wucf{}; 
         ///Character match clear flag
@@ -182,12 +182,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pecf{}; 
     }
     namespace Lpusart1Rdr{    ///<Receive data register
-        using Addr = Register::Address<0x40004824,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004824,0xfffffe00,0x00000000,std::uint32_t>;
         ///Receive data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> rdr{}; 
     }
     namespace Lpusart1Tdr{    ///<Transmit data register
-        using Addr = Register::Address<0x40004828,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004828,0xfffffe00,0x00000000,std::uint32_t>;
         ///Transmit data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> tdr{}; 
     }

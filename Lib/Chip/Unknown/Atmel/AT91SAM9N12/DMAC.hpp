@@ -3,7 +3,7 @@
 namespace Kvasir {
 //DMA Controller
     namespace DmacGcfg{    ///<DMAC Global Configuration Register
-        using Addr = Register::Address<0xffffec00,0xfffffeef,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec00,0xfffffeef,0x00000000,std::uint32_t>;
         ///Arbiter Configuration
         enum class ArbcfgVal {
             fixed=0x00000000,     ///<Fixed priority arbiter.
@@ -18,12 +18,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> dicen{}; 
     }
     namespace DmacEn{    ///<DMAC Enable Register
-        using Addr = Register::Address<0xffffec04,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec04,0xfffffffe,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> enable{}; 
     }
     namespace DmacSreq{    ///<DMAC Software Single Request Register
-        using Addr = Register::Address<0xffffec08,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec08,0xffff0000,0x00000000,std::uint32_t>;
         ///Source Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ssreq0{}; 
         ///Destination Request
@@ -58,7 +58,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> dsreq7{}; 
     }
     namespace DmacCreq{    ///<DMAC Software Chunk Transfer Request Register
-        using Addr = Register::Address<0xffffec0c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec0c,0xffff0000,0x00000000,std::uint32_t>;
         ///Source Chunk Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> screq0{}; 
         ///Destination Chunk Request
@@ -93,7 +93,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> dcreq7{}; 
     }
     namespace DmacLast{    ///<DMAC Software Last Transfer Flag Register
-        using Addr = Register::Address<0xffffec10,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec10,0xffff0000,0x00000000,std::uint32_t>;
         ///Source Last
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> slast0{}; 
         ///Destination Last
@@ -128,7 +128,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> dlast7{}; 
     }
     namespace DmacEbcier{    ///<DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register.
-        using Addr = Register::Address<0xffffec18,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec18,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Completed [7:0]
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> btc0{}; 
         ///Buffer Transfer Completed [7:0]
@@ -195,7 +195,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dicerr7{}; 
     }
     namespace DmacEbcidr{    ///<DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register.
-        using Addr = Register::Address<0xffffec1c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec1c,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Completed [7:0]
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> btc0{}; 
         ///Buffer Transfer Completed [7:0]
@@ -262,7 +262,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dicerr7{}; 
     }
     namespace DmacEbcimr{    ///<DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register.
-        using Addr = Register::Address<0xffffec20,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec20,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Completed [7:0]
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> btc0{}; 
         ///Buffer Transfer Completed [7:0]
@@ -329,7 +329,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dicerr7{}; 
     }
     namespace DmacEbcisr{    ///<DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register.
-        using Addr = Register::Address<0xffffec24,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec24,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Completed [7:0]
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> btc0{}; 
         ///Buffer Transfer Completed [7:0]
@@ -396,7 +396,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dicerr7{}; 
     }
     namespace DmacCher{    ///<DMAC Channel Handler Enable Register
-        using Addr = Register::Address<0xffffec28,0x00ff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec28,0x00ff0000,0x00000000,std::uint32_t>;
         ///Enable [7:0]
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ena0{}; 
         ///Enable [7:0]
@@ -447,7 +447,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keep7{}; 
     }
     namespace DmacChdr{    ///<DMAC Channel Handler Disable Register
-        using Addr = Register::Address<0xffffec2c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec2c,0xffff0000,0x00000000,std::uint32_t>;
         ///Disable [7:0]
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> dis0{}; 
         ///Disable [7:0]
@@ -482,7 +482,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> res7{}; 
     }
     namespace DmacChsr{    ///<DMAC Channel Handler Status Register
-        using Addr = Register::Address<0xffffec30,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec30,0x00000000,0x00000000,std::uint32_t>;
         ///Enable [7:0]
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ena0{}; 
         ///Enable [7:0]
@@ -549,17 +549,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stal7{}; 
     }
     namespace DmacSaddr0{    ///<DMAC Channel Source Address Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec3c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec3c,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr0{    ///<DMAC Channel Destination Address Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec40,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec40,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr0{    ///<DMAC Channel Descriptor Address Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec44,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec44,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -574,7 +574,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla0{    ///<DMAC Channel Control A Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec48,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec48,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -649,7 +649,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb0{    ///<DMAC Channel Control B Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec4c,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec4c,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -750,7 +750,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg0{    ///<DMAC Channel Configuration Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec50,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec50,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -853,31 +853,31 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip0{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec54,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec54,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip0{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 0)
-        using Addr = Register::Address<0xffffec58,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec58,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacSaddr1{    ///<DMAC Channel Source Address Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec64,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec64,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr1{    ///<DMAC Channel Destination Address Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec68,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec68,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr1{    ///<DMAC Channel Descriptor Address Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec6c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec6c,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -892,7 +892,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla1{    ///<DMAC Channel Control A Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec70,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec70,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -967,7 +967,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb1{    ///<DMAC Channel Control B Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec74,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec74,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -1068,7 +1068,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg1{    ///<DMAC Channel Configuration Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec78,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec78,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -1171,31 +1171,31 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip1{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec7c,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec7c,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip1{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 1)
-        using Addr = Register::Address<0xffffec80,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec80,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacSaddr2{    ///<DMAC Channel Source Address Register (ch_num = 2)
-        using Addr = Register::Address<0xffffec8c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec8c,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr2{    ///<DMAC Channel Destination Address Register (ch_num = 2)
-        using Addr = Register::Address<0xffffec90,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec90,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr2{    ///<DMAC Channel Descriptor Address Register (ch_num = 2)
-        using Addr = Register::Address<0xffffec94,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec94,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -1210,7 +1210,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla2{    ///<DMAC Channel Control A Register (ch_num = 2)
-        using Addr = Register::Address<0xffffec98,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec98,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -1285,7 +1285,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb2{    ///<DMAC Channel Control B Register (ch_num = 2)
-        using Addr = Register::Address<0xffffec9c,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffec9c,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -1386,7 +1386,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg2{    ///<DMAC Channel Configuration Register (ch_num = 2)
-        using Addr = Register::Address<0xffffeca0,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffeca0,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -1489,31 +1489,31 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip2{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 2)
-        using Addr = Register::Address<0xffffeca4,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffeca4,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip2{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 2)
-        using Addr = Register::Address<0xffffeca8,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffeca8,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacSaddr3{    ///<DMAC Channel Source Address Register (ch_num = 3)
-        using Addr = Register::Address<0xffffecb4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecb4,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr3{    ///<DMAC Channel Destination Address Register (ch_num = 3)
-        using Addr = Register::Address<0xffffecb8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecb8,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr3{    ///<DMAC Channel Descriptor Address Register (ch_num = 3)
-        using Addr = Register::Address<0xffffecbc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecbc,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -1528,7 +1528,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla3{    ///<DMAC Channel Control A Register (ch_num = 3)
-        using Addr = Register::Address<0xffffecc0,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecc0,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -1603,7 +1603,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb3{    ///<DMAC Channel Control B Register (ch_num = 3)
-        using Addr = Register::Address<0xffffecc4,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecc4,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -1704,7 +1704,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg3{    ///<DMAC Channel Configuration Register (ch_num = 3)
-        using Addr = Register::Address<0xffffecc8,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecc8,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -1807,31 +1807,31 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip3{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 3)
-        using Addr = Register::Address<0xffffeccc,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffeccc,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip3{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 3)
-        using Addr = Register::Address<0xffffecd0,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecd0,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacSaddr4{    ///<DMAC Channel Source Address Register (ch_num = 4)
-        using Addr = Register::Address<0xffffecdc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecdc,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr4{    ///<DMAC Channel Destination Address Register (ch_num = 4)
-        using Addr = Register::Address<0xffffece0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffece0,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr4{    ///<DMAC Channel Descriptor Address Register (ch_num = 4)
-        using Addr = Register::Address<0xffffece4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffece4,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -1846,7 +1846,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla4{    ///<DMAC Channel Control A Register (ch_num = 4)
-        using Addr = Register::Address<0xffffece8,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffece8,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -1921,7 +1921,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb4{    ///<DMAC Channel Control B Register (ch_num = 4)
-        using Addr = Register::Address<0xffffecec,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecec,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -2022,7 +2022,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg4{    ///<DMAC Channel Configuration Register (ch_num = 4)
-        using Addr = Register::Address<0xffffecf0,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecf0,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -2125,31 +2125,31 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip4{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 4)
-        using Addr = Register::Address<0xffffecf4,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecf4,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip4{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 4)
-        using Addr = Register::Address<0xffffecf8,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffecf8,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacSaddr5{    ///<DMAC Channel Source Address Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed04,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed04,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr5{    ///<DMAC Channel Destination Address Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed08,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed08,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr5{    ///<DMAC Channel Descriptor Address Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed0c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed0c,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -2164,7 +2164,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla5{    ///<DMAC Channel Control A Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed10,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed10,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -2239,7 +2239,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb5{    ///<DMAC Channel Control B Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed14,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed14,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -2340,7 +2340,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg5{    ///<DMAC Channel Configuration Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed18,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed18,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -2443,31 +2443,31 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip5{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed1c,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed1c,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip5{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 5)
-        using Addr = Register::Address<0xffffed20,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed20,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacSaddr6{    ///<DMAC Channel Source Address Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed2c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed2c,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr6{    ///<DMAC Channel Destination Address Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed30,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed30,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr6{    ///<DMAC Channel Descriptor Address Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed34,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed34,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -2482,7 +2482,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla6{    ///<DMAC Channel Control A Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed38,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed38,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -2557,7 +2557,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb6{    ///<DMAC Channel Control B Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed3c,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed3c,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -2658,7 +2658,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg6{    ///<DMAC Channel Configuration Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed40,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed40,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -2761,31 +2761,31 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip6{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed44,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed44,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip6{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 6)
-        using Addr = Register::Address<0xffffed48,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed48,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacSaddr7{    ///<DMAC Channel Source Address Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed54,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed54,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmacDaddr7{    ///<DMAC Channel Destination Address Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed58,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed58,0x00000000,0x00000000,std::uint32_t>;
         ///Channel x Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmacDscr7{    ///<DMAC Channel Descriptor Address Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed5c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed5c,0x00000000,0x00000000,std::uint32_t>;
         ///
         enum class DscrifVal {
             ahbIf0=0x00000000,     ///<The buffer transfer descriptor is fetched via AHB-Lite Interface 0
@@ -2800,7 +2800,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> dscr{}; 
     }
     namespace DmacCtrla7{    ///<DMAC Channel Control A Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed60,0x4c880000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed60,0x4c880000,0x00000000,std::uint32_t>;
         ///Buffer Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> btsize{}; 
         ///Source Chunk Transfer Size.
@@ -2875,7 +2875,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> done{}; 
     }
     namespace DmacCtrlb7{    ///<DMAC Channel Control B Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed64,0x0c0eeecc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed64,0x0c0eeecc,0x00000000,std::uint32_t>;
         ///Source Interface Selection Field
         enum class SifVal {
             ahbIf0=0x00000000,     ///<The source transfer is done via AHB-Lite Interface 0
@@ -2976,7 +2976,7 @@ namespace Kvasir {
         }
     }
     namespace DmacCfg7{    ///<DMAC Channel Configuration Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed68,0xc88e0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed68,0xc88e0000,0x00000000,std::uint32_t>;
         ///Source with Peripheral identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> srcPer{}; 
         ///Destination with Peripheral identifier
@@ -3079,28 +3079,28 @@ namespace Kvasir {
         }
     }
     namespace DmacSpip7{    ///<DMAC Channel Source Picture-in-Picture Configuration Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed6c,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed6c,0xfc000000,0x00000000,std::uint32_t>;
         ///Source Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> spipHole{}; 
         ///Source Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> spipBoundary{}; 
     }
     namespace DmacDpip7{    ///<DMAC Channel Destination Picture-in-Picture Configuration Register (ch_num = 7)
-        using Addr = Register::Address<0xffffed70,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffed70,0xfc000000,0x00000000,std::uint32_t>;
         ///Destination Picture-in-Picture Hole
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dpipHole{}; 
         ///Destination Picture-in-Picture Boundary
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,16),Register::ReadWriteAccess,unsigned> dpipBoundary{}; 
     }
     namespace DmacWpmr{    ///<DMAC Write Protect Mode Register
-        using Addr = Register::Address<0xffffede4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffede4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protect Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpen{}; 
         ///Write Protect KEY
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpkey{}; 
     }
     namespace DmacWpsr{    ///<DMAC Write Protect Status Register
-        using Addr = Register::Address<0xffffede8,0xff0000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xffffede8,0xff0000fe,0x00000000,std::uint32_t>;
         ///Write Protect Violation Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvs{}; 
         ///Write Protect Violation Source

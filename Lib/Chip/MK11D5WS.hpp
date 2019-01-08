@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/CM4/Freescale/MK11D5WS/Io.hpp>
 #include <Chip/CM4/Freescale/MK11D5WS/FTFL_FlashConfig.hpp>
 #include <Chip/CM4/Freescale/MK11D5WS/AIPS0.hpp>

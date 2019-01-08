@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Real-time clock
     namespace RtcTr{    ///<time register
-        using Addr = Register::Address<0x40002800,0xff808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002800,0xff808080,0x00000000,std::uint32_t>;
         ///AM/PM notation
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> pm{}; 
         ///Hour tens in BCD format
@@ -20,7 +20,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> su{}; 
     }
     namespace RtcDr{    ///<date register
-        using Addr = Register::Address<0x40002804,0xff0000c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002804,0xff0000c0,0x00000000,std::uint32_t>;
         ///Year tens in BCD format
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> yt{}; 
         ///Year units in BCD format
@@ -37,7 +37,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> du{}; 
     }
     namespace RtcCr{    ///<control register
-        using Addr = Register::Address<0x40002808,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002808,0xff000000,0x00000000,std::uint32_t>;
         ///Calibration output enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> coe{}; 
         ///Output selection
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> wcksel{}; 
     }
     namespace RtcIsr{    ///<initialization and status           register
-        using Addr = Register::Address<0x4000280c,0xfffe8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000280c,0xfffe8000,0x00000000,std::uint32_t>;
         ///Alarm A write flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> alrawf{}; 
         ///Alarm B write flag
@@ -117,26 +117,26 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> recalpf{}; 
     }
     namespace RtcPrer{    ///<prescaler register
-        using Addr = Register::Address<0x40002810,0xff808000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002810,0xff808000,0x00000000,std::uint32_t>;
         ///Asynchronous prescaler               factor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,16),Register::ReadWriteAccess,unsigned> predivA{}; 
         ///Synchronous prescaler               factor
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> predivS{}; 
     }
     namespace RtcWutr{    ///<wakeup timer register
-        using Addr = Register::Address<0x40002814,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002814,0xffff0000,0x00000000,std::uint32_t>;
         ///Wakeup auto-reload value               bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> wut{}; 
     }
     namespace RtcCalibr{    ///<calibration register
-        using Addr = Register::Address<0x40002818,0xffffff60,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002818,0xffffff60,0x00000000,std::uint32_t>;
         ///Digital calibration sign
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> dcs{}; 
         ///Digital calibration
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> dc{}; 
     }
     namespace RtcAlrmar{    ///<alarm A register
-        using Addr = Register::Address<0x4000281c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000281c,0x00000000,0x00000000,std::uint32_t>;
         ///Alarm A date mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> msk4{}; 
         ///Week day selection
@@ -167,7 +167,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> su{}; 
     }
     namespace RtcAlrmbr{    ///<alarm B register
-        using Addr = Register::Address<0x40002820,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002820,0x00000000,0x00000000,std::uint32_t>;
         ///Alarm B date mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> msk4{}; 
         ///Week day selection
@@ -198,24 +198,24 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> su{}; 
     }
     namespace RtcWpr{    ///<write protection register
-        using Addr = Register::Address<0x40002824,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002824,0xffffff00,0x00000000,std::uint32_t>;
         ///Write protection key
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> key{}; 
     }
     namespace RtcSsr{    ///<sub second register
-        using Addr = Register::Address<0x40002828,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002828,0xffff0000,0x00000000,std::uint32_t>;
         ///Sub second value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ss{}; 
     }
     namespace RtcShiftr{    ///<shift control register
-        using Addr = Register::Address<0x4000282c,0x7fff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000282c,0x7fff8000,0x00000000,std::uint32_t>;
         ///Add one second
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> add1s{}; 
         ///Subtract a fraction of a               second
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> subfs{}; 
     }
     namespace RtcTstr{    ///<time stamp time register
-        using Addr = Register::Address<0x40002830,0xff808080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002830,0xff808080,0x00000000,std::uint32_t>;
         ///AM/PM notation
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> pm{}; 
         ///Hour tens in BCD format
@@ -232,7 +232,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> su{}; 
     }
     namespace RtcTsdr{    ///<time stamp date register
-        using Addr = Register::Address<0x40002834,0xffff00c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002834,0xffff00c0,0x00000000,std::uint32_t>;
         ///Week day units
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,13),Register::ReadWriteAccess,unsigned> wdu{}; 
         ///Month tens in BCD format
@@ -245,12 +245,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> du{}; 
     }
     namespace RtcTsssr{    ///<timestamp sub second register
-        using Addr = Register::Address<0x40002838,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002838,0xffff0000,0x00000000,std::uint32_t>;
         ///Sub second value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ss{}; 
     }
     namespace RtcCalr{    ///<calibration register
-        using Addr = Register::Address<0x4000283c,0xffff1e00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000283c,0xffff1e00,0x00000000,std::uint32_t>;
         ///Increase frequency of RTC by 488.5               ppm
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> calp{}; 
         ///Use an 8-second calibration cycle               period
@@ -261,7 +261,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> calm{}; 
     }
     namespace RtcTafcr{    ///<tamper and alternate function configuration           register
-        using Addr = Register::Address<0x40002840,0xfff80060,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002840,0xfff80060,0x00000000,std::uint32_t>;
         ///AFO_ALARM output type
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::ReadWriteAccess,unsigned> alarmouttype{}; 
         ///TIMESTAMP mapping
@@ -290,116 +290,116 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tamp1e{}; 
     }
     namespace RtcAlrmassr{    ///<alarm A sub second register
-        using Addr = Register::Address<0x40002844,0xf0ff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002844,0xf0ff8000,0x00000000,std::uint32_t>;
         ///Mask the most-significant bits starting               at this bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> maskss{}; 
         ///Sub seconds value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> ss{}; 
     }
     namespace RtcAlrmbssr{    ///<alarm B sub second register
-        using Addr = Register::Address<0x40002848,0xf0ff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002848,0xf0ff8000,0x00000000,std::uint32_t>;
         ///Mask the most-significant bits starting               at this bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> maskss{}; 
         ///Sub seconds value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> ss{}; 
     }
     namespace RtcBkp0r{    ///<backup register
-        using Addr = Register::Address<0x40002850,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002850,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp1r{    ///<backup register
-        using Addr = Register::Address<0x40002854,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002854,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp2r{    ///<backup register
-        using Addr = Register::Address<0x40002858,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002858,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp3r{    ///<backup register
-        using Addr = Register::Address<0x4000285c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000285c,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp4r{    ///<backup register
-        using Addr = Register::Address<0x40002860,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002860,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp5r{    ///<backup register
-        using Addr = Register::Address<0x40002864,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002864,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp6r{    ///<backup register
-        using Addr = Register::Address<0x40002868,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002868,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp7r{    ///<backup register
-        using Addr = Register::Address<0x4000286c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000286c,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp8r{    ///<backup register
-        using Addr = Register::Address<0x40002870,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002870,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp9r{    ///<backup register
-        using Addr = Register::Address<0x40002874,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002874,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp10r{    ///<backup register
-        using Addr = Register::Address<0x40002878,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002878,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp11r{    ///<backup register
-        using Addr = Register::Address<0x4000287c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000287c,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp12r{    ///<backup register
-        using Addr = Register::Address<0x40002880,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002880,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp13r{    ///<backup register
-        using Addr = Register::Address<0x40002884,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002884,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp14r{    ///<backup register
-        using Addr = Register::Address<0x40002888,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002888,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp15r{    ///<backup register
-        using Addr = Register::Address<0x4000288c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000288c,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp16r{    ///<backup register
-        using Addr = Register::Address<0x40002890,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002890,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp17r{    ///<backup register
-        using Addr = Register::Address<0x40002894,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002894,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp18r{    ///<backup register
-        using Addr = Register::Address<0x40002898,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40002898,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }
     namespace RtcBkp19r{    ///<backup register
-        using Addr = Register::Address<0x4000289c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000289c,0x00000000,0x00000000,std::uint32_t>;
         ///BKP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bkp{}; 
     }

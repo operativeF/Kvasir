@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Serial Peripheral Interface 1
     namespace Spi1Cr{    ///<Control Register
-        using Addr = Register::Address<0xfffcc000,0xfeffff7c,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc000,0xfeffff7c,0x00000000,std::uint32_t>;
         ///SPI Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> spien{}; 
         ///SPI Disable
@@ -14,7 +14,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> lastxfer{}; 
     }
     namespace Spi1Mr{    ///<Mode Register
-        using Addr = Register::Address<0xfffcc004,0x00f0ff48,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc004,0x00f0ff48,0x00000000,std::uint32_t>;
         ///Master/Slave Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mstr{}; 
         ///Peripheral Select
@@ -33,14 +33,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dlybcs{}; 
     }
     namespace Spi1Rdr{    ///<Receive Data Register
-        using Addr = Register::Address<0xfffcc008,0xfff00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc008,0xfff00000,0x00000000,std::uint32_t>;
         ///Receive Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rd{}; 
         ///Peripheral Chip Select
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pcs{}; 
     }
     namespace Spi1Tdr{    ///<Transmit Data Register
-        using Addr = Register::Address<0xfffcc00c,0xfef00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc00c,0xfef00000,0x00000000,std::uint32_t>;
         ///Transmit Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> td{}; 
         ///Peripheral Chip Select
@@ -49,7 +49,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> lastxfer{}; 
     }
     namespace Spi1Sr{    ///<Status Register
-        using Addr = Register::Address<0xfffcc010,0xfffefcf0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc010,0xfffefcf0,0x00000000,std::uint32_t>;
         ///Receive Data Register Full
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rdrf{}; 
         ///Transmit Data Register Empty
@@ -66,7 +66,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> spiens{}; 
     }
     namespace Spi1Ier{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xfffcc014,0xfffffcf0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc014,0xfffffcf0,0x00000000,std::uint32_t>;
         ///Receive Data Register Full Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rdrf{}; 
         ///SPI Transmit Data Register Empty Interrupt Enable
@@ -81,7 +81,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txempty{}; 
     }
     namespace Spi1Idr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xfffcc018,0xfffffcf0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc018,0xfffffcf0,0x00000000,std::uint32_t>;
         ///Receive Data Register Full Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rdrf{}; 
         ///SPI Transmit Data Register Empty Interrupt Disable
@@ -96,7 +96,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txempty{}; 
     }
     namespace Spi1Imr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfffcc01c,0xfffffcf0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc01c,0xfffffcf0,0x00000000,std::uint32_t>;
         ///Receive Data Register Full Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rdrf{}; 
         ///SPI Transmit Data Register Empty Interrupt Mask
@@ -111,61 +111,61 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txempty{}; 
     }
     namespace Spi1Wpmr{    ///<Write Protection Control Register
-        using Addr = Register::Address<0xfffcc0e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc0e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpen{}; 
         ///Write Protection Key Password
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpkey{}; 
     }
     namespace Spi1Wpsr{    ///<Write Protection Status Register
-        using Addr = Register::Address<0xfffcc0e8,0xffff00fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc0e8,0xffff00fe,0x00000000,std::uint32_t>;
         ///Write Protection Violation Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvs{}; 
         ///Write Protection Violation Source
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvsrc{}; 
     }
     namespace Spi1Rpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0xfffcc100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc100,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace Spi1Rcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0xfffcc104,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc104,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace Spi1Tpr{    ///<Transmit Pointer Register
-        using Addr = Register::Address<0xfffcc108,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc108,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txptr{}; 
     }
     namespace Spi1Tcr{    ///<Transmit Counter Register
-        using Addr = Register::Address<0xfffcc10c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc10c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txctr{}; 
     }
     namespace Spi1Rnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0xfffcc110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc110,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace Spi1Rncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0xfffcc114,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc114,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace Spi1Tnpr{    ///<Transmit Next Pointer Register
-        using Addr = Register::Address<0xfffcc118,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc118,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txnptr{}; 
     }
     namespace Spi1Tncr{    ///<Transmit Next Counter Register
-        using Addr = Register::Address<0xfffcc11c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc11c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Next
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txnctr{}; 
     }
     namespace Spi1Ptcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0xfffcc120,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc120,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -176,14 +176,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace Spi1Ptsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0xfffcc124,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc124,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txten{}; 
     }
     namespace Spi1Csr0{    ///<Chip Select Register
-        using Addr = Register::Address<0xfffcc030,0x00000004,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc030,0x00000004,0x00000000,std::uint32_t>;
         ///Clock Polarity
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cpol{}; 
         ///Clock Phase
@@ -222,7 +222,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dlybct{}; 
     }
     namespace Spi1Csr1{    ///<Chip Select Register
-        using Addr = Register::Address<0xfffcc034,0x00000004,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc034,0x00000004,0x00000000,std::uint32_t>;
         ///Clock Polarity
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cpol{}; 
         ///Clock Phase
@@ -261,7 +261,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dlybct{}; 
     }
     namespace Spi1Csr2{    ///<Chip Select Register
-        using Addr = Register::Address<0xfffcc038,0x00000004,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc038,0x00000004,0x00000000,std::uint32_t>;
         ///Clock Polarity
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cpol{}; 
         ///Clock Phase
@@ -300,7 +300,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dlybct{}; 
     }
     namespace Spi1Csr3{    ///<Chip Select Register
-        using Addr = Register::Address<0xfffcc03c,0x00000004,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffcc03c,0x00000004,0x00000000,std::uint32_t>;
         ///Clock Polarity
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cpol{}; 
         ///Clock Phase

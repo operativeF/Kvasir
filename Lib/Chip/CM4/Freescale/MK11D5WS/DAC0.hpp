@@ -3,7 +3,7 @@
 namespace Kvasir {
 //12-Bit Digital-to-Analog Converter
     namespace Dac0Sr{    ///<DAC Status Register
-        using Addr = Register::Address<0x4003f020,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f020,0xffffff00,0x00000000,std::uint8_t>;
         ///DAC Buffer Read Pointer Bottom Position Flag
         enum class DacbfrpbfVal {
             v0=0x00000000,     ///<The DAC buffer read pointer is not equal to C2[DACBFUP].
@@ -38,7 +38,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,3),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0C0{    ///<DAC Control Register
-        using Addr = Register::Address<0x4003f021,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f021,0xffffff00,0x00000000,std::uint8_t>;
         ///DAC Buffer Read Pointer Bottom Flag Interrupt Enable
         enum class DacbbienVal {
             v0=0x00000000,     ///<The DAC buffer read pointer bottom flag interrupt is disabled.
@@ -121,7 +121,7 @@ namespace Kvasir {
         }
     }
     namespace Dac0C1{    ///<DAC Control Register 1
-        using Addr = Register::Address<0x4003f022,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f022,0xffffff00,0x00000000,std::uint8_t>;
         ///DAC Buffer Enable
         enum class DacbfenVal {
             v0=0x00000000,     ///<Buffer read pointer is disabled. The converted data is always the first word of the buffer.
@@ -174,199 +174,199 @@ namespace Kvasir {
         }
     }
     namespace Dac0C2{    ///<DAC Control Register 2
-        using Addr = Register::Address<0x4003f023,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f023,0xffffff00,0x00000000,std::uint8_t>;
         ///DAC Buffer Upper Limit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> dacbfup{}; 
         ///DAC Buffer Read Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::ReadWriteAccess,unsigned> dacbfrp{}; 
     }
     namespace Dac0Dat0l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f000,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat1l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f002,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat2l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f004,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat3l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f006,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat4l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f008,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f008,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat5l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f00a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f00a,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat6l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f00c,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f00c,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat7l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f00e,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f00e,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat8l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f010,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f010,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat9l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f012,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f012,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat10l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f014,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f014,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat11l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f016,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f016,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat12l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f018,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f018,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat13l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f01a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f01a,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat14l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f01c,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f01c,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat15l{    ///<DAC Data Low Register
-        using Addr = Register::Address<0x4003f01e,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f01e,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> data0{}; 
     }
     namespace Dac0Dat0h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f001,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat1h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f003,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat2h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f005,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat3h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f007,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat4h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f009,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f009,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat5h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f00b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f00b,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat6h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f00d,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f00d,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat7h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f00f,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f00f,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat8h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f011,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f011,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat9h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f013,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f013,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat10h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f015,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f015,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat11h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f017,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f017,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat12h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f019,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f019,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat13h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f01b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f01b,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat14h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f01d,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f01d,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Dac0Dat15h{    ///<DAC Data High Register
-        using Addr = Register::Address<0x4003f01f,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003f01f,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> data1{}; 
         ///no description available

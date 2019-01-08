@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Direct memory access controller
     namespace Dma1Isr{    ///<interrupt status register
-        using Addr = Register::Address<0x40020000,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020000,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel x transfer error flag (x = 1              ..7)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> teif7{}; 
         ///Channel x half transfer flag (x = 1              ..7)
@@ -62,7 +62,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gif1{}; 
     }
     namespace Dma1Ifcr{    ///<interrupt flag clear register
-        using Addr = Register::Address<0x40020004,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020004,0xf0000000,0x00000000,std::uint32_t>;
         ///Channel x transfer error clear (x = 1              ..7)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> cteif7{}; 
         ///Channel x half transfer clear (x = 1              ..7)
@@ -121,7 +121,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cgif1{}; 
     }
     namespace Dma1Ccr1{    ///<channel x configuration          register
-        using Addr = Register::Address<0x40020008,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020008,0xffff8000,0x00000000,std::uint32_t>;
         ///Memory to memory mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> mem2mem{}; 
         ///Channel priority level
@@ -148,22 +148,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma1Cndtr1{    ///<channel x number of data          register
-        using Addr = Register::Address<0x4002000c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002000c,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data to transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma1Cpar1{    ///<channel x peripheral address          register
-        using Addr = Register::Address<0x40020010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020010,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma1Cmar1{    ///<channel x memory address          register
-        using Addr = Register::Address<0x40020014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020014,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma1Ccr2{    ///<channel x configuration          register
-        using Addr = Register::Address<0x4002001c,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002001c,0xffff8000,0x00000000,std::uint32_t>;
         ///Memory to memory mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> mem2mem{}; 
         ///Channel priority level
@@ -190,22 +190,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma1Cndtr2{    ///<channel x number of data          register
-        using Addr = Register::Address<0x40020020,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020020,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data to transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma1Cpar2{    ///<channel x peripheral address          register
-        using Addr = Register::Address<0x40020024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020024,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma1Cmar2{    ///<channel x memory address          register
-        using Addr = Register::Address<0x40020028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020028,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma1Ccr3{    ///<channel x configuration          register
-        using Addr = Register::Address<0x40020030,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020030,0xffff8000,0x00000000,std::uint32_t>;
         ///Memory to memory mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> mem2mem{}; 
         ///Channel priority level
@@ -232,22 +232,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma1Cndtr3{    ///<channel x number of data          register
-        using Addr = Register::Address<0x40020034,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020034,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data to transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma1Cpar3{    ///<channel x peripheral address          register
-        using Addr = Register::Address<0x40020038,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020038,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma1Cmar3{    ///<channel x memory address          register
-        using Addr = Register::Address<0x4002003c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002003c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma1Ccr4{    ///<channel x configuration          register
-        using Addr = Register::Address<0x40020044,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020044,0xffff8000,0x00000000,std::uint32_t>;
         ///Memory to memory mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> mem2mem{}; 
         ///Channel priority level
@@ -274,22 +274,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma1Cndtr4{    ///<channel x number of data          register
-        using Addr = Register::Address<0x40020048,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020048,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data to transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma1Cpar4{    ///<channel x peripheral address          register
-        using Addr = Register::Address<0x4002004c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002004c,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma1Cmar4{    ///<channel x memory address          register
-        using Addr = Register::Address<0x40020050,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020050,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma1Ccr5{    ///<channel x configuration          register
-        using Addr = Register::Address<0x40020058,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020058,0xffff8000,0x00000000,std::uint32_t>;
         ///Memory to memory mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> mem2mem{}; 
         ///Channel priority level
@@ -316,22 +316,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma1Cndtr5{    ///<channel x number of data          register
-        using Addr = Register::Address<0x4002005c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002005c,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data to transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma1Cpar5{    ///<channel x peripheral address          register
-        using Addr = Register::Address<0x40020060,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020060,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma1Cmar5{    ///<channel x memory address          register
-        using Addr = Register::Address<0x40020064,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020064,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma1Ccr6{    ///<channel x configuration          register
-        using Addr = Register::Address<0x4002006c,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002006c,0xffff8000,0x00000000,std::uint32_t>;
         ///Memory to memory mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> mem2mem{}; 
         ///Channel priority level
@@ -358,22 +358,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma1Cndtr6{    ///<channel x number of data          register
-        using Addr = Register::Address<0x40020070,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020070,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data to transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma1Cpar6{    ///<channel x peripheral address          register
-        using Addr = Register::Address<0x40020074,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020074,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma1Cmar6{    ///<channel x memory address          register
-        using Addr = Register::Address<0x40020078,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020078,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma1Ccr7{    ///<channel x configuration          register
-        using Addr = Register::Address<0x40020080,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020080,0xffff8000,0x00000000,std::uint32_t>;
         ///Memory to memory mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> mem2mem{}; 
         ///Channel priority level
@@ -400,22 +400,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma1Cndtr7{    ///<channel x number of data          register
-        using Addr = Register::Address<0x40020084,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020084,0xffff0000,0x00000000,std::uint32_t>;
         ///Number of data to transfer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ndt{}; 
     }
     namespace Dma1Cpar7{    ///<channel x peripheral address          register
-        using Addr = Register::Address<0x40020088,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40020088,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace Dma1Cmar7{    ///<channel x memory address          register
-        using Addr = Register::Address<0x4002008c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002008c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma1Cselr{    ///<channel selection register
-        using Addr = Register::Address<0x400200a8,0xf0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400200a8,0xf0000000,0x00000000,std::uint32_t>;
         ///DMA channel 7 selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> c7s{}; 
         ///DMA channel 6 selection

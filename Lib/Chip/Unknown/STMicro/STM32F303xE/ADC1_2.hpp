@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Analog-to-Digital Converter
     namespace Adc12Csr{    ///<ADC Common status register
-        using Addr = Register::Address<0x50000300,0xf800f800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000300,0xf800f800,0x00000000,std::uint32_t>;
         ///ADDRDY_MST
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> addrdyMst{}; 
         ///EOSMP_MST
@@ -50,7 +50,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> jqovfSlv{}; 
     }
     namespace Adc12Ccr{    ///<ADC common control register
-        using Addr = Register::Address<0x50000308,0xfe3c10e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50000308,0xfe3c10e0,0x00000000,std::uint32_t>;
         ///Multi ADC mode selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> mult{}; 
         ///Delay between 2 sampling               phases
@@ -69,7 +69,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> vbaten{}; 
     }
     namespace Adc12Cdr{    ///<ADC common regular data register for dual           and triple modes
-        using Addr = Register::Address<0x5000030c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5000030c,0x00000000,0x00000000,std::uint32_t>;
         ///Regular data of the slave               ADC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> rdataSlv{}; 
         ///Regular data of the master               ADC

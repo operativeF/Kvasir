@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Floting point unit
     namespace FpuCpacr{    ///<Coprocessor Access Control           Register
-        using Addr = Register::Address<0xe000ed88,0xffaf8aaa,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed88,0xffaf8aaa,0x00000000,std::uint32_t>;
         ///Access privileges for coprocessor               0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cp0{}; 
         ///Access privileges for coprocessor               1
@@ -26,7 +26,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> cp11{}; 
     }
     namespace FpuFpccr{    ///<FP Context Control Register
-        using Addr = Register::Address<0xe000ef34,0x3ffffe84,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ef34,0x3ffffe84,0x00000000,std::uint32_t>;
         ///LSPACT
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lspact{}; 
         ///USER
@@ -47,12 +47,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> aspen{}; 
     }
     namespace FpuFpcar{    ///<FP Context Address Register
-        using Addr = Register::Address<0xe000ef38,0x00000007,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ef38,0x00000007,0x00000000,std::uint32_t>;
         ///ADDRESS
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,3),Register::ReadWriteAccess,unsigned> address{}; 
     }
     namespace FpuFpdscr{    ///<FP Default Status Control           Register
-        using Addr = Register::Address<0xe000ef3c,0xf83fffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ef3c,0xf83fffff,0x00000000,std::uint32_t>;
         ///RMode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,22),Register::ReadWriteAccess,unsigned> rmode{}; 
         ///FZ
@@ -63,7 +63,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> ahp{}; 
     }
     namespace FpuMvfr0{    ///<Media and VFP Feature Register           0
-        using Addr = Register::Address<0xe000ef40,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ef40,0x00000000,0x00000000,std::uint32_t>;
         ///A_SIMD registers
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> aSimd{}; 
         ///Single_precision
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> fpRoundingModes{}; 
     }
     namespace FpuMvfr1{    ///<Media and VFP Feature Register           1
-        using Addr = Register::Address<0xe000ef44,0x00ffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ef44,0x00ffff00,0x00000000,std::uint32_t>;
         ///FtZ mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ftzMode{}; 
         ///D_NaN mode

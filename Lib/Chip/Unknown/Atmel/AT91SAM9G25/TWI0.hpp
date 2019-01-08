@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Two-wire Interface 0
     namespace Twi0Cr{    ///<Control Register
-        using Addr = Register::Address<0xf8010000,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010000,0xffffff00,0x00000000,std::uint32_t>;
         ///Send a START Condition
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> start{}; 
         ///Send a STOP Condition
@@ -22,7 +22,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace Twi0Mmr{    ///<Master Mode Register
-        using Addr = Register::Address<0xf8010004,0xff80ecff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010004,0xff80ecff,0x00000000,std::uint32_t>;
         ///Internal Device Address Size
         enum class IadrszVal {
             none=0x00000000,     ///<No internal device address
@@ -43,17 +43,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,16),Register::ReadWriteAccess,unsigned> dadr{}; 
     }
     namespace Twi0Smr{    ///<Slave Mode Register
-        using Addr = Register::Address<0xf8010008,0xff80ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010008,0xff80ffff,0x00000000,std::uint32_t>;
         ///Slave Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,16),Register::ReadWriteAccess,unsigned> sadr{}; 
     }
     namespace Twi0Iadr{    ///<Internal Address Register
-        using Addr = Register::Address<0xf801000c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf801000c,0xff000000,0x00000000,std::uint32_t>;
         ///Internal Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> iadr{}; 
     }
     namespace Twi0Cwgr{    ///<Clock Waveform Generator Register
-        using Addr = Register::Address<0xf8010010,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010010,0xfff80000,0x00000000,std::uint32_t>;
         ///Clock Low Divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> cldiv{}; 
         ///Clock High Divider
@@ -62,7 +62,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,16),Register::ReadWriteAccess,unsigned> ckdiv{}; 
     }
     namespace Twi0Sr{    ///<Status Register
-        using Addr = Register::Address<0xf8010020,0xfffff080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010020,0xfffff080,0x00000000,std::uint32_t>;
         ///Transmission Completed (automatically set / reset)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready (automatically set / reset)
@@ -87,7 +87,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eosacc{}; 
     }
     namespace Twi0Ier{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xf8010024,0xfffff088,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010024,0xfffff088,0x00000000,std::uint32_t>;
         ///Transmission Completed Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready Interrupt Enable
@@ -110,7 +110,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eosacc{}; 
     }
     namespace Twi0Idr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xf8010028,0xfffff088,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010028,0xfffff088,0x00000000,std::uint32_t>;
         ///Transmission Completed Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready Interrupt Disable
@@ -133,7 +133,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eosacc{}; 
     }
     namespace Twi0Imr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xf801002c,0xfffff088,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf801002c,0xfffff088,0x00000000,std::uint32_t>;
         ///Transmission Completed Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready Interrupt Mask
@@ -156,24 +156,24 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eosacc{}; 
     }
     namespace Twi0Rhr{    ///<Receive Holding Register
-        using Addr = Register::Address<0xf8010030,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010030,0xffffff00,0x00000000,std::uint32_t>;
         ///Master or Slave Receive Holding Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxdata{}; 
     }
     namespace Twi0Thr{    ///<Transmit Holding Register
-        using Addr = Register::Address<0xf8010034,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf8010034,0xffffff00,0x00000000,std::uint32_t>;
         ///Master or Slave Transmit Holding Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txdata{}; 
     }
     namespace Twi0WprotMode{    ///<Protection Mode Register
-        using Addr = Register::Address<0xf80100e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf80100e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write protection bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wprot{}; 
         ///Write protection mode security code
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> securityCode{}; 
     }
     namespace Twi0WprotStatus{    ///<Protection Status Register
-        using Addr = Register::Address<0xf80100e8,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xf80100e8,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protection Error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wproterr{}; 
         ///Write Protection Error Address

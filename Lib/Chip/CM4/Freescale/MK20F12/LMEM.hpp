@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Local Memory Controller
     namespace LmemPcccr{    ///<Cache control register
-        using Addr = Register::Address<0xe0082000,0x70fffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082000,0x70fffffc,0x00000000,std::uint32_t>;
         ///Cache enable
         enum class EncacheVal {
             v0=0x00000000,     ///<Cache disabled
@@ -76,7 +76,7 @@ namespace Kvasir {
         }
     }
     namespace LmemPcclcr{    ///<Cache line control register
-        using Addr = Register::Address<0xe0082004,0xf08eb002,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082004,0xf08eb002,0x00000000,std::uint32_t>;
         ///Initiate Cache Line Command
         enum class LgoVal {
             v0=0x00000000,     ///<Write: no effect. Read: no line command active.
@@ -151,7 +151,7 @@ namespace Kvasir {
         }
     }
     namespace LmemPccsar{    ///<Cache search address register
-        using Addr = Register::Address<0xe0082008,0x00000002,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082008,0x00000002,0x00000000,std::uint32_t>;
         ///Initiate Cache Line Command
         enum class LgoVal {
             v0=0x00000000,     ///<Write: no effect. Read: no line command active.
@@ -166,12 +166,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> phyaddr{}; 
     }
     namespace LmemPcccvr{    ///<Cache read/write value register
-        using Addr = Register::Address<0xe008200c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe008200c,0x00000000,0x00000000,std::uint32_t>;
         ///Cache read/write Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace LmemPccrmr{    ///<Cache regions mode register
-        using Addr = Register::Address<0xe0082020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082020,0x00000000,0x00000000,std::uint32_t>;
         ///Region 15 mode
         enum class R15Val {
             v00=0x00000000,     ///<Non-cacheable
@@ -398,7 +398,7 @@ namespace Kvasir {
         }
     }
     namespace LmemPsccr{    ///<Cache control register
-        using Addr = Register::Address<0xe0082800,0x70fffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082800,0x70fffffc,0x00000000,std::uint32_t>;
         ///Cache enable
         enum class EncacheVal {
             v0=0x00000000,     ///<Cache disabled
@@ -471,7 +471,7 @@ namespace Kvasir {
         }
     }
     namespace LmemPsclcr{    ///<Cache line control register
-        using Addr = Register::Address<0xe0082804,0xf08eb002,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082804,0xf08eb002,0x00000000,std::uint32_t>;
         ///Initiate Cache Line Command
         enum class LgoVal {
             v0=0x00000000,     ///<Write: no effect. Read: no line command active.
@@ -546,7 +546,7 @@ namespace Kvasir {
         }
     }
     namespace LmemPscsar{    ///<Cache search address register
-        using Addr = Register::Address<0xe0082808,0x00000002,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082808,0x00000002,0x00000000,std::uint32_t>;
         ///Initiate Cache Line Command
         enum class LgoVal {
             v0=0x00000000,     ///<Write: no effect. Read: no line command active.
@@ -561,12 +561,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,2),Register::ReadWriteAccess,unsigned> phyaddr{}; 
     }
     namespace LmemPsccvr{    ///<Cache read/write value register
-        using Addr = Register::Address<0xe008280c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe008280c,0x00000000,0x00000000,std::uint32_t>;
         ///Cache read/write Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> data{}; 
     }
     namespace LmemPscrmr{    ///<Cache regions mode register
-        using Addr = Register::Address<0xe0082820,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0082820,0x00000000,0x00000000,std::uint32_t>;
         ///Region 15 mode
         enum class R15Val {
             v00=0x00000000,     ///<Non-cacheable

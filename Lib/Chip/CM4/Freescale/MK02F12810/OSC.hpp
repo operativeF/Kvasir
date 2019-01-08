@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Oscillator
     namespace OscCr{    ///<OSC Control Register
-        using Addr = Register::Address<0x40065000,0xffffff50,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40065000,0xffffff50,0x00000000,std::uint8_t>;
         ///Oscillator 16 pF Capacitor Load Configure
         enum class Sc16pVal {
             v0=0x00000000,     ///<Disable the selection.
@@ -66,8 +66,8 @@ namespace Kvasir {
         }
     }
     namespace OscDiv{    ///<OSC_DIV
-        using Addr = Register::Address<0x40065002,0xffffff3f,0x00000000,unsigned char>;
-        ///no description available
+        using Addr = Register::Address<0x40065002,0xffffff3f,0x00000000,std::uint8_t>;
+        ///ERCLK prescaler
         enum class ErpsVal {
             v00=0x00000000,     ///<The divisor ratio is 1.
             v01=0x00000001,     ///<The divisor ratio is 2.

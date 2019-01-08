@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Serial controller 1
     namespace Sc1Sc1Isr{    ///<Serial controller interrupt status          register
-        using Addr = Register::Address<0x4000a808,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000a808,0xffff8000,0x00000000,std::uint32_t>;
         ///PE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> pe{}; 
         ///FE
@@ -36,7 +36,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxne{}; 
     }
     namespace Sc1Sc1Ier{    ///<Serial controller interrupt enable          register
-        using Addr = Register::Address<0x4000a848,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000a848,0xffff8000,0x00000000,std::uint32_t>;
         ///PEIE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> peie{}; 
         ///FEIE
@@ -69,7 +69,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxneie{}; 
     }
     namespace Sc1Sc1Icr{    ///<Serial controller interrupt control          register
-        using Addr = Register::Address<0x4000a854,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000a854,0xfffffff8,0x00000000,std::uint32_t>;
         ///IDLELEVEL
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> idlelevel{}; 
         ///TXELEVEL
@@ -78,22 +78,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rxnelevel{}; 
     }
     namespace Sc1Sc1Dr{    ///<Serial control Data register
-        using Addr = Register::Address<0x4000c83c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c83c,0xffffff00,0x00000000,std::uint32_t>;
         ///DR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dr{}; 
     }
     namespace Sc1Sc1Cr{    ///<Serial controller control          register
-        using Addr = Register::Address<0x4000c854,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c854,0xfffffffc,0x00000000,std::uint32_t>;
         ///MODE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> mode{}; 
     }
     namespace Sc1Sc1Crr1{    ///<Serial controller clock rate          register
-        using Addr = Register::Address<0x4000c860,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c860,0xfffffff0,0x00000000,std::uint32_t>;
         ///LIN
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> lin{}; 
     }
     namespace Sc1Sc1Crr2{    ///<Serial controller clock rate register          2
-        using Addr = Register::Address<0x4000c864,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c864,0xfffffff0,0x00000000,std::uint32_t>;
         ///EXP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> exp{}; 
     }

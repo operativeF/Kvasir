@@ -3,7 +3,7 @@
 namespace Kvasir {
 //FlexBus external bus interface
     namespace FbCspmcr{    ///<Chip Select port Multiplexing Control Register
-        using Addr = Register::Address<0x4000c060,0x00000fff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c060,0x00000fff,0x00000000,std::uint32_t>;
         ///FlexBus Signal Group 5 Multiplex control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> group5{}; 
         ///FlexBus Signal Group 4 Multiplex control
@@ -16,37 +16,37 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> group1{}; 
     }
     namespace FbCsar0{    ///<Chip Select Address Register
-        using Addr = Register::Address<0x4000c000,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c000,0x0000ffff,0x00000000,std::uint32_t>;
         ///Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ba{}; 
     }
     namespace FbCsar1{    ///<Chip Select Address Register
-        using Addr = Register::Address<0x4000c00c,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c00c,0x0000ffff,0x00000000,std::uint32_t>;
         ///Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ba{}; 
     }
     namespace FbCsar2{    ///<Chip Select Address Register
-        using Addr = Register::Address<0x4000c018,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c018,0x0000ffff,0x00000000,std::uint32_t>;
         ///Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ba{}; 
     }
     namespace FbCsar3{    ///<Chip Select Address Register
-        using Addr = Register::Address<0x4000c024,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c024,0x0000ffff,0x00000000,std::uint32_t>;
         ///Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ba{}; 
     }
     namespace FbCsar4{    ///<Chip Select Address Register
-        using Addr = Register::Address<0x4000c030,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c030,0x0000ffff,0x00000000,std::uint32_t>;
         ///Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ba{}; 
     }
     namespace FbCsar5{    ///<Chip Select Address Register
-        using Addr = Register::Address<0x4000c03c,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c03c,0x0000ffff,0x00000000,std::uint32_t>;
         ///Base Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> ba{}; 
     }
     namespace FbCsmr0{    ///<Chip Select Mask Register
-        using Addr = Register::Address<0x4000c004,0x0000fefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c004,0x0000fefe,0x00000000,std::uint32_t>;
         ///Valid
         enum class VVal {
             v0=0x00000000,     ///<Chip-select is invalid.
@@ -71,7 +71,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> bam{}; 
     }
     namespace FbCsmr1{    ///<Chip Select Mask Register
-        using Addr = Register::Address<0x4000c010,0x0000fefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c010,0x0000fefe,0x00000000,std::uint32_t>;
         ///Valid
         enum class VVal {
             v0=0x00000000,     ///<Chip-select is invalid.
@@ -96,7 +96,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> bam{}; 
     }
     namespace FbCsmr2{    ///<Chip Select Mask Register
-        using Addr = Register::Address<0x4000c01c,0x0000fefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c01c,0x0000fefe,0x00000000,std::uint32_t>;
         ///Valid
         enum class VVal {
             v0=0x00000000,     ///<Chip-select is invalid.
@@ -121,7 +121,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> bam{}; 
     }
     namespace FbCsmr3{    ///<Chip Select Mask Register
-        using Addr = Register::Address<0x4000c028,0x0000fefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c028,0x0000fefe,0x00000000,std::uint32_t>;
         ///Valid
         enum class VVal {
             v0=0x00000000,     ///<Chip-select is invalid.
@@ -146,7 +146,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> bam{}; 
     }
     namespace FbCsmr4{    ///<Chip Select Mask Register
-        using Addr = Register::Address<0x4000c034,0x0000fefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c034,0x0000fefe,0x00000000,std::uint32_t>;
         ///Valid
         enum class VVal {
             v0=0x00000000,     ///<Chip-select is invalid.
@@ -171,7 +171,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> bam{}; 
     }
     namespace FbCsmr5{    ///<Chip Select Mask Register
-        using Addr = Register::Address<0x4000c040,0x0000fefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c040,0x0000fefe,0x00000000,std::uint32_t>;
         ///Valid
         enum class VVal {
             v0=0x00000000,     ///<Chip-select is invalid.
@@ -196,7 +196,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> bam{}; 
     }
     namespace FbCscr0{    ///<Chip Select Control Register
-        using Addr = Register::Address<0x4000c008,0x03000007,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c008,0x03000007,0x00000000,std::uint32_t>;
         ///Burst-Write Enable
         enum class BstwVal {
             v0=0x00000000,     ///<Disabled. Data exceeding the specified port size is broken into individual, port-sized, non-burst writes. For example, a 32-bit write to an 8-bit port takes four byte writes.
@@ -305,7 +305,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v10> v10{};
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v11> v11{};
         }
-        ///no description available
+        ///Extended Transfer Start/Extended Address Latch Enable Controls how long FB_TS /FB_ALE is asserted.
         enum class ExtsVal {
             v0=0x00000000,     ///<Disabled. FB_TS /FB_ALE asserts for one bus clock cycle.
             v1=0x00000001,     ///<Enabled. FB_TS /FB_ALE remains asserted until the first positive clock edge after FB_CSn asserts.
@@ -329,7 +329,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::ReadWriteAccess,unsigned> sws{}; 
     }
     namespace FbCscr1{    ///<Chip Select Control Register
-        using Addr = Register::Address<0x4000c014,0x03000007,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c014,0x03000007,0x00000000,std::uint32_t>;
         ///Burst-Write Enable
         enum class BstwVal {
             v0=0x00000000,     ///<Disabled. Data exceeding the specified port size is broken into individual, port-sized, non-burst writes. For example, a 32-bit write to an 8-bit port takes four byte writes.
@@ -438,7 +438,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v10> v10{};
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v11> v11{};
         }
-        ///no description available
+        ///Extended Transfer Start/Extended Address Latch Enable Controls how long FB_TS /FB_ALE is asserted.
         enum class ExtsVal {
             v0=0x00000000,     ///<Disabled. FB_TS /FB_ALE asserts for one bus clock cycle.
             v1=0x00000001,     ///<Enabled. FB_TS /FB_ALE remains asserted until the first positive clock edge after FB_CSn asserts.
@@ -462,7 +462,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::ReadWriteAccess,unsigned> sws{}; 
     }
     namespace FbCscr2{    ///<Chip Select Control Register
-        using Addr = Register::Address<0x4000c020,0x03000007,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c020,0x03000007,0x00000000,std::uint32_t>;
         ///Burst-Write Enable
         enum class BstwVal {
             v0=0x00000000,     ///<Disabled. Data exceeding the specified port size is broken into individual, port-sized, non-burst writes. For example, a 32-bit write to an 8-bit port takes four byte writes.
@@ -571,7 +571,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v10> v10{};
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v11> v11{};
         }
-        ///no description available
+        ///Extended Transfer Start/Extended Address Latch Enable Controls how long FB_TS /FB_ALE is asserted.
         enum class ExtsVal {
             v0=0x00000000,     ///<Disabled. FB_TS /FB_ALE asserts for one bus clock cycle.
             v1=0x00000001,     ///<Enabled. FB_TS /FB_ALE remains asserted until the first positive clock edge after FB_CSn asserts.
@@ -595,7 +595,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::ReadWriteAccess,unsigned> sws{}; 
     }
     namespace FbCscr3{    ///<Chip Select Control Register
-        using Addr = Register::Address<0x4000c02c,0x03000007,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c02c,0x03000007,0x00000000,std::uint32_t>;
         ///Burst-Write Enable
         enum class BstwVal {
             v0=0x00000000,     ///<Disabled. Data exceeding the specified port size is broken into individual, port-sized, non-burst writes. For example, a 32-bit write to an 8-bit port takes four byte writes.
@@ -704,7 +704,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v10> v10{};
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v11> v11{};
         }
-        ///no description available
+        ///Extended Transfer Start/Extended Address Latch Enable Controls how long FB_TS /FB_ALE is asserted.
         enum class ExtsVal {
             v0=0x00000000,     ///<Disabled. FB_TS /FB_ALE asserts for one bus clock cycle.
             v1=0x00000001,     ///<Enabled. FB_TS /FB_ALE remains asserted until the first positive clock edge after FB_CSn asserts.
@@ -728,7 +728,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::ReadWriteAccess,unsigned> sws{}; 
     }
     namespace FbCscr4{    ///<Chip Select Control Register
-        using Addr = Register::Address<0x4000c038,0x03000007,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c038,0x03000007,0x00000000,std::uint32_t>;
         ///Burst-Write Enable
         enum class BstwVal {
             v0=0x00000000,     ///<Disabled. Data exceeding the specified port size is broken into individual, port-sized, non-burst writes. For example, a 32-bit write to an 8-bit port takes four byte writes.
@@ -837,7 +837,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v10> v10{};
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v11> v11{};
         }
-        ///no description available
+        ///Extended Transfer Start/Extended Address Latch Enable Controls how long FB_TS /FB_ALE is asserted.
         enum class ExtsVal {
             v0=0x00000000,     ///<Disabled. FB_TS /FB_ALE asserts for one bus clock cycle.
             v1=0x00000001,     ///<Enabled. FB_TS /FB_ALE remains asserted until the first positive clock edge after FB_CSn asserts.
@@ -861,7 +861,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,26),Register::ReadWriteAccess,unsigned> sws{}; 
     }
     namespace FbCscr5{    ///<Chip Select Control Register
-        using Addr = Register::Address<0x4000c044,0x03000007,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000c044,0x03000007,0x00000000,std::uint32_t>;
         ///Burst-Write Enable
         enum class BstwVal {
             v0=0x00000000,     ///<Disabled. Data exceeding the specified port size is broken into individual, port-sized, non-burst writes. For example, a 32-bit write to an 8-bit port takes four byte writes.
@@ -970,7 +970,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v10> v10{};
             constexpr Register::FieldValue<decltype(aset)::Type,AsetVal::v11> v11{};
         }
-        ///no description available
+        ///Extended Transfer Start/Extended Address Latch Enable Controls how long FB_TS /FB_ALE is asserted.
         enum class ExtsVal {
             v0=0x00000000,     ///<Disabled. FB_TS /FB_ALE asserts for one bus clock cycle.
             v1=0x00000001,     ///<Enabled. FB_TS /FB_ALE remains asserted until the first positive clock edge after FB_CSn asserts.

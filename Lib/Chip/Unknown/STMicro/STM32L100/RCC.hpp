@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Reset and clock control
     namespace RccCr{    ///<Clock control register
-        using Addr = Register::Address<0x40023800,0x8cf8fcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023800,0x8cf8fcfc,0x00000000,std::uint32_t>;
         ///TC/LCD prescaler
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::ReadWriteAccess,unsigned> rtcpre1{}; 
         ///RTCPRE0
@@ -30,7 +30,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> hsion{}; 
     }
     namespace RccIcscr{    ///<Internal clock sources calibration          register
-        using Addr = Register::Address<0x40023804,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023804,0x00000000,0x00000000,std::uint32_t>;
         ///MSI clock trimming
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> msitrim{}; 
         ///MSI clock calibration
@@ -43,7 +43,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> hsical{}; 
     }
     namespace RccCfgr{    ///<Clock configuration register
-        using Addr = Register::Address<0x40023808,0x8802c000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023808,0x8802c000,0x00000000,std::uint32_t>;
         ///Microcontroller clock output              prescaler
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,28),Register::ReadWriteAccess,unsigned> mcopre{}; 
         ///Microcontroller clock output              selection
@@ -66,7 +66,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> sw{}; 
     }
     namespace RccCir{    ///<Clock interrupt register
-        using Addr = Register::Address<0x4002380c,0xff40c040,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002380c,0xff40c040,0x00000000,std::uint32_t>;
         ///Clock security system interrupt              clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cssc{}; 
         ///MSI ready interrupt clear
@@ -109,7 +109,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> lsirdyf{}; 
     }
     namespace RccAhbrstr{    ///<AHB peripheral reset register
-        using Addr = Register::Address<0x40023810,0xfeff6ff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023810,0xfeff6ff0,0x00000000,std::uint32_t>;
         ///DMA1 reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> dmarst{}; 
         ///FLITF reset
@@ -126,7 +126,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gpioarst{}; 
     }
     namespace RccApb2rstr{    ///<APB2 peripheral reset register
-        using Addr = Register::Address<0x40023814,0xffffade2,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023814,0xffffade2,0x00000000,std::uint32_t>;
         ///USART1RST
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> usart1rst{}; 
         ///SPI1RST
@@ -143,7 +143,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> syscfgrst{}; 
     }
     namespace RccApb1rstr{    ///<APB1 peripheral reset register
-        using Addr = Register::Address<0x40023818,0x4f19b5c8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023818,0x4f19b5c8,0x00000000,std::uint32_t>;
         ///COMP interface reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> comprst{}; 
         ///DAC interface reset
@@ -178,7 +178,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim2rst{}; 
     }
     namespace RccAhbenr{    ///<AHB peripheral clock enable          register
-        using Addr = Register::Address<0x4002381c,0xfeff6ff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002381c,0xfeff6ff0,0x00000000,std::uint32_t>;
         ///DMA1 clock enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> dmaen{}; 
         ///FLITF clock enable
@@ -195,7 +195,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gpiopaen{}; 
     }
     namespace RccApb2enr{    ///<APB2 peripheral clock enable          register
-        using Addr = Register::Address<0x40023820,0xffffade2,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023820,0xffffade2,0x00000000,std::uint32_t>;
         ///USART1 clock enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> usart1en{}; 
         ///SPI 1 clock enable
@@ -212,7 +212,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> syscfgen{}; 
     }
     namespace RccApb1enr{    ///<APB1 peripheral clock enable          register
-        using Addr = Register::Address<0x40023824,0x4f19b5c8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023824,0x4f19b5c8,0x00000000,std::uint32_t>;
         ///COMP interface clock              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> compen{}; 
         ///DAC interface clock enable
@@ -247,7 +247,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim2en{}; 
     }
     namespace RccAhblpenr{    ///<AHB peripheral clock enable in low power          mode register
-        using Addr = Register::Address<0x40023828,0xfefe6ff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023828,0xfefe6ff0,0x00000000,std::uint32_t>;
         ///DMA1 clock enable during Sleep              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> dmalpen{}; 
         ///SRAM clock enable during Sleep              mode
@@ -266,7 +266,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gpioalpen{}; 
     }
     namespace RccApb2lpenr{    ///<APB2 peripheral clock enable in low power          mode register
-        using Addr = Register::Address<0x4002382c,0xffffade2,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002382c,0xffffade2,0x00000000,std::uint32_t>;
         ///USART1 clock enable during Sleep              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> usart1lpen{}; 
         ///SPI 1 clock enable during Sleep              mode
@@ -283,7 +283,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> syscfglpen{}; 
     }
     namespace RccApb1lpenr{    ///<APB1 peripheral clock enable in low power          mode register
-        using Addr = Register::Address<0x40023830,0x4f19b5c8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023830,0x4f19b5c8,0x00000000,std::uint32_t>;
         ///COMP interface clock enable during Sleep              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> complpen{}; 
         ///DAC interface clock enable during Sleep              mode
@@ -318,7 +318,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim2lpen{}; 
     }
     namespace RccCsr{    ///<Control/status register
-        using Addr = Register::Address<0x40023834,0x023cf8fc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023834,0x023cf8fc,0x00000000,std::uint32_t>;
         ///Low-power reset flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> lpwrstf{}; 
         ///Window watchdog reset flag

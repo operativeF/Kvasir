@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Reset Control Module
     namespace RcmSrs0{    ///<System Reset Status Register 0
-        using Addr = Register::Address<0x4007f000,0xffffff10,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f000,0xffffff10,0x00000000,std::uint8_t>;
         ///Low Leakage Wakeup Reset
         enum class WakeupVal {
             v0=0x00000000,     ///<Reset not caused by LLWU module wakeup source
@@ -76,7 +76,7 @@ namespace Kvasir {
         }
     }
     namespace RcmSrs1{    ///<System Reset Status Register 1
-        using Addr = Register::Address<0x4007f001,0xffffffc0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f001,0xffffffc0,0x00000000,std::uint8_t>;
         ///JTAG Generated Reset
         enum class JtagVal {
             v0=0x00000000,     ///<Reset not caused by JTAG
@@ -139,7 +139,7 @@ namespace Kvasir {
         }
     }
     namespace RcmRpfc{    ///<Reset Pin Filter Control register
-        using Addr = Register::Address<0x4007f004,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f004,0xfffffff8,0x00000000,std::uint8_t>;
         ///Reset Pin Filter Select in Run and Wait Modes
         enum class RstfltsrwVal {
             v00=0x00000000,     ///<All filtering disabled
@@ -164,7 +164,7 @@ namespace Kvasir {
         }
     }
     namespace RcmRpfw{    ///<Reset Pin Filter Width register
-        using Addr = Register::Address<0x4007f005,0xffffffe0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f005,0xffffffe0,0x00000000,std::uint8_t>;
         ///Reset Pin Filter Bus Clock Select
         enum class RstfltselVal {
             v00000=0x00000000,     ///<Bus clock filter count is 1
@@ -237,7 +237,7 @@ namespace Kvasir {
         }
     }
     namespace RcmMr{    ///<Mode Register
-        using Addr = Register::Address<0x4007f007,0xfffffffd,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f007,0xfffffffd,0x00000000,std::uint8_t>;
         ///EZP_MS_B pin state
         enum class EzpmsVal {
             v0=0x00000000,     ///<Pin deasserted (logic 1)

@@ -3,27 +3,27 @@
 namespace Kvasir {
 //Synchronous Serial Interface
     namespace I2s0Tx0{    ///<I2S Transmit Data Registers 0
-        using Addr = Register::Address<0x4002f000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f000,0x00000000,0x00000000,std::uint32_t>;
         ///I2S transmit data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tx0{}; 
     }
     namespace I2s0Tx1{    ///<I2S Transmit Data Registers 1
-        using Addr = Register::Address<0x4002f004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f004,0x00000000,0x00000000,std::uint32_t>;
         ///I2S transmit data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tx1{}; 
     }
     namespace I2s0Rx0{    ///<I2S Receive Data Registers 0
-        using Addr = Register::Address<0x4002f008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f008,0x00000000,0x00000000,std::uint32_t>;
         ///I2S Receive Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rx0{}; 
     }
     namespace I2s0Rx1{    ///<I2S Receive Data Registers 1
-        using Addr = Register::Address<0x4002f00c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f00c,0x00000000,0x00000000,std::uint32_t>;
         ///I2S Receive Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rx1{}; 
     }
     namespace I2s0Cr{    ///<I2S Control Register
-        using Addr = Register::Address<0x4002f010,0xffffe000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f010,0xffffe000,0x00000000,std::uint32_t>;
         ///I2S Enable.
         enum class I2senVal {
             v0=0x00000000,     ///<I2S is disabled.
@@ -150,7 +150,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Isr{    ///<I2S Interrupt Status Register
-        using Addr = Register::Address<0x4002f014,0xfe780000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f014,0xfe780000,0x00000000,std::uint32_t>;
         ///Transmit FIFO Empty 0.
         enum class Tfe0Val {
             v0=0x00000000,     ///<Transmit FIFO0 has data for transmission.
@@ -363,7 +363,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Ier{    ///<I2S Interrupt Enable Register
-        using Addr = Register::Address<0x4002f018,0xfe000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f018,0xfe000000,0x00000000,std::uint32_t>;
         ///Enable Bit.
         enum class Tfe0enVal {
             v0=0x00000000,     ///<Corresponding status bit cannot issue interrupt.
@@ -616,7 +616,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Tcr{    ///<I2S Transmit Configuration Register
-        using Addr = Register::Address<0x4002f01c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f01c,0xfffffc00,0x00000000,std::uint32_t>;
         ///Transmit Early Frame Sync.
         enum class TefsVal {
             v0=0x00000000,     ///<Transmit frame sync initiated as the first bit of data is transmitted.
@@ -719,7 +719,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Rcr{    ///<I2S Receive Configuration Register
-        using Addr = Register::Address<0x4002f020,0xfffff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f020,0xfffff800,0x00000000,std::uint32_t>;
         ///Receive Early Frame Sync.
         enum class RefsVal {
             v0=0x00000000,     ///<Receive frame sync initiated as the first bit of data is received.
@@ -832,7 +832,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Tccr{    ///<I2S Transmit Clock Control Registers
-        using Addr = Register::Address<0x4002f024,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f024,0xfff80000,0x00000000,std::uint32_t>;
         ///Prescaler Modulus Select.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> pm{}; 
         ///Frame Rate Divider Control.
@@ -897,7 +897,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Rccr{    ///<I2S Receive Clock Control Registers
-        using Addr = Register::Address<0x4002f028,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f028,0xfff80000,0x00000000,std::uint32_t>;
         ///Prescaler Modulus Select.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> pm{}; 
         ///Frame Rate Divider Control.
@@ -962,7 +962,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Fcsr{    ///<I2S FIFO Control/Status Register
-        using Addr = Register::Address<0x4002f02c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f02c,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit FIFO Empty WaterMark 0.
         enum class Tfwm0Val {
             v0001=0x00000001,     ///<TFE set when there are more than or equal to 1 empty slots in Transmit FIFO. (default) Transmit FIFO empty is set when TxFIFO <= 14 data.
@@ -1261,7 +1261,7 @@ namespace Kvasir {
         }
     }
     namespace I2s0Acnt{    ///<I2S AC97 Control Register
-        using Addr = Register::Address<0x4002f038,0xfffff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f038,0xfffff800,0x00000000,std::uint32_t>;
         ///AC97 Mode Enable.
         enum class Ac97enVal {
             v0=0x00000000,     ///<AC97 mode disabled.
@@ -1316,42 +1316,42 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,5),Register::ReadWriteAccess,unsigned> frdiv{}; 
     }
     namespace I2s0Acadd{    ///<I2S AC97 Command Address Register
-        using Addr = Register::Address<0x4002f03c,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f03c,0xfff80000,0x00000000,std::uint32_t>;
         ///AC97 Command Address.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,0),Register::ReadWriteAccess,unsigned> acadd{}; 
     }
     namespace I2s0Acdat{    ///<I2S AC97 Command Data Register
-        using Addr = Register::Address<0x4002f040,0xfff00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f040,0xfff00000,0x00000000,std::uint32_t>;
         ///AC97 Command Data.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,0),Register::ReadWriteAccess,unsigned> acdat{}; 
     }
     namespace I2s0Atag{    ///<I2S AC97 Tag Register
-        using Addr = Register::Address<0x4002f044,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f044,0xffff0000,0x00000000,std::uint32_t>;
         ///AC97 Tag Value.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> atag{}; 
     }
     namespace I2s0Tmsk{    ///<I2S Transmit Time Slot Mask Register
-        using Addr = Register::Address<0x4002f048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f048,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Mask.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tmsk{}; 
     }
     namespace I2s0Rmsk{    ///<I2S Receive Time Slot Mask Register
-        using Addr = Register::Address<0x4002f04c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f04c,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Mask.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rmsk{}; 
     }
     namespace I2s0Accst{    ///<I2S AC97 Channel Status Register
-        using Addr = Register::Address<0x4002f050,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f050,0xfffffc00,0x00000000,std::uint32_t>;
         ///AC97 Channel Status.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> accst{}; 
     }
     namespace I2s0Accen{    ///<I2S AC97 Channel Enable Register
-        using Addr = Register::Address<0x4002f054,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f054,0xfffffc00,0x00000000,std::uint32_t>;
         ///AC97 Channel Enable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> accen{}; 
     }
     namespace I2s0Accdis{    ///<I2S AC97 Channel Disable Register
-        using Addr = Register::Address<0x4002f058,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002f058,0xfffffc00,0x00000000,std::uint32_t>;
         ///AC97 Channel Disable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> accdis{}; 
     }

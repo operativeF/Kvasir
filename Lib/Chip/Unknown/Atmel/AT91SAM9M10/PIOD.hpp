@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Parallel Input/Output Controller D
     namespace PiodPer{    ///<PIO Enable Register
-        using Addr = Register::Address<0xfffff800,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff800,0x00000000,0x00000000,std::uint32_t>;
         ///PIO Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///PIO Enable
@@ -70,7 +70,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodPdr{    ///<PIO Disable Register
-        using Addr = Register::Address<0xfffff804,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff804,0x00000000,0x00000000,std::uint32_t>;
         ///PIO Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///PIO Disable
@@ -137,7 +137,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodPsr{    ///<PIO Status Register
-        using Addr = Register::Address<0xfffff808,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff808,0x00000000,0x00000000,std::uint32_t>;
         ///PIO Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///PIO Status
@@ -204,7 +204,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodOer{    ///<Output Enable Register
-        using Addr = Register::Address<0xfffff810,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff810,0x00000000,0x00000000,std::uint32_t>;
         ///Output Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Output Enable
@@ -271,7 +271,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodOdr{    ///<Output Disable Register
-        using Addr = Register::Address<0xfffff814,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff814,0x00000000,0x00000000,std::uint32_t>;
         ///Output Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Output Disable
@@ -338,7 +338,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodOsr{    ///<Output Status Register
-        using Addr = Register::Address<0xfffff818,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff818,0x00000000,0x00000000,std::uint32_t>;
         ///Output Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Output Status
@@ -405,7 +405,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodIfer{    ///<Glitch Input Filter Enable Register
-        using Addr = Register::Address<0xfffff820,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff820,0x00000000,0x00000000,std::uint32_t>;
         ///Input Filter Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Input Filter Enable
@@ -472,7 +472,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodIfdr{    ///<Glitch Input Filter Disable Register
-        using Addr = Register::Address<0xfffff824,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff824,0x00000000,0x00000000,std::uint32_t>;
         ///Input Filter Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Input Filter Disable
@@ -539,7 +539,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodIfsr{    ///<Glitch Input Filter Status Register
-        using Addr = Register::Address<0xfffff828,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff828,0x00000000,0x00000000,std::uint32_t>;
         ///Input Filer Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Input Filer Status
@@ -606,7 +606,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodSodr{    ///<Set Output Data Register
-        using Addr = Register::Address<0xfffff830,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff830,0x00000000,0x00000000,std::uint32_t>;
         ///Set Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Set Output Data
@@ -673,7 +673,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodCodr{    ///<Clear Output Data Register
-        using Addr = Register::Address<0xfffff834,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff834,0x00000000,0x00000000,std::uint32_t>;
         ///Clear Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Clear Output Data
@@ -740,7 +740,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodOdsr{    ///<Output Data Status Register
-        using Addr = Register::Address<0xfffff838,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff838,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> p0{}; 
         ///Output Data Status
@@ -807,7 +807,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> p31{}; 
     }
     namespace PiodPdsr{    ///<Pin Data Status Register
-        using Addr = Register::Address<0xfffff83c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff83c,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Output Data Status
@@ -874,7 +874,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xfffff840,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff840,0x00000000,0x00000000,std::uint32_t>;
         ///Input Change Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Input Change Interrupt Enable
@@ -941,7 +941,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xfffff844,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff844,0x00000000,0x00000000,std::uint32_t>;
         ///Input Change Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Input Change Interrupt Disable
@@ -1008,7 +1008,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfffff848,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff848,0x00000000,0x00000000,std::uint32_t>;
         ///Input Change Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Input Change Interrupt Mask
@@ -1075,7 +1075,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0xfffff84c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff84c,0x00000000,0x00000000,std::uint32_t>;
         ///Input Change Interrupt Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Input Change Interrupt Status
@@ -1142,7 +1142,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodMder{    ///<Multi-driver Enable Register
-        using Addr = Register::Address<0xfffff850,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff850,0x00000000,0x00000000,std::uint32_t>;
         ///Multi Drive Enable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Multi Drive Enable.
@@ -1209,7 +1209,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodMddr{    ///<Multi-driver Disable Register
-        using Addr = Register::Address<0xfffff854,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff854,0x00000000,0x00000000,std::uint32_t>;
         ///Multi Drive Disable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Multi Drive Disable.
@@ -1276,7 +1276,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodMdsr{    ///<Multi-driver Status Register
-        using Addr = Register::Address<0xfffff858,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff858,0x00000000,0x00000000,std::uint32_t>;
         ///Multi Drive Status.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Multi Drive Status.
@@ -1343,7 +1343,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodPudr{    ///<Pull-up Disable Register
-        using Addr = Register::Address<0xfffff860,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff860,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Up Disable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Pull Up Disable.
@@ -1410,7 +1410,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodPuer{    ///<Pull-up Enable Register
-        using Addr = Register::Address<0xfffff864,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff864,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Up Enable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Pull Up Enable.
@@ -1477,7 +1477,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodPusr{    ///<Pad Pull-up Status Register
-        using Addr = Register::Address<0xfffff868,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff868,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Up Status.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Pull Up Status.
@@ -1544,7 +1544,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodAsr{    ///<Peripheral A Select Register
-        using Addr = Register::Address<0xfffff870,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff870,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral A Select.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Peripheral A Select.
@@ -1611,7 +1611,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodBsr{    ///<Peripheral B Select Register
-        using Addr = Register::Address<0xfffff874,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff874,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral B Select.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Peripheral B Select.
@@ -1678,7 +1678,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodAbsr{    ///<AB Status Register
-        using Addr = Register::Address<0xfffff878,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff878,0x00000000,0x00000000,std::uint32_t>;
         ///Peripheral A B Status.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Peripheral A B Status.
@@ -1745,7 +1745,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodOwer{    ///<Output Write Enable
-        using Addr = Register::Address<0xfffff8a0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8a0,0x00000000,0x00000000,std::uint32_t>;
         ///Output Write Enable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Output Write Enable.
@@ -1812,7 +1812,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodOwdr{    ///<Output Write Disable
-        using Addr = Register::Address<0xfffff8a4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8a4,0x00000000,0x00000000,std::uint32_t>;
         ///Output Write Disable.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Output Write Disable.
@@ -1879,7 +1879,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodOwsr{    ///<Output Write Status Register
-        using Addr = Register::Address<0xfffff8a8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8a8,0x00000000,0x00000000,std::uint32_t>;
         ///Output Write Status.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p0{}; 
         ///Output Write Status.
@@ -1946,21 +1946,21 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> p31{}; 
     }
     namespace PiodWpmr{    ///<Write Protect Mode Register
-        using Addr = Register::Address<0xfffff8e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protect Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpen{}; 
         ///Write Protect KEY
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpkey{}; 
     }
     namespace PiodWpsr{    ///<Write Protect Status Register
-        using Addr = Register::Address<0xfffff8e8,0xff0000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8e8,0xff0000fe,0x00000000,std::uint32_t>;
         ///Write Protect Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvs{}; 
         ///Write Protect Violation Source
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvsrc{}; 
     }
     namespace PiodDelayr0{    ///<I/O Delay Register
-        using Addr = Register::Address<0xfffff8c0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8c0,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> delay0{}; 
         ///
@@ -1979,7 +1979,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> delay7{}; 
     }
     namespace PiodDelayr1{    ///<I/O Delay Register
-        using Addr = Register::Address<0xfffff8c4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8c4,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> delay0{}; 
         ///
@@ -1998,7 +1998,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> delay7{}; 
     }
     namespace PiodDelayr2{    ///<I/O Delay Register
-        using Addr = Register::Address<0xfffff8c8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8c8,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> delay0{}; 
         ///
@@ -2017,7 +2017,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> delay7{}; 
     }
     namespace PiodDelayr3{    ///<I/O Delay Register
-        using Addr = Register::Address<0xfffff8cc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffff8cc,0x00000000,0x00000000,std::uint32_t>;
         ///
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> delay0{}; 
         ///

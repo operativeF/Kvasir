@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Flex Controller Area Network module
     namespace Can0Mcr{    ///<Module Configuration Register
-        using Addr = Register::Address<0x40024000,0x0008cc80,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024000,0x0008cc80,0x00000000,std::uint32_t>;
         ///Number of the Last Message Buffer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> maxmb{}; 
         ///ID Acceptance Mode
@@ -192,7 +192,7 @@ namespace Kvasir {
         }
     }
     namespace Can0Ctrl1{    ///<Control 1 Register
-        using Addr = Register::Address<0x40024004,0x00000300,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024004,0x00000300,0x00000000,std::uint32_t>;
         ///Propagation Segment
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> propseg{}; 
         ///Listen-Only Mode
@@ -315,34 +315,34 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> presdiv{}; 
     }
     namespace Can0Timer{    ///<Free Running Timer
-        using Addr = Register::Address<0x40024008,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024008,0xffff0000,0x00000000,std::uint32_t>;
         ///Timer value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timer{}; 
     }
     namespace Can0Rxmgmask{    ///<Rx Mailboxes Global Mask Register
-        using Addr = Register::Address<0x40024010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024010,0x00000000,0x00000000,std::uint32_t>;
         ///Rx Mailboxes Global Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mg{}; 
     }
     namespace Can0Rx14mask{    ///<Rx 14 Mask Register
-        using Addr = Register::Address<0x40024014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024014,0x00000000,0x00000000,std::uint32_t>;
         ///Rx Buffer 14 Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rx14m{}; 
     }
     namespace Can0Rx15mask{    ///<Rx 15 Mask Register
-        using Addr = Register::Address<0x40024018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024018,0x00000000,0x00000000,std::uint32_t>;
         ///Rx Buffer 15 Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rx15m{}; 
     }
     namespace Can0Ecr{    ///<Error Counter
-        using Addr = Register::Address<0x4002401c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002401c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Error Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> txerrcnt{}; 
         ///Receive Error Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> rxerrcnt{}; 
     }
     namespace Can0Esr1{    ///<Error and Status 1 Register
-        using Addr = Register::Address<0x40024020,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024020,0xfff80000,0x00000000,std::uint32_t>;
         ///Wake-Up Interrupt
         enum class WakintVal {
             v0=0x00000000,     ///<No such occurrence
@@ -527,22 +527,22 @@ namespace Kvasir {
         }
     }
     namespace Can0Imask2{    ///<Interrupt Masks 2 Register
-        using Addr = Register::Address<0x40024024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024024,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer MBi Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bufhm{}; 
     }
     namespace Can0Imask1{    ///<Interrupt Masks 1 Register
-        using Addr = Register::Address<0x40024028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024028,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer MBi Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> buflm{}; 
     }
     namespace Can0Iflag2{    ///<Interrupt Flags 2 Register
-        using Addr = Register::Address<0x4002402c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002402c,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer MBi Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bufhi{}; 
     }
     namespace Can0Iflag1{    ///<Interrupt Flags 1 Register
-        using Addr = Register::Address<0x40024030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024030,0x00000000,0x00000000,std::uint32_t>;
         ///Buffer MBi Interrupt or "reserved"
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> buf4to0i{}; 
         ///Buffer MB5 Interrupt or "Frames available in Rx FIFO"
@@ -579,7 +579,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> buf31to8i{}; 
     }
     namespace Can0Ctrl2{    ///<Control 2 Register
-        using Addr = Register::Address<0x40024034,0xe000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024034,0xe000ffff,0x00000000,std::uint32_t>;
         ///Entire Frame Arbitration Field Comparison Enable for Rx Mailboxes
         enum class EacenVal {
             v0=0x00000000,     ///<Rx Mailbox filter's IDE bit is always compared and RTR is never compared despite mask bits.
@@ -626,7 +626,7 @@ namespace Kvasir {
         }
     }
     namespace Can0Esr2{    ///<Error and Status 2 Register
-        using Addr = Register::Address<0x40024038,0xff809fff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024038,0xff809fff,0x00000000,std::uint32_t>;
         ///Inactive Mailbox
         enum class ImbVal {
             v0=0x00000000,     ///<If ESR2[VPS] is asserted, the ESR2[LPTM] is not an inactive Mailbox.
@@ -651,24 +651,24 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> lptm{}; 
     }
     namespace Can0Crcr{    ///<CRC Register
-        using Addr = Register::Address<0x40024044,0xff808000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024044,0xff808000,0x00000000,std::uint32_t>;
         ///CRC Transmitted
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcrc{}; 
         ///CRC Mailbox
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mbcrc{}; 
     }
     namespace Can0Rxfgmask{    ///<Rx FIFO Global Mask Register
-        using Addr = Register::Address<0x40024048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024048,0x00000000,0x00000000,std::uint32_t>;
         ///Rx FIFO Global Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> fgm{}; 
     }
     namespace Can0Rxfir{    ///<Rx FIFO Information Register
-        using Addr = Register::Address<0x4002404c,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002404c,0xfffffe00,0x00000000,std::uint32_t>;
         ///Identifier Acceptance Filter Hit Indicator
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idhit{}; 
     }
     namespace Can0Cs0{    ///<Message Buffer 0 CS Register
-        using Addr = Register::Address<0x40024080,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024080,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -683,7 +683,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id0{    ///<Message Buffer 0 ID Register
-        using Addr = Register::Address<0x40024084,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024084,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -692,7 +692,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word00{    ///<Message Buffer 0 WORD0 Register
-        using Addr = Register::Address<0x40024088,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024088,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -703,7 +703,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word10{    ///<Message Buffer 0 WORD1 Register
-        using Addr = Register::Address<0x4002408c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002408c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -714,7 +714,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs1{    ///<Message Buffer 1 CS Register
-        using Addr = Register::Address<0x40024090,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024090,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -729,7 +729,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id1{    ///<Message Buffer 1 ID Register
-        using Addr = Register::Address<0x40024094,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024094,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -738,7 +738,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word01{    ///<Message Buffer 1 WORD0 Register
-        using Addr = Register::Address<0x40024098,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024098,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -749,7 +749,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word11{    ///<Message Buffer 1 WORD1 Register
-        using Addr = Register::Address<0x4002409c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002409c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -760,7 +760,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs2{    ///<Message Buffer 2 CS Register
-        using Addr = Register::Address<0x400240a0,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240a0,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -775,7 +775,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id2{    ///<Message Buffer 2 ID Register
-        using Addr = Register::Address<0x400240a4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240a4,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -784,7 +784,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word02{    ///<Message Buffer 2 WORD0 Register
-        using Addr = Register::Address<0x400240a8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240a8,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -795,7 +795,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word12{    ///<Message Buffer 2 WORD1 Register
-        using Addr = Register::Address<0x400240ac,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240ac,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -806,7 +806,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs3{    ///<Message Buffer 3 CS Register
-        using Addr = Register::Address<0x400240b0,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240b0,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -821,7 +821,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id3{    ///<Message Buffer 3 ID Register
-        using Addr = Register::Address<0x400240b4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240b4,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -830,7 +830,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word03{    ///<Message Buffer 3 WORD0 Register
-        using Addr = Register::Address<0x400240b8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240b8,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -841,7 +841,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word13{    ///<Message Buffer 3 WORD1 Register
-        using Addr = Register::Address<0x400240bc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240bc,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -852,7 +852,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs4{    ///<Message Buffer 4 CS Register
-        using Addr = Register::Address<0x400240c0,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240c0,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -867,7 +867,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id4{    ///<Message Buffer 4 ID Register
-        using Addr = Register::Address<0x400240c4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240c4,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -876,7 +876,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word04{    ///<Message Buffer 4 WORD0 Register
-        using Addr = Register::Address<0x400240c8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240c8,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -887,7 +887,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word14{    ///<Message Buffer 4 WORD1 Register
-        using Addr = Register::Address<0x400240cc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240cc,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -898,7 +898,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs5{    ///<Message Buffer 5 CS Register
-        using Addr = Register::Address<0x400240d0,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240d0,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -913,7 +913,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id5{    ///<Message Buffer 5 ID Register
-        using Addr = Register::Address<0x400240d4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240d4,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -922,7 +922,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word05{    ///<Message Buffer 5 WORD0 Register
-        using Addr = Register::Address<0x400240d8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240d8,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -933,7 +933,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word15{    ///<Message Buffer 5 WORD1 Register
-        using Addr = Register::Address<0x400240dc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240dc,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -944,7 +944,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs6{    ///<Message Buffer 6 CS Register
-        using Addr = Register::Address<0x400240e0,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240e0,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -959,7 +959,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id6{    ///<Message Buffer 6 ID Register
-        using Addr = Register::Address<0x400240e4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240e4,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -968,7 +968,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word06{    ///<Message Buffer 6 WORD0 Register
-        using Addr = Register::Address<0x400240e8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240e8,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -979,7 +979,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word16{    ///<Message Buffer 6 WORD1 Register
-        using Addr = Register::Address<0x400240ec,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240ec,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -990,7 +990,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs7{    ///<Message Buffer 7 CS Register
-        using Addr = Register::Address<0x400240f0,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240f0,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1005,7 +1005,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id7{    ///<Message Buffer 7 ID Register
-        using Addr = Register::Address<0x400240f4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240f4,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1014,7 +1014,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word07{    ///<Message Buffer 7 WORD0 Register
-        using Addr = Register::Address<0x400240f8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240f8,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1025,7 +1025,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word17{    ///<Message Buffer 7 WORD1 Register
-        using Addr = Register::Address<0x400240fc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400240fc,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1036,7 +1036,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs8{    ///<Message Buffer 8 CS Register
-        using Addr = Register::Address<0x40024100,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024100,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1051,7 +1051,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id8{    ///<Message Buffer 8 ID Register
-        using Addr = Register::Address<0x40024104,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024104,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1060,7 +1060,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word08{    ///<Message Buffer 8 WORD0 Register
-        using Addr = Register::Address<0x40024108,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024108,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1071,7 +1071,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word18{    ///<Message Buffer 8 WORD1 Register
-        using Addr = Register::Address<0x4002410c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002410c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1082,7 +1082,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs9{    ///<Message Buffer 9 CS Register
-        using Addr = Register::Address<0x40024110,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024110,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1097,7 +1097,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id9{    ///<Message Buffer 9 ID Register
-        using Addr = Register::Address<0x40024114,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024114,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1106,7 +1106,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word09{    ///<Message Buffer 9 WORD0 Register
-        using Addr = Register::Address<0x40024118,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024118,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1117,7 +1117,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word19{    ///<Message Buffer 9 WORD1 Register
-        using Addr = Register::Address<0x4002411c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002411c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1128,7 +1128,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs10{    ///<Message Buffer 10 CS Register
-        using Addr = Register::Address<0x40024120,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024120,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1143,7 +1143,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id10{    ///<Message Buffer 10 ID Register
-        using Addr = Register::Address<0x40024124,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024124,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1152,7 +1152,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word010{    ///<Message Buffer 10 WORD0 Register
-        using Addr = Register::Address<0x40024128,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024128,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1163,7 +1163,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word110{    ///<Message Buffer 10 WORD1 Register
-        using Addr = Register::Address<0x4002412c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002412c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1174,7 +1174,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs11{    ///<Message Buffer 11 CS Register
-        using Addr = Register::Address<0x40024130,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024130,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1189,7 +1189,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id11{    ///<Message Buffer 11 ID Register
-        using Addr = Register::Address<0x40024134,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024134,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1198,7 +1198,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word011{    ///<Message Buffer 11 WORD0 Register
-        using Addr = Register::Address<0x40024138,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024138,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1209,7 +1209,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word111{    ///<Message Buffer 11 WORD1 Register
-        using Addr = Register::Address<0x4002413c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002413c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1220,7 +1220,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs12{    ///<Message Buffer 12 CS Register
-        using Addr = Register::Address<0x40024140,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024140,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1235,7 +1235,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id12{    ///<Message Buffer 12 ID Register
-        using Addr = Register::Address<0x40024144,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024144,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1244,7 +1244,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word012{    ///<Message Buffer 12 WORD0 Register
-        using Addr = Register::Address<0x40024148,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024148,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1255,7 +1255,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word112{    ///<Message Buffer 12 WORD1 Register
-        using Addr = Register::Address<0x4002414c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002414c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1266,7 +1266,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs13{    ///<Message Buffer 13 CS Register
-        using Addr = Register::Address<0x40024150,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024150,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1281,7 +1281,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id13{    ///<Message Buffer 13 ID Register
-        using Addr = Register::Address<0x40024154,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024154,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1290,7 +1290,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word013{    ///<Message Buffer 13 WORD0 Register
-        using Addr = Register::Address<0x40024158,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024158,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1301,7 +1301,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word113{    ///<Message Buffer 13 WORD1 Register
-        using Addr = Register::Address<0x4002415c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002415c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1312,7 +1312,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs14{    ///<Message Buffer 14 CS Register
-        using Addr = Register::Address<0x40024160,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024160,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1327,7 +1327,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id14{    ///<Message Buffer 14 ID Register
-        using Addr = Register::Address<0x40024164,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024164,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1336,7 +1336,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word014{    ///<Message Buffer 14 WORD0 Register
-        using Addr = Register::Address<0x40024168,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024168,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1347,7 +1347,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word114{    ///<Message Buffer 14 WORD1 Register
-        using Addr = Register::Address<0x4002416c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002416c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1358,7 +1358,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Cs15{    ///<Message Buffer 15 CS Register
-        using Addr = Register::Address<0x40024170,0xf0800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024170,0xf0800000,0x00000000,std::uint32_t>;
         ///Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> timeStamp{}; 
         ///Length of the data to be stored/transmitted.
@@ -1373,7 +1373,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> code{}; 
     }
     namespace Can0Id15{    ///<Message Buffer 15 ID Register
-        using Addr = Register::Address<0x40024174,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024174,0x00000000,0x00000000,std::uint32_t>;
         ///Contains extended (LOW word) identifier of message buffer.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,0),Register::ReadWriteAccess,unsigned> ext{}; 
         ///Contains standard/extended (HIGH word) identifier of message buffer.
@@ -1382,7 +1382,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,29),Register::ReadWriteAccess,unsigned> prio{}; 
     }
     namespace Can0Word015{    ///<Message Buffer 15 WORD0 Register
-        using Addr = Register::Address<0x40024178,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024178,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 3 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte3{}; 
         ///Data byte 2 of Rx/Tx frame.
@@ -1393,7 +1393,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte0{}; 
     }
     namespace Can0Word115{    ///<Message Buffer 15 WORD1 Register
-        using Addr = Register::Address<0x4002417c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002417c,0x00000000,0x00000000,std::uint32_t>;
         ///Data byte 7 of Rx/Tx frame.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dataByte7{}; 
         ///Data byte 6 of Rx/Tx frame.
@@ -1404,82 +1404,82 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dataByte4{}; 
     }
     namespace Can0Rximr0{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x40024880,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024880,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr1{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x40024884,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024884,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr2{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x40024888,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024888,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr3{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x4002488c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002488c,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr4{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x40024890,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024890,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr5{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x40024894,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024894,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr6{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x40024898,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024898,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr7{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x4002489c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002489c,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr8{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248a0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248a0,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr9{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248a4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248a4,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr10{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248a8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248a8,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr11{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248ac,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248ac,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr12{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248b0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248b0,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr13{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248b4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248b4,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr14{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248b8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248b8,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }
     namespace Can0Rximr15{    ///<Rx Individual Mask Registers
-        using Addr = Register::Address<0x400248bc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400248bc,0x00000000,0x00000000,std::uint32_t>;
         ///Individual Mask Bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mi{}; 
     }

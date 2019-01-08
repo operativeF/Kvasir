@@ -3,7 +3,7 @@
 namespace Kvasir {
 //High Resolution Timer: Common      functions
     namespace HrtimCommonCr1{    ///<Control Register 1
-        using Addr = Register::Address<0x40017780,0xf000ffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40017780,0xf000ffc0,0x00000000,std::uint32_t>;
         ///ADC Trigger 4 Update              Source
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,25),Register::ReadWriteAccess,unsigned> ad4usrc{}; 
         ///ADC Trigger 3 Update              Source
@@ -26,7 +26,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mudis{}; 
     }
     namespace HrtimCommonCr2{    ///<Control Register 2
-        using Addr = Register::Address<0x40017784,0xffffc0c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40017784,0xffffc0c0,0x00000000,std::uint32_t>;
         ///Timer E counter software              reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> terst{}; 
         ///Timer D counter software              reset
@@ -53,7 +53,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mswu{}; 
     }
     namespace HrtimCommonIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0x40017788,0xfffcffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40017788,0xfffcffc0,0x00000000,std::uint32_t>;
         ///Burst mode Period Interrupt              Flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bmper{}; 
         ///DLL Ready Interrupt Flag
@@ -72,7 +72,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> flt1{}; 
     }
     namespace HrtimCommonIcr{    ///<Interrupt Clear Register
-        using Addr = Register::Address<0x4001778c,0xfffcffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001778c,0xfffcffc0,0x00000000,std::uint32_t>;
         ///Burst mode period flag              Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bmperc{}; 
         ///DLL Ready Interrupt flag              Clear
@@ -91,7 +91,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> flt1c{}; 
     }
     namespace HrtimCommonIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x40017790,0xfffcffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40017790,0xfffcffc0,0x00000000,std::uint32_t>;
         ///Burst mode period Interrupt              Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::ReadWriteAccess,unsigned> bmperie{}; 
         ///DLL Ready Interrupt Enable
@@ -110,7 +110,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> flt1ie{}; 
     }
     namespace HrtimCommonOenr{    ///<Output Enable Register
-        using Addr = Register::Address<0x40017794,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40017794,0xfffffc00,0x00000000,std::uint32_t>;
         ///Timer E Output 2 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> te2oen{}; 
         ///Timer E Output 1 Enable
@@ -133,7 +133,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ta1oen{}; 
     }
     namespace HrtimCommonDisr{    ///<DISR
-        using Addr = Register::Address<0x40017798,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40017798,0xfffffc00,0x00000000,std::uint32_t>;
         ///TE2ODIS
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> te2odis{}; 
         ///TE1ODIS
@@ -156,7 +156,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ta1odis{}; 
     }
     namespace HrtimCommonOdsr{    ///<Output Disable Status Register
-        using Addr = Register::Address<0x4001779c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001779c,0xfffffc00,0x00000000,std::uint32_t>;
         ///Timer E Output 2 disable              status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> te2ods{}; 
         ///Timer E Output 1 disable              status
@@ -179,7 +179,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ta1ods{}; 
     }
     namespace HrtimCommonBmcr{    ///<Burst Mode Control Register
-        using Addr = Register::Address<0x400177a0,0x7fc0f800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177a0,0x7fc0f800,0x00000000,std::uint32_t>;
         ///Burst Mode Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> bmstat{}; 
         ///Timer E Burst Mode
@@ -206,7 +206,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> bme{}; 
     }
     namespace HrtimCommonBmtrg{    ///<BMTRG
-        using Addr = Register::Address<0x400177a4,0x78000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177a4,0x78000000,0x00000000,std::uint32_t>;
         ///OCHPEV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ochpev{}; 
         ///TECMP2
@@ -265,17 +265,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> sw{}; 
     }
     namespace HrtimCommonBmcmpr6{    ///<BMCMPR6
-        using Addr = Register::Address<0x400177a8,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177a8,0xffff0000,0x00000000,std::uint32_t>;
         ///BMCMP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> bmcmp{}; 
     }
     namespace HrtimCommonBmper{    ///<Burst Mode Period Register
-        using Addr = Register::Address<0x400177ac,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177ac,0xffff0000,0x00000000,std::uint32_t>;
         ///Burst mode Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> bmper{}; 
     }
     namespace HrtimCommonEecr1{    ///<Timer External Event Control Register          1
-        using Addr = Register::Address<0x400177b0,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177b0,0xc0000000,0x00000000,std::uint32_t>;
         ///External Event 5 Fast mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,29),Register::ReadWriteAccess,unsigned> ee5fast{}; 
         ///External Event 5              Sensitivity
@@ -318,7 +318,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> ee1src{}; 
     }
     namespace HrtimCommonEecr2{    ///<Timer External Event Control Register          2
-        using Addr = Register::Address<0x400177b4,0xe0820820,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177b4,0xe0820820,0x00000000,std::uint32_t>;
         ///External Event 10              Sensitivity
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(28,27),Register::ReadWriteAccess,unsigned> ee10sns{}; 
         ///External Event 10 Polarity
@@ -351,7 +351,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> ee6src{}; 
     }
     namespace HrtimCommonEecr3{    ///<Timer External Event Control Register          3
-        using Addr = Register::Address<0x400177b8,0xe0820820,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177b8,0xe0820820,0x00000000,std::uint32_t>;
         ///EE10SNS
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(28,27),Register::ReadWriteAccess,unsigned> ee10sns{}; 
         ///EE10POL
@@ -384,7 +384,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> ee6src{}; 
     }
     namespace HrtimCommonAdc1r{    ///<ADC Trigger 1 Register
-        using Addr = Register::Address<0x400177bc,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177bc,0x00000000,0x00000000,std::uint32_t>;
         ///ADC trigger 1 on Timer E              Period
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ad1teper{}; 
         ///ADC trigger 1 on Timer E compare              4
@@ -451,7 +451,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ad1mc1{}; 
     }
     namespace HrtimCommonAdc2r{    ///<ADC Trigger 2 Register
-        using Addr = Register::Address<0x400177c0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177c0,0x00000000,0x00000000,std::uint32_t>;
         ///ADC trigger 2 on Timer E              Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ad2terst{}; 
         ///ADC trigger 2 on Timer E compare              4
@@ -518,7 +518,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ad2mc1{}; 
     }
     namespace HrtimCommonAdc3r{    ///<ADC Trigger 3 Register
-        using Addr = Register::Address<0x400177c4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177c4,0x00000000,0x00000000,std::uint32_t>;
         ///AD1TEPER
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ad1teper{}; 
         ///AD1TEC4
@@ -585,7 +585,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ad1mc1{}; 
     }
     namespace HrtimCommonAdc4r{    ///<ADC Trigger 4 Register
-        using Addr = Register::Address<0x400177c8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177c8,0x00000000,0x00000000,std::uint32_t>;
         ///AD2TERST
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ad2terst{}; 
         ///AD2TEC4
@@ -652,7 +652,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ad2mc1{}; 
     }
     namespace HrtimCommonDllcr{    ///<DLL Control Register
-        using Addr = Register::Address<0x400177cc,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177cc,0xfffffff0,0x00000000,std::uint32_t>;
         ///DLL Calibration rate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,2),Register::ReadWriteAccess,unsigned> calrte{}; 
         ///DLL Calibration Enable
@@ -661,7 +661,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cal{}; 
     }
     namespace HrtimCommonFltinr1{    ///<HRTIM Fault Input Register 1
-        using Addr = Register::Address<0x400177d0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177d0,0x00000000,0x00000000,std::uint32_t>;
         ///FLT4LCK
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> flt4lck{}; 
         ///FLT4F
@@ -704,7 +704,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> flt1e{}; 
     }
     namespace HrtimCommonFltinr2{    ///<HRTIM Fault Input Register 2
-        using Addr = Register::Address<0x400177d4,0xfcffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177d4,0xfcffff00,0x00000000,std::uint32_t>;
         ///FLTSD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,24),Register::ReadWriteAccess,unsigned> fltsd{}; 
         ///FLT5LCK
@@ -719,7 +719,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> flt5e{}; 
     }
     namespace HrtimCommonBdmupdr{    ///<BDMUPDR
-        using Addr = Register::Address<0x400177d8,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177d8,0xfffffc00,0x00000000,std::uint32_t>;
         ///MCMP4
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> mcmp4{}; 
         ///MCMP3
@@ -742,7 +742,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mcr{}; 
     }
     namespace HrtimCommonBdtxupr{    ///<Burst DMA Timerx update          Register
-        using Addr = Register::Address<0x400177dc,0xffe00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177dc,0xffe00000,0x00000000,std::uint32_t>;
         ///HRTIM_FLTxR register update              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> timxfltr{}; 
         ///HRTIM_OUTxR register update              enable
@@ -787,7 +787,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> timxcr{}; 
     }
     namespace HrtimCommonBdmadr{    ///<Burst DMA Data Register
-        using Addr = Register::Address<0x400177e0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400177e0,0x00000000,0x00000000,std::uint32_t>;
         ///Burst DMA Data register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> bdmadr{}; 
     }

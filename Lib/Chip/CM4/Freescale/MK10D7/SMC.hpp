@@ -3,7 +3,7 @@
 namespace Kvasir {
 //System Mode Controller
     namespace SmcPmprot{    ///<Power Mode Protection Register
-        using Addr = Register::Address<0x4007e000,0xffffffd5,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e000,0xffffffd5,0x00000000,std::uint8_t>;
         ///Allow very low leakage stop mode
         enum class AvllsVal {
             v0=0x00000000,     ///<Any VLLSx mode is not allowed
@@ -36,7 +36,7 @@ namespace Kvasir {
         }
     }
     namespace SmcPmctrl{    ///<Power Mode Control Register
-        using Addr = Register::Address<0x4007e001,0xffffff90,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e001,0xffffff90,0x00000000,std::uint8_t>;
         ///Stop Mode Control
         enum class StopmVal {
             v000=0x00000000,     ///<Normal stop (STOP)
@@ -75,12 +75,12 @@ namespace Kvasir {
         }
     }
     namespace SmcVllsctrl{    ///<VLLS Control Register
-        using Addr = Register::Address<0x4007e002,0xfffffff8,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e002,0xfffffff8,0x00000000,std::uint8_t>;
         ///VLLS Mode Control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> vllsm{}; 
     }
     namespace SmcPmstat{    ///<Power Mode Status Register
-        using Addr = Register::Address<0x4007e003,0xffffff80,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007e003,0xffffff80,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pmstat{}; 
     }

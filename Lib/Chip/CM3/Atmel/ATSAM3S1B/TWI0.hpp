@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Two-wire Interface 0
     namespace Twi0Cr{    ///<Control Register
-        using Addr = Register::Address<0x40018000,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018000,0xffffff00,0x00000000,std::uint32_t>;
         ///Send a START Condition
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> start{}; 
         ///Send a STOP Condition
@@ -22,7 +22,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
     }
     namespace Twi0Mmr{    ///<Master Mode Register
-        using Addr = Register::Address<0x40018004,0xff80ecff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018004,0xff80ecff,0x00000000,std::uint32_t>;
         ///Internal Device Address Size
         enum class IadrszVal {
             none=0x00000000,     ///<No internal device address
@@ -43,17 +43,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,16),Register::ReadWriteAccess,unsigned> dadr{}; 
     }
     namespace Twi0Smr{    ///<Slave Mode Register
-        using Addr = Register::Address<0x40018008,0xff80ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018008,0xff80ffff,0x00000000,std::uint32_t>;
         ///Slave Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,16),Register::ReadWriteAccess,unsigned> sadr{}; 
     }
     namespace Twi0Iadr{    ///<Internal Address Register
-        using Addr = Register::Address<0x4001800c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001800c,0xff000000,0x00000000,std::uint32_t>;
         ///Internal Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> iadr{}; 
     }
     namespace Twi0Cwgr{    ///<Clock Waveform Generator Register
-        using Addr = Register::Address<0x40018010,0xfff80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018010,0xfff80000,0x00000000,std::uint32_t>;
         ///Clock Low Divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> cldiv{}; 
         ///Clock High Divider
@@ -62,7 +62,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,16),Register::ReadWriteAccess,unsigned> ckdiv{}; 
     }
     namespace Twi0Sr{    ///<Status Register
-        using Addr = Register::Address<0x40018020,0xffff0080,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018020,0xffff0080,0x00000000,std::uint32_t>;
         ///Transmission Completed (automatically set / reset)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready (automatically set / reset)
@@ -95,7 +95,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txbufe{}; 
     }
     namespace Twi0Ier{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x40018024,0xffff0088,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018024,0xffff0088,0x00000000,std::uint32_t>;
         ///Transmission Completed Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready Interrupt Enable
@@ -126,7 +126,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txbufe{}; 
     }
     namespace Twi0Idr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0x40018028,0xffff0088,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018028,0xffff0088,0x00000000,std::uint32_t>;
         ///Transmission Completed Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready Interrupt Disable
@@ -157,7 +157,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txbufe{}; 
     }
     namespace Twi0Imr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0x4001802c,0xffff0088,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001802c,0xffff0088,0x00000000,std::uint32_t>;
         ///Transmission Completed Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txcomp{}; 
         ///Receive Holding Register Ready Interrupt Mask
@@ -188,57 +188,57 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txbufe{}; 
     }
     namespace Twi0Rhr{    ///<Receive Holding Register
-        using Addr = Register::Address<0x40018030,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018030,0xffffff00,0x00000000,std::uint32_t>;
         ///Master or Slave Receive Holding Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxdata{}; 
     }
     namespace Twi0Thr{    ///<Transmit Holding Register
-        using Addr = Register::Address<0x40018034,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018034,0xffffff00,0x00000000,std::uint32_t>;
         ///Master or Slave Transmit Holding Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txdata{}; 
     }
     namespace Twi0Rpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0x40018100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018100,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace Twi0Rcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0x40018104,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018104,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace Twi0Tpr{    ///<Transmit Pointer Register
-        using Addr = Register::Address<0x40018108,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018108,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txptr{}; 
     }
     namespace Twi0Tcr{    ///<Transmit Counter Register
-        using Addr = Register::Address<0x4001810c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001810c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txctr{}; 
     }
     namespace Twi0Rnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0x40018110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018110,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace Twi0Rncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0x40018114,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018114,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace Twi0Tnpr{    ///<Transmit Next Pointer Register
-        using Addr = Register::Address<0x40018118,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018118,0x00000000,0x00000000,std::uint32_t>;
         ///Transmit Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> txnptr{}; 
     }
     namespace Twi0Tncr{    ///<Transmit Next Counter Register
-        using Addr = Register::Address<0x4001811c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001811c,0xffff0000,0x00000000,std::uint32_t>;
         ///Transmit Counter Next
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> txnctr{}; 
     }
     namespace Twi0Ptcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0x40018120,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018120,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -249,7 +249,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace Twi0Ptsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0x40018124,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40018124,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable

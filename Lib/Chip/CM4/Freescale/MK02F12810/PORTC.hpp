@@ -3,26 +3,26 @@
 namespace Kvasir {
 //Pin Control and Interrupts
     namespace PortcGpclr{    ///<Global Pin Control Low Register
-        using Addr = Register::Address<0x4004b080,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b080,0x00000000,0x00000000,std::uint32_t>;
         ///Global Pin Write Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
         ///Global Pin Write Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
     }
     namespace PortcGpchr{    ///<Global Pin Control High Register
-        using Addr = Register::Address<0x4004b084,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b084,0x00000000,0x00000000,std::uint32_t>;
         ///Global Pin Write Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
         ///Global Pin Write Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
     }
     namespace PortcIsfr{    ///<Interrupt Status Flag Register
-        using Addr = Register::Address<0x4004b0a0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b0a0,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Status Flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> isf{}; 
     }
     namespace PortcPcr0{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b000,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b000,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -151,7 +151,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr1{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b004,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b004,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -280,7 +280,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr2{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b008,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b008,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -409,7 +409,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr3{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b00c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b00c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -538,7 +538,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr4{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b010,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b010,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -667,7 +667,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr5{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b014,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b014,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -796,7 +796,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr6{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b018,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b018,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -925,7 +925,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr7{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b01c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b01c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1054,7 +1054,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr8{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b020,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b020,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1183,7 +1183,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr9{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b024,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b024,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1312,7 +1312,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr10{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b028,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b028,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1441,7 +1441,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr11{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b02c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b02c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1570,7 +1570,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr12{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b030,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b030,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1699,7 +1699,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr13{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b034,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b034,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1828,7 +1828,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr14{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b038,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b038,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -1957,7 +1957,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr15{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b03c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b03c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2086,7 +2086,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr16{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b040,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b040,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2215,7 +2215,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr17{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b044,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b044,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2344,7 +2344,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr18{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b048,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b048,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2473,7 +2473,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr19{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b04c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b04c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2602,7 +2602,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr20{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b050,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b050,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2731,7 +2731,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr21{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b054,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b054,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2860,7 +2860,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr22{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b058,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b058,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -2989,7 +2989,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr23{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b05c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b05c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -3118,7 +3118,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr24{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b060,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b060,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -3247,7 +3247,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr25{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b064,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b064,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -3376,7 +3376,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr26{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b068,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b068,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -3505,7 +3505,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr27{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b06c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b06c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -3634,7 +3634,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr28{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b070,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b070,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -3763,7 +3763,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr29{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b074,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b074,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -3892,7 +3892,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr30{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b078,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b078,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.
@@ -4021,7 +4021,7 @@ namespace Kvasir {
         }
     }
     namespace PortcPcr31{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004b07c,0xfef07888,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004b07c,0xfef07888,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding PE field is set.

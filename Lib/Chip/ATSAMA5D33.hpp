@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/Atmel/ATSAMA5D33/SMD.hpp>
 #include <Chip/Unknown/Atmel/ATSAMA5D33/AXIMX.hpp>
 #include <Chip/Unknown/Atmel/ATSAMA5D33/HSMCI0.hpp>

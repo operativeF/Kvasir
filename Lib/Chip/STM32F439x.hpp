@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32F439x/RNG.hpp>
 #include <Chip/Unknown/STMicro/STM32F439x/HASH.hpp>
 #include <Chip/Unknown/STMicro/STM32F439x/CRYP.hpp>

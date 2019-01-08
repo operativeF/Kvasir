@@ -3,7 +3,7 @@
 namespace Kvasir {
 //DMA2D controller
     namespace Dma2dCr{    ///<control register
-        using Addr = Register::Address<0x4002b000,0xfffcc0f8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b000,0xfffcc0f8,0x00000000,std::uint32_t>;
         ///DMA2D mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,16),Register::ReadWriteAccess,unsigned> mode{}; 
         ///Configuration Error Interrupt              Enable
@@ -26,7 +26,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> start{}; 
     }
     namespace Dma2dIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0x4002b004,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b004,0xffffffc0,0x00000000,std::uint32_t>;
         ///Configuration error interrupt              flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,unsigned> ceif{}; 
         ///CLUT transfer complete interrupt              flag
@@ -41,7 +41,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> teif{}; 
     }
     namespace Dma2dIfcr{    ///<interrupt flag clear register
-        using Addr = Register::Address<0x4002b008,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b008,0xffffffc0,0x00000000,std::uint32_t>;
         ///Clear configuration error interrupt              flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,unsigned> cceif{}; 
         ///Clear CLUT transfer complete interrupt              flag
@@ -56,27 +56,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cteif{}; 
     }
     namespace Dma2dFgmar{    ///<foreground memory address          register
-        using Addr = Register::Address<0x4002b00c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b00c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma2dFgor{    ///<foreground offset register
-        using Addr = Register::Address<0x4002b010,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b010,0xffffc000,0x00000000,std::uint32_t>;
         ///Line offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> lo{}; 
     }
     namespace Dma2dBgmar{    ///<background memory address          register
-        using Addr = Register::Address<0x4002b014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b014,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma2dBgor{    ///<background offset register
-        using Addr = Register::Address<0x4002b018,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b018,0xffffc000,0x00000000,std::uint32_t>;
         ///Line offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> lo{}; 
     }
     namespace Dma2dFgpfccr{    ///<foreground PFC control          register
-        using Addr = Register::Address<0x4002b01c,0x00fc00c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b01c,0x00fc00c0,0x00000000,std::uint32_t>;
         ///Alpha value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> alpha{}; 
         ///Alpha mode
@@ -91,7 +91,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> cm{}; 
     }
     namespace Dma2dFgcolr{    ///<foreground color register
-        using Addr = Register::Address<0x4002b020,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b020,0xff000000,0x00000000,std::uint32_t>;
         ///Red Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> red{}; 
         ///Green Value
@@ -100,7 +100,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> blue{}; 
     }
     namespace Dma2dBgpfccr{    ///<background PFC control          register
-        using Addr = Register::Address<0x4002b024,0x00fc00c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b024,0x00fc00c0,0x00000000,std::uint32_t>;
         ///Alpha value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> alpha{}; 
         ///Alpha mode
@@ -115,7 +115,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> cm{}; 
     }
     namespace Dma2dBgcolr{    ///<background color register
-        using Addr = Register::Address<0x4002b028,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b028,0xff000000,0x00000000,std::uint32_t>;
         ///Red Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> red{}; 
         ///Green Value
@@ -124,22 +124,22 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> blue{}; 
     }
     namespace Dma2dFgcmar{    ///<foreground CLUT memory address          register
-        using Addr = Register::Address<0x4002b02c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b02c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma2dBgcmar{    ///<background CLUT memory address          register
-        using Addr = Register::Address<0x4002b030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b030,0x00000000,0x00000000,std::uint32_t>;
         ///Memory address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma2dOpfccr{    ///<output PFC control register
-        using Addr = Register::Address<0x4002b034,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b034,0xfffffff8,0x00000000,std::uint32_t>;
         ///Color mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> cm{}; 
     }
     namespace Dma2dOcolr{    ///<output color register
-        using Addr = Register::Address<0x4002b038,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b038,0x00000000,0x00000000,std::uint32_t>;
         ///Alpha Channel Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> aplha{}; 
         ///Red Value
@@ -150,36 +150,36 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> blue{}; 
     }
     namespace Dma2dOmar{    ///<output memory address register
-        using Addr = Register::Address<0x4002b03c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b03c,0x00000000,0x00000000,std::uint32_t>;
         ///Memory Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> ma{}; 
     }
     namespace Dma2dOor{    ///<output offset register
-        using Addr = Register::Address<0x4002b040,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b040,0xffffc000,0x00000000,std::uint32_t>;
         ///Line Offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> lo{}; 
     }
     namespace Dma2dNlr{    ///<number of line register
-        using Addr = Register::Address<0x4002b044,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b044,0xc0000000,0x00000000,std::uint32_t>;
         ///Pixel per lines
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,16),Register::ReadWriteAccess,unsigned> pl{}; 
         ///Number of lines
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> nl{}; 
     }
     namespace Dma2dLwr{    ///<line watermark register
-        using Addr = Register::Address<0x4002b048,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b048,0xffff0000,0x00000000,std::uint32_t>;
         ///Line watermark
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> lw{}; 
     }
     namespace Dma2dAmtcr{    ///<AHB master timer configuration          register
-        using Addr = Register::Address<0x4002b04c,0xffff00fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b04c,0xffff00fe,0x00000000,std::uint32_t>;
         ///Dead Time
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> dt{}; 
         ///Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace Dma2dFgclut{    ///<FGCLUT
-        using Addr = Register::Address<0x4002b400,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b400,0x00000000,0x00000000,std::uint32_t>;
         ///APLHA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> aplha{}; 
         ///RED
@@ -190,7 +190,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> blue{}; 
     }
     namespace Dma2dBgclut{    ///<BGCLUT
-        using Addr = Register::Address<0x4002b800,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002b800,0x00000000,0x00000000,std::uint32_t>;
         ///APLHA
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> aplha{}; 
         ///RED

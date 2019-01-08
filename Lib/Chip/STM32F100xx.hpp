@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32F100xx/FSMC.hpp>
 #include <Chip/Unknown/STMicro/STM32F100xx/PWR.hpp>
 #include <Chip/Unknown/STMicro/STM32F100xx/RCC.hpp>

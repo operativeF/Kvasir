@@ -3,22 +3,22 @@
 namespace Kvasir {
 //Secure Real Time Clock
     namespace RtcTsr{    ///<RTC Time Seconds Register
-        using Addr = Register::Address<0x4003d000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d000,0x00000000,0x00000000,std::uint32_t>;
         ///Time Seconds Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tsr{}; 
     }
     namespace RtcTpr{    ///<RTC Time Prescaler Register
-        using Addr = Register::Address<0x4003d004,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d004,0xffff0000,0x00000000,std::uint32_t>;
         ///Time Prescaler Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> tpr{}; 
     }
     namespace RtcTar{    ///<RTC Time Alarm Register
-        using Addr = Register::Address<0x4003d008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d008,0x00000000,0x00000000,std::uint32_t>;
         ///Time Alarm Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tar{}; 
     }
     namespace RtcTcr{    ///<RTC Time Compensation Register
-        using Addr = Register::Address<0x4003d00c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d00c,0x00000000,0x00000000,std::uint32_t>;
         ///Time Compensation Register
         enum class TcrVal {
             v10000000=0x00000080,     ///<Time Prescaler Register overflows every 32896 clock cycles.
@@ -43,7 +43,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cic{}; 
     }
     namespace RtcCr{    ///<RTC Control Register
-        using Addr = Register::Address<0x4003d010,0xffffc0f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d010,0xffffc0f0,0x00000000,std::uint32_t>;
         ///Software Reset
         enum class SwrVal {
             v0=0x00000000,     ///<No effect.
@@ -146,7 +146,7 @@ namespace Kvasir {
         }
     }
     namespace RtcSr{    ///<RTC Status Register
-        using Addr = Register::Address<0x4003d014,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d014,0xffffffe0,0x00000000,std::uint32_t>;
         ///Time Invalid Flag
         enum class TifVal {
             v0=0x00000000,     ///<Time is valid.
@@ -199,7 +199,7 @@ namespace Kvasir {
         }
     }
     namespace RtcLr{    ///<RTC Lock Register
-        using Addr = Register::Address<0x4003d018,0xfffff087,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d018,0xfffff087,0x00000000,std::uint32_t>;
         ///Time Compensation Lock
         enum class TclVal {
             v0=0x00000000,     ///<Time Compensation Register is locked and writes are ignored.
@@ -282,7 +282,7 @@ namespace Kvasir {
         }
     }
     namespace RtcIer{    ///<RTC Interrupt Enable Register
-        using Addr = Register::Address<0x4003d01c,0xffffff60,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d01c,0xffffff60,0x00000000,std::uint32_t>;
         ///Time Invalid Interrupt Enable
         enum class TiieVal {
             v0=0x00000000,     ///<Time invalid flag does not generate an interrupt.
@@ -345,12 +345,12 @@ namespace Kvasir {
         }
     }
     namespace RtcTtsr{    ///<RTC Tamper Time Seconds Register
-        using Addr = Register::Address<0x4003d020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d020,0x00000000,0x00000000,std::uint32_t>;
         ///Tamper Time Seconds
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> tts{}; 
     }
     namespace RtcMer{    ///<RTC Monotonic Enable Register
-        using Addr = Register::Address<0x4003d024,0xffffffef,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d024,0xffffffef,0x00000000,std::uint32_t>;
         ///Monotonic Counter Enable
         enum class MceVal {
             v0=0x00000000,     ///<Writes to the monotonic counter load the counter with the value written.
@@ -363,17 +363,17 @@ namespace Kvasir {
         }
     }
     namespace RtcMclr{    ///<RTC Monotonic Counter Low Register
-        using Addr = Register::Address<0x4003d028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d028,0x00000000,0x00000000,std::uint32_t>;
         ///Monotonic Counter Low
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mcl{}; 
     }
     namespace RtcMchr{    ///<RTC Monotonic Counter High Register
-        using Addr = Register::Address<0x4003d02c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d02c,0x00000000,0x00000000,std::uint32_t>;
         ///Monotonic Counter High
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mch{}; 
     }
     namespace RtcWar{    ///<RTC Write Access Register
-        using Addr = Register::Address<0x4003d800,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d800,0xfffff000,0x00000000,std::uint32_t>;
         ///Time Seconds Register Write
         enum class TsrwVal {
             v0=0x00000000,     ///<Writes to the Time Seconds Register are ignored.
@@ -496,7 +496,7 @@ namespace Kvasir {
         }
     }
     namespace RtcRar{    ///<RTC Read Access Register
-        using Addr = Register::Address<0x4003d804,0xfffff000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d804,0xfffff000,0x00000000,std::uint32_t>;
         ///Time Seconds Register Read
         enum class TsrrVal {
             v0=0x00000000,     ///<Reads to the Time Seconds Register are ignored.

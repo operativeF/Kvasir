@@ -3,14 +3,14 @@
 namespace Kvasir {
 //External Interrupt Controller
     namespace EicCtrl{    ///<Control
-        using Addr = Register::Address<0x40001800,0xfffffffc,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40001800,0xfffffffc,0x00000000,std::uint8_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> enable{}; 
     }
     namespace EicEvctrl{    ///<Event Control
-        using Addr = Register::Address<0x40001804,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40001804,0xffff0000,0x00000000,std::uint32_t>;
         ///External Interrupt 0 Event Output Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> extinteo0{}; 
         ///External Interrupt 1 Event Output Enable
@@ -45,7 +45,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> extinteo15{}; 
     }
     namespace EicIntenclr{    ///<Interrupt Enable Clear
-        using Addr = Register::Address<0x40001808,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40001808,0xffff0000,0x00000000,std::uint32_t>;
         ///External Interrupt 0 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> extint0{}; 
         ///External Interrupt 1 Enable
@@ -80,7 +80,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> extint15{}; 
     }
     namespace EicIntenset{    ///<Interrupt Enable Set
-        using Addr = Register::Address<0x4000180c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000180c,0xffff0000,0x00000000,std::uint32_t>;
         ///External Interrupt 0 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> extint0{}; 
         ///External Interrupt 1 Enable
@@ -115,7 +115,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> extint15{}; 
     }
     namespace EicIntflag{    ///<Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x40001810,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40001810,0xffff0000,0x00000000,std::uint32_t>;
         ///External Interrupt 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> extint0{}; 
         ///External Interrupt 1
@@ -150,7 +150,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> extint15{}; 
     }
     namespace EicNmictrl{    ///<Non-Maskable Interrupt Control
-        using Addr = Register::Address<0x40001802,0xfffffff0,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40001802,0xfffffff0,0x00000000,std::uint8_t>;
         ///Non-Maskable Interrupt Sense
         enum class NmisenseVal {
             none=0x00000000,     ///<No detection
@@ -173,17 +173,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> nmifilten{}; 
     }
     namespace EicNmiflag{    ///<Non-Maskable Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x40001803,0xfffffffe,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40001803,0xfffffffe,0x00000000,std::uint8_t>;
         ///Non-Maskable Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> nmi{}; 
     }
     namespace EicStatus{    ///<Status
-        using Addr = Register::Address<0x40001801,0xffffff7f,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40001801,0xffffff7f,0x00000000,std::uint8_t>;
         ///Synchronization Busy
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> syncbusy{}; 
     }
     namespace EicWakeup{    ///<Wake-Up Enable
-        using Addr = Register::Address<0x40001814,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40001814,0xffff0000,0x00000000,std::uint32_t>;
         ///External Interrupt 0 Wake-up Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wakeupen0{}; 
         ///External Interrupt 1 Wake-up Enable
@@ -218,7 +218,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> wakeupen15{}; 
     }
     namespace EicConfig0{    ///<Configuration n
-        using Addr = Register::Address<0x40001818,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40001818,0x00000000,0x00000000,std::uint32_t>;
         ///Input Sense n Configuration
         enum class Sense0Val {
             none=0x00000000,     ///<No detection
@@ -381,7 +381,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> filten7{}; 
     }
     namespace EicConfig1{    ///<Configuration n
-        using Addr = Register::Address<0x4000181c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000181c,0x00000000,0x00000000,std::uint32_t>;
         ///Input Sense n Configuration
         enum class Sense0Val {
             none=0x00000000,     ///<No detection

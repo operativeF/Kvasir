@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Chip Identifier
     namespace ChipidCidr{    ///<Chip ID Register
-        using Addr = Register::Address<0x400e0740,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0740,0x00000000,0x00000000,std::uint32_t>;
         ///Version of the Device
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> version{}; 
         ///Embedded Processor
@@ -230,7 +230,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ext{}; 
     }
     namespace ChipidExid{    ///<Chip ID Extension Register
-        using Addr = Register::Address<0x400e0744,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0744,0x00000000,0x00000000,std::uint32_t>;
         ///Chip ID Extension
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> exid{}; 
     }

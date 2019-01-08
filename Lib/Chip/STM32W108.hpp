@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/STMicro/STM32W108/TIM1.hpp>
 #include <Chip/Unknown/STMicro/STM32W108/TIM2.hpp>
 #include <Chip/Unknown/STMicro/STM32W108/SC1.hpp>

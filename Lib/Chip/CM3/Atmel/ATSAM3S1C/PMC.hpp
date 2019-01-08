@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Power Management Controller
     namespace PmcPmcScer{    ///<System Clock Enable Register
-        using Addr = Register::Address<0x400e0400,0xfffff87f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0400,0xfffff87f,0x00000000,std::uint32_t>;
         ///USB Device Port Clock Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> udp{}; 
         ///Programmable Clock 0 Output Enable
@@ -14,7 +14,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,10),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pck2{}; 
     }
     namespace PmcPmcScdr{    ///<System Clock Disable Register
-        using Addr = Register::Address<0x400e0404,0xfffff87f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0404,0xfffff87f,0x00000000,std::uint32_t>;
         ///USB Device Port Clock Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> udp{}; 
         ///Programmable Clock 0 Output Disable
@@ -25,7 +25,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,10),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pck2{}; 
     }
     namespace PmcPmcScsr{    ///<System Clock Status Register
-        using Addr = Register::Address<0x400e0408,0xfffff87f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0408,0xfffff87f,0x00000000,std::uint32_t>;
         ///USB Device Port Clock Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> udp{}; 
         ///Programmable Clock 0 Output Status
@@ -36,7 +36,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,10),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pck2{}; 
     }
     namespace PmcPmcPcer0{    ///<Peripheral Clock Enable Register 0
-        using Addr = Register::Address<0x400e0410,0x00030003,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0410,0x00030003,0x00000000,std::uint32_t>;
         ///Peripheral Clock 2 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid2{}; 
         ///Peripheral Clock 3 Enable
@@ -95,7 +95,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace PmcPmcPcdr0{    ///<Peripheral Clock Disable Register 0
-        using Addr = Register::Address<0x400e0414,0x00030003,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0414,0x00030003,0x00000000,std::uint32_t>;
         ///Peripheral Clock 2 Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid2{}; 
         ///Peripheral Clock 3 Disable
@@ -154,7 +154,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace PmcPmcPcsr0{    ///<Peripheral Clock Status Register 0
-        using Addr = Register::Address<0x400e0418,0x00030003,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0418,0x00030003,0x00000000,std::uint32_t>;
         ///Peripheral Clock 2 Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid2{}; 
         ///Peripheral Clock 3 Status
@@ -213,7 +213,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid31{}; 
     }
     namespace PmcCkgrMor{    ///<Main Oscillator Register
-        using Addr = Register::Address<0x400e0420,0xfc000084,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0420,0xfc000084,0x00000000,std::uint32_t>;
         ///Main Crystal Oscillator Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> moscxten{}; 
         ///Main Crystal Oscillator Bypass
@@ -232,14 +232,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,25),Register::ReadWriteAccess,unsigned> cfden{}; 
     }
     namespace PmcCkgrMcfr{    ///<Main Clock Frequency Register
-        using Addr = Register::Address<0x400e0424,0xfffe0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0424,0xfffe0000,0x00000000,std::uint32_t>;
         ///Main Clock Frequency
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mainf{}; 
         ///Main Clock Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mainfrdy{}; 
     }
     namespace PmcCkgrPllar{    ///<PLLA Register
-        using Addr = Register::Address<0x400e0428,0xd800c000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0428,0xd800c000,0x00000000,std::uint32_t>;
         ///Divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> diva{}; 
         ///PLLA Counter
@@ -250,7 +250,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,29),Register::ReadWriteAccess,unsigned> one{}; 
     }
     namespace PmcCkgrPllbr{    ///<PLLB Register
-        using Addr = Register::Address<0x400e042c,0xf800c000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e042c,0xf800c000,0x00000000,std::uint32_t>;
         ///Divider
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> divb{}; 
         ///PLLB Counter
@@ -259,7 +259,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,16),Register::ReadWriteAccess,unsigned> mulb{}; 
     }
     namespace PmcPmcMckr{    ///<Master Clock Register
-        using Addr = Register::Address<0x400e0430,0xffffcf8c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0430,0xffffcf8c,0x00000000,std::uint32_t>;
         ///Master Clock Source Selection
         enum class CssVal {
             slowClk=0x00000000,     ///<Slow Clock is selected
@@ -302,14 +302,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> pllbdiv2{}; 
     }
     namespace PmcPmcUsb{    ///<USB Clock Register
-        using Addr = Register::Address<0x400e0438,0xfffff0fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0438,0xfffff0fe,0x00000000,std::uint32_t>;
         ///USB Input Clock Selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> usbs{}; 
         ///Divider for USB Clock.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,8),Register::ReadWriteAccess,unsigned> usbdiv{}; 
     }
     namespace PmcPmcIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x400e0460,0xfff8f8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0460,0xfff8f8f0,0x00000000,std::uint32_t>;
         ///Main Crystal Oscillator Status Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> moscxts{}; 
         ///PLLA Lock Interrupt Enable
@@ -332,7 +332,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cfdev{}; 
     }
     namespace PmcPmcIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0x400e0464,0xfff8f8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0464,0xfff8f8f0,0x00000000,std::uint32_t>;
         ///Main Crystal Oscillator Status Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> moscxts{}; 
         ///PLLA Lock Interrupt Disable
@@ -355,7 +355,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cfdev{}; 
     }
     namespace PmcPmcSr{    ///<Status Register
-        using Addr = Register::Address<0x400e0468,0xffe0f870,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0468,0xffe0f870,0x00000000,std::uint32_t>;
         ///Main XTAL Oscillator Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> moscxts{}; 
         ///PLLA Lock Status
@@ -384,7 +384,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> fos{}; 
     }
     namespace PmcPmcImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0x400e046c,0xfff8f8f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e046c,0xfff8f8f0,0x00000000,std::uint32_t>;
         ///Main Crystal Oscillator Status Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> moscxts{}; 
         ///PLLA Lock Interrupt Mask
@@ -407,7 +407,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(18,18),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cfdev{}; 
     }
     namespace PmcPmcFsmr{    ///<Fast Startup Mode Register
-        using Addr = Register::Address<0x400e0470,0xffe80000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0470,0xffe80000,0x00000000,std::uint32_t>;
         ///Fast Startup Input Enable 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fstt0{}; 
         ///Fast Startup Input Enable 1
@@ -450,7 +450,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> lpm{}; 
     }
     namespace PmcPmcFspr{    ///<Fast Startup Polarity Register
-        using Addr = Register::Address<0x400e0474,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0474,0xffff0000,0x00000000,std::uint32_t>;
         ///Fast Startup Input Polarityx
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fstp0{}; 
         ///Fast Startup Input Polarityx
@@ -485,26 +485,26 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> fstp15{}; 
     }
     namespace PmcPmcFocr{    ///<Fault Output Clear Register
-        using Addr = Register::Address<0x400e0478,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0478,0xfffffffe,0x00000000,std::uint32_t>;
         ///Fault Output Clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> foclr{}; 
     }
     namespace PmcPmcWpmr{    ///<Write Protect Mode Register
-        using Addr = Register::Address<0x400e04e4,0x000000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e04e4,0x000000fe,0x00000000,std::uint32_t>;
         ///Write Protect Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> wpen{}; 
         ///Write Protect KEY
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> wpkey{}; 
     }
     namespace PmcPmcWpsr{    ///<Write Protect Status Register
-        using Addr = Register::Address<0x400e04e8,0xff0000fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e04e8,0xff0000fe,0x00000000,std::uint32_t>;
         ///Write Protect Violation Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvs{}; 
         ///Write Protect Violation Source
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> wpvsrc{}; 
     }
     namespace PmcPmcPcer1{    ///<Peripheral Clock Enable Register 1
-        using Addr = Register::Address<0x400e0500,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0500,0xfffffff8,0x00000000,std::uint32_t>;
         ///Peripheral Clock 32 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid32{}; 
         ///Peripheral Clock 33 Enable
@@ -513,7 +513,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid34{}; 
     }
     namespace PmcPmcPcdr1{    ///<Peripheral Clock Disable Register 1
-        using Addr = Register::Address<0x400e0504,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0504,0xfffffff8,0x00000000,std::uint32_t>;
         ///Peripheral Clock 32 Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid32{}; 
         ///Peripheral Clock 33 Disable
@@ -522,7 +522,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid34{}; 
     }
     namespace PmcPmcPcsr1{    ///<Peripheral Clock Status Register 1
-        using Addr = Register::Address<0x400e0508,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0508,0xfffffff8,0x00000000,std::uint32_t>;
         ///Peripheral Clock 32 Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid32{}; 
         ///Peripheral Clock 33 Status
@@ -531,7 +531,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pid34{}; 
     }
     namespace PmcPmcOcr{    ///<Oscillator Calibration Register
-        using Addr = Register::Address<0x400e0510,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0510,0xff000000,0x00000000,std::uint32_t>;
         ///RC Oscillator Calibration bits for 4 MHz
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> cal4{}; 
         ///Selection of RC Oscillator Calibration bits for 4 MHz
@@ -546,7 +546,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> sel12{}; 
     }
     namespace PmcPmcPck0{    ///<Programmable Clock 0 Register
-        using Addr = Register::Address<0x400e0440,0xffffff88,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0440,0xffffff88,0x00000000,std::uint32_t>;
         ///Master Clock Source Selection
         enum class CssVal {
             slowClk=0x00000000,     ///<Slow Clock is selected
@@ -567,7 +567,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,4),Register::ReadWriteAccess,unsigned> pres{}; 
     }
     namespace PmcPmcPck1{    ///<Programmable Clock 0 Register
-        using Addr = Register::Address<0x400e0444,0xffffff88,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0444,0xffffff88,0x00000000,std::uint32_t>;
         ///Master Clock Source Selection
         enum class CssVal {
             slowClk=0x00000000,     ///<Slow Clock is selected
@@ -588,7 +588,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,4),Register::ReadWriteAccess,unsigned> pres{}; 
     }
     namespace PmcPmcPck2{    ///<Programmable Clock 0 Register
-        using Addr = Register::Address<0x400e0448,0xffffff88,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e0448,0xffffff88,0x00000000,std::uint32_t>;
         ///Master Clock Source Selection
         enum class CssVal {
             slowClk=0x00000000,     ///<Slow Clock is selected

@@ -3,14 +3,14 @@
 namespace Kvasir {
 //Analog-to-Digital Converter
     namespace AdcCr{    ///<Control Register
-        using Addr = Register::Address<0x400ac000,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac000,0xfffffffc,0x00000000,std::uint32_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> swrst{}; 
         ///Start Conversion
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> start{}; 
     }
     namespace AdcMr{    ///<Mode Register
-        using Addr = Register::Address<0x400ac004,0xf08000c0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac004,0xf08000c0,0x00000000,std::uint32_t>;
         ///Trigger Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> trgen{}; 
         ///Trigger Selection
@@ -27,7 +27,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> shtim{}; 
     }
     namespace AdcCher{    ///<Channel Enable Register
-        using Addr = Register::Address<0x400ac010,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac010,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch0{}; 
         ///Channel 1 Enable
@@ -46,7 +46,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch7{}; 
     }
     namespace AdcChdr{    ///<Channel Disable Register
-        using Addr = Register::Address<0x400ac014,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac014,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch0{}; 
         ///Channel 1 Disable
@@ -65,7 +65,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch7{}; 
     }
     namespace AdcChsr{    ///<Channel Status Register
-        using Addr = Register::Address<0x400ac018,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac018,0xffffff00,0x00000000,std::uint32_t>;
         ///Channel 0 Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch0{}; 
         ///Channel 1 Status
@@ -84,7 +84,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ch7{}; 
     }
     namespace AdcSr{    ///<Status Register
-        using Addr = Register::Address<0x400ac01c,0xfff00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac01c,0xfff00000,0x00000000,std::uint32_t>;
         ///End of Conversion 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion 1
@@ -127,12 +127,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace AdcLcdr{    ///<Last Converted Data Register
-        using Addr = Register::Address<0x400ac020,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac020,0xfffffc00,0x00000000,std::uint32_t>;
         ///Last Data Converted
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ldata{}; 
     }
     namespace AdcIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0x400ac024,0xfff00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac024,0xfff00000,0x00000000,std::uint32_t>;
         ///End of Conversion Interrupt Enable 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion Interrupt Enable 1
@@ -175,7 +175,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace AdcIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0x400ac028,0xfff00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac028,0xfff00000,0x00000000,std::uint32_t>;
         ///End of Conversion Interrupt Disable 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion Interrupt Disable 1
@@ -218,7 +218,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace AdcImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0x400ac02c,0xfff00000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac02c,0xfff00000,0x00000000,std::uint32_t>;
         ///End of Conversion Interrupt Mask 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> eoc0{}; 
         ///End of Conversion Interrupt Mask 1
@@ -261,27 +261,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxbuff{}; 
     }
     namespace AdcRpr{    ///<Receive Pointer Register
-        using Addr = Register::Address<0x400ac100,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac100,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Pointer Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxptr{}; 
     }
     namespace AdcRcr{    ///<Receive Counter Register
-        using Addr = Register::Address<0x400ac104,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac104,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Counter Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxctr{}; 
     }
     namespace AdcRnpr{    ///<Receive Next Pointer Register
-        using Addr = Register::Address<0x400ac110,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac110,0x00000000,0x00000000,std::uint32_t>;
         ///Receive Next Pointer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> rxnptr{}; 
     }
     namespace AdcRncr{    ///<Receive Next Counter Register
-        using Addr = Register::Address<0x400ac114,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac114,0xffff0000,0x00000000,std::uint32_t>;
         ///Receive Next Counter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rxnctr{}; 
     }
     namespace AdcPtcr{    ///<Transfer Control Register
-        using Addr = Register::Address<0x400ac120,0xfffffcfc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac120,0xfffffcfc,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Receiver Transfer Disable
@@ -292,49 +292,49 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txtdis{}; 
     }
     namespace AdcPtsr{    ///<Transfer Status Register
-        using Addr = Register::Address<0x400ac124,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac124,0xfffffefe,0x00000000,std::uint32_t>;
         ///Receiver Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> rxten{}; 
         ///Transmitter Transfer Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> txten{}; 
     }
     namespace AdcCdr0{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac030,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac030,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace AdcCdr1{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac034,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac034,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace AdcCdr2{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac038,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac038,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace AdcCdr3{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac03c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac03c,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace AdcCdr4{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac040,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac040,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace AdcCdr5{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac044,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac044,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace AdcCdr6{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac048,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac048,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }
     namespace AdcCdr7{    ///<Channel Data Register
-        using Addr = Register::Address<0x400ac04c,0xfffffc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400ac04c,0xfffffc00,0x00000000,std::uint32_t>;
         ///Converted Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> data{}; 
     }

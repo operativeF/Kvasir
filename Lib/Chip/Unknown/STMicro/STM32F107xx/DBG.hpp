@@ -3,14 +3,14 @@
 namespace Kvasir {
 //Debug support
     namespace DbgIdcode{    ///<DBGMCU_IDCODE
-        using Addr = Register::Address<0xe0042000,0x0000f000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0042000,0x0000f000,0x00000000,std::uint32_t>;
         ///DEV_ID
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,0),Register::ReadWriteAccess,unsigned> devId{}; 
         ///REV_ID
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> revId{}; 
     }
     namespace DbgCr{    ///<DBGMCU_CR
-        using Addr = Register::Address<0xe0042004,0xffc20018,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe0042004,0xffc20018,0x00000000,std::uint32_t>;
         ///DBG_SLEEP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dbgSleep{}; 
         ///DBG_STOP

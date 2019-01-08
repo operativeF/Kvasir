@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Operational amplifier
     namespace OpampOpamp1Cr{    ///<OPAMP1 control register
-        using Addr = Register::Address<0x40010038,0x00000010,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010038,0x00000010,0x00000000,std::uint32_t>;
         ///OPAMP1 enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> opamp1En{}; 
         ///FORCE_VP
@@ -38,7 +38,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> lock{}; 
     }
     namespace OpampOpamp2Cr{    ///<OPAMP2 control register
-        using Addr = Register::Address<0x4001003c,0x00000010,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001003c,0x00000010,0x00000000,std::uint32_t>;
         ///OPAMP2 enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> opamp2en{}; 
         ///FORCE_VP
@@ -73,7 +73,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> lock{}; 
     }
     namespace OpampOpamp3Cr{    ///<OPAMP3 control register
-        using Addr = Register::Address<0x40010040,0x00000010,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010040,0x00000010,0x00000000,std::uint32_t>;
         ///OPAMP3 enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> opamp3en{}; 
         ///FORCE_VP
@@ -108,7 +108,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> lock{}; 
     }
     namespace OpampOpamp4Cr{    ///<OPAMP4 control register
-        using Addr = Register::Address<0x40010044,0x00000010,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010044,0x00000010,0x00000000,std::uint32_t>;
         ///OPAMP4 enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> opamp4en{}; 
         ///FORCE_VP

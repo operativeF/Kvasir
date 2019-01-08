@@ -3,7 +3,7 @@
 namespace Kvasir {
 //General purpose I/Os
     namespace GpiocGpiocCrl{    ///<Port C configuration register          (Low)
-        using Addr = Register::Address<0x4000b800,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000b800,0xffff0000,0x00000000,std::uint32_t>;
         ///CNFMODE3
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> cnfmode3{}; 
         ///CNFMODE2
@@ -14,7 +14,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> cnfmode0{}; 
     }
     namespace GpiocGpiocCrh{    ///<Port C configuration register          (High)
-        using Addr = Register::Address<0x4000b804,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000b804,0xffff0000,0x00000000,std::uint32_t>;
         ///CNFMODE7
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> cnfmode7{}; 
         ///CNFMODE6
@@ -25,7 +25,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> cnfmode4{}; 
     }
     namespace GpiocGpiocIdr{    ///<Port C input data register
-        using Addr = Register::Address<0x4000b808,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000b808,0xffffff00,0x00000000,std::uint32_t>;
         ///ID7
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> id7{}; 
         ///ID6
@@ -44,7 +44,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> id0{}; 
     }
     namespace GpiocGpiocOdr{    ///<Port C output data register
-        using Addr = Register::Address<0x4000b80c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000b80c,0xffffff00,0x00000000,std::uint32_t>;
         ///OD7
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> od7{}; 
         ///OD6
@@ -63,7 +63,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> od0{}; 
     }
     namespace GpiocGpiocBsr{    ///<Port B bit set register
-        using Addr = Register::Address<0x4000b810,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000b810,0xffffff00,0x00000000,std::uint32_t>;
         ///BS7
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> bs7{}; 
         ///BS6
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> bs0{}; 
     }
     namespace GpiocGpiocBrr{    ///<Port C output clear register
-        using Addr = Register::Address<0x4000b814,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000b814,0xffffff00,0x00000000,std::uint32_t>;
         ///BR7
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> br7{}; 
         ///BR6

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Reset Controller
     namespace RstcCr{    ///<Control Register
-        using Addr = Register::Address<0x400e1200,0x00fffff2,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1200,0x00fffff2,0x00000000,std::uint32_t>;
         ///Processor Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> procrst{}; 
         ///Peripheral Reset
@@ -14,7 +14,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> key{}; 
     }
     namespace RstcSr{    ///<Status Register
-        using Addr = Register::Address<0x400e1204,0xfffcf8fe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1204,0xfffcf8fe,0x00000000,std::uint32_t>;
         ///User Reset Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ursts{}; 
         ///Reset Type
@@ -25,7 +25,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> srcmp{}; 
     }
     namespace RstcMr{    ///<Mode Register
-        using Addr = Register::Address<0x400e1208,0x00fff0ee,0x00000000,unsigned>;
+        using Addr = Register::Address<0x400e1208,0x00fff0ee,0x00000000,std::uint32_t>;
         ///User Reset Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ursten{}; 
         ///User Reset Interrupt Enable

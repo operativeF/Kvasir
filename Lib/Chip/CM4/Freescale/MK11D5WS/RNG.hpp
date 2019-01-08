@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Random Number Generator Accelerator
     namespace RngCr{    ///<RNGA Control Register
-        using Addr = Register::Address<0x40029000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40029000,0x00000000,0x00000000,std::uint32_t>;
         ///no description available
         enum class GoVal {
             v0=0x00000000,     ///<RNGA Output Register is not loaded with random data.
@@ -58,7 +58,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace RngSr{    ///<RNGA Status Register
-        using Addr = Register::Address<0x40029004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40029004,0x00000000,0x00000000,std::uint32_t>;
         ///Security Violation
         enum class SecvVal {
             v0=0x00000000,     ///<No security violations have occured or the High Assurance bit (HA) in the RNGA Control Register is not set.
@@ -119,12 +119,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace RngEr{    ///<RNGA Entropy Register
-        using Addr = Register::Address<0x40029008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40029008,0x00000000,0x00000000,std::uint32_t>;
         ///External Entropy
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> extEnt{}; 
     }
     namespace RngOr{    ///<RNGA Output Register
-        using Addr = Register::Address<0x4002900c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002900c,0x00000000,0x00000000,std::uint32_t>;
         ///Random Output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> randout{}; 
     }

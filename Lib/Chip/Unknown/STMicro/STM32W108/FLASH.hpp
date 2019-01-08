@@ -3,7 +3,7 @@
 namespace Kvasir {
 //FLASH
     namespace FlashFlashAcr{    ///<FLASH access control register
-        using Addr = Register::Address<0x40008000,0xffffffc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008000,0xffffffc0,0x00000000,std::uint32_t>;
         ///Prefetch Status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> prftbs{}; 
         ///PRFTBE
@@ -14,17 +14,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> latency{}; 
     }
     namespace FlashFlashKeyr{    ///<FLASH key register
-        using Addr = Register::Address<0x40008004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008004,0x00000000,0x00000000,std::uint32_t>;
         ///FKEYR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> fkeyr{}; 
     }
     namespace FlashFlashOptkeyr{    ///<FLASH OPT key register
-        using Addr = Register::Address<0x40008008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008008,0x00000000,0x00000000,std::uint32_t>;
         ///OPTKEYR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> optkeyr{}; 
     }
     namespace FlashFlashSr{    ///<FLASH status register
-        using Addr = Register::Address<0x4000800c,0xffffffca,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000800c,0xffffffca,0x00000000,std::uint32_t>;
         ///EOP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,unsigned> eop{}; 
         ///WRPRTERR
@@ -35,7 +35,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> bsy{}; 
     }
     namespace FlashFlashCr{    ///<FLASH control register
-        using Addr = Register::Address<0x40008010,0xffffe908,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008010,0xffffe908,0x00000000,std::uint32_t>;
         ///EOPIE
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,12),Register::ReadWriteAccess,unsigned> eopie{}; 
         ///ERRIE
@@ -58,29 +58,29 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pg{}; 
     }
     namespace FlashFlashAr{    ///<FLASH address register
-        using Addr = Register::Address<0x40008014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008014,0x00000000,0x00000000,std::uint32_t>;
         ///FAR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> far{}; 
     }
     namespace FlashFlashObr{    ///<FLASH option bytes register
-        using Addr = Register::Address<0x4000801c,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000801c,0xfffffffc,0x00000000,std::uint32_t>;
         ///RDPRT
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> rdprt{}; 
         ///OPTERR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> opterr{}; 
     }
     namespace FlashFlashWrpr{    ///<FLASH write protection          register
-        using Addr = Register::Address<0x40008020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008020,0x00000000,0x00000000,std::uint32_t>;
         ///WRP
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> wrp{}; 
     }
     namespace FlashFlashClker{    ///<FLASH controller clock enable          register
-        using Addr = Register::Address<0x4000402c,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000402c,0xfffffffe,0x00000000,std::uint32_t>;
         ///EN
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> en{}; 
     }
     namespace FlashFlashClksr{    ///<FLASH controller clock status          register
-        using Addr = Register::Address<0x40004030,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004030,0xfffffffc,0x00000000,std::uint32_t>;
         ///BSY
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> bsy{}; 
         ///ACK

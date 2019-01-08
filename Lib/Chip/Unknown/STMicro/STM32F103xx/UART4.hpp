@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal asynchronous receiver      transmitter
     namespace Uart4Sr{    ///<UART4_SR
-        using Addr = Register::Address<0x40004c00,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004c00,0xfffffe00,0x00000000,std::uint32_t>;
         ///Parity error
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pe{}; 
         ///Framing error
@@ -24,19 +24,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> lbd{}; 
     }
     namespace Uart4Dr{    ///<UART4_DR
-        using Addr = Register::Address<0x40004c04,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004c04,0xfffffe00,0x00000000,std::uint32_t>;
         ///DR
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> dr{}; 
     }
     namespace Uart4Brr{    ///<UART4_BRR
-        using Addr = Register::Address<0x40004c08,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004c08,0xffff0000,0x00000000,std::uint32_t>;
         ///DIV_Fraction
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> divFraction{}; 
         ///DIV_Mantissa
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,4),Register::ReadWriteAccess,unsigned> divMantissa{}; 
     }
     namespace Uart4Cr1{    ///<UART4_CR1
-        using Addr = Register::Address<0x40004c0c,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004c0c,0xffffc000,0x00000000,std::uint32_t>;
         ///Send break
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> sbk{}; 
         ///Receiver wakeup
@@ -67,7 +67,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,13),Register::ReadWriteAccess,unsigned> ue{}; 
     }
     namespace Uart4Cr2{    ///<UART4_CR2
-        using Addr = Register::Address<0x40004c10,0xffff8f90,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004c10,0xffff8f90,0x00000000,std::uint32_t>;
         ///Address of the USART node
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> add{}; 
         ///lin break detection length
@@ -80,7 +80,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> linen{}; 
     }
     namespace Uart4Cr3{    ///<UART4_CR3
-        using Addr = Register::Address<0x40004c14,0xffffff30,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40004c14,0xffffff30,0x00000000,std::uint32_t>;
         ///Error interrupt enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eie{}; 
         ///IrDA mode enable

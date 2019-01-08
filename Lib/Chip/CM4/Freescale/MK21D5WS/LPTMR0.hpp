@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Low Power Timer
     namespace Lptmr0Csr{    ///<Low Power Timer Control Status Register
-        using Addr = Register::Address<0x40040000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040000,0x00000000,0x00000000,std::uint32_t>;
         ///Timer Enable
         enum class TenVal {
             v0=0x00000000,     ///<LPTMR is disabled and internal logic is reset.
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Lptmr0Psr{    ///<Low Power Timer Prescale Register
-        using Addr = Register::Address<0x40040004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040004,0x00000000,0x00000000,std::uint32_t>;
         ///Prescaler Clock Select
         enum class PcsVal {
             v00=0x00000000,     ///<Prescaler/glitch filter clock 0 selected.
@@ -149,14 +149,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,7),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Lptmr0Cmr{    ///<Low Power Timer Compare Register
-        using Addr = Register::Address<0x40040008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40040008,0x00000000,0x00000000,std::uint32_t>;
         ///Compare Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> compare{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Lptmr0Cnr{    ///<Low Power Timer Counter Register
-        using Addr = Register::Address<0x4004000c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004000c,0x00000000,0x00000000,std::uint32_t>;
         ///Counter Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> counter{}; 
         ///no description available

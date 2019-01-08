@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Comparators
     namespace CompCsr{    ///<comparator control and status           register
-        using Addr = Register::Address<0x40007c00,0x0300cf40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c00,0x0300cf40,0x00000000,std::uint32_t>;
         ///Suspend Timer Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> tsusp{}; 
         ///Channel acquisition interrupt               flag

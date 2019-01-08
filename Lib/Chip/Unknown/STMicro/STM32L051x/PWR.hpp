@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Power control
     namespace PwrCr{    ///<power control register
-        using Addr = Register::Address<0x40007000,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007000,0xffff8000,0x00000000,std::uint32_t>;
         ///Low-power deep sleep
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lpds{}; 
         ///Power down deepsleep
@@ -30,7 +30,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> lprun{}; 
     }
     namespace PwrCsr{    ///<power control/status register
-        using Addr = Register::Address<0x40007004,0xfffffcc0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007004,0xfffffcc0,0x00000000,std::uint32_t>;
         ///Backup regulator enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> bre{}; 
         ///Enable WKUP pin

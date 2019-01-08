@@ -1,4 +1,5 @@
 #pragma once 
+#include <cstdint>
 #include <Chip/Unknown/Atmel/AT91SAM9G35/SMD.hpp>
 #include <Chip/Unknown/Atmel/AT91SAM9G35/SPI0.hpp>
 #include <Chip/Unknown/Atmel/AT91SAM9G35/SPI1.hpp>

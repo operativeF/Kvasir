@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Advanced timer
     namespace Tim1Cr1{    ///<control register 1
-        using Addr = Register::Address<0x40012c00,0xfffff400,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c00,0xfffff400,0x00000000,std::uint32_t>;
         ///Counter enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cen{}; 
         ///Update disable
@@ -24,7 +24,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> uifremap{}; 
     }
     namespace Tim1Cr2{    ///<control register 2
-        using Addr = Register::Address<0x40012c04,0xff0a8002,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c04,0xff0a8002,0x00000000,std::uint32_t>;
         ///Capture/compare preloaded               control
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ccpc{}; 
         ///Capture/compare control update               selection
@@ -57,7 +57,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,20),Register::ReadWriteAccess,unsigned> mms2{}; 
     }
     namespace Tim1Smcr{    ///<slave mode control register
-        using Addr = Register::Address<0x40012c08,0xfffe0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c08,0xfffe0000,0x00000000,std::uint32_t>;
         ///Slave mode selection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> sms{}; 
         ///OCREF clear selection
@@ -78,7 +78,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::ReadWriteAccess,unsigned> sms3{}; 
     }
     namespace Tim1Dier{    ///<DMA/Interrupt enable register
-        using Addr = Register::Address<0x40012c0c,0xffff8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c0c,0xffff8000,0x00000000,std::uint32_t>;
         ///Trigger DMA request enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> tde{}; 
         ///Reserved
@@ -111,7 +111,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> uie{}; 
     }
     namespace Tim1Sr{    ///<status register
-        using Addr = Register::Address<0x40012c10,0xfffce000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c10,0xfffce000,0x00000000,std::uint32_t>;
         ///Update interrupt flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> uif{}; 
         ///Capture/compare 1 interrupt               flag
@@ -144,7 +144,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(17,17),Register::ReadWriteAccess,unsigned> c6if{}; 
     }
     namespace Tim1Egr{    ///<event generation register
-        using Addr = Register::Address<0x40012c14,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c14,0xfffffe00,0x00000000,std::uint32_t>;
         ///Update generation
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ug{}; 
         ///Capture/compare 1               generation
@@ -165,7 +165,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> b2g{}; 
     }
     namespace Tim1Ccmr1Output{    ///<capture/compare mode register (output           mode)
-        using Addr = Register::Address<0x40012c18,0xfefe0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c18,0xfefe0000,0x00000000,std::uint32_t>;
         ///Output Compare 2 clear               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> oc2ce{}; 
         ///Output Compare 2 mode
@@ -192,7 +192,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> oc2m3{}; 
     }
     namespace Tim1Ccmr1Input{    ///<capture/compare mode register 1 (input           mode)
-        using Addr = Register::Address<0x40012c18,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c18,0xffff0000,0x00000000,std::uint32_t>;
         ///Input capture 2 filter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> ic2f{}; 
         ///Input capture 2 prescaler
@@ -207,7 +207,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> cc1s{}; 
     }
     namespace Tim1Ccmr2Output{    ///<capture/compare mode register (output           mode)
-        using Addr = Register::Address<0x40012c1c,0xfefe0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c1c,0xfefe0000,0x00000000,std::uint32_t>;
         ///Output compare 4 clear               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> oc4ce{}; 
         ///Output compare 4 mode
@@ -234,7 +234,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> oc4m3{}; 
     }
     namespace Tim1Ccmr2Input{    ///<capture/compare mode register 2 (input           mode)
-        using Addr = Register::Address<0x40012c1c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c1c,0xffff0000,0x00000000,std::uint32_t>;
         ///Input capture 4 filter
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,12),Register::ReadWriteAccess,unsigned> ic4f{}; 
         ///Input capture 4 prescaler
@@ -249,7 +249,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> cc3s{}; 
     }
     namespace Tim1Ccer{    ///<capture/compare enable           register
-        using Addr = Register::Address<0x40012c20,0xffcc4000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c20,0xffcc4000,0x00000000,std::uint32_t>;
         ///Capture/Compare 1 output               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cc1e{}; 
         ///Capture/Compare 1 output               Polarity
@@ -290,49 +290,49 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(21,21),Register::ReadWriteAccess,unsigned> cc6p{}; 
     }
     namespace Tim1Cnt{    ///<counter
-        using Addr = Register::Address<0x40012c24,0x7fff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c24,0x7fff0000,0x00000000,std::uint32_t>;
         ///counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> cnt{}; 
         ///UIF copy
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> uifcpy{}; 
     }
     namespace Tim1Psc{    ///<prescaler
-        using Addr = Register::Address<0x40012c28,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c28,0xffff0000,0x00000000,std::uint32_t>;
         ///Prescaler value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> psc{}; 
     }
     namespace Tim1Arr{    ///<auto-reload register
-        using Addr = Register::Address<0x40012c2c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c2c,0xffff0000,0x00000000,std::uint32_t>;
         ///Auto-reload value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> arr{}; 
     }
     namespace Tim1Rcr{    ///<repetition counter register
-        using Addr = Register::Address<0x40012c30,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c30,0xffff0000,0x00000000,std::uint32_t>;
         ///Repetition counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> rep{}; 
     }
     namespace Tim1Ccr1{    ///<capture/compare register 1
-        using Addr = Register::Address<0x40012c34,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c34,0xffff0000,0x00000000,std::uint32_t>;
         ///Capture/Compare 1 value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ccr1{}; 
     }
     namespace Tim1Ccr2{    ///<capture/compare register 2
-        using Addr = Register::Address<0x40012c38,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c38,0xffff0000,0x00000000,std::uint32_t>;
         ///Capture/Compare 2 value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ccr2{}; 
     }
     namespace Tim1Ccr3{    ///<capture/compare register 3
-        using Addr = Register::Address<0x40012c3c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c3c,0xffff0000,0x00000000,std::uint32_t>;
         ///Capture/Compare 3 value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ccr3{}; 
     }
     namespace Tim1Ccr4{    ///<capture/compare register 4
-        using Addr = Register::Address<0x40012c40,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c40,0xffff0000,0x00000000,std::uint32_t>;
         ///Capture/Compare 3 value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ccr4{}; 
     }
     namespace Tim1Bdtr{    ///<break and dead-time register
-        using Addr = Register::Address<0x40012c44,0xfc000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c44,0xfc000000,0x00000000,std::uint32_t>;
         ///Dead-time generator setup
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> dtg{}; 
         ///Lock configuration
@@ -359,19 +359,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(25,25),Register::ReadWriteAccess,unsigned> bk2p{}; 
     }
     namespace Tim1Dcr{    ///<DMA control register
-        using Addr = Register::Address<0x40012c48,0xffffe0e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c48,0xffffe0e0,0x00000000,std::uint32_t>;
         ///DMA burst length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,8),Register::ReadWriteAccess,unsigned> dbl{}; 
         ///DMA base address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> dba{}; 
     }
     namespace Tim1Dmar{    ///<DMA address for full transfer
-        using Addr = Register::Address<0x40012c4c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c4c,0xffff0000,0x00000000,std::uint32_t>;
         ///DMA register for burst               accesses
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> dmab{}; 
     }
     namespace Tim1Ccmr3Output{    ///<capture/compare mode register 3 (output           mode)
-        using Addr = Register::Address<0x40012c54,0xfefe0303,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c54,0xfefe0303,0x00000000,std::uint32_t>;
         ///Output compare 5 fast               enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> oc5fe{}; 
         ///Output compare 5 preload               enable
@@ -394,7 +394,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(24,24),Register::ReadWriteAccess,unsigned> oc6m3{}; 
     }
     namespace Tim1Ccr5{    ///<capture/compare register 5
-        using Addr = Register::Address<0x40012c58,0x1fff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c58,0x1fff0000,0x00000000,std::uint32_t>;
         ///Capture/Compare 5 value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ccr5{}; 
         ///Group Channel 5 and Channel               1
@@ -405,12 +405,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> gc5c3{}; 
     }
     namespace Tim1Ccr6{    ///<capture/compare register 6
-        using Addr = Register::Address<0x40012c5c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c5c,0xffff0000,0x00000000,std::uint32_t>;
         ///Capture/Compare 6 value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ccr6{}; 
     }
     namespace Tim1Or{    ///<option registers
-        using Addr = Register::Address<0x40012c60,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012c60,0xfffffff0,0x00000000,std::uint32_t>;
         ///TIM1_ETR_ADC1 remapping               capability
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> tim1EtrAdc1Rmp{}; 
         ///TIM1_ETR_ADC4 remapping               capability

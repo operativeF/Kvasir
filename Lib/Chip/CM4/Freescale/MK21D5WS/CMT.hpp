@@ -3,27 +3,27 @@
 namespace Kvasir {
 //Carrier Modulator Transmitter
     namespace CmtCgh1{    ///<CMT Carrier Generator High Data Register 1
-        using Addr = Register::Address<0x40062000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062000,0xffffff00,0x00000000,std::uint8_t>;
         ///Primary Carrier High Time Data Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ph{}; 
     }
     namespace CmtCgl1{    ///<CMT Carrier Generator Low Data Register 1
-        using Addr = Register::Address<0x40062001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062001,0xffffff00,0x00000000,std::uint8_t>;
         ///Primary Carrier Low Time Data Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> pl{}; 
     }
     namespace CmtCgh2{    ///<CMT Carrier Generator High Data Register 2
-        using Addr = Register::Address<0x40062002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062002,0xffffff00,0x00000000,std::uint8_t>;
         ///Secondary Carrier High Time Data Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sh{}; 
     }
     namespace CmtCgl2{    ///<CMT Carrier Generator Low Data Register 2
-        using Addr = Register::Address<0x40062003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062003,0xffffff00,0x00000000,std::uint8_t>;
         ///Secondary Carrier Low Time Data Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sl{}; 
     }
     namespace CmtOc{    ///<CMT Output Control Register
-        using Addr = Register::Address<0x40062004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062004,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///IRO Pin Enable
@@ -50,7 +50,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> irol{}; 
     }
     namespace CmtMsc{    ///<CMT Modulator Status and Control Register
-        using Addr = Register::Address<0x40062005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062005,0xffffff00,0x00000000,std::uint8_t>;
         ///Modulator and Carrier Generator Enable
         enum class McgenVal {
             v0=0x00000000,     ///<Modulator and carrier generator disabled
@@ -127,27 +127,27 @@ namespace Kvasir {
         }
     }
     namespace CmtCmd1{    ///<CMT Modulator Data Register Mark High
-        using Addr = Register::Address<0x40062006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062006,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> mb{}; 
     }
     namespace CmtCmd2{    ///<CMT Modulator Data Register Mark Low
-        using Addr = Register::Address<0x40062007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062007,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> mb{}; 
     }
     namespace CmtCmd3{    ///<CMT Modulator Data Register Space High
-        using Addr = Register::Address<0x40062008,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062008,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sb{}; 
     }
     namespace CmtCmd4{    ///<CMT Modulator Data Register Space Low
-        using Addr = Register::Address<0x40062009,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40062009,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> sb{}; 
     }
     namespace CmtPps{    ///<CMT Primary Prescaler Register
-        using Addr = Register::Address<0x4006200a,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006200a,0xffffff00,0x00000000,std::uint8_t>;
         ///Primary Prescaler Divider
         enum class PpsdivVal {
             v0000=0x00000000,     ///<Bus clock * 1
@@ -190,7 +190,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,4),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace CmtDma{    ///<CMT Direct Memory Access Register
-        using Addr = Register::Address<0x4006200b,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4006200b,0xffffff00,0x00000000,std::uint8_t>;
         ///DMA Enable
         enum class DmaVal {
             v0=0x00000000,     ///<DMA transfer request and done are disabled.

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Cryptographic processor
     namespace CrypCr{    ///<control register
-        using Addr = Register::Address<0x50060000,0xffff3c03,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060000,0xffff3c03,0x00000000,std::uint32_t>;
         ///Cryptographic processor              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> crypen{}; 
         ///FIFO flush
@@ -18,7 +18,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> algodir{}; 
     }
     namespace CrypSr{    ///<status register
-        using Addr = Register::Address<0x50060004,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060004,0xffffffe0,0x00000000,std::uint32_t>;
         ///Busy bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> busy{}; 
         ///Output FIFO full
@@ -31,45 +31,45 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ifem{}; 
     }
     namespace CrypDin{    ///<data input register
-        using Addr = Register::Address<0x50060008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060008,0x00000000,0x00000000,std::uint32_t>;
         ///Data input
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> datain{}; 
     }
     namespace CrypDout{    ///<data output register
-        using Addr = Register::Address<0x5006000c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5006000c,0x00000000,0x00000000,std::uint32_t>;
         ///Data output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dataout{}; 
     }
     namespace CrypDmacr{    ///<DMA control register
-        using Addr = Register::Address<0x50060010,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060010,0xfffffffc,0x00000000,std::uint32_t>;
         ///DMA output enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> doen{}; 
         ///DMA input enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dien{}; 
     }
     namespace CrypImscr{    ///<interrupt mask set/clear          register
-        using Addr = Register::Address<0x50060014,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060014,0xfffffffc,0x00000000,std::uint32_t>;
         ///Output FIFO service interrupt              mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> outim{}; 
         ///Input FIFO service interrupt              mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> inim{}; 
     }
     namespace CrypRisr{    ///<raw interrupt status register
-        using Addr = Register::Address<0x50060018,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060018,0xfffffffc,0x00000000,std::uint32_t>;
         ///Output FIFO service raw interrupt              status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> outris{}; 
         ///Input FIFO service raw interrupt              status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> inris{}; 
     }
     namespace CrypMisr{    ///<masked interrupt status          register
-        using Addr = Register::Address<0x5006001c,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5006001c,0xfffffffc,0x00000000,std::uint32_t>;
         ///Output FIFO service masked interrupt              status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> outmis{}; 
         ///Input FIFO service masked interrupt              status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> inmis{}; 
     }
     namespace CrypK0lr{    ///<key registers
-        using Addr = Register::Address<0x50060020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060020,0x00000000,0x00000000,std::uint32_t>;
         ///b224
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b224{}; 
         ///b225
@@ -136,7 +136,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b255{}; 
     }
     namespace CrypK0rr{    ///<key registers
-        using Addr = Register::Address<0x50060024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060024,0x00000000,0x00000000,std::uint32_t>;
         ///b192
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b192{}; 
         ///b193
@@ -203,7 +203,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b223{}; 
     }
     namespace CrypK1lr{    ///<key registers
-        using Addr = Register::Address<0x50060028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060028,0x00000000,0x00000000,std::uint32_t>;
         ///b160
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b160{}; 
         ///b161
@@ -270,7 +270,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b191{}; 
     }
     namespace CrypK1rr{    ///<key registers
-        using Addr = Register::Address<0x5006002c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5006002c,0x00000000,0x00000000,std::uint32_t>;
         ///b128
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b128{}; 
         ///b129
@@ -337,7 +337,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b159{}; 
     }
     namespace CrypK2lr{    ///<key registers
-        using Addr = Register::Address<0x50060030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060030,0x00000000,0x00000000,std::uint32_t>;
         ///b96
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b96{}; 
         ///b97
@@ -404,7 +404,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b127{}; 
     }
     namespace CrypK2rr{    ///<key registers
-        using Addr = Register::Address<0x50060034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060034,0x00000000,0x00000000,std::uint32_t>;
         ///b64
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b64{}; 
         ///b65
@@ -471,7 +471,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b95{}; 
     }
     namespace CrypK3lr{    ///<key registers
-        using Addr = Register::Address<0x50060038,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060038,0x00000000,0x00000000,std::uint32_t>;
         ///b32
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b32{}; 
         ///b33
@@ -538,7 +538,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b63{}; 
     }
     namespace CrypK3rr{    ///<key registers
-        using Addr = Register::Address<0x5006003c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5006003c,0x00000000,0x00000000,std::uint32_t>;
         ///b0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> b0{}; 
         ///b1
@@ -605,7 +605,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> b31{}; 
     }
     namespace CrypIv0lr{    ///<initialization vector          registers
-        using Addr = Register::Address<0x50060040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060040,0x00000000,0x00000000,std::uint32_t>;
         ///IV31
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> iv31{}; 
         ///IV30
@@ -672,7 +672,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> iv0{}; 
     }
     namespace CrypIv0rr{    ///<initialization vector          registers
-        using Addr = Register::Address<0x50060044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060044,0x00000000,0x00000000,std::uint32_t>;
         ///IV63
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> iv63{}; 
         ///IV62
@@ -739,7 +739,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> iv32{}; 
     }
     namespace CrypIv1lr{    ///<initialization vector          registers
-        using Addr = Register::Address<0x50060048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x50060048,0x00000000,0x00000000,std::uint32_t>;
         ///IV95
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> iv95{}; 
         ///IV94
@@ -806,7 +806,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> iv64{}; 
     }
     namespace CrypIv1rr{    ///<initialization vector          registers
-        using Addr = Register::Address<0x5006004c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x5006004c,0x00000000,0x00000000,std::uint32_t>;
         ///IV127
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> iv127{}; 
         ///IV126

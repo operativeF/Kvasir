@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Touch sensing controller
     namespace TscCr{    ///<control register
-        using Addr = Register::Address<0x40024000,0x00000f00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024000,0x00000f00,0x00000000,std::uint32_t>;
         ///Charge transfer pulse high
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> ctph{}; 
         ///Charge transfer pulse low
@@ -30,28 +30,28 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tsce{}; 
     }
     namespace TscIer{    ///<interrupt enable register
-        using Addr = Register::Address<0x40024004,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024004,0xfffffffc,0x00000000,std::uint32_t>;
         ///Max count error interrupt              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> mceie{}; 
         ///End of acquisition interrupt              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eoaie{}; 
     }
     namespace TscIcr{    ///<interrupt clear register
-        using Addr = Register::Address<0x40024008,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024008,0xfffffffc,0x00000000,std::uint32_t>;
         ///Max count error interrupt              clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> mceic{}; 
         ///End of acquisition interrupt              clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eoaic{}; 
     }
     namespace TscIsr{    ///<interrupt status register
-        using Addr = Register::Address<0x4002400c,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002400c,0xfffffffc,0x00000000,std::uint32_t>;
         ///Max count error flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> mcef{}; 
         ///End of acquisition flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eoaf{}; 
     }
     namespace TscIohcr{    ///<I/O hysteresis control          register
-        using Addr = Register::Address<0x40024010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024010,0x00000000,0x00000000,std::uint32_t>;
         ///G1_IO1 Schmitt trigger hysteresis              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> g1Io1{}; 
         ///G1_IO2 Schmitt trigger hysteresis              mode
@@ -118,7 +118,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> g8Io4{}; 
     }
     namespace TscIoascr{    ///<I/O analog switch control          register
-        using Addr = Register::Address<0x40024018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024018,0x00000000,0x00000000,std::uint32_t>;
         ///G1_IO1 analog switch              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> g1Io1{}; 
         ///G1_IO2 analog switch              enable
@@ -185,7 +185,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> g8Io4{}; 
     }
     namespace TscIoscr{    ///<I/O sampling control register
-        using Addr = Register::Address<0x40024020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024020,0x00000000,0x00000000,std::uint32_t>;
         ///G1_IO1 sampling mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> g1Io1{}; 
         ///G1_IO2 sampling mode
@@ -252,7 +252,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> g8Io4{}; 
     }
     namespace TscIoccr{    ///<I/O channel control register
-        using Addr = Register::Address<0x40024028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024028,0x00000000,0x00000000,std::uint32_t>;
         ///G1_IO1 channel mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> g1Io1{}; 
         ///G1_IO2 channel mode
@@ -319,7 +319,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> g8Io4{}; 
     }
     namespace TscIogcsr{    ///<I/O group control status          register
-        using Addr = Register::Address<0x40024030,0xff00ff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024030,0xff00ff00,0x00000000,std::uint32_t>;
         ///Analog I/O group x status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> g8s{}; 
         ///Analog I/O group x status
@@ -354,42 +354,42 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> g1e{}; 
     }
     namespace TscIog1cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x40024034,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024034,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }
     namespace TscIog2cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x40024038,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024038,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }
     namespace TscIog3cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x4002403c,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002403c,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }
     namespace TscIog4cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x40024040,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024040,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }
     namespace TscIog5cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x40024044,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024044,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }
     namespace TscIog6cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x40024048,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024048,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }
     namespace TscIog7cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x4002404c,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002404c,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }
     namespace TscIog8cr{    ///<I/O group x counter register
-        using Addr = Register::Address<0x40024050,0xffffc000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40024050,0xffffc000,0x00000000,std::uint32_t>;
         ///Counter value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(13,0),Register::ReadWriteAccess,unsigned> cnt{}; 
     }

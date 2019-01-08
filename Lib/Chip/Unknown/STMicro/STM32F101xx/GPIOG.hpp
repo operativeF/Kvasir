@@ -3,7 +3,7 @@
 namespace Kvasir {
 //General purpose I/O
     namespace GpiogCrl{    ///<Port configuration register low          (GPIOn_CRL)
-        using Addr = Register::Address<0x40012000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012000,0x00000000,0x00000000,std::uint32_t>;
         ///Port n.0 mode bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> mode0{}; 
         ///Port n.0 configuration              bits
@@ -38,7 +38,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> cnf7{}; 
     }
     namespace GpiogCrh{    ///<Port configuration register high          (GPIOn_CRL)
-        using Addr = Register::Address<0x40012004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012004,0x00000000,0x00000000,std::uint32_t>;
         ///Port n.8 mode bits
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> mode8{}; 
         ///Port n.8 configuration              bits
@@ -73,7 +73,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> cnf15{}; 
     }
     namespace GpiogIdr{    ///<Port input data register          (GPIOn_IDR)
-        using Addr = Register::Address<0x40012008,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012008,0xffff0000,0x00000000,std::uint32_t>;
         ///Port input data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> idr0{}; 
         ///Port input data
@@ -108,7 +108,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> idr15{}; 
     }
     namespace GpiogOdr{    ///<Port output data register          (GPIOn_ODR)
-        using Addr = Register::Address<0x4001200c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001200c,0xffff0000,0x00000000,std::uint32_t>;
         ///Port output data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> odr0{}; 
         ///Port output data
@@ -143,7 +143,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> odr15{}; 
     }
     namespace GpiogBsrr{    ///<Port bit set/reset register          (GPIOn_BSRR)
-        using Addr = Register::Address<0x40012010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012010,0x00000000,0x00000000,std::uint32_t>;
         ///Set bit 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> bs0{}; 
         ///Set bit 1
@@ -210,7 +210,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> br15{}; 
     }
     namespace GpiogBrr{    ///<Port bit reset register          (GPIOn_BRR)
-        using Addr = Register::Address<0x40012014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012014,0xffff0000,0x00000000,std::uint32_t>;
         ///Reset bit 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> br0{}; 
         ///Reset bit 1
@@ -245,7 +245,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> br15{}; 
     }
     namespace GpiogLckr{    ///<Port configuration lock          register
-        using Addr = Register::Address<0x40012018,0xfffe0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40012018,0xfffe0000,0x00000000,std::uint32_t>;
         ///Port A Lock bit 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lck0{}; 
         ///Port A Lock bit 1

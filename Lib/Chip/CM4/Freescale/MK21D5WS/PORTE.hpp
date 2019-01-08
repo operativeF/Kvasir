@@ -3,31 +3,31 @@
 namespace Kvasir {
 //Pin Control and Interrupts
     namespace PorteGpclr{    ///<Global Pin Control Low Register
-        using Addr = Register::Address<0x4004d080,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d080,0x00000000,0x00000000,std::uint32_t>;
         ///Global Pin Write Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
         ///Global Pin Write Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
     }
     namespace PorteGpchr{    ///<Global Pin Control High Register
-        using Addr = Register::Address<0x4004d084,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d084,0x00000000,0x00000000,std::uint32_t>;
         ///Global Pin Write Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwd{}; 
         ///Global Pin Write Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> gpwe{}; 
     }
     namespace PorteIsfr{    ///<Interrupt Status Flag Register
-        using Addr = Register::Address<0x4004d0a0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d0a0,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Status Flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> isf{}; 
     }
     namespace PorteDfer{    ///<Digital Filter Enable Register
-        using Addr = Register::Address<0x4004d0c0,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d0c0,0x00000000,0x00000000,std::uint32_t>;
         ///Digital Filter Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dfe{}; 
     }
     namespace PorteDfcr{    ///<Digital Filter Clock Register
-        using Addr = Register::Address<0x4004d0c4,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d0c4,0x00000000,0x00000000,std::uint32_t>;
         ///Clock Source
         enum class CsVal {
             v0=0x00000000,     ///<Digital filters are clocked by the bus clock.
@@ -42,14 +42,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,1),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PorteDfwr{    ///<Digital Filter Width Register
-        using Addr = Register::Address<0x4004d0c8,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d0c8,0x00000000,0x00000000,std::uint32_t>;
         ///Filter Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,0),Register::ReadWriteAccess,unsigned> filt{}; 
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr0{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d000,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -188,7 +188,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr1{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d004,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -327,7 +327,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr2{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d008,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -466,7 +466,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr3{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d00c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d00c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -605,7 +605,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr4{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d010,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -744,7 +744,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr5{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d014,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d014,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -883,7 +883,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr6{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d018,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d018,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1022,7 +1022,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr7{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d01c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d01c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1161,7 +1161,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr8{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d020,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1300,7 +1300,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr9{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d024,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1439,7 +1439,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr10{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d028,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1578,7 +1578,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr11{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d02c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d02c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1717,7 +1717,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr12{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d030,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1856,7 +1856,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr13{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d034,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -1995,7 +1995,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr14{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d038,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d038,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2134,7 +2134,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr15{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d03c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d03c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2273,7 +2273,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr16{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d040,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2412,7 +2412,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr17{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d044,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2551,7 +2551,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr18{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d048,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2690,7 +2690,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr19{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d04c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d04c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2829,7 +2829,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr20{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d050,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d050,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -2968,7 +2968,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr21{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d054,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d054,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -3107,7 +3107,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr22{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d058,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d058,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -3246,7 +3246,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr23{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d05c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d05c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -3385,7 +3385,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr24{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d060,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d060,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -3524,7 +3524,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr25{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d064,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d064,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -3663,7 +3663,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr26{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d068,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d068,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -3802,7 +3802,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr27{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d06c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d06c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -3941,7 +3941,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr28{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d070,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d070,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -4080,7 +4080,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr29{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d074,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d074,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -4219,7 +4219,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr30{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d078,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d078,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.
@@ -4358,7 +4358,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,25),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace PortePcr31{    ///<Pin Control Register n
-        using Addr = Register::Address<0x4004d07c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4004d07c,0x00000000,0x00000000,std::uint32_t>;
         ///Pull Select
         enum class PsVal {
             v0=0x00000000,     ///<Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.

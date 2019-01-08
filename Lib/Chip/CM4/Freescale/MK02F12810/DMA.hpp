@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Enhanced direct memory access controller
     namespace DmaCr{    ///<Control Register
-        using Addr = Register::Address<0x40008000,0xfffcff09,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008000,0xfffcff09,0x00000000,std::uint32_t>;
         ///Enable Debug
         enum class EdbgVal {
             v0=0x00000000,     ///<When in debug mode, the DMA continues to operate.
@@ -86,7 +86,7 @@ namespace Kvasir {
         }
     }
     namespace DmaEs{    ///<Error Status Register
-        using Addr = Register::Address<0x40008004,0x7ffebc00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008004,0x7ffebc00,0x00000000,std::uint32_t>;
         ///Destination Bus Error
         enum class DbeVal {
             v0=0x00000000,     ///<No destination bus error
@@ -189,7 +189,7 @@ namespace Kvasir {
             constexpr Register::FieldValue<decltype(ecx)::Type,EcxVal::v0> v0{};
             constexpr Register::FieldValue<decltype(ecx)::Type,EcxVal::v1> v1{};
         }
-        ///no description available
+        ///Logical OR of all ERR status bits
         enum class VldVal {
             v0=0x00000000,     ///<No ERR bits are set
             v1=0x00000001,     ///<At least one ERR bit is set indicating a valid error exists that has not been cleared
@@ -201,7 +201,7 @@ namespace Kvasir {
         }
     }
     namespace DmaErq{    ///<Enable Request Register
-        using Addr = Register::Address<0x4000800c,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000800c,0xfffffff0,0x00000000,std::uint32_t>;
         ///Enable DMA Request 0
         enum class Erq0Val {
             v0=0x00000000,     ///<The DMA request signal for the corresponding channel is disabled
@@ -244,7 +244,7 @@ namespace Kvasir {
         }
     }
     namespace DmaEei{    ///<Enable Error Interrupt Register
-        using Addr = Register::Address<0x40008014,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008014,0xfffffff0,0x00000000,std::uint32_t>;
         ///Enable Error Interrupt 0
         enum class Eei0Val {
             v0=0x00000000,     ///<The error signal for corresponding channel does not generate an error interrupt
@@ -287,7 +287,7 @@ namespace Kvasir {
         }
     }
     namespace DmaCeei{    ///<Clear Enable Error Interrupt Register
-        using Addr = Register::Address<0x40008018,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40008018,0xffffff3c,0x00000000,std::uint8_t>;
         ///Clear Enable Error Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ceei{}; 
         ///Clear All Enable Error Interrupts
@@ -312,7 +312,7 @@ namespace Kvasir {
         }
     }
     namespace DmaSeei{    ///<Set Enable Error Interrupt Register
-        using Addr = Register::Address<0x40008019,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40008019,0xffffff3c,0x00000000,std::uint8_t>;
         ///Set Enable Error Interrupt
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> seei{}; 
         ///Sets All Enable Error Interrupts
@@ -337,7 +337,7 @@ namespace Kvasir {
         }
     }
     namespace DmaCerq{    ///<Clear Enable Request Register
-        using Addr = Register::Address<0x4000801a,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4000801a,0xffffff3c,0x00000000,std::uint8_t>;
         ///Clear Enable Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cerq{}; 
         ///Clear All Enable Requests
@@ -362,7 +362,7 @@ namespace Kvasir {
         }
     }
     namespace DmaSerq{    ///<Set Enable Request Register
-        using Addr = Register::Address<0x4000801b,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4000801b,0xffffff3c,0x00000000,std::uint8_t>;
         ///Set enable request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> serq{}; 
         ///Set All Enable Requests
@@ -387,7 +387,7 @@ namespace Kvasir {
         }
     }
     namespace DmaCdne{    ///<Clear DONE Status Bit Register
-        using Addr = Register::Address<0x4000801c,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4000801c,0xffffff3c,0x00000000,std::uint8_t>;
         ///Clear DONE Bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cdne{}; 
         ///Clears All DONE Bits
@@ -412,7 +412,7 @@ namespace Kvasir {
         }
     }
     namespace DmaSsrt{    ///<Set START Bit Register
-        using Addr = Register::Address<0x4000801d,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4000801d,0xffffff3c,0x00000000,std::uint8_t>;
         ///Set START Bit
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> ssrt{}; 
         ///Set All START Bits (activates all channels)
@@ -437,7 +437,7 @@ namespace Kvasir {
         }
     }
     namespace DmaCerr{    ///<Clear Error Register
-        using Addr = Register::Address<0x4000801e,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4000801e,0xffffff3c,0x00000000,std::uint8_t>;
         ///Clear Error Indicator
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cerr{}; 
         ///Clear All Error Indicators
@@ -462,7 +462,7 @@ namespace Kvasir {
         }
     }
     namespace DmaCint{    ///<Clear Interrupt Request Register
-        using Addr = Register::Address<0x4000801f,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4000801f,0xffffff3c,0x00000000,std::uint8_t>;
         ///Clear Interrupt Request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cint{}; 
         ///Clear All Interrupt Requests
@@ -487,7 +487,7 @@ namespace Kvasir {
         }
     }
     namespace DmaInt{    ///<Interrupt Request Register
-        using Addr = Register::Address<0x40008024,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008024,0xfffffff0,0x00000000,std::uint32_t>;
         ///Interrupt Request 0
         enum class Int0Val {
             v0=0x00000000,     ///<The interrupt request for corresponding channel is cleared
@@ -530,7 +530,7 @@ namespace Kvasir {
         }
     }
     namespace DmaErr{    ///<Error Register
-        using Addr = Register::Address<0x4000802c,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000802c,0xfffffff0,0x00000000,std::uint32_t>;
         ///Error In Channel 0
         enum class Err0Val {
             v0=0x00000000,     ///<An error in the corresponding channel has not occurred
@@ -573,7 +573,7 @@ namespace Kvasir {
         }
     }
     namespace DmaHrs{    ///<Hardware Request Status Register
-        using Addr = Register::Address<0x40008034,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008034,0xfffffff0,0x00000000,std::uint32_t>;
         ///Hardware Request Status Channel 0
         enum class Hrs0Val {
             v0=0x00000000,     ///<A hardware service request for channel 0 is not present
@@ -616,7 +616,7 @@ namespace Kvasir {
         }
     }
     namespace DmaEars{    ///<Enable Asynchronous Request in Stop Register
-        using Addr = Register::Address<0x40008044,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40008044,0xfffffff0,0x00000000,std::uint32_t>;
         ///Enable asynchronous DMA request in stop for channel 0.
         enum class Edreq0Val {
             v0=0x00000000,     ///<Disable asynchronous DMA request for channel 0.
@@ -659,7 +659,7 @@ namespace Kvasir {
         }
     }
     namespace DmaDchpri3{    ///<Channel n Priority Register
-        using Addr = Register::Address<0x40008100,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40008100,0xffffff3c,0x00000000,std::uint8_t>;
         ///Channel n Arbitration Priority
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> chpri{}; 
         ///Disable Preempt Ability
@@ -684,7 +684,7 @@ namespace Kvasir {
         }
     }
     namespace DmaDchpri2{    ///<Channel n Priority Register
-        using Addr = Register::Address<0x40008101,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40008101,0xffffff3c,0x00000000,std::uint8_t>;
         ///Channel n Arbitration Priority
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> chpri{}; 
         ///Disable Preempt Ability
@@ -709,7 +709,7 @@ namespace Kvasir {
         }
     }
     namespace DmaDchpri1{    ///<Channel n Priority Register
-        using Addr = Register::Address<0x40008102,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40008102,0xffffff3c,0x00000000,std::uint8_t>;
         ///Channel n Arbitration Priority
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> chpri{}; 
         ///Disable Preempt Ability
@@ -734,7 +734,7 @@ namespace Kvasir {
         }
     }
     namespace DmaDchpri0{    ///<Channel n Priority Register
-        using Addr = Register::Address<0x40008103,0xffffff3c,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40008103,0xffffff3c,0x00000000,std::uint8_t>;
         ///Channel n Arbitration Priority
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> chpri{}; 
         ///Disable Preempt Ability
@@ -759,47 +759,47 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd0Saddr{    ///<TCD Source Address
-        using Addr = Register::Address<0x40009000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009000,0x00000000,0x00000000,std::uint32_t>;
         ///Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmaTcd1Saddr{    ///<TCD Source Address
-        using Addr = Register::Address<0x40009020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009020,0x00000000,0x00000000,std::uint32_t>;
         ///Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmaTcd2Saddr{    ///<TCD Source Address
-        using Addr = Register::Address<0x40009040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009040,0x00000000,0x00000000,std::uint32_t>;
         ///Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmaTcd3Saddr{    ///<TCD Source Address
-        using Addr = Register::Address<0x40009060,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009060,0x00000000,0x00000000,std::uint32_t>;
         ///Source Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> saddr{}; 
     }
     namespace DmaTcd0Soff{    ///<TCD Signed Source Address Offset
-        using Addr = Register::Address<0x40009004,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009004,0xffff0000,0x00000000,std::uint16_t>;
         ///Source address signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> soff{}; 
     }
     namespace DmaTcd1Soff{    ///<TCD Signed Source Address Offset
-        using Addr = Register::Address<0x40009024,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009024,0xffff0000,0x00000000,std::uint16_t>;
         ///Source address signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> soff{}; 
     }
     namespace DmaTcd2Soff{    ///<TCD Signed Source Address Offset
-        using Addr = Register::Address<0x40009044,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009044,0xffff0000,0x00000000,std::uint16_t>;
         ///Source address signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> soff{}; 
     }
     namespace DmaTcd3Soff{    ///<TCD Signed Source Address Offset
-        using Addr = Register::Address<0x40009064,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009064,0xffff0000,0x00000000,std::uint16_t>;
         ///Source address signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> soff{}; 
     }
     namespace DmaTcd0Attr{    ///<TCD Transfer Attributes
-        using Addr = Register::Address<0x40009006,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009006,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Data Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> dsize{}; 
         ///Destination Address Modulo
@@ -824,7 +824,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,11),Register::ReadWriteAccess,unsigned> smod{}; 
     }
     namespace DmaTcd1Attr{    ///<TCD Transfer Attributes
-        using Addr = Register::Address<0x40009026,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009026,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Data Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> dsize{}; 
         ///Destination Address Modulo
@@ -849,7 +849,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,11),Register::ReadWriteAccess,unsigned> smod{}; 
     }
     namespace DmaTcd2Attr{    ///<TCD Transfer Attributes
-        using Addr = Register::Address<0x40009046,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009046,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Data Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> dsize{}; 
         ///Destination Address Modulo
@@ -874,7 +874,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,11),Register::ReadWriteAccess,unsigned> smod{}; 
     }
     namespace DmaTcd3Attr{    ///<TCD Transfer Attributes
-        using Addr = Register::Address<0x40009066,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009066,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Data Transfer Size
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,0),Register::ReadWriteAccess,unsigned> dsize{}; 
         ///Destination Address Modulo
@@ -899,27 +899,27 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,11),Register::ReadWriteAccess,unsigned> smod{}; 
     }
     namespace DmaTcd0NbytesMlno{    ///<TCD Minor Byte Count (Minor Loop Disabled)
-        using Addr = Register::Address<0x40009008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009008,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
     }
     namespace DmaTcd1NbytesMlno{    ///<TCD Minor Byte Count (Minor Loop Disabled)
-        using Addr = Register::Address<0x40009028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009028,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
     }
     namespace DmaTcd2NbytesMlno{    ///<TCD Minor Byte Count (Minor Loop Disabled)
-        using Addr = Register::Address<0x40009048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009048,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
     }
     namespace DmaTcd3NbytesMlno{    ///<TCD Minor Byte Count (Minor Loop Disabled)
-        using Addr = Register::Address<0x40009068,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009068,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
     }
     namespace DmaTcd0NbytesMloffno{    ///<TCD Signed Minor Loop Offset (Minor Loop Enabled and Offset Disabled)
-        using Addr = Register::Address<0x40009008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009008,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///Destination Minor Loop Offset enable
@@ -944,7 +944,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd1NbytesMloffno{    ///<TCD Signed Minor Loop Offset (Minor Loop Enabled and Offset Disabled)
-        using Addr = Register::Address<0x40009028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009028,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///Destination Minor Loop Offset enable
@@ -969,7 +969,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd2NbytesMloffno{    ///<TCD Signed Minor Loop Offset (Minor Loop Enabled and Offset Disabled)
-        using Addr = Register::Address<0x40009048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009048,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///Destination Minor Loop Offset enable
@@ -994,7 +994,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd3NbytesMloffno{    ///<TCD Signed Minor Loop Offset (Minor Loop Enabled and Offset Disabled)
-        using Addr = Register::Address<0x40009068,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009068,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///Destination Minor Loop Offset enable
@@ -1019,7 +1019,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd0NbytesMloffyes{    ///<TCD Signed Minor Loop Offset (Minor Loop and Offset Enabled)
-        using Addr = Register::Address<0x40009008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009008,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///If SMLOE or DMLOE is set, this field represents a sign-extended offset applied to the source or destination address to form the next-state value after the minor loop completes.
@@ -1046,7 +1046,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd1NbytesMloffyes{    ///<TCD Signed Minor Loop Offset (Minor Loop and Offset Enabled)
-        using Addr = Register::Address<0x40009028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009028,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///If SMLOE or DMLOE is set, this field represents a sign-extended offset applied to the source or destination address to form the next-state value after the minor loop completes.
@@ -1073,7 +1073,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd2NbytesMloffyes{    ///<TCD Signed Minor Loop Offset (Minor Loop and Offset Enabled)
-        using Addr = Register::Address<0x40009048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009048,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///If SMLOE or DMLOE is set, this field represents a sign-extended offset applied to the source or destination address to form the next-state value after the minor loop completes.
@@ -1100,7 +1100,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd3NbytesMloffyes{    ///<TCD Signed Minor Loop Offset (Minor Loop and Offset Enabled)
-        using Addr = Register::Address<0x40009068,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009068,0x00000000,0x00000000,std::uint32_t>;
         ///Minor Byte Transfer Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> nbytes{}; 
         ///If SMLOE or DMLOE is set, this field represents a sign-extended offset applied to the source or destination address to form the next-state value after the minor loop completes.
@@ -1127,67 +1127,67 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd0Slast{    ///<TCD Last Source Address Adjustment
-        using Addr = Register::Address<0x4000900c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000900c,0x00000000,0x00000000,std::uint32_t>;
         ///Last source Address Adjustment
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> slast{}; 
     }
     namespace DmaTcd1Slast{    ///<TCD Last Source Address Adjustment
-        using Addr = Register::Address<0x4000902c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000902c,0x00000000,0x00000000,std::uint32_t>;
         ///Last source Address Adjustment
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> slast{}; 
     }
     namespace DmaTcd2Slast{    ///<TCD Last Source Address Adjustment
-        using Addr = Register::Address<0x4000904c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000904c,0x00000000,0x00000000,std::uint32_t>;
         ///Last source Address Adjustment
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> slast{}; 
     }
     namespace DmaTcd3Slast{    ///<TCD Last Source Address Adjustment
-        using Addr = Register::Address<0x4000906c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000906c,0x00000000,0x00000000,std::uint32_t>;
         ///Last source Address Adjustment
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> slast{}; 
     }
     namespace DmaTcd0Daddr{    ///<TCD Destination Address
-        using Addr = Register::Address<0x40009010,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009010,0x00000000,0x00000000,std::uint32_t>;
         ///Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmaTcd1Daddr{    ///<TCD Destination Address
-        using Addr = Register::Address<0x40009030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009030,0x00000000,0x00000000,std::uint32_t>;
         ///Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmaTcd2Daddr{    ///<TCD Destination Address
-        using Addr = Register::Address<0x40009050,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009050,0x00000000,0x00000000,std::uint32_t>;
         ///Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmaTcd3Daddr{    ///<TCD Destination Address
-        using Addr = Register::Address<0x40009070,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009070,0x00000000,0x00000000,std::uint32_t>;
         ///Destination Address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> daddr{}; 
     }
     namespace DmaTcd0Doff{    ///<TCD Signed Destination Address Offset
-        using Addr = Register::Address<0x40009014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009014,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Address Signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> doff{}; 
     }
     namespace DmaTcd1Doff{    ///<TCD Signed Destination Address Offset
-        using Addr = Register::Address<0x40009034,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009034,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Address Signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> doff{}; 
     }
     namespace DmaTcd2Doff{    ///<TCD Signed Destination Address Offset
-        using Addr = Register::Address<0x40009054,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009054,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Address Signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> doff{}; 
     }
     namespace DmaTcd3Doff{    ///<TCD Signed Destination Address Offset
-        using Addr = Register::Address<0x40009074,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009074,0xffff0000,0x00000000,std::uint16_t>;
         ///Destination Address Signed offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> doff{}; 
     }
     namespace DmaTcd0CiterElinkno{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x40009016,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009016,0xffff0000,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Enable channel-to-channel linking on minor-loop complete
@@ -1202,7 +1202,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd1CiterElinkno{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x40009036,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009036,0xffff0000,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Enable channel-to-channel linking on minor-loop complete
@@ -1217,7 +1217,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd2CiterElinkno{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x40009056,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009056,0xffff0000,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Enable channel-to-channel linking on minor-loop complete
@@ -1232,7 +1232,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd3CiterElinkno{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x40009076,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009076,0xffff0000,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Enable channel-to-channel linking on minor-loop complete
@@ -1247,7 +1247,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd0CiterElinkyes{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x40009016,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009016,0xffff7800,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Link Channel Number
@@ -1264,7 +1264,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd1CiterElinkyes{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x40009036,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009036,0xffff7800,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Link Channel Number
@@ -1281,7 +1281,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd2CiterElinkyes{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x40009056,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009056,0xffff7800,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Link Channel Number
@@ -1298,7 +1298,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd3CiterElinkyes{    ///<TCD Current Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x40009076,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40009076,0xffff7800,0x00000000,std::uint16_t>;
         ///Current Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> citer{}; 
         ///Link Channel Number
@@ -1315,27 +1315,27 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd0Dlastsga{    ///<TCD Last Destination Address Adjustment/Scatter Gather Address
-        using Addr = Register::Address<0x40009018,0x00000000,0x00000000,unsigned>;
-        ///no description available
+        using Addr = Register::Address<0x40009018,0x00000000,0x00000000,std::uint32_t>;
+        ///Destination last address adjustment or the memory address for the next transfer control descriptor to be loaded into this channel (scatter/gather)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dlastsga{}; 
     }
     namespace DmaTcd1Dlastsga{    ///<TCD Last Destination Address Adjustment/Scatter Gather Address
-        using Addr = Register::Address<0x40009038,0x00000000,0x00000000,unsigned>;
-        ///no description available
+        using Addr = Register::Address<0x40009038,0x00000000,0x00000000,std::uint32_t>;
+        ///Destination last address adjustment or the memory address for the next transfer control descriptor to be loaded into this channel (scatter/gather)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dlastsga{}; 
     }
     namespace DmaTcd2Dlastsga{    ///<TCD Last Destination Address Adjustment/Scatter Gather Address
-        using Addr = Register::Address<0x40009058,0x00000000,0x00000000,unsigned>;
-        ///no description available
+        using Addr = Register::Address<0x40009058,0x00000000,0x00000000,std::uint32_t>;
+        ///Destination last address adjustment or the memory address for the next transfer control descriptor to be loaded into this channel (scatter/gather)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dlastsga{}; 
     }
     namespace DmaTcd3Dlastsga{    ///<TCD Last Destination Address Adjustment/Scatter Gather Address
-        using Addr = Register::Address<0x40009078,0x00000000,0x00000000,unsigned>;
-        ///no description available
+        using Addr = Register::Address<0x40009078,0x00000000,0x00000000,std::uint32_t>;
+        ///Destination last address adjustment or the memory address for the next transfer control descriptor to be loaded into this channel (scatter/gather)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> dlastsga{}; 
     }
     namespace DmaTcd0Csr{    ///<TCD Control and Status
-        using Addr = Register::Address<0x4000901c,0xffff3c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000901c,0xffff3c00,0x00000000,std::uint16_t>;
         ///Channel Start
         enum class StartVal {
             v0=0x00000000,     ///<The channel is not explicitly started
@@ -1416,7 +1416,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd1Csr{    ///<TCD Control and Status
-        using Addr = Register::Address<0x4000903c,0xffff3c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000903c,0xffff3c00,0x00000000,std::uint16_t>;
         ///Channel Start
         enum class StartVal {
             v0=0x00000000,     ///<The channel is not explicitly started
@@ -1497,7 +1497,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd2Csr{    ///<TCD Control and Status
-        using Addr = Register::Address<0x4000905c,0xffff3c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000905c,0xffff3c00,0x00000000,std::uint16_t>;
         ///Channel Start
         enum class StartVal {
             v0=0x00000000,     ///<The channel is not explicitly started
@@ -1578,7 +1578,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd3Csr{    ///<TCD Control and Status
-        using Addr = Register::Address<0x4000907c,0xffff3c00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000907c,0xffff3c00,0x00000000,std::uint16_t>;
         ///Channel Start
         enum class StartVal {
             v0=0x00000000,     ///<The channel is not explicitly started
@@ -1659,7 +1659,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd0BiterElinkno{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x4000901e,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000901e,0xffff0000,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Enables channel-to-channel linking on minor loop complete
@@ -1674,7 +1674,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd1BiterElinkno{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x4000903e,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000903e,0xffff0000,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Enables channel-to-channel linking on minor loop complete
@@ -1689,7 +1689,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd2BiterElinkno{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x4000905e,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000905e,0xffff0000,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Enables channel-to-channel linking on minor loop complete
@@ -1704,7 +1704,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd3BiterElinkno{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Disabled)
-        using Addr = Register::Address<0x4000907e,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000907e,0xffff0000,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Enables channel-to-channel linking on minor loop complete
@@ -1719,7 +1719,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd0BiterElinkyes{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x4000901e,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000901e,0xffff7800,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Link Channel Number
@@ -1736,7 +1736,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd1BiterElinkyes{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x4000903e,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000903e,0xffff7800,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Link Channel Number
@@ -1753,7 +1753,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd2BiterElinkyes{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x4000905e,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000905e,0xffff7800,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Link Channel Number
@@ -1770,7 +1770,7 @@ namespace Kvasir {
         }
     }
     namespace DmaTcd3BiterElinkyes{    ///<TCD Beginning Minor Loop Link, Major Loop Count (Channel Linking Enabled)
-        using Addr = Register::Address<0x4000907e,0xffff7800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000907e,0xffff7800,0x00000000,std::uint16_t>;
         ///Starting Major Iteration Count
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> biter{}; 
         ///Link Channel Number

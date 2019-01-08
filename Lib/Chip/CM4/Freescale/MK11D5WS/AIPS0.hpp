@@ -3,7 +3,7 @@
 namespace Kvasir {
 //AIPS-Lite Bridge
     namespace Aips0Mpra{    ///<Master Privilege Register A
-        using Addr = Register::Address<0x40000000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000000,0x00000000,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> reserved{}; 
         ///no description available
@@ -22,7 +22,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
     namespace Aips0Pacra{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000020,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -281,7 +281,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrb{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000024,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -540,7 +540,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrc{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000028,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -799,7 +799,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrd{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x4000002c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000002c,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -1058,7 +1058,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacre{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000040,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -1317,7 +1317,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrf{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000044,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -1576,7 +1576,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrg{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000048,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -1835,7 +1835,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrh{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x4000004c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000004c,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -2094,7 +2094,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacri{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000050,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000050,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -2353,7 +2353,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrj{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000054,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000054,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -2612,7 +2612,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrk{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000058,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000058,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -2871,7 +2871,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrl{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x4000005c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000005c,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -3130,7 +3130,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrm{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000060,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000060,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -3389,7 +3389,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrn{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000064,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000064,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -3648,7 +3648,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacro{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x40000068,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40000068,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.
@@ -3907,7 +3907,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace Aips0Pacrp{    ///<Peripheral Access Control Register
-        using Addr = Register::Address<0x4000006c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000006c,0x00000000,0x00000000,std::uint32_t>;
         ///Trusted Protect
         enum class Tp7Val {
             v0=0x00000000,     ///<Accesses from an untrusted master are allowed.

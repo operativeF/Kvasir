@@ -3,7 +3,7 @@
 namespace Kvasir {
 //DMA channel multiplexor
     namespace DmamuxChcfg0{    ///<Channel Configuration Register
-        using Addr = Register::Address<0x40021000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40021000,0xffffff00,0x00000000,std::uint8_t>;
         ///DMA Channel Source (slot)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> source{}; 
         ///DMA Channel Trigger Enable
@@ -28,7 +28,7 @@ namespace Kvasir {
         }
     }
     namespace DmamuxChcfg1{    ///<Channel Configuration Register
-        using Addr = Register::Address<0x40021001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40021001,0xffffff00,0x00000000,std::uint8_t>;
         ///DMA Channel Source (slot)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> source{}; 
         ///DMA Channel Trigger Enable
@@ -53,7 +53,7 @@ namespace Kvasir {
         }
     }
     namespace DmamuxChcfg2{    ///<Channel Configuration Register
-        using Addr = Register::Address<0x40021002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40021002,0xffffff00,0x00000000,std::uint8_t>;
         ///DMA Channel Source (slot)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> source{}; 
         ///DMA Channel Trigger Enable
@@ -78,7 +78,7 @@ namespace Kvasir {
         }
     }
     namespace DmamuxChcfg3{    ///<Channel Configuration Register
-        using Addr = Register::Address<0x40021003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40021003,0xffffff00,0x00000000,std::uint8_t>;
         ///DMA Channel Source (slot)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,0),Register::ReadWriteAccess,unsigned> source{}; 
         ///DMA Channel Trigger Enable

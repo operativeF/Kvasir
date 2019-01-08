@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Cyclic Redundancy Check
     namespace CrcCrc{    ///<CRC Data register
-        using Addr = Register::Address<0x40032000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40032000,0x00000000,0x00000000,std::uint32_t>;
         ///CRC Low Lower Byte
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> ll{}; 
         ///CRC Low Upper Byte
@@ -14,75 +14,75 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> hu{}; 
     }
     namespace CrcCrcl{    ///<CRC_CRCL register.
-        using Addr = Register::Address<0x40032000,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40032000,0xffff0000,0x00000000,std::uint16_t>;
         ///CRCL stores the lower 16 bits of the 16/32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> crcl{}; 
     }
     namespace CrcCrcll{    ///<CRC_CRCLL register.
-        using Addr = Register::Address<0x40032000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032000,0xffffff00,0x00000000,std::uint8_t>;
         ///CRCLL stores the first 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> crcll{}; 
     }
     namespace CrcCrclu{    ///<CRC_CRCLU register.
-        using Addr = Register::Address<0x40032001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032001,0xffffff00,0x00000000,std::uint8_t>;
         ///CRCLL stores the second 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> crclu{}; 
     }
     namespace CrcCrch{    ///<CRC_CRCH register.
-        using Addr = Register::Address<0x40032002,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40032002,0xffff0000,0x00000000,std::uint16_t>;
         ///CRCH stores the high 16 bits of the 16/32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> crch{}; 
     }
     namespace CrcCrchl{    ///<CRC_CRCHL register.
-        using Addr = Register::Address<0x40032002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032002,0xffffff00,0x00000000,std::uint8_t>;
         ///CRCHL stores the third 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> crchl{}; 
     }
     namespace CrcCrchu{    ///<CRC_CRCHU register.
-        using Addr = Register::Address<0x40032003,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032003,0xffffff00,0x00000000,std::uint8_t>;
         ///CRCHU stores the fourth 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> crchu{}; 
     }
     namespace CrcGpoly{    ///<CRC Polynomial register
-        using Addr = Register::Address<0x40032004,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40032004,0x00000000,0x00000000,std::uint32_t>;
         ///Low Polynominal Half-word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> low{}; 
         ///High Polynominal Half-word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> high{}; 
     }
     namespace CrcGpolyl{    ///<CRC_GPOLYL register.
-        using Addr = Register::Address<0x40032004,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40032004,0xffff0000,0x00000000,std::uint16_t>;
         ///POLYL stores the lower 16 bits of the 16/32 bit CRC polynomial value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> gpolyl{}; 
     }
     namespace CrcGpolyll{    ///<CRC_GPOLYLL register.
-        using Addr = Register::Address<0x40032004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032004,0xffffff00,0x00000000,std::uint8_t>;
         ///POLYLL stores the first 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> gpolyll{}; 
     }
     namespace CrcGpolylu{    ///<CRC_GPOLYLU register.
-        using Addr = Register::Address<0x40032005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032005,0xffffff00,0x00000000,std::uint8_t>;
         ///POLYLL stores the second 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> gpolylu{}; 
     }
     namespace CrcGpolyh{    ///<CRC_GPOLYH register.
-        using Addr = Register::Address<0x40032006,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40032006,0xffff0000,0x00000000,std::uint16_t>;
         ///POLYH stores the high 16 bits of the 16/32 bit CRC polynomial value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> gpolyh{}; 
     }
     namespace CrcGpolyhl{    ///<CRC_GPOLYHL register.
-        using Addr = Register::Address<0x40032006,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032006,0xffffff00,0x00000000,std::uint8_t>;
         ///POLYHL stores the third 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> gpolyhl{}; 
     }
     namespace CrcGpolyhu{    ///<CRC_GPOLYHU register.
-        using Addr = Register::Address<0x40032007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x40032007,0xffffff00,0x00000000,std::uint8_t>;
         ///POLYHU stores the fourth 8 bits of the 32 bit CRC
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> gpolyhu{}; 
     }
     namespace CrcCtrl{    ///<CRC Control register
-        using Addr = Register::Address<0x40032008,0x08ffffff,0x00000000,unsigned>;
-        ///no description available
+        using Addr = Register::Address<0x40032008,0x08ffffff,0x00000000,std::uint32_t>;
+        ///Width of CRC protocol.
         enum class TcrcVal {
             v0=0x00000000,     ///<16-bit CRC protocol.
             v1=0x00000001,     ///<32-bit CRC protocol.
@@ -142,7 +142,7 @@ namespace Kvasir {
         }
     }
     namespace CrcCtrlhu{    ///<CRC_CTRLHU register.
-        using Addr = Register::Address<0x4003200b,0xffffff08,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4003200b,0xffffff08,0x00000000,std::uint8_t>;
         ///no description available
         enum class TcrcVal {
             v0=0x00000000,     ///<16-bit CRC protocol.

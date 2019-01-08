@@ -3,7 +3,7 @@
 namespace Kvasir {
 //System Control Registers
     namespace SystemcontrolActlr{    ///<Auxiliary Control Register,
-        using Addr = Register::Address<0xe000e008,0xfffffff8,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000e008,0xfffffff8,0x00000000,std::uint32_t>;
         ///Disables interruption of multi-cycle instructions.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dismcycint{}; 
         ///Disables write buffer use during default memory map accesses.
@@ -12,7 +12,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> disfold{}; 
     }
     namespace SystemcontrolCpuid{    ///<CPUID Base Register
-        using Addr = Register::Address<0xe000ed00,0x000f0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed00,0x000f0000,0x00000000,std::uint32_t>;
         ///Indicates patch release: 0x0 = Patch 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> revision{}; 
         ///Indicates part number
@@ -23,7 +23,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> implementer{}; 
     }
     namespace SystemcontrolIcsr{    ///<Interrupt Control and State Register
-        using Addr = Register::Address<0xe000ed04,0x613c0600,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed04,0x613c0600,0x00000000,std::uint32_t>;
         ///Active exception number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> vectactive{}; 
         ///no description available
@@ -102,12 +102,12 @@ namespace Kvasir {
         }
     }
     namespace SystemcontrolVtor{    ///<Vector Table Offset Register
-        using Addr = Register::Address<0xe000ed08,0x0000007f,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed08,0x0000007f,0x00000000,std::uint32_t>;
         ///Vector table base offset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,7),Register::ReadWriteAccess,unsigned> tbloff{}; 
     }
     namespace SystemcontrolAircr{    ///<Application Interrupt and Reset Control Register
-        using Addr = Register::Address<0xe000ed0c,0x000078f8,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed0c,0x000078f8,0x00000000,std::uint32_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> vectreset{}; 
         ///no description available
@@ -138,7 +138,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> vectkey{}; 
     }
     namespace SystemcontrolScr{    ///<System Control Register
-        using Addr = Register::Address<0xe000ed10,0xffffffe9,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed10,0xffffffe9,0x00000000,std::uint32_t>;
         ///no description available
         enum class SleeponexitVal {
             v0=0x00000000,     ///<o not sleep when returning to Thread mode
@@ -171,7 +171,7 @@ namespace Kvasir {
         }
     }
     namespace SystemcontrolCcr{    ///<Configuration and Control Register
-        using Addr = Register::Address<0xe000ed14,0xfffffce4,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed14,0xfffffce4,0x00000000,std::uint32_t>;
         ///no description available
         enum class NonbasethrdenaVal {
             v0=0x00000000,     ///<processor can enter Thread mode only when no exception is active
@@ -234,7 +234,7 @@ namespace Kvasir {
         }
     }
     namespace SystemcontrolShpr1{    ///<System Handler Priority Register 1
-        using Addr = Register::Address<0xe000ed18,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed18,0xff000000,0x00000000,std::uint32_t>;
         ///Priority of system handler 4, MemManage
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> pri4{}; 
         ///Priority of system handler 5, BusFault
@@ -243,19 +243,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> pri6{}; 
     }
     namespace SystemcontrolShpr2{    ///<System Handler Priority Register 2
-        using Addr = Register::Address<0xe000ed1c,0x00ffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed1c,0x00ffffff,0x00000000,std::uint32_t>;
         ///Priority of system handler 11, SVCall
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> pri11{}; 
     }
     namespace SystemcontrolShpr3{    ///<System Handler Priority Register 3
-        using Addr = Register::Address<0xe000ed20,0x0000ffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed20,0x0000ffff,0x00000000,std::uint32_t>;
         ///Priority of system handler 14, PendSV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,16),Register::ReadWriteAccess,unsigned> pri14{}; 
         ///Priority of system handler 15, SysTick exception
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> pri15{}; 
     }
     namespace SystemcontrolShcsr{    ///<System Handler Control and State Register
-        using Addr = Register::Address<0xe000ed24,0xfff80274,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed24,0xfff80274,0x00000000,std::uint32_t>;
         ///no description available
         enum class MemfaultactVal {
             v0=0x00000000,     ///<exception is not active
@@ -398,7 +398,7 @@ namespace Kvasir {
         }
     }
     namespace SystemcontrolCfsr{    ///<Configurable Fault Status Registers
-        using Addr = Register::Address<0xe000ed28,0xfcf04044,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed28,0xfcf04044,0x00000000,std::uint32_t>;
         ///no description available
         enum class IaccviolVal {
             v0=0x00000000,     ///<no instruction access violation fault
@@ -591,7 +591,7 @@ namespace Kvasir {
         }
     }
     namespace SystemcontrolHfsr{    ///<HardFault Status register
-        using Addr = Register::Address<0xe000ed2c,0x3ffffffd,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed2c,0x3ffffffd,0x00000000,std::uint32_t>;
         ///no description available
         enum class VecttblVal {
             v0=0x00000000,     ///<no BusFault on vector table read
@@ -616,7 +616,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> debugevt{}; 
     }
     namespace SystemcontrolDfsr{    ///<Debug Fault Status Register
-        using Addr = Register::Address<0xe000ed30,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed30,0xffffffe0,0x00000000,std::uint32_t>;
         ///no description available
         enum class HaltedVal {
             v0=0x00000000,     ///<No active halt request debug event
@@ -669,17 +669,17 @@ namespace Kvasir {
         }
     }
     namespace SystemcontrolMmfar{    ///<MemManage Address Register
-        using Addr = Register::Address<0xe000ed34,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed34,0x00000000,0x00000000,std::uint32_t>;
         ///Address of MemManage fault location
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> address{}; 
     }
     namespace SystemcontrolBfar{    ///<BusFault Address Register
-        using Addr = Register::Address<0xe000ed38,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed38,0x00000000,0x00000000,std::uint32_t>;
         ///Address of the BusFault location
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> address{}; 
     }
     namespace SystemcontrolAfsr{    ///<Auxiliary Fault Status Register
-        using Addr = Register::Address<0xe000ed3c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xe000ed3c,0x00000000,0x00000000,std::uint32_t>;
         ///Latched version of the AUXFAULT inputs
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> auxfault{}; 
     }

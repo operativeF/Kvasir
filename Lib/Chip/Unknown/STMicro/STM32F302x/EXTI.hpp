@@ -3,7 +3,7 @@
 namespace Kvasir {
 //External interrupt/event controller
     namespace ExtiImr1{    ///<Interrupt mask register
-        using Addr = Register::Address<0x40010400,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010400,0x00000000,0x00000000,std::uint32_t>;
         ///Interrupt Mask on line 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mr0{}; 
         ///Interrupt Mask on line 1
@@ -70,7 +70,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> mr31{}; 
     }
     namespace ExtiEmr1{    ///<Event mask register
-        using Addr = Register::Address<0x40010404,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010404,0x00000000,0x00000000,std::uint32_t>;
         ///Event Mask on line 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mr0{}; 
         ///Event Mask on line 1
@@ -137,7 +137,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> mr31{}; 
     }
     namespace ExtiRtsr1{    ///<Rising Trigger selection           register
-        using Addr = Register::Address<0x40010408,0x1f800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010408,0x1f800000,0x00000000,std::uint32_t>;
         ///Rising trigger event configuration of               line 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tr0{}; 
         ///Rising trigger event configuration of               line 1
@@ -192,7 +192,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> tr31{}; 
     }
     namespace ExtiFtsr1{    ///<Falling Trigger selection           register
-        using Addr = Register::Address<0x4001040c,0x1f800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001040c,0x1f800000,0x00000000,std::uint32_t>;
         ///Falling trigger event configuration of               line 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tr0{}; 
         ///Falling trigger event configuration of               line 1
@@ -247,7 +247,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> tr31{}; 
     }
     namespace ExtiSwier1{    ///<Software interrupt event           register
-        using Addr = Register::Address<0x40010410,0x1f800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010410,0x1f800000,0x00000000,std::uint32_t>;
         ///Software Interrupt on line               0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swier0{}; 
         ///Software Interrupt on line               1
@@ -302,7 +302,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> swier31{}; 
     }
     namespace ExtiPr1{    ///<Pending register
-        using Addr = Register::Address<0x40010414,0x1f800000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010414,0x1f800000,0x00000000,std::uint32_t>;
         ///Pending bit 0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pr0{}; 
         ///Pending bit 1
@@ -357,7 +357,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> pr31{}; 
     }
     namespace ExtiImr2{    ///<Interrupt mask register
-        using Addr = Register::Address<0x40010418,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010418,0xfffffff0,0x00000000,std::uint32_t>;
         ///Interrupt Mask on external/internal line               32
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mr32{}; 
         ///Interrupt Mask on external/internal line               33
@@ -368,7 +368,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> mr35{}; 
     }
     namespace ExtiEmr2{    ///<Event mask register
-        using Addr = Register::Address<0x4001041c,0xfffffff0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001041c,0xfffffff0,0x00000000,std::uint32_t>;
         ///Event mask on external/internal line               32
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mr32{}; 
         ///Event mask on external/internal line               33
@@ -379,28 +379,28 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> mr35{}; 
     }
     namespace ExtiRtsr2{    ///<Rising Trigger selection           register
-        using Addr = Register::Address<0x40010420,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010420,0xfffffffc,0x00000000,std::uint32_t>;
         ///Rising trigger event configuration bit               of line 32
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tr32{}; 
         ///Rising trigger event configuration bit               of line 33
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> tr33{}; 
     }
     namespace ExtiFtsr2{    ///<Falling Trigger selection           register
-        using Addr = Register::Address<0x40010424,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010424,0xfffffffc,0x00000000,std::uint32_t>;
         ///Falling trigger event configuration bit               of line 32
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tr32{}; 
         ///Falling trigger event configuration bit               of line 33
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> tr33{}; 
     }
     namespace ExtiSwier2{    ///<Software interrupt event           register
-        using Addr = Register::Address<0x40010428,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40010428,0xfffffffc,0x00000000,std::uint32_t>;
         ///Software interrupt on line               32
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swier32{}; 
         ///Software interrupt on line               33
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,1),Register::ReadWriteAccess,unsigned> swier33{}; 
     }
     namespace ExtiPr2{    ///<Pending register
-        using Addr = Register::Address<0x4001042c,0xfffffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001042c,0xfffffffc,0x00000000,std::uint32_t>;
         ///Pending bit on line 32
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pr32{}; 
         ///Pending bit on line 33

@@ -3,12 +3,12 @@
 namespace Kvasir {
 //Timer Counter Control 2
     namespace Tcc2Count{    ///<Count
-        using Addr = Register::Address<0x42002834,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002834,0xff000000,0x00000000,std::uint32_t>;
         ///Count Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> count{}; 
     }
     namespace Tcc2Ctrla{    ///<Control A
-        using Addr = Register::Address<0x42002800,0xf0ff009c,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002800,0xf0ff009c,0x00000000,std::uint32_t>;
         ///Software Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///Enable
@@ -77,7 +77,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> cpten3{}; 
     }
     namespace Tcc2Ctrlbclr{    ///<Control B Clear
-        using Addr = Register::Address<0x42002804,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42002804,0xffffff00,0x00000000,std::uint8_t>;
         ///Counter Direction
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dir{}; 
         ///Lock Update
@@ -116,7 +116,7 @@ namespace Kvasir {
         }
     }
     namespace Tcc2Ctrlbset{    ///<Control B Set
-        using Addr = Register::Address<0x42002805,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x42002805,0xffffff00,0x00000000,std::uint8_t>;
         ///Counter Direction
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dir{}; 
         ///Lock update
@@ -155,14 +155,14 @@ namespace Kvasir {
         }
     }
     namespace Tcc2Dbgctrl{    ///<Debug Control
-        using Addr = Register::Address<0x4200281e,0xfffffffa,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4200281e,0xfffffffa,0x00000000,std::uint8_t>;
         ///Debug Running Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dbgrun{}; 
         ///Fault Detection on Debug Break Detection
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> fddbd{}; 
     }
     namespace Tcc2Drvctrl{    ///<Driver Configuration
-        using Addr = Register::Address<0x42002818,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002818,0x00000000,0x00000000,std::uint32_t>;
         ///Non-Recoverable State 0 Output Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> nre0{}; 
         ///Non-Recoverable State 1 Output Enable
@@ -217,7 +217,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> filterval1{}; 
     }
     namespace Tcc2Evctrl{    ///<Event Control
-        using Addr = Register::Address<0x42002820,0xf0f00800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002820,0xf0f00800,0x00000000,std::uint32_t>;
         ///Timer/counter Input Event0 Action
         enum class Evact0Val {
             off=0x00000000,     ///<
@@ -306,7 +306,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> mceo3{}; 
     }
     namespace Tcc2Fctrla{    ///<Recoverable FaultA Configuration
-        using Addr = Register::Address<0x4200280c,0xf0008004,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200280c,0xf0008004,0x00000000,std::uint32_t>;
         ///FaultA Source
         enum class SrcVal {
             disable=0x00000000,     ///<
@@ -395,7 +395,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> filterval{}; 
     }
     namespace Tcc2Fctrlb{    ///<Recoverable FaultB Configuration
-        using Addr = Register::Address<0x42002810,0xf0008004,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002810,0xf0008004,0x00000000,std::uint32_t>;
         ///FaultB Source
         enum class SrcVal {
             disable=0x00000000,     ///<
@@ -484,7 +484,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,24),Register::ReadWriteAccess,unsigned> filterval{}; 
     }
     namespace Tcc2Intenclr{    ///<Interrupt Enable Clear
-        using Addr = Register::Address<0x42002824,0xfff007f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002824,0xfff007f0,0x00000000,std::uint32_t>;
         ///Overflow Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovf{}; 
         ///Retrigger Interrupt Enable
@@ -513,7 +513,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> mc3{}; 
     }
     namespace Tcc2Intenset{    ///<Interrupt Enable Set
-        using Addr = Register::Address<0x42002828,0xfff007f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002828,0xfff007f0,0x00000000,std::uint32_t>;
         ///Overflow Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovf{}; 
         ///Retrigger Interrupt Enable
@@ -542,7 +542,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> mc3{}; 
     }
     namespace Tcc2Intflag{    ///<Interrupt Flag Status and Clear
-        using Addr = Register::Address<0x4200282c,0xfff007f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200282c,0xfff007f0,0x00000000,std::uint32_t>;
         ///Overflow
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ovf{}; 
         ///Retrigger
@@ -571,7 +571,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> mc3{}; 
     }
     namespace Tcc2Patt{    ///<Pattern
-        using Addr = Register::Address<0x42002838,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002838,0xffff0000,0x00000000,std::uint16_t>;
         ///Pattern Generator 0 Output Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pge0{}; 
         ///Pattern Generator 1 Output Enable
@@ -606,7 +606,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> pgv7{}; 
     }
     namespace Tcc2Pattb{    ///<Pattern Buffer
-        using Addr = Register::Address<0x42002864,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002864,0xffff0000,0x00000000,std::uint16_t>;
         ///Pattern Generator 0 Output Enable Buffer
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pgeb0{}; 
         ///Pattern Generator 1 Output Enable Buffer
@@ -641,17 +641,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> pgvb7{}; 
     }
     namespace Tcc2Per{    ///<Period
-        using Addr = Register::Address<0x42002840,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002840,0xff000000,0x00000000,std::uint32_t>;
         ///Period Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> per{}; 
     }
     namespace Tcc2Perb{    ///<Period Buffer
-        using Addr = Register::Address<0x4200286c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200286c,0xff000000,0x00000000,std::uint32_t>;
         ///Period Value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> perb{}; 
     }
     namespace Tcc2Status{    ///<Status
-        using Addr = Register::Address<0x42002830,0xf0f00014,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002830,0xf0f00014,0x00000000,std::uint32_t>;
         ///Stop
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> stop{}; 
         ///Ramp
@@ -698,7 +698,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cmp3{}; 
     }
     namespace Tcc2Syncbusy{    ///<Synchronization Busy
-        using Addr = Register::Address<0x42002808,0xff80f000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002808,0xff80f000,0x00000000,std::uint32_t>;
         ///Swrst Busy
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> swrst{}; 
         ///Enable Busy
@@ -739,7 +739,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> ccb3{}; 
     }
     namespace Tcc2Wave{    ///<Waveform Control
-        using Addr = Register::Address<0x4200283c,0xf0f0f048,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200283c,0xf0f0f048,0x00000000,std::uint32_t>;
         ///Waveform Generation
         enum class WavegenVal {
             nfrq=0x00000000,     ///<
@@ -800,7 +800,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> swap3{}; 
     }
     namespace Tcc2Waveb{    ///<Waveform Control Buffer
-        using Addr = Register::Address<0x42002868,0xf0f0f048,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002868,0xf0f0f048,0x00000000,std::uint32_t>;
         ///Waveform Generation Buffer
         enum class WavegenbVal {
             nfrq=0x00000000,     ///<
@@ -851,7 +851,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> swapb3{}; 
     }
     namespace Tcc2Wexctrl{    ///<Waveform Extension Configuration
-        using Addr = Register::Address<0x42002814,0x0000f0fc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002814,0x0000f0fc,0x00000000,std::uint32_t>;
         ///Output Matrix
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> otmx{}; 
         ///Dead-time Insertion Generator 0 Enable
@@ -868,82 +868,42 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> dths{}; 
     }
     namespace Tcc2Cc0{    ///<Compare and Capture
-        using Addr = Register::Address<0x42002844,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002844,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
     }
     namespace Tcc2Cc1{    ///<Compare and Capture
-        using Addr = Register::Address<0x42002848,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002848,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
     }
     namespace Tcc2Cc2{    ///<Compare and Capture
-        using Addr = Register::Address<0x4200284c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200284c,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
     }
     namespace Tcc2Cc3{    ///<Compare and Capture
-        using Addr = Register::Address<0x42002850,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002850,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
     }
     namespace Tcc2Ccb0{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x42002870,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002870,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture buffer value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
     }
     namespace Tcc2Ccb1{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x42002874,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002874,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture buffer value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
     }
     namespace Tcc2Ccb2{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x42002878,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x42002878,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture buffer value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
     }
     namespace Tcc2Ccb3{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x4200287c,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture buffer value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
-    }
-    namespace Tcc2Cc0{    ///<Compare and Capture
-        using Addr = Register::Address<0x42002844,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
-    }
-    namespace Tcc2Cc1{    ///<Compare and Capture
-        using Addr = Register::Address<0x42002848,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
-    }
-    namespace Tcc2Cc2{    ///<Compare and Capture
-        using Addr = Register::Address<0x4200284c,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
-    }
-    namespace Tcc2Cc3{    ///<Compare and Capture
-        using Addr = Register::Address<0x42002850,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> cc{}; 
-    }
-    namespace Tcc2Ccb0{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x42002870,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture buffer value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
-    }
-    namespace Tcc2Ccb1{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x42002874,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture buffer value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
-    }
-    namespace Tcc2Ccb2{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x42002878,0xff000000,0x00000000,unsigned>;
-        ///Compare and Capture buffer value
-        constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
-    }
-    namespace Tcc2Ccb3{    ///<Compare and Capture Buffer
-        using Addr = Register::Address<0x4200287c,0xff000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4200287c,0xff000000,0x00000000,std::uint32_t>;
         ///Compare and Capture buffer value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> ccb{}; 
     }

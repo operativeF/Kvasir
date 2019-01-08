@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal synchronous asynchronous receiver      transmitter
     namespace Usart6Cr1{    ///<Control register 1
-        using Addr = Register::Address<0x40011400,0xe0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011400,0xe0000000,0x00000000,std::uint32_t>;
         ///USART enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ue{}; 
         ///USART enable in Stop mode
@@ -48,7 +48,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(28,28),Register::ReadWriteAccess,unsigned> m1{}; 
     }
     namespace Usart6Cr2{    ///<Control register 2
-        using Addr = Register::Address<0x40011404,0x0000008f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011404,0x0000008f,0x00000000,std::uint32_t>;
         ///Address of the USART node
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> add4{}; 
         ///Address of the USART node
@@ -89,7 +89,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> addm7{}; 
     }
     namespace Usart6Cr3{    ///<Control register 3
-        using Addr = Register::Address<0x40011408,0xff810000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011408,0xff810000,0x00000000,std::uint32_t>;
         ///Wakeup from Stop mode interrupt              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> wufie{}; 
         ///Wakeup from Stop mode interrupt flag              selection
@@ -130,28 +130,28 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> eie{}; 
     }
     namespace Usart6Brr{    ///<Baud rate register
-        using Addr = Register::Address<0x4001140c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001140c,0xffff0000,0x00000000,std::uint32_t>;
         ///mantissa of USARTDIV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,4),Register::ReadWriteAccess,unsigned> divMantissa{}; 
         ///fraction of USARTDIV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> divFraction{}; 
     }
     namespace Usart6Gtpr{    ///<Guard time and prescaler          register
-        using Addr = Register::Address<0x40011410,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011410,0xffff0000,0x00000000,std::uint32_t>;
         ///Guard time value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,8),Register::ReadWriteAccess,unsigned> gt{}; 
         ///Prescaler value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,0),Register::ReadWriteAccess,unsigned> psc{}; 
     }
     namespace Usart6Rtor{    ///<Receiver timeout register
-        using Addr = Register::Address<0x40011414,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011414,0x00000000,0x00000000,std::uint32_t>;
         ///Block Length
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::ReadWriteAccess,unsigned> blen{}; 
         ///Receiver timeout value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,0),Register::ReadWriteAccess,unsigned> rto{}; 
     }
     namespace Usart6Rqr{    ///<Request register
-        using Addr = Register::Address<0x40011418,0xffffffe0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011418,0xffffffe0,0x00000000,std::uint32_t>;
         ///Transmit data flush              request
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(4,4),Register::ReadWriteAccess,unsigned> txfrq{}; 
         ///Receive data flush request
@@ -164,7 +164,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> abrrq{}; 
     }
     namespace Usart6Isr{    ///<Interrupt & status          register
-        using Addr = Register::Address<0x4001141c,0xff802000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4001141c,0xff802000,0x00000000,std::uint32_t>;
         ///Receive enable acknowledge              flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(22,22),Register::ReadWriteAccess,unsigned> reack{}; 
         ///Transmit enable acknowledge              flag
@@ -211,7 +211,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pe{}; 
     }
     namespace Usart6Icr{    ///<Interrupt flag clear register
-        using Addr = Register::Address<0x40011420,0xffede4a0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011420,0xffede4a0,0x00000000,std::uint32_t>;
         ///Wakeup from Stop mode clear              flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(20,20),Register::ReadWriteAccess,unsigned> wucf{}; 
         ///Character match clear flag
@@ -238,12 +238,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pecf{}; 
     }
     namespace Usart6Rdr{    ///<Receive data register
-        using Addr = Register::Address<0x40011424,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011424,0xfffffe00,0x00000000,std::uint32_t>;
         ///Receive data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> rdr{}; 
     }
     namespace Usart6Tdr{    ///<Transmit data register
-        using Addr = Register::Address<0x40011428,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40011428,0xfffffe00,0x00000000,std::uint32_t>;
         ///Transmit data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> tdr{}; 
     }

@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal synchronous asynchronous receiver      transmitter
     namespace Uart5Sr{    ///<Status register
-        using Addr = Register::Address<0x40005000,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005000,0xfffffe00,0x00000000,std::uint32_t>;
         ///LIN break detection flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::ReadWriteAccess,unsigned> lbd{}; 
         ///Transmit data register              empty
@@ -24,19 +24,19 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> pe{}; 
     }
     namespace Uart5Dr{    ///<Data register
-        using Addr = Register::Address<0x40005004,0xfffffe00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005004,0xfffffe00,0x00000000,std::uint32_t>;
         ///Data value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,0),Register::ReadWriteAccess,unsigned> dr{}; 
     }
     namespace Uart5Brr{    ///<Baud rate register
-        using Addr = Register::Address<0x40005008,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005008,0xffff0000,0x00000000,std::uint32_t>;
         ///mantissa of USARTDIV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,4),Register::ReadWriteAccess,unsigned> divMantissa{}; 
         ///fraction of USARTDIV
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> divFraction{}; 
     }
     namespace Uart5Cr1{    ///<Control register 1
-        using Addr = Register::Address<0x4000500c,0xffff4000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000500c,0xffff4000,0x00000000,std::uint32_t>;
         ///Oversampling mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> over8{}; 
         ///USART enable
@@ -69,7 +69,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> sbk{}; 
     }
     namespace Uart5Cr2{    ///<Control register 2
-        using Addr = Register::Address<0x40005010,0xffff8f90,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005010,0xffff8f90,0x00000000,std::uint32_t>;
         ///LIN mode enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(14,14),Register::ReadWriteAccess,unsigned> linen{}; 
         ///STOP bits
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> add{}; 
     }
     namespace Uart5Cr3{    ///<Control register 3
-        using Addr = Register::Address<0x40005014,0xfffff730,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40005014,0xfffff730,0x00000000,std::uint32_t>;
         ///One sample bit method              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(11,11),Register::ReadWriteAccess,unsigned> onebit{}; 
         ///DMA enable transmitter

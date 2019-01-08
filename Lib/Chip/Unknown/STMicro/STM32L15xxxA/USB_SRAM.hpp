@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Universal serial bus full-speed device       interface
     namespace UsbSramUsbEp0r{    ///<endpoint 0 register
-        using Addr = Register::Address<0x40006000,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006000,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -26,7 +26,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbEp1r{    ///<endpoint 1 register
-        using Addr = Register::Address<0x40006004,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006004,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -49,7 +49,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbEp2r{    ///<endpoint 2 register
-        using Addr = Register::Address<0x40006008,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006008,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -72,7 +72,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbEp3r{    ///<endpoint 3 register
-        using Addr = Register::Address<0x4000600c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000600c,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -95,7 +95,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbEp4r{    ///<endpoint 4 register
-        using Addr = Register::Address<0x40006010,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006010,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -118,7 +118,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbEp5r{    ///<endpoint 5 register
-        using Addr = Register::Address<0x40006014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006014,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -141,7 +141,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbEp6r{    ///<endpoint 6 register
-        using Addr = Register::Address<0x40006018,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006018,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -164,7 +164,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbEp7r{    ///<endpoint 7 register
-        using Addr = Register::Address<0x4000601c,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000601c,0xffff0000,0x00000000,std::uint32_t>;
         ///Endpoint address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> ea{}; 
         ///Status bits, for transmission               transfers
@@ -187,7 +187,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrRx{}; 
     }
     namespace UsbSramUsbCntr{    ///<control register
-        using Addr = Register::Address<0x40006040,0xffff00e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006040,0xffff00e0,0x00000000,std::uint32_t>;
         ///Force USB Reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fres{}; 
         ///Power down
@@ -216,7 +216,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctrm{}; 
     }
     namespace UsbSramIstr{    ///<interrupt status register
-        using Addr = Register::Address<0x40006044,0xffff00e0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006044,0xffff00e0,0x00000000,std::uint32_t>;
         ///Endpoint Identifier
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> epId{}; 
         ///Direction of transaction
@@ -239,7 +239,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ctr{}; 
     }
     namespace UsbSramFnr{    ///<frame number register
-        using Addr = Register::Address<0x40006048,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006048,0xffff0000,0x00000000,std::uint32_t>;
         ///Frame number
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(10,0),Register::ReadWriteAccess,unsigned> fn{}; 
         ///Lost SOF
@@ -252,14 +252,14 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> rxdp{}; 
     }
     namespace UsbSramDaddr{    ///<device address
-        using Addr = Register::Address<0x4000604c,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4000604c,0xffffff00,0x00000000,std::uint32_t>;
         ///Device address
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(6,0),Register::ReadWriteAccess,unsigned> add{}; 
         ///Enable function
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> ef{}; 
     }
     namespace UsbSramBtable{    ///<Buffer table address
-        using Addr = Register::Address<0x40006050,0xffff0007,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40006050,0xffff0007,0x00000000,std::uint32_t>;
         ///Buffer table
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,3),Register::ReadWriteAccess,unsigned> btable{}; 
     }

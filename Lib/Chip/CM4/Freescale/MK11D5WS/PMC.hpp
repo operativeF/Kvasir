@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Power Management Controller
     namespace PmcLvdsc1{    ///<Low Voltage Detect Status And Control 1 register
-        using Addr = Register::Address<0x4007d000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007d000,0xffffff00,0x00000000,std::uint8_t>;
         ///Low-Voltage Detect Voltage Select
         enum class LvdvVal {
             v00=0x00000000,     ///<Low trip point selected (V LVD = V LVDL )
@@ -54,7 +54,7 @@ namespace Kvasir {
         }
     }
     namespace PmcLvdsc2{    ///<Low Voltage Detect Status And Control 2 register
-        using Addr = Register::Address<0x4007d001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007d001,0xffffff00,0x00000000,std::uint8_t>;
         ///Low-Voltage Warning Voltage Select
         enum class LvwvVal {
             v00=0x00000000,     ///<Low trip point selected (VLVW = VLVW1)
@@ -95,7 +95,7 @@ namespace Kvasir {
         }
     }
     namespace PmcRegsc{    ///<Regulator Status And Control register
-        using Addr = Register::Address<0x4007d002,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007d002,0xffffff00,0x00000000,std::uint8_t>;
         ///Bandgap Buffer Enable
         enum class BgbeVal {
             v0=0x00000000,     ///<Bandgap buffer not enabled

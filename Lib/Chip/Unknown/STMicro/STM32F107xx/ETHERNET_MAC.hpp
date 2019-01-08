@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Ethernet: media access control
     namespace EthernetMacMaccr{    ///<Ethernet MAC configuration register          (ETH_MACCR)
-        using Addr = Register::Address<0x40028000,0xff308103,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028000,0xff308103,0x00000000,std::uint32_t>;
         ///Receiver enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(2,2),Register::ReadWriteAccess,unsigned> re{}; 
         ///Transmitter enable
@@ -36,7 +36,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::ReadWriteAccess,unsigned> wd{}; 
     }
     namespace EthernetMacMacffr{    ///<Ethernet MAC frame filter register          (ETH_MACCFFR)
-        using Addr = Register::Address<0x40028004,0x7ffff800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028004,0x7ffff800,0x00000000,std::uint32_t>;
         ///Promiscuous mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pm{}; 
         ///Hash unicast
@@ -61,17 +61,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ra{}; 
     }
     namespace EthernetMacMachthr{    ///<Ethernet MAC hash table high          register
-        using Addr = Register::Address<0x40028008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028008,0x00000000,0x00000000,std::uint32_t>;
         ///Hash table high
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> hth{}; 
     }
     namespace EthernetMacMachtlr{    ///<Ethernet MAC hash table low          register
-        using Addr = Register::Address<0x4002800c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002800c,0x00000000,0x00000000,std::uint32_t>;
         ///Hash table low
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> htl{}; 
     }
     namespace EthernetMacMacmiiar{    ///<Ethernet MAC MII address register          (ETH_MACMIIAR)
-        using Addr = Register::Address<0x40028010,0xffff0020,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028010,0xffff0020,0x00000000,std::uint32_t>;
         ///MII busy
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mb{}; 
         ///MII write
@@ -84,12 +84,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,11),Register::ReadWriteAccess,unsigned> pa{}; 
     }
     namespace EthernetMacMacmiidr{    ///<Ethernet MAC MII data register          (ETH_MACMIIDR)
-        using Addr = Register::Address<0x40028014,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028014,0xffff0000,0x00000000,std::uint32_t>;
         ///MII data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> md{}; 
     }
     namespace EthernetMacMacfcr{    ///<Ethernet MAC flow control register          (ETH_MACFCR)
-        using Addr = Register::Address<0x40028018,0x0000ff40,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028018,0x0000ff40,0x00000000,std::uint32_t>;
         ///Flow control busy/back pressure              activate
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fcbBpa{}; 
         ///Transmit flow control              enable
@@ -106,17 +106,17 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> pt{}; 
     }
     namespace EthernetMacMacvlantr{    ///<Ethernet MAC VLAN tag register          (ETH_MACVLANTR)
-        using Addr = Register::Address<0x4002801c,0xfffe0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002801c,0xfffe0000,0x00000000,std::uint32_t>;
         ///VLAN tag identifier (for receive              frames)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> vlanti{}; 
         ///12-bit VLAN tag comparison
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::ReadWriteAccess,unsigned> vlantc{}; 
     }
     namespace EthernetMacMacrwuffr{    ///<Ethernet MAC remote wakeup frame filter          register (ETH_MACRWUFFR)
-        using Addr = Register::Address<0x40028028,0xffffffff,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028028,0xffffffff,0x00000000,std::uint32_t>;
     }
     namespace EthernetMacMacpmtcsr{    ///<Ethernet MAC PMT control and status register          (ETH_MACPMTCSR)
-        using Addr = Register::Address<0x4002802c,0x7ffffd98,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002802c,0x7ffffd98,0x00000000,std::uint32_t>;
         ///Power down
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pd{}; 
         ///Magic Packet enable
@@ -133,7 +133,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> wffrpr{}; 
     }
     namespace EthernetMacMacsr{    ///<Ethernet MAC interrupt status register          (ETH_MACSR)
-        using Addr = Register::Address<0x40028038,0xfffffd87,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028038,0xfffffd87,0x00000000,std::uint32_t>;
         ///PMT status
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> pmts{}; 
         ///MMC status
@@ -146,26 +146,26 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> tsts{}; 
     }
     namespace EthernetMacMacimr{    ///<Ethernet MAC interrupt mask register          (ETH_MACIMR)
-        using Addr = Register::Address<0x4002803c,0xfffffdf7,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002803c,0xfffffdf7,0x00000000,std::uint32_t>;
         ///PMT interrupt mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,3),Register::ReadWriteAccess,unsigned> pmtim{}; 
         ///Time stamp trigger interrupt              mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,9),Register::ReadWriteAccess,unsigned> tstim{}; 
     }
     namespace EthernetMacMaca0hr{    ///<Ethernet MAC address 0 high register          (ETH_MACA0HR)
-        using Addr = Register::Address<0x40028040,0x7fff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028040,0x7fff0000,0x00000000,std::uint32_t>;
         ///MAC address0 high
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> maca0h{}; 
         ///Always 1
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> mo{}; 
     }
     namespace EthernetMacMaca0lr{    ///<Ethernet MAC address 0 low          register
-        using Addr = Register::Address<0x40028044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028044,0x00000000,0x00000000,std::uint32_t>;
         ///MAC address0 low
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> maca0l{}; 
     }
     namespace EthernetMacMaca1hr{    ///<Ethernet MAC address 1 high register          (ETH_MACA1HR)
-        using Addr = Register::Address<0x40028048,0x00ff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028048,0x00ff0000,0x00000000,std::uint32_t>;
         ///MAC address1 high
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> maca1h{}; 
         ///Mask byte control
@@ -176,12 +176,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ae{}; 
     }
     namespace EthernetMacMaca1lr{    ///<Ethernet MAC address1 low          register
-        using Addr = Register::Address<0x4002804c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002804c,0x00000000,0x00000000,std::uint32_t>;
         ///MAC address1 low
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> maca1l{}; 
     }
     namespace EthernetMacMaca2hr{    ///<Ethernet MAC address 2 high register          (ETH_MACA2HR)
-        using Addr = Register::Address<0x40028050,0x00ff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028050,0x00ff0000,0x00000000,std::uint32_t>;
         ///Ethernet MAC address 2 high              register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> ethMaca2hr{}; 
         ///Mask byte control
@@ -192,12 +192,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ae{}; 
     }
     namespace EthernetMacMaca2lr{    ///<Ethernet MAC address 2 low          register
-        using Addr = Register::Address<0x40028054,0x80000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028054,0x80000000,0x00000000,std::uint32_t>;
         ///MAC address2 low
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,0),Register::ReadWriteAccess,unsigned> maca2l{}; 
     }
     namespace EthernetMacMaca3hr{    ///<Ethernet MAC address 3 high register          (ETH_MACA3HR)
-        using Addr = Register::Address<0x40028058,0x00ff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40028058,0x00ff0000,0x00000000,std::uint32_t>;
         ///MAC address3 high
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> maca3h{}; 
         ///Mask byte control
@@ -208,7 +208,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> ae{}; 
     }
     namespace EthernetMacMaca3lr{    ///<Ethernet MAC address 3 low          register
-        using Addr = Register::Address<0x4002805c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002805c,0x00000000,0x00000000,std::uint32_t>;
         ///MAC address3 low
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> mbca3l{}; 
     }

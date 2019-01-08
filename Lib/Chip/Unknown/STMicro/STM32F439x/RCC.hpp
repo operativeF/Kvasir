@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Reset and clock control
     namespace RccCr{    ///<clock control register
-        using Addr = Register::Address<0x40023800,0xf0f00004,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023800,0xf0f00004,0x00000000,std::uint32_t>;
         ///PLLI2S clock ready flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> plli2srdy{}; 
         ///PLLI2S enable
@@ -30,7 +30,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> hsion{}; 
     }
     namespace RccPllcfgr{    ///<PLL configuration register
-        using Addr = Register::Address<0x40023804,0xf0bc8000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023804,0xf0bc8000,0x00000000,std::uint32_t>;
         ///Main PLL (PLL) division factor for USB              OTG FS, SDIO and random number generator              clocks
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(27,27),Register::ReadWriteAccess,unsigned> pllq3{}; 
         ///Main PLL (PLL) division factor for USB              OTG FS, SDIO and random number generator              clocks
@@ -77,7 +77,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pllm0{}; 
     }
     namespace RccCfgr{    ///<clock configuration register
-        using Addr = Register::Address<0x40023808,0x00000300,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023808,0x00000300,0x00000000,std::uint32_t>;
         ///Microcontroller clock output              2
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> mco2{}; 
         ///MCO2 prescaler
@@ -106,7 +106,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> sw0{}; 
     }
     namespace RccCir{    ///<clock interrupt register
-        using Addr = Register::Address<0x4002380c,0xff008000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4002380c,0xff008000,0x00000000,std::uint32_t>;
         ///Clock security system interrupt              clear
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(23,23),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cssc{}; 
         ///PLLSAI Ready Interrupt              Clear
@@ -155,7 +155,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> lsirdyf{}; 
     }
     namespace RccAhb1rstr{    ///<AHB1 peripheral reset register
-        using Addr = Register::Address<0x40023810,0xdd1fe800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023810,0xdd1fe800,0x00000000,std::uint32_t>;
         ///USB OTG HS module reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,29),Register::ReadWriteAccess,unsigned> otghsrst{}; 
         ///Ethernet MAC reset
@@ -192,7 +192,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gpioarst{}; 
     }
     namespace RccAhb2rstr{    ///<AHB2 peripheral reset register
-        using Addr = Register::Address<0x40023814,0xffffff0e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023814,0xffffff0e,0x00000000,std::uint32_t>;
         ///USB OTG FS module reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> otgfsrst{}; 
         ///Random number generator module              reset
@@ -205,12 +205,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dcmirst{}; 
     }
     namespace RccAhb3rstr{    ///<AHB3 peripheral reset register
-        using Addr = Register::Address<0x40023818,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023818,0xfffffffe,0x00000000,std::uint32_t>;
         ///Flexible memory controller module              reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fmcrst{}; 
     }
     namespace RccApb1rstr{    ///<APB1 peripheral reset register
-        using Addr = Register::Address<0x40023820,0x09013600,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023820,0x09013600,0x00000000,std::uint32_t>;
         ///TIM2 reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim2rst{}; 
         ///TIM3 reset
@@ -263,7 +263,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> uart8rst{}; 
     }
     namespace RccApb2rstr{    ///<APB2 peripheral reset register
-        using Addr = Register::Address<0x40023824,0xfb8886cc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023824,0xfb8886cc,0x00000000,std::uint32_t>;
         ///TIM1 reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim1rst{}; 
         ///TIM8 reset
@@ -298,7 +298,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> ltdcrst{}; 
     }
     namespace RccAhb1enr{    ///<AHB1 peripheral clock register
-        using Addr = Register::Address<0x40023830,0x810be800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023830,0x810be800,0x00000000,std::uint32_t>;
         ///USB OTG HSULPI clock              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::ReadWriteAccess,unsigned> otghsulpien{}; 
         ///USB OTG HS clock enable
@@ -347,7 +347,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gpioaen{}; 
     }
     namespace RccAhb2enr{    ///<AHB2 peripheral clock enable          register
-        using Addr = Register::Address<0x40023834,0xffffff0e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023834,0xffffff0e,0x00000000,std::uint32_t>;
         ///USB OTG FS clock enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> otgfsen{}; 
         ///Random number generator clock              enable
@@ -360,12 +360,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dcmien{}; 
     }
     namespace RccAhb3enr{    ///<AHB3 peripheral clock enable          register
-        using Addr = Register::Address<0x40023838,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023838,0xfffffffe,0x00000000,std::uint32_t>;
         ///Flexible memory controller module clock              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fmcen{}; 
     }
     namespace RccApb1enr{    ///<APB1 peripheral clock enable          register
-        using Addr = Register::Address<0x40023840,0x09013600,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023840,0x09013600,0x00000000,std::uint32_t>;
         ///TIM2 clock enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim2en{}; 
         ///TIM3 clock enable
@@ -418,7 +418,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> uart8enr{}; 
     }
     namespace RccApb2enr{    ///<APB2 peripheral clock enable          register
-        using Addr = Register::Address<0x40023844,0xfb8880cc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023844,0xfb8880cc,0x00000000,std::uint32_t>;
         ///TIM1 clock enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim1en{}; 
         ///TIM8 clock enable
@@ -457,7 +457,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> ltdcen{}; 
     }
     namespace RccAhb1lpenr{    ///<AHB1 peripheral clock enable in low power          mode register
-        using Addr = Register::Address<0x40023850,0x81106800,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023850,0x81106800,0x00000000,std::uint32_t>;
         ///IO port A clock enable during sleep              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> gpioalpen{}; 
         ///IO port B clock enable during Sleep              mode
@@ -512,7 +512,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,30),Register::ReadWriteAccess,unsigned> otghsulpilpen{}; 
     }
     namespace RccAhb2lpenr{    ///<AHB2 peripheral clock enable in low power          mode register
-        using Addr = Register::Address<0x40023854,0xffffff0e,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023854,0xffffff0e,0x00000000,std::uint32_t>;
         ///USB OTG FS clock enable during Sleep              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,7),Register::ReadWriteAccess,unsigned> otgfslpen{}; 
         ///Random number generator clock enable              during Sleep mode
@@ -525,12 +525,12 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dcmilpen{}; 
     }
     namespace RccAhb3lpenr{    ///<AHB3 peripheral clock enable in low power          mode register
-        using Addr = Register::Address<0x40023858,0xfffffffe,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023858,0xfffffffe,0x00000000,std::uint32_t>;
         ///Flexible memory controller module clock              enable during Sleep mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> fmclpen{}; 
     }
     namespace RccApb1lpenr{    ///<APB1 peripheral clock enable in low power          mode register
-        using Addr = Register::Address<0x40023860,0x09013600,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023860,0x09013600,0x00000000,std::uint32_t>;
         ///TIM2 clock enable during Sleep              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim2lpen{}; 
         ///TIM3 clock enable during Sleep              mode
@@ -583,7 +583,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> uart8lpen{}; 
     }
     namespace RccApb2lpenr{    ///<APB2 peripheral clock enabled in low power          mode register
-        using Addr = Register::Address<0x40023864,0xfb8880cc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023864,0xfb8880cc,0x00000000,std::uint32_t>;
         ///TIM1 clock enable during Sleep              mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> tim1lpen{}; 
         ///TIM8 clock enable during Sleep              mode
@@ -622,7 +622,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(26,26),Register::ReadWriteAccess,unsigned> ltdclpen{}; 
     }
     namespace RccBdcr{    ///<Backup domain control register
-        using Addr = Register::Address<0x40023870,0xfffe7cf8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023870,0xfffe7cf8,0x00000000,std::uint32_t>;
         ///Backup domain software              reset
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::ReadWriteAccess,unsigned> bdrst{}; 
         ///RTC clock enable
@@ -639,7 +639,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lseon{}; 
     }
     namespace RccCsr{    ///<clock control & status          register
-        using Addr = Register::Address<0x40023874,0x00fffffc,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023874,0x00fffffc,0x00000000,std::uint32_t>;
         ///Low-power reset flag
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> lpwrrstf{}; 
         ///Window watchdog reset flag
@@ -662,7 +662,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lsion{}; 
     }
     namespace RccSscgr{    ///<spread spectrum clock generation          register
-        using Addr = Register::Address<0x40023880,0x30000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023880,0x30000000,0x00000000,std::uint32_t>;
         ///Spread spectrum modulation              enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> sscgen{}; 
         ///Spread Select
@@ -673,7 +673,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(12,0),Register::ReadWriteAccess,unsigned> modper{}; 
     }
     namespace RccPlli2scfgr{    ///<PLLI2S configuration register
-        using Addr = Register::Address<0x40023884,0x80ff803f,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40023884,0x80ff803f,0x00000000,std::uint32_t>;
         ///PLLI2S division factor for I2S              clocks
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(30,28),Register::ReadWriteAccess,unsigned> plli2sr{}; 
         ///PLLI2S division factor for SAI1              clock

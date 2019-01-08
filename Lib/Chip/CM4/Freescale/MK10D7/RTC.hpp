@@ -3,22 +3,22 @@
 namespace Kvasir {
 //Secure Real Time Clock
     namespace RtcTsr{    ///<RTC Time Seconds Register
-        using Addr = Register::Address<0x4003d000,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d000,0x00000000,0x00000000,std::uint32_t>;
         ///Time Seconds Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tsr{}; 
     }
     namespace RtcTpr{    ///<RTC Time Prescaler Register
-        using Addr = Register::Address<0x4003d004,0xffff0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d004,0xffff0000,0x00000000,std::uint32_t>;
         ///Time Prescaler Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,0),Register::ReadWriteAccess,unsigned> tpr{}; 
     }
     namespace RtcTar{    ///<RTC Time Alarm Register
-        using Addr = Register::Address<0x4003d008,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d008,0x00000000,0x00000000,std::uint32_t>;
         ///Time Alarm Register
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::ReadWriteAccess,unsigned> tar{}; 
     }
     namespace RtcTcr{    ///<RTC Time Compensation Register
-        using Addr = Register::Address<0x4003d00c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d00c,0x00000000,0x00000000,std::uint32_t>;
         ///Time Compensation Register
         enum class TcrVal {
             v10000000=0x00000080,     ///<Time prescaler register overflows every 32896 clock cycles.
@@ -43,7 +43,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,24),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> cic{}; 
     }
     namespace RtcCr{    ///<RTC Control Register
-        using Addr = Register::Address<0x4003d010,0xffffc0f0,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d010,0xffffc0f0,0x00000000,std::uint32_t>;
         ///Software Reset
         enum class SwrVal {
             v0=0x00000000,     ///<No effect
@@ -146,7 +146,7 @@ namespace Kvasir {
         }
     }
     namespace RtcSr{    ///<RTC Status Register
-        using Addr = Register::Address<0x4003d014,0xffffffe8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d014,0xffffffe8,0x00000000,std::uint32_t>;
         ///Time Invalid Flag
         enum class TifVal {
             v0=0x00000000,     ///<Time is valid.
@@ -189,7 +189,7 @@ namespace Kvasir {
         }
     }
     namespace RtcLr{    ///<RTC Lock Register
-        using Addr = Register::Address<0x4003d018,0xffffff87,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d018,0xffffff87,0x00000000,std::uint32_t>;
         ///Time Compensation Lock
         enum class TclVal {
             v0=0x00000000,     ///<Time compensation register is locked and writes are ignored.
@@ -232,7 +232,7 @@ namespace Kvasir {
         }
     }
     namespace RtcIer{    ///<RTC Interrupt Enable Register
-        using Addr = Register::Address<0x4003d01c,0xffffffe8,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d01c,0xffffffe8,0x00000000,std::uint32_t>;
         ///Time Invalid Interrupt Enable
         enum class TiieVal {
             v0=0x00000000,     ///<Time invalid flag does not generate an interrupt.
@@ -275,7 +275,7 @@ namespace Kvasir {
         }
     }
     namespace RtcWar{    ///<RTC Write Access Register
-        using Addr = Register::Address<0x4003d800,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d800,0xffffff00,0x00000000,std::uint32_t>;
         ///Time Seconds Register Write
         enum class TsrwVal {
             v0=0x00000000,     ///<Writes to the time seconds register are ignored.
@@ -358,7 +358,7 @@ namespace Kvasir {
         }
     }
     namespace RtcRar{    ///<RTC Read Access Register
-        using Addr = Register::Address<0x4003d804,0xffffff00,0x00000000,unsigned>;
+        using Addr = Register::Address<0x4003d804,0xffffff00,0x00000000,std::uint32_t>;
         ///Time Seconds Register Read
         enum class TsrrVal {
             v0=0x00000000,     ///<Reads to the time seconds register are ignored.

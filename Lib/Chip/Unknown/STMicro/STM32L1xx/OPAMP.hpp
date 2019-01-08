@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Operational amplifiers
     namespace OpampCsr{    ///<control/status register
-        using Addr = Register::Address<0x40007c5c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c5c,0x00000000,0x00000000,std::uint32_t>;
         ///OPAMP3 calibration output
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> opa3calout{}; 
         ///OPAMP2 calibration output
@@ -70,7 +70,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> opa1pd{}; 
     }
     namespace OpampOtr{    ///<offset trimming register for normal          mode
-        using Addr = Register::Address<0x40007c60,0x40000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c60,0x40000000,0x00000000,std::uint32_t>;
         ///Select user or factory trimming              value
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> otUser{}; 
         ///OPAMP3, 10-bit offset trim value for              normal mode
@@ -81,7 +81,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(9,0),Register::ReadWriteAccess,unsigned> ao1OptOffsetTrim{}; 
     }
     namespace OpampLpotr{    ///<OPAMP offset trimming register for low power          mode
-        using Addr = Register::Address<0x40007c64,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0x40007c64,0xc0000000,0x00000000,std::uint32_t>;
         ///OPAMP3, 10-bit offset trim value for low              power mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,20),Register::ReadWriteAccess,unsigned> ao3OptOffsetTrimLp{}; 
         ///OPAMP2, 10-bit offset trim value for low              power mode

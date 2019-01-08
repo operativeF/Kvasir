@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Reset Control Module
     namespace RcmSrs0{    ///<System Reset Status Register 0
-        using Addr = Register::Address<0x4007f000,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f000,0xffffff00,0x00000000,std::uint8_t>;
         ///Low Leakage Wakeup Reset
         enum class WakeupVal {
             v0=0x00000000,     ///<Reset not caused by LLWU module wakeup source
@@ -78,7 +78,7 @@ namespace Kvasir {
         }
     }
     namespace RcmSrs1{    ///<System Reset Status Register 1
-        using Addr = Register::Address<0x4007f001,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f001,0xffffff00,0x00000000,std::uint8_t>;
         ///JTAG Generated Reset
         enum class JtagVal {
             v0=0x00000000,     ///<Reset not caused by JTAG
@@ -153,7 +153,7 @@ namespace Kvasir {
         }
     }
     namespace RcmRpfc{    ///<Reset Pin Filter Control register
-        using Addr = Register::Address<0x4007f004,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f004,0xffffff00,0x00000000,std::uint8_t>;
         ///Reset Pin Filter Select in Run and Wait Modes
         enum class RstfltsrwVal {
             v00=0x00000000,     ///<All filtering disabled
@@ -182,7 +182,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,3),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace RcmRpfw{    ///<Reset Pin Filter Width register
-        using Addr = Register::Address<0x4007f005,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f005,0xffffff00,0x00000000,std::uint8_t>;
         ///Reset Pin Filter Bus Clock Select
         enum class RstfltselVal {
             v00000=0x00000000,     ///<Bus clock filter count is 1
@@ -257,7 +257,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(7,5),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
     }
     namespace RcmMr{    ///<Mode Register
-        using Addr = Register::Address<0x4007f007,0xffffff00,0x00000000,unsigned char>;
+        using Addr = Register::Address<0x4007f007,0xffffff00,0x00000000,std::uint8_t>;
         ///no description available
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> reserved{}; 
         ///EZP_MS_B pin state

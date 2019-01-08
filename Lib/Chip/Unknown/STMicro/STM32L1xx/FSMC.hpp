@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Flexible static memory controller
     namespace FsmcBcr1{    ///<BCR1
-        using Addr = Register::Address<0xa0000000,0xfff70080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000000,0xfff70080,0x00000000,std::uint32_t>;
         ///CBURSTRW
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> cburstrw{}; 
         ///ASYNCWAIT
@@ -34,7 +34,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mbken{}; 
     }
     namespace FsmcBtr1{    ///<BTR1
-        using Addr = Register::Address<0xa0000004,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000004,0xc0000000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT
@@ -51,7 +51,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> addset{}; 
     }
     namespace FsmcBcr2{    ///<BCR2
-        using Addr = Register::Address<0xa0000008,0xfff70080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000008,0xfff70080,0x00000000,std::uint32_t>;
         ///CBURSTRW
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> cburstrw{}; 
         ///ASYNCWAIT
@@ -82,7 +82,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mbken{}; 
     }
     namespace FsmcBtr2{    ///<BTR2
-        using Addr = Register::Address<0xa000000c,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa000000c,0xc0000000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT
@@ -99,7 +99,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> addset{}; 
     }
     namespace FsmcBcr3{    ///<BCR3
-        using Addr = Register::Address<0xa0000010,0xfff70080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000010,0xfff70080,0x00000000,std::uint32_t>;
         ///CBURSTRW
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> cburstrw{}; 
         ///ASYNCWAIT
@@ -130,7 +130,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mbken{}; 
     }
     namespace FsmcBtr3{    ///<BTR3
-        using Addr = Register::Address<0xa0000014,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000014,0xc0000000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT
@@ -147,7 +147,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> addset{}; 
     }
     namespace FsmcBcr4{    ///<BCR4
-        using Addr = Register::Address<0xa0000018,0xfff70080,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000018,0xfff70080,0x00000000,std::uint32_t>;
         ///CBURSTRW
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(19,19),Register::ReadWriteAccess,unsigned> cburstrw{}; 
         ///ASYNCWAIT
@@ -178,7 +178,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> mbken{}; 
     }
     namespace FsmcBtr4{    ///<BTR4
-        using Addr = Register::Address<0xa000001c,0xc0000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa000001c,0xc0000000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT
@@ -195,7 +195,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> addset{}; 
     }
     namespace FsmcBwtr1{    ///<BWTR1
-        using Addr = Register::Address<0xa0000104,0xc00f0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000104,0xc00f0000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT
@@ -210,7 +210,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> addset{}; 
     }
     namespace FsmcBwtr2{    ///<BWTR2
-        using Addr = Register::Address<0xa000010c,0xc00f0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa000010c,0xc00f0000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT
@@ -225,7 +225,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> addset{}; 
     }
     namespace FsmcBwtr3{    ///<BWTR3
-        using Addr = Register::Address<0xa0000114,0xc00f0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa0000114,0xc00f0000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT
@@ -240,7 +240,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> addset{}; 
     }
     namespace FsmcBwtr4{    ///<BWTR4
-        using Addr = Register::Address<0xa000011c,0xc00f0000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xa000011c,0xc00f0000,0x00000000,std::uint32_t>;
         ///ACCMOD
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(29,28),Register::ReadWriteAccess,unsigned> accmod{}; 
         ///DATLAT

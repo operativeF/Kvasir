@@ -3,7 +3,7 @@
 namespace Kvasir {
 //Advanced Encryption Standard
     namespace AesCr{    ///<Control Register
-        using Addr = Register::Address<0xfffc0000,0xfffefefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0000,0xfffefefe,0x00000000,std::uint32_t>;
         ///Start Processing
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> start{}; 
         ///Software Reset
@@ -12,7 +12,7 @@ namespace Kvasir {
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> loadseed{}; 
     }
     namespace AesMr{    ///<Mode Register
-        using Addr = Register::Address<0xfffc0004,0xe008000e,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0004,0xe008000e,0x00000000,std::uint32_t>;
         ///Processing Mode
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> cipher{}; 
         ///Processing Delay
@@ -129,28 +129,28 @@ namespace Kvasir {
         }
     }
     namespace AesIer{    ///<Interrupt Enable Register
-        using Addr = Register::Address<0xfffc0010,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0010,0xfffffefe,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Interrupt Enable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace AesIdr{    ///<Interrupt Disable Register
-        using Addr = Register::Address<0xfffc0014,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0014,0xfffffefe,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Interrupt Disable
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace AesImr{    ///<Interrupt Mask Register
-        using Addr = Register::Address<0xfffc0018,0xfffffefe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0018,0xfffffefe,0x00000000,std::uint32_t>;
         ///Data Ready Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Interrupt Mask
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(8,8),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> urad{}; 
     }
     namespace AesIsr{    ///<Interrupt Status Register
-        using Addr = Register::Address<0xfffc001c,0xffff0efe,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc001c,0xffff0efe,0x00000000,std::uint32_t>;
         ///Data Ready
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> datrdy{}; 
         ///Unspecified Register Access Detection Status
@@ -175,102 +175,102 @@ namespace Kvasir {
         }
     }
     namespace AesKeywr0{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc0020,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0020,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesKeywr1{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc0024,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0024,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesKeywr2{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc0028,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0028,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesKeywr3{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc002c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc002c,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesKeywr4{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc0030,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0030,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesKeywr5{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc0034,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0034,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesKeywr6{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc0038,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0038,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesKeywr7{    ///<Key Word Register
-        using Addr = Register::Address<0xfffc003c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc003c,0x00000000,0x00000000,std::uint32_t>;
         ///Key Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> keyw{}; 
     }
     namespace AesIdatar0{    ///<Input Data Register
-        using Addr = Register::Address<0xfffc0040,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0040,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace AesIdatar1{    ///<Input Data Register
-        using Addr = Register::Address<0xfffc0044,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0044,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace AesIdatar2{    ///<Input Data Register
-        using Addr = Register::Address<0xfffc0048,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0048,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace AesIdatar3{    ///<Input Data Register
-        using Addr = Register::Address<0xfffc004c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc004c,0x00000000,0x00000000,std::uint32_t>;
         ///Input Data Word
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> idata{}; 
     }
     namespace AesOdatar0{    ///<Output Data Register
-        using Addr = Register::Address<0xfffc0050,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0050,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace AesOdatar1{    ///<Output Data Register
-        using Addr = Register::Address<0xfffc0054,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0054,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace AesOdatar2{    ///<Output Data Register
-        using Addr = Register::Address<0xfffc0058,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0058,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace AesOdatar3{    ///<Output Data Register
-        using Addr = Register::Address<0xfffc005c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc005c,0x00000000,0x00000000,std::uint32_t>;
         ///Output Data
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::readOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> odata{}; 
     }
     namespace AesIvr0{    ///<Initialization Vector Register
-        using Addr = Register::Address<0xfffc0060,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0060,0x00000000,0x00000000,std::uint32_t>;
         ///Initialization Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> iv{}; 
     }
     namespace AesIvr1{    ///<Initialization Vector Register
-        using Addr = Register::Address<0xfffc0064,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0064,0x00000000,0x00000000,std::uint32_t>;
         ///Initialization Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> iv{}; 
     }
     namespace AesIvr2{    ///<Initialization Vector Register
-        using Addr = Register::Address<0xfffc0068,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc0068,0x00000000,0x00000000,std::uint32_t>;
         ///Initialization Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> iv{}; 
     }
     namespace AesIvr3{    ///<Initialization Vector Register
-        using Addr = Register::Address<0xfffc006c,0x00000000,0x00000000,unsigned>;
+        using Addr = Register::Address<0xfffc006c,0x00000000,0x00000000,std::uint32_t>;
         ///Initialization Vector
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,0),Register::Access<Register::AccessType::writeOnly,Register::ReadActionType::normal,Register::ModifiedWriteValueType::normal>,unsigned> iv{}; 
     }
