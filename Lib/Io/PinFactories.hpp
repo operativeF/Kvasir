@@ -16,9 +16,9 @@ limitations under the License.
 
 namespace Kvasir {
 	namespace Io {
-		/// This generic Metafunction which all pin factores resolve to. 
+		/// This generic Metafunction which all pin factories resolve to. 
 		/// It relies on the user to include a chip file which specializes this template
-		/// with the propper resulting Register::Action
+		/// with the proper resulting Register::Action
 		template<typename TAction, typename TPinLocation>
 		struct MakeAction {
 			static_assert(MPL::AlwaysFalse<TAction>::value, "could not find this configuration in the included chip file");
@@ -81,24 +81,75 @@ namespace Kvasir {
 		}
 
 		//create a register::action which sets a pins output
-		template<typename TPortPin>
-		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Set, TPortPin>
-			set(TPortPin) {
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Set, T>
+			set(T) {
 			return{};
 		}
 
 
 		//create a register::action which clears a pins output
-		template<typename TPortPin>
-		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Clear, TPortPin>
-			clear(TPortPin) {
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Clear, T>
+			clear(T) {
 			return{};
 		}
 
 		//create a register::action wich toggles a pins output
-		template<typename TPortPin>
-		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Toggle, TPortPin>
-			toggle(TPortPin) {
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Toggle, T>
+			toggle(T) {
+			return{};
+		}
+
+		//create a register::action which makes the pin a pullup
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Pullup, T>
+			makePullup(T) {
+			return{};
+		}
+
+		//create a register::action which makes the pin a pulldown
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Pulldown, T>
+			makePulldown(T) {
+			return{};
+		}
+
+		//create a register::action which makes the pin open drain
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::OpenDrain, T>
+			makeOpenDrain(T) {
+			return{};
+		}
+
+		//create a register::action which makes locks the pin's configuration
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Lock, T>
+			lock(T) {
+			return{};
+		}
+
+		//create a register::action which makes unlocks the pin's configuration
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Unlock, T>
+			unlock(T) {
+			return{};
+		}
+
+		/*
+		//create a register::action which makes the pin use the alt function
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Alt, T>
+			makeAltFunc(T) {
+			return{};
+		}
+		*/
+
+		//create a register::action which makes the pin use the 2nd alt function
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::PinFunction<2>, T>
+			makeAltFunc2(T) {
 			return{};
 		}
 
@@ -112,9 +163,9 @@ namespace Kvasir {
 		}
 
 		//create read register::action from a gpio pin.
-		template<typename TPortPin>
-		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Read, TPortPin>
-			read(TPortPin) {
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Read, T>
+			read(T) {
 			return{};
 		}
 

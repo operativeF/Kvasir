@@ -1,13 +1,13 @@
 #pragma once
 #include <cassert>
+#include <type_traits>
 #include <Io/Io.hpp>
 #include <Register/Register.hpp>
 namespace Kvasir{
     namespace Io{
         // Starting GPIO Address, PortA
         // Every other GPIO port is offset by 0x400, respectively
-        constexpr int BASE_GPIO_ADDR = 0x40020000;
-
+        constexpr int BASE_GPIO_ADDR = 0x48000000;
         constexpr int PORT_OFFSET = 0x400;
 
         constexpr int GPIOx_OTYPER_OFFSET  = 0x04;
@@ -30,32 +30,24 @@ namespace Kvasir{
         template<int Port>
         constexpr int GPIOx_BSRR_ADDR = BASE_GPIO_ADDR + Port * PORT_OFFSET + GPIOx_BSRR_OFFSET;
 
-
-        template<int Port, typename std::enable_if_t<(Port < 15), void>>
-        constexpr int GPIOx_PORT_ADDR = BASE_GPIO_ADDR + Port * 0x400;
-
         template<int Port, int Pin>
         struct MakeAction<Action::Input,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b00<<(Pin*2))5>,Register::WriteLiteralAction<(0b00<<(Pin*2))>>{};
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_PORT_ADDR<Port>,0x00000000>,(0b00<<(Pin*2))>,Register::WriteLiteralAction<(0b00<<(Pin*2))>>{};
 
         template<int Port, int Pin>
         struct MakeAction<Action::Output,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b01<<(Pin*2))>,Register::WriteLiteralAction<(0b01<<(Pin*2))>>{};
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_PORT_ADDR<Port>,0x00000000>,(0b01<<(Pin*2))>,Register::WriteLiteralAction<(0b01<<(Pin*2))>>{};
 
         template<int Port, int Pin>
         struct MakeAction<Action::Analog,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b11<<(Pin*2))>,Register::WriteLiteralAction<(0b11<<(Pin*2))>>{};
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_PORT_ADDR<Port>,0x00000000>,(0b11<<(Pin*2))>,Register::WriteLiteralAction<(0b11<<(Pin*2))>>{};
         
         template<int Port, int Pin>
-        struct MakeAction<Action::Alt,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b10<<(Pin*2))>,Register::WriteLiteralAction<(0b10<<(Pin*2))>>{};
-        
-        
-        // High alternate register action
+        struct MakeAction<Action::Set,Register::PinLocation<Port,Pin>> :
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_BSRR_ADDR<Port>,0x00000000>,(1<<Pin)>,Register::WriteLiteralAction<(1<<Pin)>>{};
+
         template<int Port, int Pin>
-        struct MakeAction<Action::PinFunction<2>,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port> + 0x24,0x00000000>,(0b01<<(Pin*4))>,Register::WriteLiteralAction<(0b10<<(Pin*4))>>{};
-        
-    
+        struct MakeAction<Action::Clear,Register::PinLocation<Port,Pin>> :
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_BSRR_ADDR<Port>,0x00000000>,(1<<(Pin+16))>,Register::WriteLiteralAction<(1<<(Pin+16))>>{};
     }
 }

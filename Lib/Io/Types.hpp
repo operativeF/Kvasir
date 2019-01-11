@@ -21,6 +21,12 @@ namespace Io{
 		struct Clear{};
 		struct Toggle{};
 		struct Read{};
+		struct Pullup{};
+		struct Pulldown{};
+		struct OpenDrain{};
+		struct Analog{};
+		struct Lock{};
+		struct Unlock{};
 		template<int I>
 		struct PinFunction{ static constexpr int value = I;};
 		constexpr Input input{};
@@ -28,6 +34,12 @@ namespace Io{
 		constexpr Set set{};
 		constexpr Clear clear{};
 		constexpr Toggle toggle{};
+		constexpr Pullup pullup{};
+		constexpr Pulldown pulldown{};
+		constexpr OpenDrain opendrain{};
+		constexpr Analog analog{};
+		constexpr Lock lock{};
+		constexpr Unlock unlock{};
 		constexpr PinFunction<0> pinFunction0{};
 		constexpr PinFunction<1> pinFunction1{};
 		constexpr PinFunction<2> pinFunction2{};
