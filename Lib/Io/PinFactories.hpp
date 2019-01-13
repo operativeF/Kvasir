@@ -105,14 +105,28 @@ namespace Kvasir {
 		//create a register::action which makes the pin a pullup
 		template<typename T>
 		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Pullup, T>
-			makePullup(T) {
+			makePullUp(T) {
+			return{};
+		}
+
+		//create a register::action which configures a gpio pin as pullup variadic
+		template<typename T, typename U, typename... Ts>
+		constexpr decltype(MPL::list(makePullUp(T{}), makePullUp(U{}), makePullUp(Ts{})...))
+			makePullUp(T, U, Ts...) {
 			return{};
 		}
 
 		//create a register::action which makes the pin a pulldown
 		template<typename T>
 		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Pulldown, T>
-			makePulldown(T) {
+			makePullDown(T) {
+			return{};
+		}
+
+		//create a register::action which configures a gpio pin as pulldown variadic
+		template<typename T, typename U, typename... Ts>
+		constexpr decltype(MPL::list(makePullDown(T{}), makePullDown(U{}), makePullDown(Ts{})...))
+			makePullDown(T, U, Ts...) {
 			return{};
 		}
 
@@ -123,6 +137,13 @@ namespace Kvasir {
 			return{};
 		}
 
+		//create a register::action which configures a gpio pin as open drain variadic
+		template<typename T, typename U, typename... Ts>
+		constexpr decltype(MPL::list(makeOpenDrain(T{}), makeOpenDrain(U{}), makeOpenDrain(Ts{})...))
+			makeOpenDrain(T, U, Ts...) {
+			return{};
+		}
+
 		//create a register::action which makes locks the pin's configuration
 		template<typename T>
 		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Lock, T>
@@ -130,10 +151,24 @@ namespace Kvasir {
 			return{};
 		}
 
+		//create a register::action which configures a gpio pin as locked variadic
+		template<typename T, typename U, typename... Ts>
+		constexpr decltype(MPL::list(lock(T{}), lock(U{}), lock(Ts{})...))
+			lock(T, U, Ts...) {
+			return{};
+		}
+
 		//create a register::action which makes unlocks the pin's configuration
 		template<typename T>
 		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Unlock, T>
 			unlock(T) {
+			return{};
+		}
+
+		//create a register::action which configures a gpio pin as unlocked variadic
+		template<typename T, typename U, typename... Ts>
+		constexpr decltype(MPL::list(unlock(T{}), unlock(U{}), unlock(Ts{})...))
+			unlock(T, U, Ts...) {
 			return{};
 		}
 

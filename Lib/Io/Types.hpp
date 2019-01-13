@@ -45,6 +45,9 @@ namespace Io{
 		constexpr PinFunction<2> pinFunction2{};
 		constexpr PinFunction<3> pinFunction3{};
 		constexpr PinFunction<4> pinFunction4{};
+		constexpr PinFunction<5> pinFunction5{};
+		constexpr PinFunction<6> pinFunction6{};
+		constexpr PinFunction<7> pinFunction7{};
 	}
 
 	template<int I>
