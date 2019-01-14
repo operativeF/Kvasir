@@ -2,7 +2,7 @@
 #include <Register/Utility.hpp>
 namespace Kvasir {
 //GPIO
-    namespace GpioaGpioaModer{    ///<GPIO port mode register
+    namespace GpioaModer{    ///<GPIO port mode register
         using Addr = Register::Address<0x58020000,0x00000000,0x00000000,std::uint32_t>;
         ///[1:0]: Port x configuration bits (y =              0..15) These bits are written by software to              configure the I/O mode.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> mode0{}; 
@@ -37,7 +37,7 @@ namespace Kvasir {
         ///[1:0]: Port x configuration bits (y =              0..15) These bits are written by software to              configure the I/O mode.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> mode15{}; 
     }
-    namespace GpioaGpioaOtyper{    ///<GPIO port output type register
+    namespace GpioaOtyper{    ///<GPIO port output type register
         using Addr = Register::Address<0x58020004,0xffff0000,0x00000000,std::uint32_t>;
         ///Port x configuration bits (y = 0..15)              These bits are written by software to configure the              I/O output type.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ot0{}; 
@@ -72,7 +72,7 @@ namespace Kvasir {
         ///Port x configuration bits (y = 0..15)              These bits are written by software to configure the              I/O output type.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> ot15{}; 
     }
-    namespace GpioaGpioaOspeedr{    ///<GPIO port output speed          register
+    namespace GpioaOspeedr{    ///<GPIO port output speed          register
         using Addr = Register::Address<0x58020008,0x00000000,0x00000000,std::uint32_t>;
         ///[1:0]: Port x configuration bits (y =              0..15) These bits are written by software to              configure the I/O output speed. Note: Refer to the              device datasheet for the frequency specifications and              the power supply and load conditions for each              speed.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> ospeed0{}; 
@@ -107,7 +107,7 @@ namespace Kvasir {
         ///[1:0]: Port x configuration bits (y =              0..15) These bits are written by software to              configure the I/O output speed. Note: Refer to the              device datasheet for the frequency specifications and              the power supply and load conditions for each              speed.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> ospeed15{}; 
     }
-    namespace GpioaGpioaPupdr{    ///<GPIO port pull-up/pull-down          register
+    namespace GpioaPupdr{    ///<GPIO port pull-up/pull-down          register
         using Addr = Register::Address<0x5802000c,0x00000000,0x00000000,std::uint32_t>;
         ///[1:0]: Port x configuration bits (y =              0..15) These bits are written by software to              configure the I/O pull-up or pull-down
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(1,0),Register::ReadWriteAccess,unsigned> pupd0{}; 
@@ -142,7 +142,7 @@ namespace Kvasir {
         ///[1:0]: Port x configuration bits (y =              0..15) These bits are written by software to              configure the I/O pull-up or pull-down
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> pupd15{}; 
     }
-    namespace GpioaGpioaIdr{    ///<GPIO port input data register
+    namespace GpioaIdr{    ///<GPIO port input data register
         using Addr = Register::Address<0x58020010,0xffff0000,0x00000000,std::uint32_t>;
         ///Port input data bit (y = 0..15) These              bits are read-only. They contain the input value of              the corresponding I/O port.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> id0{}; 
@@ -177,7 +177,7 @@ namespace Kvasir {
         ///Port input data bit (y = 0..15) These              bits are read-only. They contain the input value of              the corresponding I/O port.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> id15{}; 
     }
-    namespace GpioaGpioaOdr{    ///<GPIO port output data register
+    namespace GpioaOdr{    ///<GPIO port output data register
         using Addr = Register::Address<0x58020014,0xffff0000,0x00000000,std::uint32_t>;
         ///Port output data bit These bits can be              read and written by software. Note: For atomic bit              set/reset, the OD bits can be individually set and/or              reset by writing to the GPIOx_BSRR or GPIOx_BRR              registers (x = A..F).
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> od0{}; 
@@ -212,7 +212,7 @@ namespace Kvasir {
         ///Port output data bit These bits can be              read and written by software. Note: For atomic bit              set/reset, the OD bits can be individually set and/or              reset by writing to the GPIOx_BSRR or GPIOx_BRR              registers (x = A..F).
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(15,15),Register::ReadWriteAccess,unsigned> od15{}; 
     }
-    namespace GpioaGpioaBsrr{    ///<GPIO port bit set/reset          register
+    namespace GpioaBsrr{    ///<GPIO port bit set/reset          register
         using Addr = Register::Address<0x58020018,0x00000000,0x00000000,std::uint32_t>;
         ///Port x set bit y (y= 0..15) These bits              are write-only. A read to these bits returns the              value 0x0000.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> bs0{}; 
@@ -279,7 +279,7 @@ namespace Kvasir {
         ///Port x reset bit y (y = 0..15) These              bits are write-only. A read to these bits returns the              value 0x0000. Note: If both BSx and BRx are set, BSx              has priority.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> br15{}; 
     }
-    namespace GpioaGpioaLckr{    ///<This register is used to lock the          configuration of the port bits when a correct write          sequence is applied to bit 16 (LCKK). The value of bits          [15:0] is used to lock the configuration of the GPIO.          During the write sequence, the value of LCKR[15:0] must          not change. When the LOCK sequence has been applied on a          port bit, the value of this port bit can no longer be          modified until the next MCU reset or peripheral reset.A          specific write sequence is used to write to the          GPIOx_LCKR register. Only word access (32-bit long) is          allowed during this locking sequence.Each lock bit          freezes a specific configuration register (control and          alternate function registers).
+    namespace GpioaLckr{    ///<This register is used to lock the          configuration of the port bits when a correct write          sequence is applied to bit 16 (LCKK). The value of bits          [15:0] is used to lock the configuration of the GPIO.          During the write sequence, the value of LCKR[15:0] must          not change. When the LOCK sequence has been applied on a          port bit, the value of this port bit can no longer be          modified until the next MCU reset or peripheral reset.A          specific write sequence is used to write to the          GPIOx_LCKR register. Only word access (32-bit long) is          allowed during this locking sequence.Each lock bit          freezes a specific configuration register (control and          alternate function registers).
         using Addr = Register::Address<0x5802001c,0xfffe0000,0x00000000,std::uint32_t>;
         ///Port x lock bit y (y= 0..15) These bits              are read/write but can only be written when the LCKK              bit is 0.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lck0{}; 
@@ -316,7 +316,7 @@ namespace Kvasir {
         ///Lock key This bit can be read any time.              It can only be modified using the lock key write              sequence. LOCK key write sequence: WR LCKR[16] = 1 +              LCKR[15:0] WR LCKR[16] = 0 + LCKR[15:0] WR LCKR[16] =              1 + LCKR[15:0] RD LCKR RD LCKR[16] = 1 (this read              operation is optional but it confirms that the lock              is active) Note: During the LOCK key write sequence,              the value of LCK[15:0] must not change. Any error in              the lock sequence aborts the lock. After the first              lock sequence on any bit of the port, any read access              on the LCKK bit will return 1 until the next MCU              reset or peripheral reset.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(16,16),Register::ReadWriteAccess,unsigned> lckk{}; 
     }
-    namespace GpioaGpioaAfrl{    ///<GPIO alternate function low          register
+    namespace GpioaAfrl{    ///<GPIO alternate function low          register
         using Addr = Register::Address<0x58020020,0x00000000,0x00000000,std::uint32_t>;
         ///[3:0]: Alternate function selection for              port x pin y (y = 0..7) These bits are written by              software to configure alternate function I/Os AFSELy              selection:
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> afsel0{}; 
@@ -335,7 +335,7 @@ namespace Kvasir {
         ///[3:0]: Alternate function selection for              port x pin y (y = 0..7) These bits are written by              software to configure alternate function I/Os AFSELy              selection:
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,28),Register::ReadWriteAccess,unsigned> afsel7{}; 
     }
-    namespace GpioaGpioaAfrh{    ///<GPIO alternate function high          register
+    namespace GpioaAfrh{    ///<GPIO alternate function high          register
         using Addr = Register::Address<0x58020024,0x00000000,0x00000000,std::uint32_t>;
         ///[3:0]: Alternate function selection for              port x pin y (y = 8..15) These bits are written by              software to configure alternate function              I/Os
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(3,0),Register::ReadWriteAccess,unsigned> afsel8{}; 

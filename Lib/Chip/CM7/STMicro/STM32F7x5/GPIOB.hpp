@@ -72,7 +72,7 @@ namespace Kvasir {
         ///Port x configuration bits (y =              0..15)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> ot0{}; 
     }
-    namespace GpiobGpiobOspeedr{    ///<GPIO port output speed          register
+    namespace GpiobOspeedr{    ///<GPIO port output speed          register
         using Addr = Register::Address<0x40020408,0x00000000,0x00000000,std::uint32_t>;
         ///Port x configuration bits (y =              0..15)
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,30),Register::ReadWriteAccess,unsigned> ospeedr15{}; 

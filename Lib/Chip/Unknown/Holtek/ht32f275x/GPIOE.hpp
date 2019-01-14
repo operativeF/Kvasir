@@ -2,7 +2,7 @@
 #include <Register/Utility.hpp>
 namespace Kvasir {
 //GPIOE
-    namespace GpioeGpioeDircr{    ///<GPIOE_DIRCR
+    namespace GpioeDircr{    ///<GPIOE_DIRCR
         using Addr = Register::Address<0x4001e000,0x00000000,0x00000000,unsigned>;
         ///DIR0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dir0{}; 
@@ -39,7 +39,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioeIner{    ///<GPIOE_INER
+    namespace GpioeIner{    ///<GPIOE_INER
         using Addr = Register::Address<0x4001e004,0x00000000,0x00000000,unsigned>;
         ///INEN0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> inen0{}; 
@@ -76,7 +76,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioePur{    ///<GPIOE_PUR
+    namespace GpioePur{    ///<GPIOE_PUR
         using Addr = Register::Address<0x4001e008,0x00000000,0x00000000,unsigned>;
         ///PU0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pu0{}; 
@@ -113,7 +113,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioePdr{    ///<GPIOE_PDR
+    namespace GpioePdr{    ///<GPIOE_PDR
         using Addr = Register::Address<0x4001e00c,0x00000000,0x00000000,unsigned>;
         ///PD0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pd0{}; 
@@ -150,7 +150,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioeOdr{    ///<GPIOE_ODR
+    namespace GpioeOdr{    ///<GPIOE_ODR
         using Addr = Register::Address<0x4001e010,0x00000000,0x00000000,unsigned>;
         ///OD0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> od0{}; 
@@ -187,7 +187,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioeDrvr{    ///<GPIOE_DRVR
+    namespace GpioeDrvr{    ///<GPIOE_DRVR
         using Addr = Register::Address<0x4001e014,0x0000001f,0x00000000,unsigned>;
         ///DV5
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(5,5),Register::ReadWriteAccess,unsigned> dv5{}; 
@@ -204,7 +204,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,11),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioeLockr{    ///<GPIOE_LOCKR
+    namespace GpioeLockr{    ///<GPIOE_LOCKR
         using Addr = Register::Address<0x4001e018,0x00000000,0x00000000,unsigned>;
         ///LOCK0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lock0{}; 
@@ -241,7 +241,7 @@ namespace Kvasir {
         ///LKEY
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> lkey{}; 
     }
-    namespace GpioeGpioeDinr{    ///<GPIOE_DINR
+    namespace GpioeDinr{    ///<GPIOE_DINR
         using Addr = Register::Address<0x4001e01c,0x00000000,0x00000000,unsigned>;
         ///DIN0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> din0{}; 
@@ -278,7 +278,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioeDoutr{    ///<GPIOE_DOUTR
+    namespace GpioeDoutr{    ///<GPIOE_DOUTR
         using Addr = Register::Address<0x4001e020,0x00000000,0x00000000,unsigned>;
         ///DOUT0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dout0{}; 
@@ -315,7 +315,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpioeGpioeSrr{    ///<GPIOE_SRR
+    namespace GpioeSrr{    ///<GPIOE_SRR
         using Addr = Register::Address<0x4001e024,0x00000000,0x00000000,unsigned>;
         ///SET0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> set0{}; 
@@ -382,7 +382,7 @@ namespace Kvasir {
         ///RST15
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> rst15{}; 
     }
-    namespace GpioeGpioeRr{    ///<GPIOE_RR
+    namespace GpioeRr{    ///<GPIOE_RR
         using Addr = Register::Address<0x4001e028,0x00000000,0x00000000,unsigned>;
         ///RST0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rst0{}; 

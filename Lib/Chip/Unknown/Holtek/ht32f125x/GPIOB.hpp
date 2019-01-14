@@ -2,7 +2,7 @@
 #include <Register/Utility.hpp>
 namespace Kvasir {
 //GPIOB
-    namespace GpiobGpiobDircr{    ///<GPIOB_DIRCR
+    namespace GpiobDircr{    ///<GPIOB_DIRCR
         using Addr = Register::Address<0x4001b000,0x00000000,0x00000000,unsigned>;
         ///DIR0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dir0{}; 
@@ -39,7 +39,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobIner{    ///<GPIOB_INER
+    namespace GpiobIner{    ///<GPIOB_INER
         using Addr = Register::Address<0x4001b004,0x00000000,0x00000000,unsigned>;
         ///INEN0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> inen0{}; 
@@ -76,7 +76,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobPur{    ///<GPIOB_PUR
+    namespace GpiobPur{    ///<GPIOB_PUR
         using Addr = Register::Address<0x4001b008,0x00000000,0x00000000,unsigned>;
         ///PU0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pu0{}; 
@@ -113,7 +113,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobPdr{    ///<GPIOB_PDR
+    namespace GpiobPdr{    ///<GPIOB_PDR
         using Addr = Register::Address<0x4001b00c,0x00000000,0x00000000,unsigned>;
         ///PD0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> pd0{}; 
@@ -150,7 +150,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobOdr{    ///<GPIOB_ODR
+    namespace GpiobOdr{    ///<GPIOB_ODR
         using Addr = Register::Address<0x4001b010,0x00000000,0x00000000,unsigned>;
         ///OD0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> od0{}; 
@@ -187,7 +187,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobDrvr{    ///<GPIOB_DRVR
+    namespace GpiobDrvr{    ///<GPIOB_DRVR
         using Addr = Register::Address<0x4001b014,0x00000000,0x00000000,unsigned>;
         ///DV0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dv0{}; 
@@ -208,7 +208,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,8),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobLockr{    ///<GPIOB_LOCKR
+    namespace GpiobLockr{    ///<GPIOB_LOCKR
         using Addr = Register::Address<0x4001b018,0x00000000,0x00000000,unsigned>;
         ///LOCK0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> lock0{}; 
@@ -245,7 +245,7 @@ namespace Kvasir {
         ///LKEY
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> lkey{}; 
     }
-    namespace GpiobGpiobDinr{    ///<GPIOB_DINR
+    namespace GpiobDinr{    ///<GPIOB_DINR
         using Addr = Register::Address<0x4001b01c,0x00000000,0x00000000,unsigned>;
         ///DIN0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> din0{}; 
@@ -282,7 +282,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobDoutr{    ///<GPIOB_DOUTR
+    namespace GpiobDoutr{    ///<GPIOB_DOUTR
         using Addr = Register::Address<0x4001b020,0x00000000,0x00000000,unsigned>;
         ///DOUT0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> dout0{}; 
@@ -319,7 +319,7 @@ namespace Kvasir {
         ///Reserved.
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,16),Register::ReadWriteAccess,unsigned> reserved{}; 
     }
-    namespace GpiobGpiobSrr{    ///<GPIOB_SRR
+    namespace GpiobSrr{    ///<GPIOB_SRR
         using Addr = Register::Address<0x4001b024,0x00000000,0x00000000,unsigned>;
         ///SET0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> set0{}; 
@@ -386,7 +386,7 @@ namespace Kvasir {
         ///RST15
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(31,31),Register::ReadWriteAccess,unsigned> rst15{}; 
     }
-    namespace GpiobGpiobRr{    ///<GPIOB_RR
+    namespace GpiobRr{    ///<GPIOB_RR
         using Addr = Register::Address<0x4001b028,0x00000000,0x00000000,unsigned>;
         ///RST0
         constexpr Register::FieldLocation<Addr,Register::maskFromRange(0,0),Register::ReadWriteAccess,unsigned> rst0{}; 
