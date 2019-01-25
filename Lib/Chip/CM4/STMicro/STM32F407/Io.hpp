@@ -1,5 +1,4 @@
 #pragma once
-#include <cassert>
 #include <Io/Io.hpp>
 #include <Register/Register.hpp>
 namespace Kvasir{
@@ -43,26 +42,19 @@ namespace Kvasir{
 
         template<int Port, int Pin>
         struct MakeAction<Action::Input,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b00<<(Pin*2))5>,Register::WriteLiteralAction<(0b00<<(Pin*2))>>{};
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_PORT_ADDR<Port>(),0x00000000>,(0b00<<(Pin*2))>,Register::WriteLiteralAction<(0b00<<(Pin*2))>>{};
 
         template<int Port, int Pin>
         struct MakeAction<Action::Output,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b01<<(Pin*2))>,Register::WriteLiteralAction<(0b01<<(Pin*2))>>{};
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_PORT_ADDR<Port>(),0x00000000>,(0b01<<(Pin*2))>,Register::WriteLiteralAction<(0b01<<(Pin*2))>>{};
 
         template<int Port, int Pin>
         struct MakeAction<Action::Analog,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b11<<(Pin*2))>,Register::WriteLiteralAction<(0b11<<(Pin*2))>>{};
-        
-        template<int Port, int Pin>
-        struct MakeAction<Action::Alt,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port>,0x00000000>,(0b10<<(Pin*2))>,Register::WriteLiteralAction<(0b10<<(Pin*2))>>{};
-        
-        
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_PORT_ADDR<Port>(),0x00000000>,(0b11<<(Pin*2))>,Register::WriteLiteralAction<(0b11<<(Pin*2))>>{};
+
         // High alternate register action
         template<int Port, int Pin>
         struct MakeAction<Action::PinFunction<2>,Register::PinLocation<Port,Pin>> :
-            Register::Action<Register::FieldLocation<Register::Address<BASE_GPIO_ADDR + GPIOx_PORT_ADDR<Port> + 0x24,0x00000000>,(0b01<<(Pin*4))>,Register::WriteLiteralAction<(0b10<<(Pin*4))>>{};
-        
-    
+            Register::Action<Register::FieldLocation<Register::Address<GPIOx_PORT_ADDR<Port>() + 0x24,0x00000000>,(0b01<<(Pin*4))>,Register::WriteLiteralAction<(0b10<<(Pin*4))>>{};
     }
 }

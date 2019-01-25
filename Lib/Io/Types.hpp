@@ -1,5 +1,6 @@
 /**************************************************************************
 Copyright 2015 Odin Holmes
+		  2019 Thomas Figueroa
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -34,6 +35,7 @@ namespace Io{
 		constexpr Set set{};
 		constexpr Clear clear{};
 		constexpr Toggle toggle{};
+		constexpr Read read{};
 		constexpr Pullup pullup{};
 		constexpr Pulldown pulldown{};
 		constexpr OpenDrain opendrain{};

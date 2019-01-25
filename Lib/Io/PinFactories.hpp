@@ -87,7 +87,6 @@ namespace Kvasir {
 			return{};
 		}
 
-
 		//create a register::action which clears a pins output
 		template<typename T>
 		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Clear, T>
@@ -104,7 +103,7 @@ namespace Kvasir {
 
 		//create a register::action which makes the pin a pullup
 		template<typename T>
-		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Pullup, T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Pullup, T>
 			makePullUp(T) {
 			return{};
 		}
@@ -116,9 +115,23 @@ namespace Kvasir {
 			return{};
 		}
 
+		//create a register::action which configures a gpio pin as analog
+		template<typename T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Analog, T>
+			makeAnalog(T) {
+			return{};
+		}
+
+		//create a register::action which configures a gpio pin as analog variadic
+		template<typename T, typename U, typename... Ts>
+		constexpr decltype(MPL::list(makeAnalog(T{}), makeAnalog(U{}), makeAnalog(Ts{})...))
+			makeAnalog(T, U, Ts...) {
+			return{};
+		}
+
 		//create a register::action which makes the pin a pulldown
 		template<typename T>
-		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Pulldown, T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Pulldown, T>
 			makePullDown(T) {
 			return{};
 		}
@@ -132,7 +145,7 @@ namespace Kvasir {
 
 		//create a register::action which makes the pin open drain
 		template<typename T>
-		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::OpenDrain, T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::OpenDrain, T>
 			makeOpenDrain(T) {
 			return{};
 		}
@@ -146,7 +159,7 @@ namespace Kvasir {
 
 		//create a register::action which makes locks the pin's configuration
 		template<typename T>
-		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Lock, T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Lock, T>
 			lock(T) {
 			return{};
 		}
@@ -160,7 +173,7 @@ namespace Kvasir {
 
 		//create a register::action which makes unlocks the pin's configuration
 		template<typename T>
-		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::Unlock, T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::Unlock, T>
 			unlock(T) {
 			return{};
 		}
@@ -183,7 +196,7 @@ namespace Kvasir {
 
 		//create a register::action which makes the pin use the 2nd alt function
 		template<typename T>
-		constexpr Io::Detail::MakeActionIfPinLocation<Io::Action::PinFunction<2>, T>
+		constexpr Io::Detail::MakeActionIfPinLocationT<Io::Action::PinFunction<2>, T>
 			makeAltFunc2(T) {
 			return{};
 		}
